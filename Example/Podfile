@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'WDFrameWorkIOS_Example' do
+  pod 'WDFrameWorkIOS', :path => '../'
+
+  target 'WDFrameWorkIOS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
