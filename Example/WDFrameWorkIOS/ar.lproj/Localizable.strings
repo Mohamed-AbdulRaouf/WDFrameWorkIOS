@@ -1,0 +1,385 @@
+/* 
+  Localizable.strings
+  WDFrameWorkIOS
+
+  Created by Raouf on 11/03/2023.
+  Copyright © 2023 CocoaPods. All rights reserved.
+*/
+// MARK: - BLL
+"invalid_phone_number" = "رقم الهاتف غير صحيح";
+"invalid_first_name" = "الاسم الاول غير صحيح";
+"invalid_last_name" = "اسم العائلة غير صحيح";
+"invalid_email_address" = "البريد الإلكتروني غير صحيح";
+"invalid_password" = "كلمة السر غير صحيحة";
+"invalid_id" = "بطاقه هويه غير معروفة";
+"invalid_gender" = "جنس غير معروف";
+"phone_number_exist" = "رقم الهاتف مسجل بالفعل";
+"email_address_exist" = "البريد الإلكتروني مسجل بالفعل";
+"invalid_customer_source" = "مصدر غير صالح";
+"invalid_share_code" = "كود المشاركة غير صحيح";
+"invalid_mobile_token" = "Invalid Mobile App Token.";
+"user_not_found" = "هذا المستخدم غير موجود";
+"error_occure" = "حدوث بعض الأخطاء";
+"inactive_account" = "هذا الحساب لم يُفعَّل بعد";
+"not_active_account" = "هذا الحساب لم يُفعَّل بعد";
+"number_not_found" = "هذا الرقم غير مسجل";
+"faild_update_verify_code" = "فشل تعديل رمز التآكيد";
+"faild_send_verify_code" = "فشل إرسال رمز التآكيد";
+"invalid_verification_code" = "رمز التأكيد غير صحيح";
+"invalid_password_length" = "كلمة المرور يجب أن تكون من %@ إلى %@ رموز (حروف أو أرقام)";
+"password_not_match" = "كلمة المرور غير مطابقة";
+"faild_upfate_password" = "فشل تعديل كلمة السر";
+"password_not_match_to_current" = "كلمة السر غير متطابقه مع كلمة السر الحالية";
+"invalid_mobile_language" = "اللغة غير صحيحة";
+"no_data_found" = "لا يوجد داتا";
+"faild_parse_data" = "فشل استقبال الداتا";
+"invalid_qr_code" = "رمز QR غير صالح";
+"qr_code_expired_or_used_before" = "تم استخدام هذا الكود من قبل أو قد انتهت مدته";
+"code_used_before" = "قد تم استخدامه من قبل";
+"invalid_referral_code" = "الكود غير صحيح";
+"invalid_input_data" = "بيانات غير صحيحة.";
+"not_found_brand" = "Brand Not Found";
+"customer_register_before_to_brand" = "انت مسجل بالفعل في هذا الفرع";
+"faild_register_to_brand" = "فشل التسجيل";
+"all_service" = "الكل";
+"coupon_code_not_correct" = "كوبون الخصم غير صحيح!";
+"coupon_code_not_in_campaign" = "كوبون الكود ليس مفعل";
+"coupon_code_is_expired" = "كوبون الخصم منتهي";
+"coupon_code_is_assigned_to_another_one" = "كوبون الخصم مفعل  إلى مستخدم آخر";
+"coupon_code_used_before" = "كوبون الخصم  مستخدم بالفعل من قبل ";
+"coupon_code_exceeding_maximum" = "خصمك يتجاوز  الحد الأقصى المسموح";
+"coupon_code_points_enough" = "ليس لديك نقاط كافية";
+"can_not_use_two_type" = "لا يمكنك تطبيق نوعين من الخصم.";
+"error_online_order_msg" = "طلبك ليس متاحاالان .";
+"branch_not_available" = "الفرع غير متاح .";
+"customer_registered_to_brand_before" = "انت مسجل مسبقاً بالفعل";
+"online_order_not_availble" = "الطلب اونلاين غير متاح حالياً";
+"items_changed" = "!لقد تم إدراج المنتجات بالسلة منذ فترة طويلة فتم تعطيل عملية الطلب، برجاء إعادة الطلب. سيتم تفريغ السلة";
+"min_order_invalid" = "إجمالي الطلب أقل من الحد الأدنى!";
+"select_choice_msg" = "اختر من %@ الحد الأدني %@ الحد الأقصي %@";
+"failed_validate_customer" = "Failed Validate Customer";
+"invalid_rate" = "يجب ان تقييم واحد على الأقل";
+
+//validation
+"empty_email" = "من فضلك أدخل البريد الإلكتروني";
+"empty_name" = "أدخل الاسم";
+"empty_last_name" = "من فضلك أدخل الإسم الأخير";
+"empty_field" = "هذا الحقل إجباري";
+"empty_phone_number" = "من فضلك أدخل رقم الهاتف";
+"empty_password" = "أدخل الرقم السري";
+"empty_verify_code" = "ادخل رمز التأكيد";
+"empty_referral_code" = "من فضلك أدخل كوبون الخصم";
+"empty_building_no" = "إدخل رقم العقار";
+"invalid_building_no" = "رقم العقار غير صحيح";
+"empty_street_name" = "إدخل اسم الشارع";
+"invalid_street_name" = "إسم الشارع غير صحيح";
+"empty_floor_no" = "من فضلك أدخل رقم الطابق";
+"invalid_floor_no" = "رقم الطابق غير صحيح";
+"select_size" = "إختر الحجم";
+"empty_user_address_id" = "يجب اختيار عنوان للمتابعة!";
+"empty_verification_code" = "Empty Verification Code";
+// validation payment
+"empty_card_name" = "برجاء إدخال اسمك الموجود على بطاقتك !";
+"empty_card_number" = "الرجاء إدخال رقم بطاقتك!";
+"empty_card_expiry_date" = "تاريخ الانتهاء إجباري";
+"empty_card_cvv" = "كود الحمايه إجباري";
+"invalid_card_name" = "الاسم  غير صحيح ";
+"invalid_card_number" = "رقم بطاقتك غير صحيح";
+"invalid_card_expiry_date" = "تاريخ الانتهاء غير صحيح!";
+"invalid_card_cvv" = "كود الحمايه غير صحيح!";
+"expired_card" = "البطاقة منتهية الصلاحية";
+
+/* Network Error description */
+"NetworkError_ConnectionLost" = "Internet connection is lost. Move to a location where more stable connection is available, or wait until the connection returns to be stable.";
+
+/* Error description */
+"NetworkError_IncorrectDataReturned" = "Incorrect data returned from Pixabay server. Try again, or wait until Pixabay fixes the problem.";
+
+/* Error description */
+"NetworkError_InternationalRoamingOff" = "International roaming is not allowed. Change the international roaming setting, or turn on Wi-Fi.";
+
+/* Error description */
+"NetworkError_NotConnectedToInternet" = "Not connected to the internet. Turn on Wi-Fi, or allow cellular data connection.";
+
+/* Error description */
+"NetworkError_NotReachedServer" = "Could not reach the Pixabay server. Check the internet connection, or wait until the server becomes accessible.";
+
+/* Error description */
+"NetworkError_Unknown" = "حدث خطأ غير معروف. تحقق من اتصال الإنترنت وحاول مرة أخرى.";
+
+/* Connection Error */
+"Connection_error_title" = "نعذُر الاتصال!";
+
+
+
+//MARK:- Registeration
+"male" = "ذكر";
+"female" = "انثي";
+"specify_later" = "التحديد لاحقاً";
+"phone_number" = "رقم الهاتف";
+"referral_code" = "كود المشاركة";
+"first_name" = "الأسم الأول";
+"last_name" = "الأسم الأخير";
+"email_address" = "البريد الإلكتروني";
+"password" = "كلمة السر";
+"sign_up" = "تسجيل";
+"have_an_account_login_in" = "لديك حساب؟ دخول";
+//MARK:- Login
+"login" = "الدخول";
+"forgot_password" = "هل نسيت كلمه السر؟";
+"login_facebook" = "تسجيل الدخول بالفيسبوك";
+//MARK:- Forgot password
+"skip" = "تخطي";
+"send_code" = "إرسال الكود";
+"verify_code" = "تأكيد الكود";
+"change_password" = "تغيير كلمة السر";
+"haven't_received_Code" = "لم تستلم الكود بعد؟";
+"resend_code" = "أعد إرسال الرمز";
+"success_send_verification_code" = "تم إرسال رمز التآكيد";
+"success_update_password" = "تم تحديث كلمة السر بنجاح";
+"success_update_user_profile" = "تم تحديث بيانات المستخدم بنجاح";
+//MARK:- User Profile
+"profile" = "الملف الشخصي";
+"date_of_birth" = "تاريخ الميلاد يوم - شهر";
+//MARK:- Change password
+"old_password" = "كلمة السر الحالية";
+"new_password" = "كلمة السر الجديدة";
+"confirm_password" = "تآكيد كلمة السر";
+//verification code
+"success_activate_account" = "تم تفعيل الحساب بنجاح";
+"verify" = "تآكيد";
+//MARK:- Location
+"start" = "إبدأ";
+"city" = "المدينة";
+"area" = "المنطقة";
+"select_city" = "إختر المدينة";
+"select_area" = "إختر المنطقة";
+"select_city_msg" = "قم بإختيار المدينة أولاً";
+"select_city_and_area_msg" = "قم بإختيار المدينه و المنطقه أولا للأستمرار";
+"clear_cart_due_to_change_location" = "بتغيير المنطقه سيتم تفرغة السلة";
+"clear_cart_due_to_change_language" = "بتغيير اللغة سيتم تفرغة السلة";
+"clear_cart_due_to_change_country" = "بتغيير الدولة سيتم تفرغة السلة";
+"no_items_match_search_query" = "لا توجد عناصر متطابقة";
+"filtering" = "ناتج البحث";
+"of" = "من";
+"club" = "نادي";
+"government" = "فرع";
+"select_club" = "إختر نادي";
+"select_government" = "إختر المحافظة";
+"select_government_msg" = "قم بإختيار المحافظة أولاً";
+"select_club_and_government_msg" = "قم بإختيار النادي و المحافظة أولا للأستمرار";
+
+"success_register_to_brand" = "تم التسجيل بنجاح. ";
+"searching" = "إبحث";
+"change_location" = "تغيير المكان";
+//MARK : - General
+"ok" = "حسناً";
+"password" = "كلمة السر";
+"confirm_password" = "تآكيد كلمة السر";
+"seconds" = "ثواني";
+"save" = "حفظ";
+"cancel" = "إالغاء";
+"done" = "تآكيد";
+//Tab Bar Items
+"Home" = "الصفحه الرئيسيه";
+"Explore" =  "عرض المطاعم";
+"Cart" = "السلة";
+"More" = "المزيد";
+"no_data_found" = "لا يوجد بيانات برجاء تحديث الصفحه او المحاوله لاحقا";
+"settings" = "إعدادات";
+//Home
+"scan_earn" = "صوّر واكسب";
+"rankings" = "العملاء المميزين";
+"favorite_resturants" = "       المطاعم المفضلة";
+"near_resturants" = "المطاعم القريبة";
+
+//Ranking
+"Top Ranking" = "العملاء المميزين";
+/* QR Code */
+"Scan and Earn" = "صوّر واكسب";
+"get your" = "واحصل على ";
+"Rewards" = "مكافأتك";
+"success_gain_points" = "مبروك لقد حصلت علي %@ نقاط";
+"scan_order" = "صور و اطلب";
+"place_QR" = "ضع رمز الاستجابة السريعة هنا";
+"online_order" = "اطلب اونلاين";
+//Map
+"your location" = "موقعك";
+
+//referralCode
+"referral_code_title" = "لديك كود خصومات";
+"referral_code_message" = "لو معاك كود خصومات ستحصل على نقاط مجانية";
+"apply" = "تفعيل الخصم";
+
+//More
+"change_locations" = "تغيير الموقع";
+"my_orders" = "طلباتي السابقة";
+"language" = "اللغة الإنجليزية";
+"about_doBites" = "عن التطبيق";
+"sign_out" = "تسجيل الخروج";
+"sign_in" = "تسجيل الدخول";
+"bar_code" = "باركود";
+"payment_methods" = "طرق الدفع";
+"favorites" = "المفضلين";
+"change_country" = "تغيير الدولة";
+//order
+"order_number" = "رقم الطلب";
+"order_ref" = "الرقم المرجعي";
+"show_rate" = "عرض التقييم";
+"rate_order" = "قيم الطلب";
+"order_status" = "حالة الطلب";
+"orders" = "طلبات";
+"no_orders" = "لا توجد طلبات بعد";
+"order" = "أطلب";
+//notification
+"notifications" =  "الإشعارات";
+"read" = "إقرأ";
+"delete" = "حذف";
+"no_notification" = "لا يوجد إشعارات";
+
+/* add new address */
+"building_no" =  "رقم العقار";
+"street_name" = "اسم الشارع ";
+"landmark" = "علامة مميزة";
+"company_name" =  "اسم الشركة";
+"floor_no" =  "الطابق ";
+"address" = "العنوان ";
+"my_addresses" = "عناويني";
+"success_add_address" = "تم إضافه العنوان بنجاح";
+"success_update_address" = "تم تعديل العنوان بنجاح";
+"dobites_pdf" = "AboutDoBitesArabic";
+"add_new_Address" = "أدخل عنوان جديد";
+/* Brand Info */
+"view_our_menu" = "عرض المنيو ";
+"balance" = "رصيدالنقاط";
+"redeemed" = "مجموع النقاط المستبدلة";
+"my_rewards" = "مكافأتك";
+"delivery" = "التوصيل";
+"info" = "معلومات";
+"min_order_to_deliver" = "الحد الأدنى للتوصيل ";
+"delivery_fees" =  "رسوم التوصيل";
+"delivery_time" = "وقت التوصيل ";
+"Working_hrs" =  "مواعيد العمل";
+"online_payment" = "الدفع أونلاين";
+"no_online_payment" = "خدمة الدفع أونلاين غير متوفره";
+"facilities" = "خدمات";
+"view_balance_info" = "رصيد النقاط";
+"bites" = "بايتس";
+"minute" = "دقيقة";
+"hr" = "ساعة";
+"share_code_message" =  "You’ve got free points, open this link %@ to sign up in DoBites and get free points for %@ or use this code %@ in referal code field when registering or after registeration.";
+"brand_location" = "موقع الفرع";
+"COD" = " الدفع عند الإستلام";
+"cod_order" = "الطلب أونلاين";
+"no_online_order" = "غير متاح الطلب اونلاين";
+"get" = "احصل على";
+/* Explore */
+"search_for_brand" = "البحث عن مطعم";
+"all_service" = "الكل";
+"cuisine_filter" = "حسب المطبخ";
+"facilites_filter" = "حسب الخدمات المتاحة";
+"price_on_selection" = "السعر عند الاختيار";
+"calories" = "سعرات حراريه";
+"branch_not_open" = "هذا المطعم مغلق حالياً . يمكنك الطلب من الساعة %@ و حتي الساعة %@ ";
+/* Receipt */
+"my_items" = "تفاصيل الطلب";
+"total" = "إجمالي الأصناف";
+"delivery_fees" = "تكلفة خدمة التوصيل";
+"VAT" = "قيمة الضريبة";
+"sub_total" = "إجمالي قيمة الطلب";
+"order_details" = "تفاصيل الطلب";
+//Cart
+"changing_brand_error_title" = "تغيير البراند";
+"changing_brand_error_msg" = "العناصر بالسلة من مطاعم مختلفة، برجاء إدراج منتجات من مطعم واحد؛ سيتم تفريغ عربة التسوق!";
+"clear_and_add" = "تفريغ السلة و إضافه هذا المنتج";
+"success_add_item" = "تم إضافة المنتج إلي السلة";
+"quantity" = "الكمية";
+"item_price" = "سعر المنتج";
+"checkout" = "متابعة";
+"add_item" = "إضافه منتج";
+"empty_cart" = "السلة فارغة";
+"empty_cart_message" = "قم بإضافه بعض المنتجات إلي السلة ";
+"min_order_error_msg" = "إجمالي الطلب أقل من الحد الأدنى!";
+"total_discount" =  "إجمالي قيمة الخصم";
+"discount" = "الخصم";
+"clear_cart_title" = "حذف كل العناصر بالسلة!";
+"clear_cart_mesg" = "سيتم حذف كل المنتجات المدرجة بالسلة، هل تريد الاستمرار؟";
+"order_comment_description" = " تعليقك...";
+"error_country_location" = "عذرا ، لا يمكن متابعة طلبك. موقعك الحالي خارج البلد الذي اخترته. يرجى تغيير بلدك وحاول مرة أخرى.  ";
+"location_permission_denied" = "يرجى السماح بتفعيل موقعك الحالى";
+//Product
+"add_to_cart" = "إضافه إالي السلة";
+"select_size" = "إختر الحجم";
+"special_instructions" = "تعليمات";
+"special_instructions_example" = "مثال. لا تقم بإضافه البصل";
+"comment_description" = " تعليقك...";
+/* Loyalty discount */
+"loyalty_discount" = "قيمة الخصم بالنقاط";
+"your_balance" = "رصيد النقاط الحالي";
+"equivalent_cash_value" = "القيمة النقديمة للنقاط";
+"amount_of_bites_to_be_redeemed" = "عدد النقاط التي تريد استبدالها";
+"max_redeem" = "الحد الأقصى";
+"min_redeem" = "الحد الأدني";
+"enter_the_amount_of_points" = "أدخل عدد النقاط";
+"small_min_redeem_msg" = " عدد النقاط لا بد ان تكون مابين اكبر واقل قيمه للبايتس";
+"big_min_redeem_msg" = " عدد النقاط لا بد ان تكون مابين اكبر واقل قيمه للبايتس";
+"redeem_points_greater_than_your_points" = "عدد النقاط أكبر من رصيد نقاطك الحالي!";
+"loyalty_discount_amount" =  "قيمة الخصم باستخدام نقاطك";
+/* Checkout */
+"enter_promo_code" = "كود الخصم";
+"finalize_order" = "تأكيد الطلب";
+"items_changed_error_msg" = "لقد تم إدراج المنتجات بالسلة منذ فترة طويلة فتم تعطيل عملية الطلب، برجاء إعادة الطلب. سيتم تفريغ السلة!";
+"clear_cart" = "حذف السلة";
+"checkout_cash_details" = "تفاصيل الفلوس";
+"place_order" = "تاكيد الطلب";
+"change" = "تغيير";
+"don't_close_app_message" = "يرجى عدم إغلاق التطبيق حتى يتم تقديم الطلب";
+"don't_close_app_during_purchasing_message" = "";
+"error_happen_message" = "Some Error Occured . Please Try again";
+
+/* rate */
+"rate_desc" =  "لإن رآيك يهمنا";
+"submit" = "تأكيد";
+/* Payment */
+"select_payment_method" = "أختار طريقة الدفع";
+"cash_on_delivery" = "الدفع عند الاستلام";
+"pay_with_credit_card" = "دفع مع بطاقة الائتمان";
+"congratulations" = "تهانئ";
+"success_place_order" = "تم إرسال طلبك";
+"track_order" = "تتبع طلبك";
+"no_credit_card" = "لا توجد بطاقة ائتمان";
+"no_credit_card_description" = "ليس لديك أي بطاقات ائتمان مرتبطة بحسابك";
+"add_credit_card" = "أضف بطاقة ائتمان";
+"add_credit_card_hint" = "أدخل تفاصيل بطاقة الائتمان الخاصة بك";
+"name_on_card" = "الاسم على بطاقة الائتمان";
+"card_number" = "رقم البطاقة";
+"expiry_date" = "تاريخ الإنتهاء";
+"cvv" = "CVV";
+"save_card_data" = "حفظ بيانات البطاقة للدفعات المستقبلية";
+"success_add_card" = "تم إضافه بطاقة الائتمان";
+"credit_card_list" = "بطاقات ائتمانك";
+"continue" = "استمرار";
+/* Order Type */
+"order_type_choices" = "ما نوع الخدمة التي تريد اختيارها؟";
+"online" = "آونلاين";
+"atStore" = "فى المتجر";
+"dine_in" = "Dine In";
+"drive_thru" = "Drive Thru";
+"delivery" = "Delivery";
+/* Country List */
+"search_country" = "إبحث عن الدول";
+/* Location Picker */
+"check_address_search" = "إبحث عن العنوان";
+"select_manually" = "قم بإضافته يدويا";
+"next" = "التالى";
+"add_new_address_title" = "أين تريدنا ان نصل أليك؟";
+"add_new_address_message" = "يرجى السماح للتطبيق بالوصول إلى موقعك للعثور على فرع بالقرب منك";
+"use_current_location" = "موقعك الحالي";
+"show_direction_msg" = "هل ترغب في إظهار الاتجاهات لـ";
+"yes" = "نعم";
+"no" = "No";
+"show_on_apple_map" = "عرض باستخدام خريطه آبل";
+"show_on_google_map" = "عرض باستخدام خريطة جوجل";
+/* Splash */
+"logo_title1" = "آندية وادي دجلة";
+"logo_title2" = "مجتمع الأبطال";
