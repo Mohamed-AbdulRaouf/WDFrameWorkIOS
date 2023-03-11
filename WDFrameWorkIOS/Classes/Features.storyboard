@@ -254,7 +254,7 @@
         <!--Rcode View Controller-->
         <scene sceneID="3rQ-Od-rbG">
             <objects>
-                <viewController storyboardIdentifier="QRcodeViewController" hidesBottomBarWhenPushed="YES" id="5q1-md-PBV" customClass="QRcodeViewController" customModule="WDFrameWorkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRcodeViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5q1-md-PBV" customClass="QRcodeViewController" customModule="WDFrameWorkIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cby-HQ-Tlm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,16 +297,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-L9-8Eq" customClass="STFooterBackGround" customModule="WDFrameWorkIOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-L9-8Eq">
                                 <rect key="frame" x="0.0" y="797" width="414" height="65"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ellipse.png" translatesAutoresizingMaskIntoConstraints="NO" id="sia-66-lED">
+                                        <rect key="frame" x="0.0" y="-136" width="413" height="336"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <viewLayoutGuide key="safeArea" id="vL1-Np-Kbx"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="com.myorg.mylib"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="2D8-7V-Mab"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="STFooterBackGround"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4SM-T3-rva"/>
@@ -734,6 +738,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ellipse.png" width="648" height="336"/>
         <image name="logo" width="160" height="160"/>
         <image name="noNotification" width="158.5" height="131.5"/>
         <namedColor name="PrimaryRed_Dark">

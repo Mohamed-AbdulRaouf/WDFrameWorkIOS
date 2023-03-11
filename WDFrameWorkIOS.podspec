@@ -61,7 +61,16 @@ spec.requires_arc = true
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/**/*.{lproj,storyboard,xib,png,jpeg,jpg,nib}'}
+  'resources' => 'WDFrameWorkIOS/**/*.{lproj,storyboard,xib,png,jpeg,jpg}'}
+
+
+#
+#spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
+# 
+# spec.resource_bundles = {
+#    'WDFrameWorkIOS' => ['WDFrameWorkIOS/Classes/**/*.{storyboard,xib,xcdatamodeld,png,jpeg,jpg}']
+# }
+
 
 #spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
 #spec.resource_bundles = {

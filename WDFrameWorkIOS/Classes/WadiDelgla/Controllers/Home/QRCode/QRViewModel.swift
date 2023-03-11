@@ -12,7 +12,7 @@ import ReactiveKit
 //import DAL
 //import BLL
 import SVProgressHUD
-protocol IQRViewModel: IBaseViewModel {
+public protocol IQRViewModel: IBaseViewModel {
     
     var onSuccessReadQRCode: (() -> Void)? { get set }
     var onError: ((String) -> Void)? { get set }

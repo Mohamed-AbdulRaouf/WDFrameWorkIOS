@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         
         let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
-        let storyboard: UIStoryboard = UIStoryboard(name: "Features", bundle: bundle)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QRcodeViewController")
+        let storyboard: UIStoryboard = UIStoryboard(name: "LaunchScreen", bundle: bundle)
+        let vc = storyboard.instantiateInitialViewController()! //instantiateViewController(withIdentifier: "QRcodeViewController")
         self.present(vc, animated: false, completion: nil)
     }
     

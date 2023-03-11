@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class QRController : STUIViewController,IQRCode ,AVCaptureMetadataOutputObjectsDelegate{
+open class QRController : STUIViewController,IQRCode ,AVCaptureMetadataOutputObjectsDelegate{
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     
-    override func viewDidLoad() {
+   open override func viewDidLoad() {
         super.viewDidLoad()
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         
@@ -25,7 +25,7 @@ class QRController : STUIViewController,IQRCode ,AVCaptureMetadataOutputObjectsD
         case .denied: alertCameraAccessNeeded()
         }
     }
-    func requestCameraPermission() {
+    public func requestCameraPermission() {
         AVCaptureDevice.requestAccess(for: .video, completionHandler: {accessGranted in
             guard accessGranted == true else {
                 self.dismiss(animated: true, completion: nil)
@@ -35,11 +35,11 @@ class QRController : STUIViewController,IQRCode ,AVCaptureMetadataOutputObjectsD
         })
     }
     
-    func presentCamera() {
+    public func presentCamera() {
         fatalError("Must be override in sub class")
     }
     
-    func alertCameraAccessNeeded() {
+    public func alertCameraAccessNeeded() {
         
 //        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
         

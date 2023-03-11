@@ -8,13 +8,13 @@
 
 import UIKit
 @IBDesignable
-class STFooterBackGround: UIView {
+public class STFooterBackGround: UIView {
 
 
     var contentView:UIView?
     @IBInspectable var nibName:String?
  
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         xibSetup()
     }
@@ -30,13 +30,15 @@ class STFooterBackGround: UIView {
     
     func loadViewFromNib() -> UIView? {
         guard let nibName = nibName else { return nil }
+//        let bundle = Bundle(for: TestViewController.self)
+//        let podBundle = Bundle(path: Bundle(for: TestViewController.self).path(forResource: "WDFrameWorkIOS", ofType: "bundle")!)
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(
             withOwner: self,
             options: nil).first as? UIView
     }
-    override func prepareForInterfaceBuilder() {
+    public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         xibSetup()
         contentView?.prepareForInterfaceBuilder()

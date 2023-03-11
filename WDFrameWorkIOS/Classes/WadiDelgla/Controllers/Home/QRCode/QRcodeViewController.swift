@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 //import DAL
-class QRcodeViewController: QRController,IBaseController{
+public class QRcodeViewController: QRController,IBaseController{
     
     // MARK: - Properties
-    typealias T = IQRViewModel
-    var viewModel: IQRViewModel?
+    public typealias T = IQRViewModel
+    public var viewModel: IQRViewModel?
     let supportedBarCodes = [AVMetadataObject.ObjectType.qr]
 
     // MARK: - IBOutlets
@@ -25,7 +25,7 @@ class QRcodeViewController: QRController,IBaseController{
     @IBOutlet weak var skiptBtn: UIButton!
     
     // MARK: - View Life Cycle
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         //bind UI
@@ -33,17 +33,17 @@ class QRcodeViewController: QRController,IBaseController{
         self.bindingData()
     }
     
-     override func viewDidAppear(_ animated: Bool) {
+     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.navigationController?.navigationBar.topItem?.title = R.string.localizable.scan_earn()
     }
-    override func viewWillDisappear(_ animated: Bool) {
+    open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
     // MARK: - Functions
-    override func presentCamera()  {
+    public override func presentCamera()  {
         DispatchQueue.main.async {
             self.captureSession = AVCaptureSession()
             guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
@@ -103,7 +103,7 @@ extension QRcodeViewController{
         self.presentCamera()
 
     }
-    func bindingData() {
+    public func bindingData() {
         if let viewModel = viewModel {
             viewModel.onError = { [weak self] error in
                 self?.showMessage(andMessage: error)

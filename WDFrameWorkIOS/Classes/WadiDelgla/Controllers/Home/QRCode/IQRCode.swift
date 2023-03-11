@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol IQRCode {
+public protocol IQRCode {
     func presentCamera()
     func requestCameraPermission()
     func alertCameraAccessNeeded()

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-protocol IBaseViewModel :AnyObject{
+public protocol IBaseViewModel :AnyObject{
 }
-class BaseViewModel : IBaseViewModel{
+public class BaseViewModel : IBaseViewModel{
     
 }
