@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.simpletouch.WDFrameWorkIOSTest</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreen.xib</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -35,5 +35,51 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.739319251387-s1tj22fpk5cihb9qfdm0dvnnr6umpnvh</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callback</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>App need your camera to read the QR code to earn new Bites</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>CustomerSourceId</key>
+	<string>$(CUSTOMER_SOURCE_ID)</string>
+	<key>ServerURL</key>
+	<string>https://dobitesmobileapitestnew.azurewebsites.net/</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<string>NO</string>
+	<key>GOOGLE_PLACES_API_KEY</key>
+	<string>AIzaSyAzbQHVG-yfKbg5fxyKtWjOPKCIvz9eYA8</string>
+	<key>Configuration</key>
+	<string>${CONFIGURATION}</string>
 </dict>
 </plist>

@@ -1,0 +1,393 @@
+/* 
+  Localizable.strings
+  WadiDegla
+
+  Created by Nermeen Mohamed on 22/12/2022.
+  
+*/
+
+// MARK: - BLL
+//errors from api
+"invalid_phone_number" = "Invalid phone number";
+"invalid_first_name" = "Invalid First Name";
+"invalid_last_name" = "Invalid Last Name.";
+"invalid_email_address" = "Invalid Email Address.";
+"invalid_password" = "Invalid Password.";
+"invalid_id" = "Invalid ID";
+"invalid_gender" = "Invalid Gender";
+"phone_number_exist" = "Phone Number already exists";
+"email_address_exist" = "Email already exists";
+"invalid_customer_source" = "Invalid Customer Source";
+"invalid_share_code" = "Invalid share code";
+"invalid_mobile_token" = "Invalid Mobile App Token.";
+"user_not_found" =  "User not found!";
+"error_occure" = "Some error occure";
+"inactive_account" = "Your Account is Inactive , you can\'t login with this Phone Number";
+"not_active_account" = "Not acctivated account";
+"number_not_found" = "Phone number not found";
+"faild_update_verify_code" = "Failed to Update Verify Code.";
+"faild_send_verify_code" = "Failed Send Verify Code.";
+"invalid_verification_code" = "Invalid Verification Code";
+"invalid_password_length" = "Password Length must be greater than %@ and Less than %@";
+"password_not_match" = "Passwords do not match.";
+"faild_upfate_password" = "Faild to update password";
+"password_not_match_to_current" = "Password not Match with your current one";
+"invalid_mobile_language" = "Invalid Mobile Language";
+"no_data_found" = "No Data Found";
+"faild_parse_data" = "Faild to Parse Data";
+"invalid_qr_code" = "Invalid QR Code";
+"qr_code_expired_or_used_before" = "This code was used before or may be expired";
+"code_used_before" = "Your Order Number is Used Before.";
+"invalid_referral_code" = "Invalid Referral code";
+"invalid_input_data" = "Invalid Input Data.";
+"not_found_brand" = "Brand Not Found";
+"customer_register_before_to_brand" = "Customer Already Registered To this Brand";
+"faild_register_to_brand" = "Customer Registered To Brand Failed";
+"all_service" = "All";
+"coupon_code_not_correct" = "Coupon Code Is Invalid.";
+"coupon_code_not_in_campaign" = "Coupon Code Not In Campaign.";
+"coupon_code_is_expired" = "Coupon Code Is Expired.";
+"coupon_code_is_assigned_to_another_one" = "Coupon Code Is Assigned To Another User.";
+"coupon_code_used_before" = "Coupon Code Already Used Before.";
+"coupon_code_exceeding_maximum" = "Your Discount Is Exceeding Maximum Allowed Limit.";
+"coupon_code_points_enough" = "You don\'t have points enough.";
+"can_not_use_two_type" = "You Can\'t Use Two Discount Types.";
+"error_online_order_msg" = "Online Ordering Is Not Available .";
+"branch_not_available" = "Branch Not Available.";
+"customer_registered_to_brand_before" = "Customer Already Registered To this Brand";
+"online_order_not_availble" = "Online Order Not available at this time";
+
+"items_changed" = "Some of the items in the cart have been modified or updated.Your cart will be emptied";
+"min_order_invalid" = "Your total order amount is less than  the minimum value for delivery";
+"invalid_rate" = "Please at least rate one";
+//validation
+"empty_email" = "Please enter your Email Address";
+"empty_name" = "Please enter your  Name";
+"empty_last_name" = "Please enter your Last Name";
+"empty_field" = "This field is required";
+"empty_phone_number" = "Please enter mobile Number";
+"empty_password" = "Please enter password";
+"empty_verify_code" = "Please enter Verification Code";
+"empty_referral_code" = "Empty Referral Code";
+"empty_building_no" = "Empty Building No";
+"invalid_building_no" = "Invalid Building NO";
+"empty_street_name" = "Empty Street Name";
+"invalid_street_name" = "Invalid Street Name";
+"empty_floor_no" = "Empty Floor No.";
+"invalid_floor_no" = "Invalid Floor no.";
+"select_size" = "Please select size";
+"empty_user_address_id" = "Please select address";
+"select_choice_msg" = "Select From %@ min: %@ max: %@";
+"failed_validate_customer" = "Failed Validate Customer";
+"empty_verification_code" = "Empty Verification Code";
+// validation payment
+"empty_card_name" = "Holder name is required!";
+"empty_card_number" = "Please enter your cardData number!";
+"empty_card_expiry_date" = "Expiry date required!";
+"empty_card_cvv" = "CVV is required!";
+"invalid_card_name" = "Invalid Card Name";
+"invalid_card_number" = "Invalid Card Number";
+"invalid_card_expiry_date" = "Invalid Expiry Date";
+"invalid_card_cvv" = "Invalid Card CVV";
+"expired_card" = "Expired Card";
+
+/* Network Error description */
+"NetworkError_ConnectionLost" = "Internet connection is lost. Move to a location where more stable connection is available, or wait until the connection returns to be stable.";
+
+/* Error description */
+"NetworkError_IncorrectDataReturned" = "Incorrect data returned from Pixabay server. Try again, or wait until Pixabay fixes the problem.";
+
+/* Error description */
+"NetworkError_InternationalRoamingOff" = "International roaming is not allowed. Change the international roaming setting, or turn on Wi-Fi.";
+
+/* Error description */
+"NetworkError_NotConnectedToInternet" = "Not connected to the internet. Turn on Wi-Fi, or allow cellular data connection.";
+
+/* Error description */
+"NetworkError_NotReachedServer" = "Could not reach the Pixabay server. Check the internet connection, or wait until the server becomes accessible.";
+
+/* Error description */
+"NetworkError_Unknown" = "Unknown error occurred. Check internet connection and try again.";
+
+/* Connection Error */
+"Connection_error_title" = "Connection error";
+
+
+
+//MARK:- Registeration
+"male" = "Male";
+"female" = "Female";
+"specify_later" = "Not Specified";
+"phone_number" = "Phone Number";
+"referral_code" = "Referral Code";
+"first_name" = "First Name";
+"last_name" = "Last Name";
+"email_address" = "Email Address";
+"password" = "Password";
+"sign_up" = "Sign Up";
+"have_an_account_login_in" = "Already Registered? Log in!";
+
+//MARK:- Login
+"login" = "Log in";
+"forgot_password" = "forget your Password?";
+"login_facebook" = "Sign up with facebook";
+//MARK:- Forgot password
+"skip" = "SKIP";
+"send_code" = "Send Code";
+"verify_code" = "Verify Code";
+"change_password" = "Change Password";
+"haven't_received_Code" = "Haven't received the code yet?";
+"resend_code" = "Resend Code";
+"success_send_verification_code" = "Successfully send verification code.";
+"success_update_password" = "Password Updated Successfully.";
+//MARK:- User Profile
+"profile" = "Profile";
+"date_of_birth" = "Date of Birth - MM/DD";
+"success_update_user_profile" = "User Info Updated Successfully.";
+//MARK:- Change password
+"old_password" = "Old Password";
+"new_password" = "New Password";
+"confirm_password" = "Confirm Password";
+//verification code
+"success_activate_account" = "Successfully activate account";
+"verify" = "VERIFY";
+//MARK:- Location
+"start" = "START";
+"city" = "City";
+"area" = "area";
+"select_city" = "Select City";
+"select_area" = "Select Area";
+"select_city_msg" = "You haven't select city yet, to continue please select city first";
+"select_city_and_area_msg" = "you should select city and area to continue";
+"clear_cart_due_to_change_location" = "by changing your area you will empty cart";
+"clear_cart_due_to_change_language" = "by changing your language you will empty cart";
+"clear_cart_due_to_change_country" = "by changing your country you will empty cart";
+"no_items_match_search_query" = "No items match your query";
+"filtering" = "Filtering";
+"of" = "Of";
+"searching" = "Searching";
+"change_location" = "Change Location";
+"club" = "Club";
+"government" = "Government";
+"select_club" = "Select club";
+"select_government" = "Select government";
+"select_government_msg" = "You haven't select government yet, to continue please select government first";
+"select_club_and_government_msg" = "you should select club and government to continue";
+
+
+//MARK : - General
+"ok" = "Ok";
+"password" = "Password";
+"confirm_password" = "Confirm Password";
+"seconds" = "SECONDS";
+"save" = "Save";
+"cancel" = "Cancel";
+"done" = "Done";
+//Tab Bar Items
+"Home" = "Home";
+"Explore" = "Explore";
+"Cart" = "Cart";
+"More" = "More";
+"settings" = "Settings";
+//Home
+"scan_earn" = "Scan & Earn";
+"rankings" = "Rankings";
+"favorite_resturants" = "My Favorite Restaurant";
+"near_resturants" = "View Nearby Restaurant";
+
+//Ranking
+"Top Ranking" = "Top Ranking";
+/* QR Code */
+"Scan and Earn" = "Scan & Earn";
+"get your" = "& Get Your";
+"Rewards" = "Rewards";
+"success_gain_points" = "You have got  %@ bites";
+"scan_order" = "Scan & Order";
+"place_QR" = "Place the QR code here";
+"online_order" = "Online Order";
+//Map
+"your location" =  "Your Location";
+//referralCode
+"referral_code_title" = "Do You Have Referral Code?";
+"referral_code_message" = "If you have referral code, enter it to get free points.";
+"apply" = "Apply";
+"cancel" = "Cancel";
+//More
+"change_locations" = "Locations";
+"my_orders" = "My Orders";
+"language" = "Language Arabic";
+"about_doBites" = "About DoBites";
+"sign_out" =  "Sign Out";
+"sign_in" = "SIGN In";
+"bar_code" = "Bar Code";
+"payment_methods" = "My payment methods";
+"favorites" = "Favorites";
+"change_country" = "Change Country";
+//order
+"order_number" = "Order Number";
+"order_ref" = "Order Ref";
+"show_rate" = "Show Rate";
+"rate_order" = "Rate Order";
+"order_status" = "Order Status";
+"orders" = "orders";
+"no_orders" = "No Orders";
+"order" = "Order";
+//notification
+"notifications" = "Notifications";
+"read" = "View";
+"delete" = "Delete";
+"no_notification" = "No Notification";
+/* add new address */
+"building_no" = "Building No.";
+"street_name" = "Street Name";
+"landmark" = "Landmark";
+"company_name" = "Company Name";
+"floor_no" = "Floor No";
+"address" = "Address";
+"my_addresses" = "My Addresses";
+"success_add_address" = "Successfully Added Address";
+"success_update_address" = "Successfully Update Address";
+"dobites_pdf" = "AboutDoBitesEnglish";
+"add_new_Address" = "Add New Address";
+/* Brand Info */
+"view_our_menu" = "View our Menu";
+"balance" = "Balance";
+"redeemed" = "Redeemed";
+"my_rewards" = "My Rewards";
+"delivery" = "Delivery";
+"info" = "Info";
+"min_order_to_deliver" = "Min.Order to Deliver";
+"delivery_fees" = "Delivery Fees";
+"delivery_time" = "Delivery Time";
+"Working_hrs" = "Working Hrs";
+"online_payment" = "Online Payment";
+"no_online_payment" = "No Online Payment";
+"facilities" = "Facilities";
+"view_balance_info" = "View balance Info";
+"bites" = "Bites";
+"minute" = "Min";
+"hr" = "HR";
+"share_code_message" =  "You’ve got free points, open this link %@ to sign up in DoBites and get free points for %@ or use this code %@ in referal code field when regsitering or after registeration.";
+"brand_location" = "Brand Location";
+"COD" = "COD";
+"cod_online" = "COD & Online";
+"no_online_order" = "No Online Ordering";
+"get" = "Get";
+/* Explore */
+"search_for_brand" = "Search for a brand";
+"all_service" = "All";
+"cuisine_filter" = "Cuisine Filter";
+"facilites_filter" = "Facilites Filter";
+"price_on_selection" = "Price on selection";
+"calories" = "Calories";
+"branch_not_open" = "This brand is closed now! You can order at any time through its availability (from %@ to %@ )";
+"success_register_to_brand" = "You have successfully registered to brand.";
+"no_data_found" = "No data found, please refresh or try again later.";
+//Receipt
+"my_items" = "My Items";
+"sub_total" = "Sub-Total";
+"delivery_fees" = "Delivery Fees";
+"VAT" = "VAT";
+"total" = "Total";
+"order_details" = "Order Details";
+
+//Cart
+"changing_brand_error_title" = "Brand Changing";
+"changing_brand_error_msg" = "you have selected Items from different brands! Kindly enlist items from one brand only; your cart will be automatically cleared";
+"clear_and_add" = "Clear and Add";
+"success_add_item" = "Item Successfully added to cart!";
+"quantity" = "Quantity";
+"item_price" = "Item Price";
+"checkout" = "Checkout";
+"add_item" = "Add Item";
+"empty_cart" = "Cart is Empty";
+"empty_cart_message" = "You have to add something first to cart";
+"min_order_error_msg" = "Your total order amount is less than the minimum value for delivery";
+"total_discount" = "Total Discount";
+"discount" = "Discount";
+"clear_cart_title" = "Empty cart?";
+"clear_cart_mesg" = "By emptying your cart, you will lose the order and all the added items to the cart. Do you want to proceed with emptying the cart?";
+"order_comment_description" = "if you have any comments regarding your order …….";
+"error_country_location" = "Sorry, Couldn\'t Proceed your order. Your current location is outside of your selected country. Please change your country and try again. ";
+"location_permission_denied" = "Location permission denied, For better user please allow you current location.";
+//Product
+"add_to_cart" = "Add to Cart";
+"select_size" = "Select Size";
+"special_instructions" = "Special Instructions";
+"special_instructions_example" = "eg. Please don't add onion";
+"comment_description" = "if you have any comments regarding your item …….";
+/* Loyalty discount */
+"loyalty_discount" = "Loyalty Discount";
+"your_balance" = "Your Balance";
+"equivalent_cash_value" = "Equivalent cash value";
+"amount_of_bites_to_be_redeemed" = "Amount of Bites to be Redeemed";
+"max_redeem" = "Max Redeem";
+"min_redeem" = "Min Redeem";
+"enter_the_amount_of_points" = "Enter the amount of points";
+"small_min_redeem_msg" = "This redemption amount must be between min and max redeem .";
+"big_min_redeem_msg" = "This redemption amount must be between min and max redeem .";
+"redeem_points_greater_than_your_points" = "This redemption amount exceeds your bites\' balance.";
+"loyalty_discount_amount" =  "Your Loyalty Discount Amount";
+
+/* Checkout */
+"enter_promo_code" = "Enter Promo Code";
+"finalize_order" = "Finalize Order";
+
+"items_changed_error_msg" = "Some of the items in the cart have been modified or updated.Your cart will be emptied!";
+"clear_cart" = "Clear cart";
+"checkout_cash_details" = "checkout cash details";
+"place_order" = "Place order";
+"change" = "Change";
+"don't_close_app_message" = "Please don't close the application Until order placed";
+"don't_close_app_during_purchasing_message" = "Please don't close the application during purchasing proccess";
+"error_happen_message" = "An error occurred, please try again";
+
+/* rate */
+"rate_desc" = "Because your opinion matters..";
+"submit" = "Submit";
+/* Payment */
+"select_payment_method" = "Select payment method";
+"cash_on_delivery" = "Cash on delivery";
+"pay_with_credit_card" = "Pay with credit card";
+"congratulations" = "Congratulations";
+"success_place_order" = "Your order has been sent. In about 60 minutes it should be at your door.";
+"track_order" = "Track your order";
+"no_credit_card" = "No Credit Card";
+"no_credit_card_description" = "you don't have any credit cards associated with your account";
+"add_credit_card" = "Add credit card";
+"add_credit_card_hint" = "Enter your credit card details";
+"name_on_card" = "Name On Card";
+"card_number" = "Card Number";
+"expiry_date" = "Expiry Date";
+"cvv" = "CVV";
+"save_card_data" = "Save card data for future payments";
+"success_add_card" = "Success add your credit card";
+"credit_card_list" = "Your credit card list";
+"continue" = "Continue";
+
+/* Order Type */
+"order_type_choices" = "Which Categories do you want to choose ?";
+"online" = "Online";
+"atStore" = "At Store";
+"dine_in" = "Dine In";
+"drive_thru" = "Drive Thru";
+"delivery" = "Delivery";
+
+/* Country List */
+"search_country" = "Search Countries";
+/* Location Picker */
+"check_address_search" = "Search address";
+"select_manually" = "Select it manually";
+"next"= "Next";
+"add_new_address_title" = "Where do you want us to deliver?";
+"add_new_address_message" = "Please allow app access to your location to find Branche near you.";
+"use_current_location" = "Use current location";
+"show_direction_msg" = "Would you like to show directions for";
+"yes" = "Yes";
+"no" = "No";
+"show_on_apple_map" = "Open with Apple map";
+"show_on_google_map" = "Open with Google map";
+/* Splash */
+"logo_title1" = "WADI DEGLA CLUBS";
+"logo_title2" = "COMMUNITY OF CHAMPIONS";
+

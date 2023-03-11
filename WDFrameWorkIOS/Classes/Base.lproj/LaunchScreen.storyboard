@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PKk-PO-deG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wadiDeglaLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="XXZ-Qa-VqM">
+                                <rect key="frame" x="132" y="273" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Ddv-Fp-Iis"/>
+                                    <constraint firstAttribute="height" constant="150" id="p8p-1n-qqA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNITY OF CHAMPIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKE-f2-fOa">
+                                <rect key="frame" x="75.5" y="472" width="263" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WADI DEGLA CLUBS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6K-RK-lpk">
+                                <rect key="frame" x="20" y="443" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8kN-Hm-mh0">
+                                <rect key="frame" x="188.5" y="554" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DPX-k2-xs7"/>
+                        <color key="backgroundColor" red="0.019607843137254902" green="0.027450980392156862" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8kN-Hm-mh0" firstAttribute="top" secondItem="U6K-RK-lpk" secondAttribute="bottom" constant="90" id="3v6-rt-QQY"/>
+                            <constraint firstItem="8kN-Hm-mh0" firstAttribute="centerX" secondItem="PKk-PO-deG" secondAttribute="centerX" id="5jD-3a-5bC"/>
+                            <constraint firstItem="U6K-RK-lpk" firstAttribute="centerX" secondItem="DPX-k2-xs7" secondAttribute="centerX" id="I3J-Vl-el6"/>
+                            <constraint firstItem="U6K-RK-lpk" firstAttribute="leading" secondItem="DPX-k2-xs7" secondAttribute="leading" constant="20" id="Ish-I5-FUO"/>
+                            <constraint firstItem="U6K-RK-lpk" firstAttribute="top" secondItem="XXZ-Qa-VqM" secondAttribute="bottom" constant="20" id="VL8-aV-6cn"/>
+                            <constraint firstItem="zKE-f2-fOa" firstAttribute="centerX" secondItem="DPX-k2-xs7" secondAttribute="centerX" id="b6k-fq-gIg"/>
+                            <constraint firstItem="XXZ-Qa-VqM" firstAttribute="centerX" secondItem="PKk-PO-deG" secondAttribute="centerX" id="jW8-qL-SlO"/>
+                            <constraint firstItem="zKE-f2-fOa" firstAttribute="top" secondItem="U6K-RK-lpk" secondAttribute="bottom" constant="8" id="oD1-66-NdR"/>
+                            <constraint firstItem="XXZ-Qa-VqM" firstAttribute="centerY" secondItem="PKk-PO-deG" secondAttribute="centerY" constant="-100" id="rfM-6i-toT"/>
+                            <constraint firstItem="DPX-k2-xs7" firstAttribute="trailing" secondItem="U6K-RK-lpk" secondAttribute="trailing" constant="20" id="yKw-zG-zjM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="wadiDeglaLogo.png" width="160" height="160"/>
+    </resources>
+</document>

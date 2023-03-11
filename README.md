@@ -22,7 +22,7 @@ pod 'WDFrameWorkIOS'
 
 ## Author
 
-mohamed.a.raouf@icloud.com, mabdulraouf@ipmagix.com
+mohamed.a.raouf@icloud.com, mohamed.a.raouf@icloud.com
 
 ## License
 
