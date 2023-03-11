@@ -17,7 +17,7 @@ WDFrameWorkIOS is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'WDFrameWorkIOS'
+  pod 'WDFrameWorkIOS', :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS' , :branch => 'master'
 ```
 
 ## Author

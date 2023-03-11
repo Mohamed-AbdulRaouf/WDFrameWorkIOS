@@ -29,14 +29,22 @@ Pod::Spec.new do |spec|
 #    'PRODUCT_BUNDLE_IDENTIFIER' => '${PODS_TARGET_SRCROOT}/Resources/YourPod-Info.plist'
 #  }
   spec.description      = <<-DESC
-  TODO: Add long description of the pod here.
+  sdsds
+   sdasds
+   sdsdsas
+   sdasdssd
+   sadsadsadsadsa adas
+   adasd Assetsd sadsadsadsadsa descriptionasd
+   asd
+   asd
+   sadsadsadsadsa sa
   DESC
   
-  spec.homepage         = 'https://github.com/mohamed.a.raouf@icloud.com/WDFrameWorkIOS'
+  spec.homepage         = 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
   spec.author           = { 'mohamed.a.raouf@icloud.com' => 'mohamed.a.raouf@icloud.com' }
-  spec.source           = { :git => 'https://github.com/mohamed.a.raouf@icloud.com/WDFrameWorkIOS.git', :tag => spec.version.to_s }
+  spec.source           = { :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS.git', :tag => spec.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   spec.ios.deployment_target = '13.0'
@@ -59,9 +67,10 @@ spec.static_framework = true
 spec.requires_arc = true
 
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
+spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/**/*.{lproj,storyboard,xib,png,jpeg,jpg}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg}'}
+spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
 #
