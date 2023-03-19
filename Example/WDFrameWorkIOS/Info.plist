@@ -74,12 +74,16 @@
 	<key>CustomerSourceId</key>
 	<string>$(CUSTOMER_SOURCE_ID)</string>
 	<key>ServerURL</key>
-	<string>https://dobitesmobileapitestnew.azurewebsites.net/</string>
+	<string>https://wdorderonlineapi.azurewebsites.net/</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<string>NO</string>
 	<key>GOOGLE_PLACES_API_KEY</key>
 	<string>AIzaSyAzbQHVG-yfKbg5fxyKtWjOPKCIvz9eYA8</string>
 	<key>Configuration</key>
 	<string>${CONFIGURATION}</string>
+	<key>BrandID</key>
+	<string>$(BRAND_ID)</string>
+	<key>KashierSDKMode</key>
+	<string>$(KASHIER_SDK_MODE)</string>
 </dict>
 </plist>

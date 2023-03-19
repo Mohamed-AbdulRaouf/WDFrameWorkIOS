@@ -27,7 +27,7 @@ class BrandItemTableViewCell: UITableViewCell{
     
     func configureCell(_ model: IBrandRatingItemDTODAL,_ isRateBefore: Bool){
         self.brandItemNameLabel.textColor = COLOR_PRIMARY_TEXT
-        self.brandItemNameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+        self.brandItemNameLabel.font = APP_FONT_REGULAR16 //UIFont(resource: , size: 17)
         self.brandItemNameLabel.text = model.brandRatingItemName.value ?? ""
         self.cosmosView.rating = Double(model.value.value ?? 0.0)
         self.cosmosView.isUserInteractionEnabled = !isRateBefore

@@ -17,7 +17,7 @@ class OrderTypeCollectionViewCell: UICollectionViewCell {
     
     func configureCell(_ model: IOrderTypeDTODAL){
         self.itemNameLabel.text = model.itemTitle.value ?? ""
-        self.itemNameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 14)
+        self.itemNameLabel.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR, size: 14)
         self.itemNameLabel.numberOfLines = 2
         self.itemNameLabel.textColor = COLOR_PRIMARY_TEXT
         if let image = model.itemImage.value {

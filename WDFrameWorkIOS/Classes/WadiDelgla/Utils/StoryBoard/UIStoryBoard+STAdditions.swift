@@ -11,16 +11,15 @@ import UIKit
 import SwinjectStoryboard
 // swiftlint:disable file_length
 
-protocol StoryboardType {
+public protocol StoryboardType {
     static var storyboardName: String { get }
 }
 
 extension StoryboardType {
-    static var storyboard: UIStoryboard {
-        //        return UIStoryboard(name: self.storyboardName, bundle: Bundle(for: BundleToken.self))
-        
-        return SwinjectStoryboard.create(name: self.storyboardName, bundle: Bundle(for: BundleToken.self), container: container)
-        
+    public static var storyboard: UIStoryboard {
+        let bundlePath = Bundle(for: UserTestPath.self).path(forResource: "resources", ofType: "bundle")
+        let bundle = Bundle(path: bundlePath!)
+        return SwinjectStoryboard.create(name: self.storyboardName, bundle: bundle, container: container)
     }
 }
 
@@ -36,7 +35,7 @@ public struct SceneType<T: Any> {
     }
 }
 
-struct InitialSceneType<T: Any> {
+public struct InitialSceneType<T: Any> {
     let storyboard: StoryboardType.Type
     
     func instantiate() -> T {
@@ -48,7 +47,7 @@ struct InitialSceneType<T: Any> {
     }
 }
 
-protocol SegueType: RawRepresentable { }
+public protocol SegueType: RawRepresentable { }
 
 extension UIViewController {
     func perform<S: SegueType>(segue: S, sender: Any? = nil) where S.RawValue == String {
@@ -60,12 +59,12 @@ extension UIViewController {
 public enum StoryboardScene {
     public enum User : StoryboardType {
         
-        static let storyboardName = "User"
+       public static let storyboardName = "User"
         
         static let loginViewController = SceneType<LoginViewController>(storyboard: User.self, identifier: "LoginViewController")
         
         static let registerViewController = SceneType<RegisterationViewController>(storyboard: User.self, identifier: R.storyboard.user.registerationViewController.identifier)
-        static let forgotPasswordVerifyCodeViewController = SceneType<ForgotPasswordVerifyCodeViewController>(storyboard: User.self, identifier: "ForgotPasswordVerifyCodeViewController")
+        static let forgotPasswordVerifyCodeViewController = SceneType<ForgotPasswordVerifyCodeViewController>(storyboard: User.self, identifier: R.storyboard.user.forgotPasswordVerifyCodeViewController.identifier)
         static let resetPasswordViewController = SceneType<ResetPasswordViewController>(storyboard: User.self, identifier: "ResetPasswordViewController")
         static let userProfileViewController = SceneType<UserProfileViewController>(storyboard: User.self, identifier: R.storyboard.user.userProfileViewController.identifier)
         static let userProfileNavigationViewController = SceneType<UINavigationController>(storyboard: User.self, identifier: "UserProfileNavigationController")
@@ -83,7 +82,7 @@ public enum StoryboardScene {
         static let locationPickerViewController = SceneType<LocationPickerViewController>(storyboard: User.self, identifier: "LocationPickerViewController")
     }
     public enum Location :StoryboardType {
-        static let storyboardName = "Location"
+        public static let storyboardName = "Location"
         
         static let locationViewController = SceneType<LocationViewController>(storyboard: Location.self, identifier: "LocationViewController")
         
@@ -92,7 +91,7 @@ public enum StoryboardScene {
     }
     
     public enum Features :StoryboardType {
-        static let storyboardName = "Features"
+        public static let storyboardName = "Features"
         
         static let searchViewController = SceneType<SearchViewController>(storyboard: Features.self, identifier: "SearchViewController")
         
@@ -112,7 +111,7 @@ public enum StoryboardScene {
     public enum Main :StoryboardType {
         public static let storyboardName = "Main"
         
-        static var splashViewController = SceneType<SplashViewController>(storyboard: Main.self, identifier: "SplashViewController")
+        static let splashViewController = SceneType<SplashViewController>(storyboard: Main.self, identifier: "SplashViewController")
         
         static let tabBarViewController = SceneType<UITabBarController>(storyboard: Main.self, identifier: "tabController")
         
@@ -126,7 +125,7 @@ public enum StoryboardScene {
         
     }
    public enum Brand :StoryboardType {
-        static let storyboardName = "Brand"
+       public static let storyboardName = "Brand"
         
         static let brandInfoViewController = SceneType<BrandInfoViewController>(storyboard: Brand.self, identifier: "BrandInfoViewController")
         
@@ -137,7 +136,7 @@ public enum StoryboardScene {
         
     }
    public enum Menu :StoryboardType {
-        static let storyboardName = "Menu"
+       public static let storyboardName = "Menu"
         
         static let menuViewController = SceneType<MenuViewController>(storyboard: Menu.self, identifier: "MenuViewController")
         
@@ -146,7 +145,7 @@ public enum StoryboardScene {
         
     }
    public enum Order :StoryboardType {
-        static let storyboardName = "Order"
+       public static let storyboardName = "Order"
         
         static let receiptViewController = SceneType<ReceiptViewController>(storyboard: Order.self, identifier: "ReceiptViewController")
         
@@ -164,15 +163,22 @@ public enum StoryboardScene {
         
     }
     public enum Payment: StoryboardType {
-        static let storyboardName = "Payment"
+        public static let storyboardName = "Payment"
         
         static let creditCardViewController = SceneType<CreditCardViewController>(storyboard: Payment.self, identifier: "CreditCardViewController")
         
     }
+    
+    public enum RaoufTest: StoryboardType {
+        public static let storyboardName = "Main"
+        
+       static let splashViewControllerTwo = SceneType<SplashViewController>(storyboard: Main.self, identifier: "SplashViewController")
+    }
+    
 }
 
-enum StoryboardSegue {
+public enum StoryboardSegue {
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 
-private final class BundleToken {}
+public final class BundleToken {}

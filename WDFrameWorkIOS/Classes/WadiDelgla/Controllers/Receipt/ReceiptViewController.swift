@@ -73,13 +73,16 @@ extension ReceiptViewController: UITableViewDelegate,UITableViewDataSource,IBase
 //        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 60.0
         self.tableView.isScrollEnabled = false
-        let nib = UINib(nibName: "ReceiptMainHeaderView", bundle: Bundle.main)
-        tableView.register(nib, forHeaderFooterViewReuseIdentifier: "ReceiptMainHeaderView")
-        let nibFooter = UINib(nibName: "ReceiptCashDetailsFooter", bundle: Bundle.main)
-        tableView.register(nibFooter, forHeaderFooterViewReuseIdentifier: "ReceiptCashDetailsFooter")
+        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
+        let bundle = Bundle(path: bundlePath!)
+//        let nib = UINib(nibName: "ReceiptMainHeaderView", bundle: bundle)
+//        tableView.register(nib, forHeaderFooterViewReuseIdentifier: "ReceiptMainHeaderView")
+        
+//        let nibFooter = UINib(nibName: "ReceiptCashDetailsFooter", bundle: Bundle.main)
+//        tableView.register(nibFooter, forHeaderFooterViewReuseIdentifier: "ReceiptCashDetailsFooter")
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60 //UITableView.automaticDimension
+        return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         guard  (self.viewModel?.order != nil) else { return 0 }
@@ -103,25 +106,29 @@ extension ReceiptViewController: UITableViewDelegate,UITableViewDataSource,IBase
 // MARK: - Table Header & Foooter
 extension ReceiptViewController {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60 //UITableView.automaticDimension
+        return UITableViewAutomaticDimension
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ReceiptMainHeaderView") as! ReceiptMainHeaderView
-        guard let order = self.viewModel?.order?.orderItems.value else { return UIView()}
-        header.configureCell(order[section])
-        return header
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ReceiptMainHeaderView") as! ReceiptMainHeaderView
+//        guard let order = self.viewModel?.order?.orderItems.value else { return UIView()}
+//        header.configureCell(order[section])
+//        return header
+//    }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return 0}
         return 150
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return UIView()}
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ReceiptCashDetailsFooter") as! ReceiptCashDetailsFooter
-        guard let order = self.viewModel?.order?.orderDetails.value else { return UIView()}
-        header.configureCell(order)
-        return header
-    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return UIView()}
+//        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ReceiptCashDetailsFooter") as! ReceiptCashDetailsFooter
+//        guard let order = self.viewModel?.order?.orderDetails.value else { return UIView()}
+//        header.configureCell(order)
+//        return header
+//    }
 }
 
 // MARK: - IReceiptViewController Protocol

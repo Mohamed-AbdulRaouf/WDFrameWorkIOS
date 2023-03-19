@@ -23,7 +23,7 @@ class ExploreServicesCell: UICollectionViewCell,IBaseCollectionCell {
         
         self.serviceNameLabel.text = model.serviceName.value ?? ""
         self.serviceNameLabel.textColor =  UIColor(white:0, alpha: 0.7)
-        self.serviceNameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 12)
+        self.serviceNameLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
         self.serviceNameLabel.sizeToFit()
         self.serviceNameLabel.textAlignment = .center
     }

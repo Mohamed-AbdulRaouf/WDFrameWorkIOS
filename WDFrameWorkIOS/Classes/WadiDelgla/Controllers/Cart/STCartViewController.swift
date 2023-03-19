@@ -48,7 +48,7 @@ class STCartViewController: STUIViewController ,IBaseController{
     @IBAction func onShoppingTapped(_ sender: Any) {
         TabsData.sharedInstance.searchTerm = ""
         TabsData.sharedInstance.isLoyality = false
-        self.tabBarController?.selectedIndex = 0
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func onCheckoutTapped(_ sender: Any) {
         self.viewModel?.validateUserLocationWithSelectedCountry()
@@ -73,10 +73,10 @@ extension STCartViewController{
         self.checkoutButton.setTitle(R.string.localizable.checkout(), for: .normal)
         self.emptyCartLabel.text = R.string.localizable.empty_cart()
         self.emptyCartLabel.textColor = COLOR_ACCENT
-        self.emptyCartLabel.font = UIFont(resource: APP_FONT_BOLD, size: 20)
+        self.emptyCartLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
         self.emptyCartMessageLabel.text = R.string.localizable.empty_cart_message()
         self.emptyCartMessageLabel.textColor = COLOR_PRIMARY_TEXT
-        self.emptyCartMessageLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 16)
+        self.emptyCartMessageLabel.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 16)
         self.addItemButton.setTitle(R.string.localizable.add_item(), for: .normal)
         self.addItemButton.titleLabel?.font = FONT_PRIMARY_BUTTON
         self.addItemButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)

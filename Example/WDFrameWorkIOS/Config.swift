@@ -28,9 +28,9 @@ class Config {
     static var TestVerifyCode: String{
         return "123456"
     }
-//    static var kashierSDKMode: KASHIER_SDK_MODE {
-//        return UIApplication.KASHIER_SDK_MODE == "Production" ? .PRODUCTION : .DEVELOPMENT
-//    }
+    static var kashierSDKMode: String {
+        return "Production" //"Production" ? .PRODUCTION : .DEVELOPMENT
+    }
     static var googlePlacesAPIKey: String {
         return UIApplication.googlePlacesAPIKey
     }

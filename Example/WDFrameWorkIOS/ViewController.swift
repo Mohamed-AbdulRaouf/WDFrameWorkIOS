@@ -31,9 +31,11 @@ class ViewController: UIViewController {
         
         let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
-        let storyboard: UIStoryboard = UIStoryboard(name: "LaunchScreen", bundle: bundle)
+        let storyboard: UIStoryboard = UIStoryboard(name: "WDStoryboard", bundle: bundle)
         let vc = storyboard.instantiateInitialViewController()! //instantiateViewController(withIdentifier: "QRcodeViewController")
-        self.present(vc, animated: false, completion: nil)
+        AppDelegate.shared.window?.rootViewController = vc
+        AppDelegate.shared.window?.makeKeyAndVisible()
+//        self.present(vc, animated: false, completion: nil)
     }
     
 }

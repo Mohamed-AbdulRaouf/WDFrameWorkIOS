@@ -13,4 +13,5 @@ protocol IExploreViewController:ICommonFunc {
     func setFilter(_ filterText: String)
     func setServiceId(_ serviceId: String)
     func openLogin()
+    func onSuccessLoadBrandInfo()
 }

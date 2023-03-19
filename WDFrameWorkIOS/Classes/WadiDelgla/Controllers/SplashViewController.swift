@@ -25,21 +25,18 @@ extension SplashViewController {
         self.bindingData()
         self.viewModel?.delegate = self
         K.shared.APP_LANGUAGE = UserDefaults.currentAppLanguage
-#warning("check from code")
       DispatchQueue.main.async(execute: {
                   setup(with: Config.self, completion: {
                       DispatchQueue.global(qos: .background).async {
                                          getErrorMessages(completion: {
-
+                                             
                                          })
                                      }
                       doOnMain(deadline: 0.0) {
                         UserDefaults.enableShowQRCodeVC = true
                           self.viewModel?.viewDidLoad()
-#warning("check from code")
-                          self.onPresentQRCodeVC()
                       }
-
+                     
                   })
               })
     }
@@ -51,7 +48,6 @@ extension SplashViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-#warning("check from code")
         setStatusBarStyle(.darkContent)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }

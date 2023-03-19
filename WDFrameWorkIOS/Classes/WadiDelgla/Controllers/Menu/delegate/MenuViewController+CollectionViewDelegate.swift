@@ -30,7 +30,7 @@ extension MenuViewController : UICollectionViewDelegate,UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let text = self.viewModel?.categoryList?[indexPath.row].categoryName.value ?? ""
-        let width = UILabel.textWidth(font: UIFont(resource: APP_FONT_REGULAR, size: 14)!, text: text)
+        let width = UILabel.textWidth(font: APP_FONT_REGULAR, text: text)
         return CGSize(width: width + 10 + 10, height: 50)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

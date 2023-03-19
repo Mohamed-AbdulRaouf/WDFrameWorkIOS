@@ -95,6 +95,7 @@ extension ExploreViewController{
     func bindingData() {}
     
     func setupNavigationBar(){
+        self.navigationController?.title = R.string.localizable.explore()
         self.navigationController?.navigationBar.topItem?.title = R.string.localizable.explore()
         let sort = UIBarButtonItem(image: R.image.ic_sort(), style: .plain, target: self, action: #selector(onSortTapped))
         let filter =   UIBarButtonItem(image: R.image.funnel(), style: .plain, target: self, action: #selector(onFilterTapped))

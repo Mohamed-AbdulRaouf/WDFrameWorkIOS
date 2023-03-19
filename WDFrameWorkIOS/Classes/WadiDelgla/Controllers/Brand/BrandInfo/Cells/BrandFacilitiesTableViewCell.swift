@@ -25,7 +25,7 @@ class BrandFacilitiesTableViewCell: UITableViewCell ,IBaseTableViewCell{
         // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
-        self.headerTitleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 16)
+        self.headerTitleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
         self.headerTitleLabel.text = R.string.localizable.facilities()
         self.headerTitleLabel.textColor = COLOR_PRIMARY_TEXT
         self.selectionStyle = .none

@@ -37,11 +37,11 @@ class ProductDetailsTableViewCell: UITableViewCell,IBaseTableViewCell {
         }
         self.productImageView.backgroundColor = .white
         self.productNameLabel.text = model.itemName.value ?? ""
-        self.productNameLabel.font = UIFont(resource: APP_FONT_BOLD, size: 20)
+        self.productNameLabel.font = APP_FONT_BOLD //APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
         self.productNameLabel.textColor = COLOR_PRIMARY_TEXT
         self.productDescriptionLabel.text = model.categoryDescription.value ?? ""
         self.productDescriptionLabel.textColor = .lightGray
-        self.productDescriptionLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 13)
+        self.productDescriptionLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 13)
     }
 
 }

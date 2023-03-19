@@ -7,10 +7,9 @@
 //
 
 import UIKit
-//import DAL
-//import Firebase
 import FirebaseCore
-// MARK:- IBOutlets & Variables
+
+// MARK: - IBOutlets & Variables
 class LocationViewController :STUIViewController ,IBaseController{
     
     typealias T = ILocationViewModel
@@ -69,7 +68,7 @@ extension LocationViewController {
             self?.bindingData()
         }
         vc.data = data
-        vc.title = R.string.localizable.government()
+        vc.title = R.string.localizable.club()
         self.navigationController?.pushViewController(vc)
         
     }
@@ -85,7 +84,7 @@ extension LocationViewController {
             self?.bindingData()
         }
         vc.data = self.data.filter({$0.id.value == self.viewModel?.currentCity?.id.value!}).first?.areas.value ?? [SearchItemDTOModelDAL]()
-        vc.title = R.string.localizable.club()
+        vc.title = R.string.localizable.area()
         self.navigationController?.pushViewController(vc)
         
     }
@@ -112,17 +111,17 @@ extension LocationViewController{
         self.viewModel?.delegate = self
 //        self.startButton.backgroundColor = COLOR_ACCENT
         self.title1Label.text = R.string.localizable.logo_title1()
-        self.title2Label.text = R.string.localizable.logo_title2()
-        self.title1Label.font = UIFont.init(resource: APP_FONT_BOLD, size: 18)
-        self.title2Label.font = UIFont.init(resource: APP_FONT_BOLD, size: 18)
+        self.title2Label.text = "Order the Food You Love".localized()
+        self.title1Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
+        self.title2Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
 
         self.startButton.layer.cornerRadius = 30
         self.startButton.layer.borderColor = UIColor.clear.cgColor
         self.startButton.titleLabel?.font = FONT_PRIMARY_BUTTON
         self.startButton.setTitle(R.string.localizable.order(), for: .normal)
         
-        self.cityLabel.text = R.string.localizable.government()
-        self.areaLabel.text = R.string.localizable.club()
+        self.cityLabel.text = R.string.localizable.club()
+        self.areaLabel.text = R.string.localizable.area()
         self.cityButton.setTitle(R.string.localizable.select_government(), for: .normal)
         self.areaButton.setTitle(R.string.localizable.select_club(), for: .normal)
         let lang = K.shared.APP_LANGUAGE == "ar"  ? "English" : "العربية"
@@ -152,7 +151,7 @@ extension LocationViewController {
     func updateCountryCode(country: ICountryDTODAL) {
         self.countryButton.setTitle("\(country.name.value ?? "") \(country.emoji.value ?? "")", for: .normal)
         self.countryButton.setTitleColor(.white, for: .normal)
-        self.countryButton.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 20)
+        self.countryButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
     }
     
     
@@ -172,8 +171,10 @@ extension LocationViewController {
 extension LocationViewController: ILocationViewController{
     
     func openHome(){
-        let vc = StoryboardScene.Main.tabBarViewController.instantiate()
-        UIApplication.shared.keyWindow?.rootViewController = vc
+//        let vc = StoryboardScene.Main.tabBarViewController.instantiate()
+//        UIApplication.shared.keyWindow?.rootViewController = vc
+        let vc = StoryboardScene.Main.exploreViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onSuccessLoadCitiesAndAreas(_ cities: [CityDTODAL]) {
         self.data = cities

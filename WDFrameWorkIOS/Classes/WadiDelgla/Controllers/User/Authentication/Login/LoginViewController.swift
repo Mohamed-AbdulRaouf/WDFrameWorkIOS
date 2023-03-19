@@ -39,20 +39,40 @@ class LoginViewController: STUIViewController ,IBaseController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        self.phoneNumberTextField.text = "01113713682"
+//        self.passwordTextField.text = "123456"
+//        let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
+//        self.updateCountryCode(country: country)
+//        viewModel?.sendLoginRequest()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+//        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.user  {
-            let vc = StoryboardScene.User.userProfileNavigationViewController.instantiate()
-            self.present(vc, animated: true, completion: nil)
+//            let vc = StoryboardScene.User.userProfileNavigationViewController.instantiate()
+//            let vc = StoryboardScene.Location.locationViewController.instantiate()
+//            self.present(vc, animated: true, completion: nil)
             
+//            let vc = StoryboardScene.Location.locationViewController.instantiate()
+//            self.navigationController?.pushViewController(vc)
+            
+            let vc = StoryboardScene.Location.locationViewController.instantiate()
+            let window = UIApplication.shared.keyWindow
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+            window?.makeKeyAndVisible()
+//            self.navigationController.pus
+        } else {
+                    self.phoneNumberTextField.text = "01113713682"
+                    self.passwordTextField.text = "123456"
+                    let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
+                    self.updateCountryCode(country: country)
+                    viewModel?.sendLoginRequest()
         }
     }
     
@@ -107,7 +127,7 @@ extension LoginViewController{
     func setupUI(){
         viewModel?.delegate = self
         [self.phoneNumberTextField,passwordTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.textColor = .black
             $0?.setPlaceHolderTextColor(.black)
             $0?.backgroundColor = .white
@@ -117,7 +137,7 @@ extension LoginViewController{
             
         }
         [self.countryCodeButton].forEach {
-            $0?.titleLabel?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.titleLabel?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.setTitleColor(.black, for: .normal)
             $0?.backgroundColor = .white
             $0?.layer.cornerRadius = 20
@@ -161,7 +181,7 @@ extension LoginViewController{
          self.phoneNumberTextField.maxLength = country.hintNumber.value?.count ?? 0
         self.viewModel?.user_login_data?.countryId = country.countryId
            self.viewModel?.user_login_data?.dialCode = country.dialCode
-            self.viewModel?.country_data = country        
+        self.viewModel?.country_data = country
     }
 }
 
@@ -169,10 +189,22 @@ extension LoginViewController{
 extension LoginViewController: ILoginViewController{
     
     func onSuccessLogin() {
-        if let _ = self.delegate {
-            self.delegate?.onUserLogedIn()
-        }
-        self.dismiss(animated: true, completion: nil)
+        let vc = StoryboardScene.Location.locationViewController.instantiate()
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = UINavigationController(rootViewController: vc)
+        window?.makeKeyAndVisible()
+        
+//        let vc = StoryboardScene.Location.locationViewController.instantiate()
+//        let window = UIApplication.shared.keyWindow
+//        window?.rootViewController = UINavigationController(rootViewController: vc)
+        
+//        let location = StoryboardScene.Location.locationViewController.instantiate()
+//        self.present(location, animated: true)
+        
+//        if let _ = self.delegate {
+//            self.delegate?.onUserLogedIn()
+//        }
+//        self.dismiss(animated: true, completion: nil)
     }
     
     func onUpdateLayout() {

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X2s-5z-x1G">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="TestViewController" customModule="WDFrameWorkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escallope_elnady.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-rO-wN2">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-eW-z6W">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5jf-eW-z6W" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="2Gi-59-vaL"/>
+                            <constraint firstItem="ZbF-rO-wN2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5Tp-fS-T3j"/>
+                            <constraint firstItem="ZbF-rO-wN2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ae5-5t-Bp7"/>
+                            <constraint firstItem="ZbF-rO-wN2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="duZ-Cj-kqF"/>
+                            <constraint firstItem="5jf-eW-z6W" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gv5-x3-Dxy"/>
+                            <constraint firstAttribute="bottom" secondItem="ZbF-rO-wN2" secondAttribute="bottom" id="mBN-jF-juI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FHo-cf-Ftg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223.66412213740458" y="-25.35211267605634"/>
+        </scene>
+        <!--Test View Controller Two-->
+        <scene sceneID="kxB-Wd-Hzm">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ejr-VC-kCQ" customClass="TestViewControllerTwo" customModule="WDFrameWorkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vay-AZ-2Wc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orders.png" translatesAutoresizingMaskIntoConstraints="NO" id="OKY-gk-7hX">
+                                <rect key="frame" x="20" y="79" width="353" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="iKx-Sm-5Os"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mvJ-Bz-n6j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OKY-gk-7hX" firstAttribute="top" secondItem="mvJ-Bz-n6j" secondAttribute="top" constant="20" id="ash-2S-yzn"/>
+                            <constraint firstItem="mvJ-Bz-n6j" firstAttribute="trailing" secondItem="OKY-gk-7hX" secondAttribute="trailing" constant="20" id="sID-8X-P8d"/>
+                            <constraint firstItem="OKY-gk-7hX" firstAttribute="leading" secondItem="mvJ-Bz-n6j" secondAttribute="leading" constant="20" id="tYY-sH-UGx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jKu-qA-nYO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJx-co-Z6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.3435114503816" y="21.83098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W7c-jN-ueG">
+            <objects>
+                <navigationController storyboardIdentifier="TestNag" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X2s-5z-x1G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TYf-oe-gjv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="SYQ-xL-KAJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06Q-4D-uZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703.05343511450383" y="-25.35211267605634"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="escallope_elnady.png" width="408.75" height="515.25"/>
+        <image name="orders.png" width="648" height="509"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -35,10 +35,10 @@ extension AddNewAddressOptionsViewController {
       func setupUI(){
           self.titleLabel.text = R.string.localizable.add_new_address_title()
           self.titleLabel.textColor = COLOR_PRIMARY_TEXT
-          self.titleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 30)
+          self.titleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 30)
           
           self.messageLabel.textColor = COLOR_PRIMARY_TEXT
-          self.messageLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 16)
+          self.messageLabel.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 16)
           self.messageLabel.text = R.string.localizable.add_new_address_message()
           
           self.mapButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
@@ -48,7 +48,7 @@ extension AddNewAddressOptionsViewController {
           
           self.addAddressManuallyButton.setTitle(R.string.localizable.select_manually(), for: .normal)
           self.addAddressManuallyButton.setTitleColor(COLOR_PRIMARY_TEXT, for: .normal)
-          self.addAddressManuallyButton.titleLabel?.font = UIFont(resource: APP_FONT_REGULAR, size: 14)
+          self.addAddressManuallyButton.titleLabel?.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR, size: 14)
           self.addAddressManuallyButton.addTarget(self, action: #selector(openNewAddressManuallyTapped(_:)), for: .touchUpInside)
           self.mapButton.addTarget(self, action: #selector(openMapTapped(_:)), for: .touchUpInside)
       }

@@ -60,11 +60,11 @@ extension CreditCardViewController {
         self.viewModel?.delegate = self
         self.headerTitleLabel.text = R.string.localizable.add_credit_card()
         self.headerTitleLabel.textColor = COLOR_PRIMARY_TEXT
-        self.headerTitleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+        self.headerTitleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
         
         self.headerSubTitleLabel.text = R.string.localizable.add_credit_card_hint()
         self.headerSubTitleLabel.textColor = COLOR_PRIMARY_TEXT
-        self.headerSubTitleLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 16)
+        self.headerSubTitleLabel.font = APP_FONT_REGULAR16 // UIFont(resource: APP_FONT_REGULAR, size: 16)
         [self.cardHolderNameTextField,self.cardNumberTextField,cardExpiryDateTextField,cardCvvTextField].forEach{
             $0?.underlineTextField(.lightGray)
         }

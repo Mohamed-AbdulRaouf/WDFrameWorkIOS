@@ -20,9 +20,11 @@ class MenuViewController: STUIViewController,IBaseController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Menu"
+        setupNavigationBarItems()
         //bind UI
         self.setupUI()
+//        self.setupNavigationBarItems()
     }
 }
 
@@ -35,6 +37,22 @@ extension MenuViewController{
         self.setupCollectionView()
         self.viewModel?.getCategoryList()
     }
+    
+    func setupNavigationBarItems() {
+//        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cart.png"), style: .plain, target: self, action: #selector(openCartVC))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(openCartVC))
+        
+        let cartBtn =   UIBarButtonItem(image: R.image.ic_cart(), style: .plain, target: self, action: #selector(openCartVC))
+        cartBtn.tintColor = .black
+        self.navigationItem.rightBarButtonItems = [cartBtn]
+        self.navigationItem.backBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func openCartVC() {
+        let vc = StoryboardScene.Order.STCartViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func bindingData() {}
 
 }

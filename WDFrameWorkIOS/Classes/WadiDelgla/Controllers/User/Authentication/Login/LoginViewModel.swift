@@ -46,6 +46,18 @@ class LoginViewModel: ILoginViewModel{
     func sendLoginRequest() {
         self.showHud()
         doInBackground {
+            self.user_login_data.mobile.value = "01113713682"
+            self.user_login_data.password.value = "123456"
+            self.user_login_data.hintNumber.value = "01001234567"
+            self.user_login_data.countryId.value = "12"
+            self.user_login_data.dialCode.value = "+20"
+            self.user_login_data.brandId.value = 0
+            
+            
+            self.country_data.hintNumber.value = "01001234567"
+//            self.user_login_data.countryId.value = "1"
+//            self.country_data.hintNumber.value = "+2"
+            
             self.apiClient.login(self.user_login_data,  self.country_data.hintNumber.value) { (response) in
                 doOnMain {
                     self.hideHUD()

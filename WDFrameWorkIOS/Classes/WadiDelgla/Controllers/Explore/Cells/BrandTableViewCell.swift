@@ -50,12 +50,12 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
             self.brandLogoImageView.image = UIImage(named: "dobites_splash")
         }
         
-        self.brandNameLabel.font = UIFont.init(resource: APP_FONT_BOLD, size: 16)
+        self.brandNameLabel.font = APP_FONT_BOLD //UIFont.init(resource: APP_FONT_BOLD, size: 16)
         self.brandNameLabel.textAlignment = K.shared.APP_LANGUAGE == "en" ? .left : .right
         self.brandNameLabel.text = model.brandName.value ?? ""
         
         
-        self.serviceLabel.font = UIFont.init(resource: APP_FONT_REGULAR, size: 10)
+        self.serviceLabel.font = APP_FONT_REGULAR //UIFont.init(resource: APP_FONT_REGULAR, size: 10)
         var facilities = ""
         model.facilities.value?.forEach({ (facility) in
             facilities += " \(facility)"
@@ -65,11 +65,11 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
 //        self.ratingView.rating = Double(model.ratingValue.value ?? 0)
 //        self.ratingView.text = "(\(model.numberOfUserRate.value ?? 0))"
         
-        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.delivery_time()) : ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.estimatedDeliveryTime.value ?? 0) \(R.string.localizable.minute())")
+        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.delivery_time()) : ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.estimatedDeliveryTime.value ?? 0) \(R.string.localizable.minute())")
         
-        self.minOrderLabel.setupAttributes(APP_FONT_BOLD, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.min_order_to_deliver()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
+        self.minOrderLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.min_order_to_deliver()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
         
-        self.paymentLabel.font = UIFont.init(resource: APP_FONT_BOLD, size: 10)
+        self.paymentLabel.font = APP_FONT_BOLD10 //UIFont.init(resource: APP_FONT_BOLD, size: 10)
         
         
         if model.isOnLinePayment.value ?? false {
@@ -79,14 +79,14 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         }
         
         
-        self.getHaveLabel.font = UIFont.init(resource: APP_FONT_REGULAR, size: 10)
+        self.getHaveLabel.font = APP_FONT_REGULAR10 //UIFont.init(resource: APP_FONT_REGULAR, size: 10)
         
-        self.bitesLabel.font = UIFont.init(resource: APP_FONT_BOLD, size: 13)
+        self.bitesLabel.font = APP_FONT_BOLD13 //UIFont.init(resource: APP_FONT_BOLD, size: 13)
         self.bitesLabel.textColor = .darkGray
         
         
         
-        self.equivelantCashLabel.font = UIFont.init(resource: APP_FONT_REGULAR, size: 10)
+        self.equivelantCashLabel.font = APP_FONT_REGULAR10 //UIFont.init(resource: APP_FONT_REGULAR, size: 10)
         self.equivelantCashLabel.text = "\(model.equivalentPointsAmount.value ?? 0) \(model.currency.value ?? "")"
         
         
@@ -97,8 +97,8 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         
         
         if model.isOnlineOrder.value ?? false {
-            self.onlineOrderLabel.text = R.string.localizable.cod_online()
-            self.onlineOrderLabel.font = UIFont.init(resource: APP_FONT_REGULAR, size: 14)
+            self.onlineOrderLabel.text = R.string.localizable.online_order()
+            self.onlineOrderLabel.font = APP_FONT_REGULAR //UIFont.init(resource: APP_FONT_REGULAR, size: 14)
             
         }else{
             self.onlineOrderLabel.text = ""
@@ -139,11 +139,11 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
 }
 import RswiftResources
 extension UILabel{
-    func setupAttributes(_ fontResource1 : FontResource,withSize size1 : CGFloat, _ textColor1 : UIColor,_ str1 : String,_ fontResource2: FontResource,withSize size2 : CGFloat, _ textColor2: UIColor,_ str2 : String){
-        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: fontResource1, size: size1), NSAttributedString.Key.foregroundColor : textColor1]
+    func setupAttributes(_ fontResource1 : UIFont,withSize size1 : CGFloat, _ textColor1 : UIColor,_ str1 : String,_ fontResource2: UIFont,withSize size2 : CGFloat, _ textColor2: UIColor,_ str2 : String){
+        let attrs1 = [NSAttributedString.Key.font : fontResource1, NSAttributedString.Key.foregroundColor : textColor1]
         
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: fontResource2, size: size2), NSAttributedString.Key.foregroundColor : textColor2]
+        let attrs2 = [NSAttributedString.Key.font : fontResource2, NSAttributedString.Key.foregroundColor : textColor2]
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1 as [NSAttributedString.Key : Any])
         

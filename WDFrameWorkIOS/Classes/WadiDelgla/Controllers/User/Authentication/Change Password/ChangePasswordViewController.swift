@@ -45,10 +45,10 @@ extension ChangePasswordViewController{
         saveButton.backgroundColor = COLOR_ACCENT
         saveButton.titleLabel?.textColor = COLOR_BUTTON_TEXT
         saveButton.titleLabel?.font = FONT_PRIMARY_BUTTON
-        headerTitleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 25)
+        headerTitleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 25)
         headerTitleLabel.textColor = COLOR_ACCENT
         [oldPasswordTextField,newPasswordTextField,confirmPasswordTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.underlineTextField(COLOR_PRIMARY_TEXT)
             $0?.setPlaceHolderTextColor(COLOR_PRIMARY_TEXT)
             $0?.textColor = COLOR_PRIMARY_TEXT

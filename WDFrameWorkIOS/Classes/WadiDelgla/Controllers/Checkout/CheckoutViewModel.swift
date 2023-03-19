@@ -194,11 +194,14 @@ class CheckoutViewModel: ICheckoutViewModel{
         }
     }
     func handleOnlinePayment(_ orderId: String){
+        #warning("check from code")
+        self.delegate?.onError("Online Payment not available right now".localized())
+        return
         guard let _ = paymentData?.cardToken else {
-            self.payWithCard(orderId)
+//            self.payWithCard(orderId)
             return
         }
-        self.payWithToken(orderId)
+//        self.payWithToken(orderId)
     }
     func deleteCart(){
         self.cartService?.deleteCart(completion: { (success) in
@@ -207,9 +210,9 @@ class CheckoutViewModel: ICheckoutViewModel{
             }
         })
     }
-    func payWithToken(_ orderId: String) {
-        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
-
+//    func payWithToken(_ orderId: String) {
+//        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
+//
 //        doInBackground {
 //            self.paymentService?.payWithPermToken(shopperReference: UserDefaults.user?.userId.value ?? "", orderId: orderId, amount: "\(String(format: "%.2f", self.calcResponse?.totalPay.value ?? 0))", cardToken: self.paymentData?.cardToken?.token ?? "", completion: { (result,error) in
 //                doOnMain {
@@ -231,9 +234,9 @@ class CheckoutViewModel: ICheckoutViewModel{
 //
 //
 //        }
-    }
-    func payWithCard(_ orderId: String) {
-        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
+//    }
+//    func payWithCard(_ orderId: String) {
+//        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
 //        doInBackground {
 //            self.paymentService?.payWithCard(cardData: self.paymentData?.cardData! as! ICardDTODAL, orderId: orderId, amount: "\(String(format: "%.2f", self.calcResponse?.totalPay.value ?? 0))", shopperReference: UserDefaults.user?.userId.value ?? "", shouldSaveCard: self.isSaveCard ?? false, completion: { (result,error) in
 //                doOnMain {
@@ -252,17 +255,17 @@ class CheckoutViewModel: ICheckoutViewModel{
 //            })
 //
 //        }
-    }
+//    }
     
 //    func confirmOnlinePaymentForOrder(_ model: PaymentResponse?,_ orderId: String?,_ status: Bool){
 //        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
 //        doInBackground {
 //            let payment = self.paymentService?.getPaymentData(from: model, orderId, status)
-//            self.orderService?.confirmOnLinePaymentForOrder(payment as! IConfirmPaymentDTODAL, completion: { (response) in
+//            self.orderService?.confirmOnLinePaymentForOrder(payment as! IConfirmPaymentDTO, completion: { (response) in
 //                doOnMain {
 //                    self.hideHUD()
 //                    guard let data = response?.data else {
-//                        self.errorModel = response?.error?.validateError as? IOrderValidationDTOBLL
+//                        self.errorModel = response?.error?.validateError as? IOrderValidationDTO
 //                        if response?.error?.APIError != nil {
 //                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
 //                        }
@@ -297,7 +300,7 @@ class CheckoutViewModel: ICheckoutViewModel{
             self.brandService?.getBrandPaymentData(String(cart.selectedAreaId),cart.brandId, completion: { (response) in
                 doInBackground {
                     self.initKashier()
-                } 
+                }
             })
         }
     }

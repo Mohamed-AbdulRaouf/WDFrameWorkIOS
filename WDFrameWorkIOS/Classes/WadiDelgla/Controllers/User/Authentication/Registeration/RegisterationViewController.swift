@@ -84,7 +84,7 @@ extension RegisterationViewController{
         self.viewModel?.delegate = self
         viewModel?.user_data?.gender.value = Gender.male.rawValue
         [self.phoneNumberTextField,referralCodeTextField,firstNameTextField,lastNameTextField,emailTextField,passwordTextField,confirmPasswordTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.textColor = .black
             $0?.setPlaceHolderTextColor(.black)
             
@@ -94,7 +94,7 @@ extension RegisterationViewController{
             $0?.addPaddingRight(16)
         }
         [self.countryCodeButton].forEach {
-                  $0?.titleLabel?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+                  $0?.titleLabel?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.setTitleColor(.black, for: .normal)
                   $0?.backgroundColor = .white
                   $0?.layer.cornerRadius = 20

@@ -71,13 +71,13 @@ extension VerificationCodeViewController{
         self.viewModel?.delegate = self
         
         [self.verifyCodeTextField,self.phoneNumberTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
-            $0?.textColor = .black
-            $0?.setPlaceHolderTextColor(.black)
+            $0.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0.textColor = .black
+            $0.setPlaceHolderTextColor(.black)
 
-            $0?.backgroundColor = .white
-            $0?.layer.cornerRadius = 25
-            $0?.addPaddingLeft(16)
+            $0.backgroundColor = .white
+            $0.layer.cornerRadius = 25
+            $0.addPaddingLeft(16)
         }
         [self.verifyCodeButton].forEach {
             $0?.layer.cornerRadius = 25
@@ -108,7 +108,7 @@ extension VerificationCodeViewController{
         self.resendCodeButton.titleLabel?.minimumScaleFactor = 0.5;
 
         self.counterDownLabel.textColor = .white
-        self.counterDownLabel.font = UIFont(resource: APP_FONT_BOLD, size: 20)
+        self.counterDownLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
         self.counterDownLabel.textAlignment = .center
         _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }

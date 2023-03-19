@@ -81,9 +81,9 @@ extension QRcodeViewController{
         }else{
             self.skiptBtn.isHidden = true
         }
-        let attrs1 = [NSAttributedString.Key.font :UIFont(resource: APP_FONT_REGULAR, size: 16), NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font :APP_FONT_REGULAR, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 30), NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
         let attributedString1 = NSMutableAttributedString(string:R.string.localizable.getYour(), attributes:attrs1)
         

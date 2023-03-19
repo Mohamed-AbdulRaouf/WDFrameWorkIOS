@@ -19,6 +19,11 @@ extension UIColor{
     
     @nonobjc class var STYellow: UIColor {
 //        return  UIColor(red: 253.0 / 255.0, green: 215.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
-        return UIColor.init(hexString: "#fdd72e")!
+        return UIColor.init(hexString: "#FFD02A")!
     }
+    
+    @nonobjc class var MainColorApp: UIColor {
+        return UIColor.init(hexString: "#FDD72E")!
+    }
+    
 }

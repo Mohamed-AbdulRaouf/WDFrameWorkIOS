@@ -15,7 +15,7 @@ class BrandFacilityCollectionCell: UICollectionViewCell {
     func configureCell(_ facility : IFacilityDTODAL){
         self.facilityNameLabel.text = facility.name.value
         self.facilityNameLabel.textColor = COLOR_PRIMARY_TEXT
-        self.facilityNameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 12)
+        self.facilityNameLabel.font = APP_FONT_REGULAR12 // UIFont(resource: APP_FONT_REGULAR, size: 12)
         self.facilityNameLabel.sizeToFit()
         
         

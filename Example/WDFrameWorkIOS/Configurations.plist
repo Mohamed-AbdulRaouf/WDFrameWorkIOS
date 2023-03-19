@@ -10,12 +10,12 @@
 	<key>Debug</key>
 	<dict>
 		<key>serverURL</key>
-		<string>https://dobitesmobileapitestnew.azurewebsites.net/</string>
+		<string>https://wdorderonlineapi.azurewebsites.net/</string>
 	</dict>
 	<key>Release</key>
 	<dict>
 		<key>serverURL</key>
-		<string>https://dobitesmobileapitestnew.azurewebsites.net/</string>
+		<string>https://wdorderonlineapi.azurewebsites.net/</string>
 	</dict>
 </dict>
 </plist>

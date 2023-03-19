@@ -47,16 +47,16 @@ class NotificationTableViewCell: UITableViewCell,IBaseTableViewCell {
         
         [self.notificationDateLabel].forEach { (label) in
             label?.textColor =  COLOR_PRIMARY_TEXT
-            label?.font = UIFont(resource: APP_FONT_REGULAR, size: 12)
+            label?.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
         }
         [self.brandNameLabel].forEach { (label) in
             label?.textColor = COLOR_PRIMARY_TEXT
-            label?.font = UIFont(resource: APP_FONT_BOLD ,size: 13)
+            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD ,size: 13)
         }
         
         [self.notificationDescriptionLabel].forEach { (label) in
             label?.textColor = COLOR_PRIMARY_TEXT
-            label?.font = UIFont(resource: APP_FONT_REGULAR ,size: 12)
+            label?.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR ,size: 12)
         }
     }
 

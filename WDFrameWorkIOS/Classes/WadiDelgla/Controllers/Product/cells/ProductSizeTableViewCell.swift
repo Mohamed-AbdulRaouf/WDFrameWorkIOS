@@ -29,7 +29,7 @@ class ProductSizeTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.sizeNameLabel.text = model.sizeName.value ?? ""
         self.sizePriceLabel.text = "\(model.sizePrice.value ?? 0) \(model.currencyCode.value ?? "")"
         [self.sizeNameLabel,self.sizePriceLabel].forEach {
-            $0?.font = UIFont(resource: APP_FONT_BOLD, size: 16)
+            $0?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
             $0?.textColor = COLOR_PRIMARY_TEXT
         }
         [radioButton].forEach {

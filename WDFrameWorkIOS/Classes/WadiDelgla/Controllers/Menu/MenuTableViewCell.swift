@@ -32,10 +32,10 @@ class MenuTableViewCell: UITableViewCell,IBaseTableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ model: IMenuItemsDTODAL) {
-        self.itemNameLabel.font = UIFont(resource: APP_FONT_BOLD, size: 12)
+        self.itemNameLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 12)
         self.itemNameLabel.textColor = COLOR_PRIMARY_TEXT
         [self.itemDescriptionLabel,self.itemCaloriesLabel,self.itemIngredientsLabel].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 10)
+            $0?.font = APP_FONT_REGULAR10 //UIFont(resource: APP_FONT_REGULAR, size: 10)
             $0?.textColor = .lightGray
         }
         if let imageUrl = URL(string: model.imagePath.value ?? ""){

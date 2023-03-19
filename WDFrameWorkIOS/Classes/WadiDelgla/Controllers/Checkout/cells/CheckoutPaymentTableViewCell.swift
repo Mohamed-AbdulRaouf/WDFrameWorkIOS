@@ -30,7 +30,7 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
     }
     func configureCell(_ model: SelectedPaymentMethodDTO,_ subTitle: String = "") {
         self.nameLabel.text = model.paymentType.name
-        self.nameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 12)
+        self.nameLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
         self.nameLabel.textColor = COLOR_PRIMARY_TEXT
         [radioButton].forEach {
             $0?.circleColor = COLOR_ACCENT_DARK
@@ -45,7 +45,7 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
         self.changeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         
         self.subTitleLabel.text = subTitle
-        self.subTitleLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 10)
+        self.subTitleLabel.font = APP_FONT_REGULAR10 //UIFont(resource: APP_FONT_REGULAR, size: 10)
         self.subTitleLabel.textColor = COLOR_SUB_TITLE_TEXT
        
         self.changeButton.isHidden = model.paymentType == PaymentType.cashOnDelivery

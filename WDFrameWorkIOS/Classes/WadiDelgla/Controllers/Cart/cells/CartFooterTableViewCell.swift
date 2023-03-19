@@ -28,9 +28,9 @@ class CartFooterTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.subTotalLabel.attributedText =  setupLabels(R.string.localizable.sub_total(), ": \(model.subTotal.value ?? 0.0) \(model.currencyCode.value ?? "")")
     }    
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
-        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_REGULAR, size: 13), NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 13), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)

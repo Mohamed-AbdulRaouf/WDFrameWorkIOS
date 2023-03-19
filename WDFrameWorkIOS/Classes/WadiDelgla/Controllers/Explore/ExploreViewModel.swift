@@ -19,6 +19,7 @@ protocol IExploreViewModel: IBaseViewModel {
     var brand :IBrandListDTODAL? {get set}
     var requestBrandDTO: IRequestBrandDTODAL? {get set}
     var delegate: IExploreViewController? {get set}
+    var brandInfo :IBrandDTODAL? {get set}
     func getServices()
     func getBrandList()
      func initdata()
@@ -29,6 +30,7 @@ protocol IExploreViewModel: IBaseViewModel {
     func registerUserInBrand(_ index: Int)
     func checkIfChangeLoyalty()
     func refreshList()
+    func getBrandInfoById(_ brandId: String)
 }
 class ExploreViewModel: IExploreViewModel{
     var brand :IBrandListDTODAL?
@@ -37,6 +39,7 @@ class ExploreViewModel: IExploreViewModel{
     var apiClient: BrandServiceBLL?
     var userService: UserServiceBLL?
     weak var delegate: IExploreViewController?
+    var brandInfo: IBrandDTODAL?
     
     public  init (requestBrandDTO: IRequestBrandDTODAL, apiClient: BrandServiceBLL,userService: UserServiceBLL){
         self.apiClient = apiClient
@@ -177,6 +180,29 @@ class ExploreViewModel: IExploreViewModel{
         self.getBrandList()
         doInBackground {
             self.getServices()
+        }
+    }
+    
+    func getBrandInfoById(_ brandId: String) {
+        guard brandId != "0" else {return}
+        self.showHud()
+        doInBackground {
+            self.apiClient?.getBrandInfoById(brandId) { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let data = response?.data else {
+                        if response?.error?.APIError != nil {
+                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                        }
+                        if response?.error?.networkError != nil {
+                            self.delegate?.onError(response?.error?.networkError?.description ?? "")
+                        }
+                        return
+                    }
+                    self.brandInfo = data as? IBrandDTODAL
+                    self.delegate?.onSuccessLoadBrandInfo()
+                }
+            }
         }
     }
     

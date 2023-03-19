@@ -35,7 +35,7 @@ class ProductChoiceTableViewCell: UITableViewCell,IBaseTableViewCell {
          self.choiceNameLabel.text = model.choiceName.value ?? ""
         self.choicePriceLabel.text = "\(model.choicePrice.value ?? 0.0) \(model.currencyCode.value ?? "")"
         [self.choicePriceLabel,self.choiceNameLabel].forEach {
-            $0?.font = UIFont(resource: APP_FONT_BOLD, size: 16)
+            $0?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
             $0?.textColor = COLOR_PRIMARY_TEXT
         }
         self.isOn = model.isSelectedChoice.value ?? false

@@ -24,12 +24,15 @@ protocol IMenuViewModel: IBaseViewModel {
     func addItemTapped(_ item: IMenuItemsDTODAL)
     
  }
+
 class MenuViewModel: IMenuViewModel{
     weak var delegate: IMenuViewController?
     var apiClient: MenuServiceBLL?
     var categoryList :[ICategoryMenuItemsDTODAL]?
     var requestCategoryListDTO: IRequestCategoryListDTODAL?
     var cartService: CartServiceBLL?
+    
+    
     public  init (requestCategoryListDTO: IRequestCategoryListDTODAL, apiClient: MenuServiceBLL,cartService: CartServiceBLL){
         self.apiClient = apiClient
         self.cartService = cartService

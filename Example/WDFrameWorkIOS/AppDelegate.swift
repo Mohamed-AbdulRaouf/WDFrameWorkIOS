@@ -17,11 +17,13 @@ import FirebaseCore
 import FirebaseMessaging
 import GoogleMaps
 import GooglePlaces
+import WDFrameWorkIOS
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    static var shared = AppDelegate()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -61,7 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber = 0
         application.registerForRemoteNotifications()
-        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
+        let bundle = Bundle(path: bundlePath!)
+        let storyboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456"))
         return true
     }
     

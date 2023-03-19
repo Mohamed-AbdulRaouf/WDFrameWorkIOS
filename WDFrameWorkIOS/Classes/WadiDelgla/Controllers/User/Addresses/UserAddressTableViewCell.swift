@@ -41,20 +41,20 @@ class UserAddressTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.landMarkLabel.text = "\(model.addressDescription.value ?? "")"
         
         [buildingNoLabel,streetNameLabel,companyNameLabel,landMarkLabel].forEach { (label) in
-            label?.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
             label?.textColor = .lightGray
         }
         self.floorNoLabel.text = "\(R.string.localizable.floor_no()) : \(model.floorNo.value ?? "")"
         self.apartmentNoLabel.text = ""
         self.areaNameLabel.text = "\(model.areaName.value ?? "")"
         [floorNoLabel,apartmentNoLabel,areaNameLabel].forEach { (label) in
-            label?.font = UIFont(resource: APP_FONT_BOLD, size: 17)
+            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
             label?.textColor = .black
         }
         
         [self.addressIndexButton].forEach { (button) in
             button?.backgroundColor = COLOR_ACCENT
-            button?.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 17)
+            button?.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
             button?.titleLabel?.sizeToFit()
             button?.cornerRadius = 20.0
             button?.setTitleColor(.white, for: .normal)

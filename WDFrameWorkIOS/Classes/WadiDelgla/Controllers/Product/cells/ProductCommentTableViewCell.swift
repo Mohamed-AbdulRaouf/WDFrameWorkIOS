@@ -29,7 +29,7 @@ class ProductCommentTableViewCell: UITableViewCell,UITextViewDelegate {
             placeholderLabel = UILabel()
             placeholderLabel.text = R.string.localizable.special_instructions_example()
             placeholderLabel.text = ""
-            placeholderLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 13)
+            placeholderLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 13)
             placeholderLabel.sizeToFit()
             commentTextView.addSubview(placeholderLabel)
             placeholderLabel.textAlignment = K.shared.APP_LANGUAGE == "ar" ? .right : .left

@@ -156,7 +156,7 @@ extension CheckOutViewController {
                 label.text = titles[section]
             }
         }
-        label.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+        label.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
         label.textColor = COLOR_ACCENT_DARK
         headerView.addSubview(label)
         

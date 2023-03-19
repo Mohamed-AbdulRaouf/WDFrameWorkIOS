@@ -59,7 +59,7 @@ extension ForgotPasswordVerifyCodeViewController{
     func setupUI(){
         self.viewModel?.delegate = self
         [self.phoneNumberTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.textColor = .black
             $0?.setPlaceHolderTextColor(.black)
             
@@ -74,7 +74,7 @@ extension ForgotPasswordVerifyCodeViewController{
             
         }
         [self.countryCodeButton].forEach {
-                  $0?.titleLabel?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+                  $0?.titleLabel?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.setTitleColor(.black, for: .normal)
                   $0?.backgroundColor = .white
                   $0?.layer.cornerRadius = 20

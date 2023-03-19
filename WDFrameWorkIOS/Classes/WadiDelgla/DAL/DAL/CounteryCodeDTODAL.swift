@@ -45,6 +45,15 @@ public class CountryDTODAL : ICountryDTODAL,Codable{
         self.hintNumber.value = hintNumber
     }
     
+    public init(countryId: String, countryCode: String,dialCode: String,emoji: String,name: String,hintNumber: String) {
+        self.countryCode.value = countryCode
+        self.dialCode.value = dialCode
+        self.emoji.value = emoji
+        self.name.value = name
+        self.hintNumber.value = hintNumber
+        self.countryId.value = countryId
+    }
+    
     public init(json:JSON)   {
         self.countryId.value = json[CodingKeys.CountryId.rawValue].stringValue
         self.countryCode.value = json[CodingKeys.CountryCode.rawValue].stringValue

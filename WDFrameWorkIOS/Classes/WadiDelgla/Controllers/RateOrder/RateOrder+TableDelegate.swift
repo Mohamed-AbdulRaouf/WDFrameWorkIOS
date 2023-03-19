@@ -74,7 +74,7 @@ extension RateOrderViewController{
         view.tintColor = .white
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = COLOR_PRIMARY_TEXT
-        header.textLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+        header.textLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
     }
     /* Footer */
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

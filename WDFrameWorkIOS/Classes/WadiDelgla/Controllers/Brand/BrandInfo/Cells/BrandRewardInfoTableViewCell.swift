@@ -54,7 +54,7 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.redeemAmountLabel.text = "\(model.equivalentRedeemPointsAmount.value ?? 0.0) \(model.currency.value ?? "")"
         
         [rewardTitleLabel,balanceTitleLabel,redeemTitleLabel,rewardAmountLabel,balanceAmountLabel,redeemAmountLabel].forEach { (label) in
-            label?.font = UIFont(resource: APP_FONT_REGULAR, size: 12)
+            label?.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
             label?.textColor = .darkGray
         }
         
@@ -63,7 +63,7 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.redeemedBitesAmountLabel.text = "\(model.totalRedeemValue.value ?? 0) \(R.string.localizable.bites())"
         
         [rewardBitesAmountLabel,balanceBitesAmountLabel,redeemedBitesAmountLabel].forEach { (label) in
-            label?.font = UIFont(resource: APP_FONT_BOLD, size: 16)
+            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
             label?.textColor = COLOR_PRIMARY_TEXT
         }
         
@@ -74,9 +74,9 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
     }
     func setupHeaderTitle(){
         
-        let attrs1 = [NSAttributedString.Key.font :UIFont(resource: APP_FONT_BOLD, size: 13), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font :APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 25), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         var attributedString1 = NSMutableAttributedString(string:"My", attributes:attrs1)
         var attributedString2 = NSMutableAttributedString(string: "\n \(R.string.localizable.rewards())", attributes:attrs2)
@@ -97,9 +97,9 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         
     }
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
-        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 14), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_REGULAR, size: 12), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_REGULAR, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)
         

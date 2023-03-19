@@ -9,7 +9,11 @@
 import UIKit
 extension ExploreViewController : IExploreViewController{
     
-   
+    func onSuccessLoadBrandInfo() {
+        let vc = StoryboardScene.Menu.menuViewController.instantiate()
+        K.shared.SELECTED_BRAND = self.viewModel?.brandInfo
+        self.navigationController?.pushViewController(vc)
+    }
     
     func onReloadTableView() {
         self.tableView.reloadData()

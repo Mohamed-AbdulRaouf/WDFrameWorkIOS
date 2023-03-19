@@ -26,7 +26,7 @@ class FilterTableViewCell: UITableViewCell,IBaseTableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ model: IBaseFilterDTODAL) {
-        self.nameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 15)
+        self.nameLabel.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR, size: 15)
         self.nameLabel.text = model.name.value ?? ""
         self.filterSwitch.isOn = model.isSelected.value ?? false
     }

@@ -34,7 +34,7 @@ extension RateOrderViewController{
         self.setupTableView()
         self.viewModel?.delegate = self
         self.rateTitleLabel.text = R.string.localizable.rate_desc()
-        self.rateTitleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 17)
+        self.rateTitleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
         self.rateTitleLabel.textColor = COLOR_PRIMARY_TEXT
     }
     func bindingData() {}

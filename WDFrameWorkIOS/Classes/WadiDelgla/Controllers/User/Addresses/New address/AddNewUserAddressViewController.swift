@@ -40,7 +40,7 @@ import RxSwift
             $0?.setPlaceHolderTextColor(.lightGray)
             $0?.textColor = COLOR_PRIMARY_TEXT
             $0?.underlineTextField(COLOR_PRIMARY_TEXT)
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 16)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 16)
             $0?.addPaddingRight(16)
         }
         [floorNoTextField].forEach {
@@ -48,7 +48,7 @@ import RxSwift
         }
         [cityButton,areaButton].forEach {
             $0?.setTitleColor(COLOR_PRIMARY_TEXT, for: .normal)
-            $0?.titleLabel?.font = UIFont(resource: APP_FONT_REGULAR, size: 18)
+            $0?.titleLabel?.font = APP_FONT_REGULAR18 //UIFont(resource: APP_FONT_REGULAR, size: 18)
         }
         [saveButton].forEach { (button) in
             button?.layer.cornerRadius = 18.2

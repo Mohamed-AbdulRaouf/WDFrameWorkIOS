@@ -54,7 +54,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             label.frame = CGRect.init(x: 20, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }
         label.text = self.viewModel?.categoryList?[section].categoryName.value ?? ""
-        label.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+        label.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
         label.textColor = COLOR_PRIMARY_TEXT
         headerView.addSubview(label)
         return headerView

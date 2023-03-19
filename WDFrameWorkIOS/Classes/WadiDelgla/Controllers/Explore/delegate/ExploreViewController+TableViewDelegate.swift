@@ -40,9 +40,16 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        let vc = StoryboardScene.Brand.brandInfoViewController.instantiate()
-        vc.viewModel?.brandId = self.viewModel?.brand?.items.value?[indexPath.row].brandId.value
-        self.navigationController?.pushViewController(vc)
+//        let vc = StoryboardScene.Brand.brandInfoViewController.instantiate()
+//        vc.viewModel?.brandId = self.viewModel?.brand?.items.value?[indexPath.row].brandId.value
+//        self.navigationController?.pushViewController(vc)
+        
+        self.viewModel?.getBrandInfoById(self.viewModel?.brand?.items.value?[indexPath.row].brandId.value?.description ?? "0")
+        
+//        let vc = StoryboardScene.Menu.menuViewController.instantiate()
+//        K.shared.SELECTED_BRAND = self.viewModel?.brand?.items.value?[indexPath.row].b
+//        vc.viewModel = self.viewModel?.brand?.items.value?[indexPath.row]
+//        self.navigationController?.pushViewController(vc)
     }
     
 }

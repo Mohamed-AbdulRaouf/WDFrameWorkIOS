@@ -8,26 +8,12 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.0'
+  spec.version          = '1.1.1'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-#  spec.info_plist = {
-#    'CFBundleIdentifier' => 'com.simpletouch.WDFrameWorkIOS'
-#  }
 
+  spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
 
-#  spec.info_plist = { 'CFBundleIdentifier' => 'com.myorg.mylib' }
-  spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.myorg.mylib' }
-
-
-#  spec.pod_target_xcconfig = {
-#    'PRODUCT_BUNDLE_IDENTIFIER' => '${PODS_TARGET_SRCROOT}/Resources/YourPod-Info.plist'
-#  }
   spec.description      = <<-DESC
   sdsds
    sdasds
@@ -67,9 +53,9 @@ spec.static_framework = true
 spec.requires_arc = true
 
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift}'
+spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg,storyboardc}'}
 spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
@@ -122,7 +108,8 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'FirebaseCore'
   spec.dependency 'FirebaseAuth'
   spec.dependency 'FirebaseMessaging'
-  spec.dependency 'SwinjectStoryboard' , '~> 2.2.2'
+  spec.dependency 'SwinjectStoryboard' , '~> 1.1.2'
+  spec.dependency 'Swinject', '~> 2.1.1'
   spec.dependency 'FSnapChatLoading'
   spec.dependency 'IQKeyboardManagerSwift'
   spec.dependency 'FontAwesome.swift'
@@ -134,8 +121,11 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Cosmos'
   spec.dependency 'MyFatoorah'
   spec.dependency 'Bond'
+  spec.dependency 'Localize-Swift' ,'1.7.0'
+  spec.dependency 'MOLH'
+#  spec.dependency 'AZDialogView' not working
   
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+#  spec.frameworks = 'KashierPaymentSDK'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

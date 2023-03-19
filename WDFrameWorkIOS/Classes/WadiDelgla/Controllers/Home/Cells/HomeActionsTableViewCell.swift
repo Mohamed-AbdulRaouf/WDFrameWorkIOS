@@ -36,15 +36,15 @@ class HomeActionsTableViewCell: UITableViewCell {
         [self.exploreButton,self.scanButton,self.rankingButton].forEach {
             $0?.setTitleColor(COLOR_ACCENT, for: .normal)
         }
-        self.exploreButton.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 16)
-        self.scanButton.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 17)
-        self.rankingButton.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 18)
+        self.exploreButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
+        self.scanButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
+        self.rankingButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 18)
        
         [self.favoritesRestaurantButton,self.nearResturantsButton].forEach {
-             $0?.layer.cornerRadius = 20
-            $0?.setTitleColor(COLOR_ACCENT, for: .normal)
-            $0?.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 17)
-            $0?.backgroundColor = .white
+            $0.layer.cornerRadius = 20
+            $0.setTitleColor(COLOR_ACCENT, for: .normal)
+            $0.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
+            $0.backgroundColor = .white
         }
         let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: FontAwesome_ImageIcons_Names.heart_bold.rawValue,imageSize: CGSize(width: 30, height: 30))
         self.favoritesRestaurantButton.setImage(iconImage, for: .normal)

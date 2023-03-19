@@ -26,7 +26,7 @@ class MoreTableViewCell: UITableViewCell ,IBaseTableViewCell{
         // Configure the view for the selected state
     }
     func configureCell(_ model:MoreItemDTODAL){
-        self.itemNameLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+        self.itemNameLabel.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
         self.itemNameLabel.textColor = COLOR_PRIMARY_TEXT
         self.itemNameLabel.text = model.itemName
         self.itemImageView.image = UIImage(named: model.itemImageName)

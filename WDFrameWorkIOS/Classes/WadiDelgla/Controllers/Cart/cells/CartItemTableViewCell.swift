@@ -69,7 +69,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
        
         [itemCommentLabel,itemSizeLabel].forEach { (label) in
             label?.textColor = COLOR_ACCENT
-            label?.font = UIFont(resource: APP_FONT_BOLD, size: 10)
+            label?.font = APP_FONT_BOLD //UIFont(resource: , size: 10)
             
         }
         self.itemCommentLabel.text = "\(model.itemComment)"
@@ -100,9 +100,9 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.delegate?.increamentItem(item)
     }
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
-        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_REGULAR, size: 12), NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR12, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 12), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)

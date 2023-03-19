@@ -19,10 +19,10 @@ class STInformationCell: UITableViewCell {
     func configureCell(_ model : STReusableDTO){
         self.itemImageView.image = model.image
         self.titleLabel.text = model.title
-        self.titleLabel.font = UIFont(resource: APP_FONT_BOLD, size: 30)
+        self.titleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 30)
         self.titleLabel.textColor = COLOR_PRIMARY_TEXT
         self.subTitleLabel.textColor = COLOR_PRIMARY_TEXT
-        self.subTitleLabel.font = UIFont(resource: APP_FONT_REGULAR, size: 16)
+        self.subTitleLabel.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 16)
         self.subTitleLabel.text = model.subTitle
     }
 }

@@ -132,7 +132,7 @@ extension UserProfileViewController{
         self.saveButton.backgroundColor = COLOR_ACCENT
         self.saveButton.layer.cornerRadius = 10
         self.saveButton.layer.borderColor = UIColor.clear.cgColor
-        self.saveButton.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 17)
+        self.saveButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
         self.saveButton.setTitle(R.string.localizable.save(), for: .normal)
         
         [self.userPhoneNumberTextField].forEach {
@@ -142,7 +142,7 @@ extension UserProfileViewController{
         self.userAddressButton.setTitle(R.string.localizable.my_addresses(), for: .normal)
         [self.userAddressButton,self.changePasswordButton].forEach {
             $0?.setTitleColor(COLOR_ACCENT, for: .normal)
-            $0?.titleLabel?.font = UIFont(resource: APP_FONT_BOLD, size: 14)
+            $0?.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
             $0?.layer.cornerRadius = 18.2
             // set backgroundColor in order to cover the shadow inside the bounds
             $0?.layer.backgroundColor = UIColor.white.cgColor
@@ -150,7 +150,7 @@ extension UserProfileViewController{
             
         }
         [self.userFirstNameTextField,self.userLastNameTextField,self.userEmailTextField,self.userPhoneNumberTextField,self.userDateOfBirthTextField,self.userGenderTextField].forEach {
-            $0?.font = UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.textColor = COLOR_PRIMARY_TEXT
             $0?.setPlaceHolderTextColor(COLOR_PRIMARY_TEXT)
             $0?.backgroundColor = .white
