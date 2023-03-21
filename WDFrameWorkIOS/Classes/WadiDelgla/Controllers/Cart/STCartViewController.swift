@@ -51,6 +51,7 @@ class STCartViewController: STUIViewController ,IBaseController{
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func onCheckoutTapped(_ sender: Any) {
+        self.view.endEditing(true)
         self.viewModel?.validateUserLocationWithSelectedCountry()
 //        self.viewModel?.validateCheckout()
     }
@@ -98,12 +99,12 @@ extension STCartViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,19 +115,26 @@ extension STCartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 2{
+        if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartFooterTableViewCell", for: indexPath) as! CartFooterTableViewCell
             if let calOrder = self.viewModel?.calcResponse{
                 cell.configureCell(calOrder)
             }
             return cell
-        }else if indexPath.section == 1 {
+        }else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCommentTableViewCell", for: indexPath) as! OrderCommentTableViewCell
             cell.configureCell(self.viewModel?.cart?.orderComment ?? "")
             cell.onChangeComment = { [weak self ] comment in
                 self?.viewModel?.updateOrderComment(comment)
             }
             return cell
+        } else if indexPath.section == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OrderPhoneTableViewCell", for: indexPath) as! OrderPhoneTableViewCell
+                cell.configureCell(self.viewModel?.cart?.phone2 ?? "")
+                cell.onChangePhone = { [weak self ] phone in
+                    self?.viewModel?.cart?.phone2 = phone
+                }
+                return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemTableViewCell", for: indexPath) as! CartItemTableViewCell
             if let items = self.viewModel?.cart?.cartItems{
@@ -139,10 +147,5 @@ extension STCartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.viewWillLayoutSubviews()
     }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let items = self.viewModel?.cart?.cartItems, indexPath.row != items.count - 1 else { return 60 }
-        return 60 //UITableView.automaticDimension
-    }
+    
 }
-
-

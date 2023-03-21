@@ -15,8 +15,7 @@ extension CheckOutViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,7 +40,7 @@ extension CheckOutViewController : UITableViewDelegate,UITableViewDataSource {
         if indexPath.section == 2 {
             //            guard let order =  self.viewModel?.calcResponse,order.isCurrentRewardIdValid.value ?? false && order.currentCustomerIsRegistered.value ?? false else { return 0 }
         }
-        return 60 //UITableView.automaticDimension
+        return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let titles = self.viewModel?.sections

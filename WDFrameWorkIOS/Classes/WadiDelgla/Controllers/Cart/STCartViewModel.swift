@@ -96,7 +96,8 @@ class STCartViewModel: ISTCartViewModel{
         }
     }
     
-    func validateCheckout(){
+    func validateCheckout() {
+        
         guard let _ = cart else { return}
         if  UserDefaults.user == nil {
             self.delegate?.openLogin()
@@ -106,6 +107,10 @@ class STCartViewModel: ISTCartViewModel{
     }
     
     func checkout() {
+        if self.cart?.phone2 == "" {
+            self.delegate?.onError("Please add your phone".localized())
+            return
+        }
         guard let cart = cart else { return}
         self.showHud()
         doInBackground {

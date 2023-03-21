@@ -61,16 +61,17 @@ class LoginViewController: STUIViewController ,IBaseController{
             
 //            let vc = StoryboardScene.Location.locationViewController.instantiate()
 //            self.navigationController?.pushViewController(vc)
-            
             let vc = StoryboardScene.Location.locationViewController.instantiate()
             let window = UIApplication.shared.keyWindow
             window?.rootViewController = UINavigationController(rootViewController: vc)
             window?.makeKeyAndVisible()
 //            self.navigationController.pus
         } else {
+            
                     self.phoneNumberTextField.text = "01113713682"
                     self.passwordTextField.text = "123456"
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
+            UserDefaults.currentAppCountry = country
                     self.updateCountryCode(country: country)
                     viewModel?.sendLoginRequest()
         }

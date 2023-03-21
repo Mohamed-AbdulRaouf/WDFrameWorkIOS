@@ -106,6 +106,8 @@ extension STUIViewController {
 extension STUIViewController {
     //MARK: - show Dialog message with ok action
     func showMessage(withTitle title: String = "", andMessage message: String, withcompletion completion: (() -> Void )? = nil) {
+        
+        self.view.makeToast(message, duration: 3.0, position: .bottom)
 #warning("check from code")
 //        DispatchQueue.main.async {
 //            let dialog = AZDialogViewController(title: title, message: message)
@@ -128,6 +130,7 @@ extension STUIViewController {
     //MARK: - show Dialog message with custom actions
     func showMessage(withTitle title: String,andMessage message: String,withCancel showCancel: Bool){
 #warning("check from code")
+        self.view.makeToast(message, duration: 3.0, position: .bottom)
 //        DispatchQueue.main.async {
 //            let dialog = AZDialogViewController(title: title, message: message)
 //            dialog.imageHandler = { (imageView) in

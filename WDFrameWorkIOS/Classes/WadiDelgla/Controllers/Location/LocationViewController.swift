@@ -60,7 +60,7 @@ extension LocationViewController{
 }
 //MARK: - IBActions
 extension LocationViewController {
-    @IBAction func onCityTapped(_ sender: Any) {
+    @IBAction func onCityTapped(_ sender: UIButton) {
         let vc = StoryboardScene.Features.searchViewController.instantiate()
         vc.onItemSelect = { [weak self] item in
             self?.viewModel?.currentCity = item

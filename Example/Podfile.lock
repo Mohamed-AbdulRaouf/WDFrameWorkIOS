@@ -160,7 +160,7 @@ PODS:
     - Swinject (~> 2.1)
   - TextFieldEffects (1.6.0)
   - Toast-Swift (5.0.1)
-  - WDFrameWorkIOS (1.1.0):
+  - WDFrameWorkIOS (1.1.1):
     - Alamofire (~> 4.7)
     - Bond
     - CachyKit
@@ -281,7 +281,7 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  WDFrameWorkIOS: b1205a48e5deb4e811f0243cd76ae35c92139c88
+  WDFrameWorkIOS: 69bf5c740d6092768acf8b7608152fb3e0e8879c
 
 PODFILE CHECKSUM: 5eec755484acaf74d3596193118d99b27aad062c
 

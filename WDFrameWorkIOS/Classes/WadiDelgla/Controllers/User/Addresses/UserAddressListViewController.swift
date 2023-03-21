@@ -138,6 +138,14 @@ extension UserAddressListViewController: UITableViewDelegate,UITableViewDataSour
 extension UserAddressListViewController: IUserAddressListViewController{
    
     func onReloadTableView() {
-        self.tableView.reloadData()
+        if self.viewModel?.addresses?.count ?? 0 > 0 {
+            if let address = self.viewModel?.addresses?.first {
+            self.navigationController?.popViewController(animated: false, {
+                    self.viewModel?.sourceDelegate?.didSelectAddress(address)
+                })
+            }
+        } else {
+            self.tableView.reloadData()
+        }
     }
 }
