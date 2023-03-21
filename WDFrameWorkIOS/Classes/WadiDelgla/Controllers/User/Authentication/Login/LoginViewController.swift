@@ -68,8 +68,8 @@ class LoginViewController: STUIViewController ,IBaseController{
 //            self.navigationController.pus
         } else {
             
-                    self.phoneNumberTextField.text = "01113713682"
-                    self.passwordTextField.text = "123456"
+            self.phoneNumberTextField.text = GlobalConstants.shared.mobile
+            self.passwordTextField.text = GlobalConstants.shared.membershipNumber
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
             UserDefaults.currentAppCountry = country
                     self.updateCountryCode(country: country)

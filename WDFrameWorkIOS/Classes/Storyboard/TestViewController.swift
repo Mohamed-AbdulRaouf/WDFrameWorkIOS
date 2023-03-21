@@ -37,12 +37,15 @@ extension TestViewController {
         vc.mobile = mobile
         vc.email = email
         vc.membershipNumber = membershipNumber
-        GlobalConstants(name: name, mobile: mobile, email: email, membershipNumber: membershipNumber)
+        GlobalConstants.shared.name = name
+        GlobalConstants.shared.mobile = mobile
+        GlobalConstants.shared.email = email
+        GlobalConstants.shared.membershipNumber = membershipNumber
         UserDefaults.loginData?.mobile.value = mobile
         UserDefaults.loginData?.password.value = membershipNumber
-        UserDefaults.loginData?.brandId.value = 4
-        UserDefaults.loginData?.countryId.value = "1"
-        UserDefaults.loginData?.dialCode.value = "+2"
+        UserDefaults.loginData?.brandId.value = 0
+//        UserDefaults.loginData?.countryId.value = "1"
+//        UserDefaults.loginData?.dialCode.value = "+2"
         return vc
     }
     
