@@ -70,6 +70,13 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
         vc.viewModel?.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
      }
+    
+    @objc func backToMainApp() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "\(GlobalConstants.shared.mainHomeScreen)")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
    
 }
 
@@ -97,14 +104,14 @@ extension ExploreViewController{
     func setupNavigationBar(){
         self.navigationController?.title = R.string.localizable.explore()
         self.navigationController?.navigationBar.topItem?.title = R.string.localizable.explore()
-        let sort = UIBarButtonItem(image: R.image.ic_sort(), style: .plain, target: self, action: #selector(onSortTapped))
-        let filter =   UIBarButtonItem(image: R.image.funnel(), style: .plain, target: self, action: #selector(onFilterTapped))
-        
-        self.navigationItem.rightBarButtonItems = [sort, filter]
-        
+//        let sort = UIBarButtonItem(image: R.image.ic_sort(), style: .plain, target: self, action: #selector(onSortTapped))
+//        let filter =   UIBarButtonItem(image: R.image.funnel(), style: .plain, target: self, action: #selector(onFilterTapped))
+//        self.navigationItem.rightBarButtonItems = [sort, filter]
+        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
+        self.navigationItem.rightBarButtonItem = backToMainApp
         self.tabBarController?.delegate = self
         
-        self.navigationItem.titleView = self.searchController.searchBar
+//        self.navigationItem.titleView = self.searchController.searchBar
         
     }
     func addRefreshControl(){

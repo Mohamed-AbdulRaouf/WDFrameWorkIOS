@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bundle = Bundle(path: bundlePath!)
         let storyboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456"))
+        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainHomeScreen: "ViewController"))
         return true
     }
     

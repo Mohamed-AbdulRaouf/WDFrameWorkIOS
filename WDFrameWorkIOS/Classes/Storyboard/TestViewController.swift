@@ -31,7 +31,7 @@ public class TestViewController: UIViewController {
 
 extension TestViewController {
     
-    public func create(name: String, mobile: String, email: String ,membershipNumber: String) -> TestViewController {
+    public func create(name: String, mobile: String, email: String ,membershipNumber: String, mainHomeScreen: String) -> TestViewController {
         let vc = TestViewController()
         vc.name = name
         vc.mobile = mobile
@@ -41,6 +41,7 @@ extension TestViewController {
         GlobalConstants.shared.mobile = mobile
         GlobalConstants.shared.email = email
         GlobalConstants.shared.membershipNumber = membershipNumber
+        GlobalConstants.shared.mainHomeScreen = mainHomeScreen
         UserDefaults.loginData?.mobile.value = mobile
         UserDefaults.loginData?.password.value = membershipNumber
         UserDefaults.loginData?.brandId.value = 0
