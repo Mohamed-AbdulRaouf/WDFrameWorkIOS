@@ -110,8 +110,19 @@ extension ResetPasswordViewController{
         let attributedString = NSMutableAttributedString()
         attributedString.append(NSAttributedString(string: R.string.localizable.havenT_received_Code(),
                                                    attributes: [.underlineStyle: 0]))
-        attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
-                                                   attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]))
+//        attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
+//                                                   attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]))
+        
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+                attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
+                                                           attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]))
+#else
+print("Running old Swift")
+                attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
+                                                           attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]))
+#endif
+        
         self.resendCodeButton.titleLabel?.attributedText = attributedString
         self.resendCodeButton.setTitle(self.resendCodeButton.titleLabel?.text, for: .normal)
         self.resendCodeButton.tintColor = .lightGray

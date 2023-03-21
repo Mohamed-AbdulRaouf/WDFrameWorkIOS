@@ -73,7 +73,16 @@ class MapController : STUIViewController,IMap{
         //Zoom to user location
         if let userLocation = locationManager.location?.coordinate {
             //            guard  self.brandLocations.count > 0 else {return}
+//            let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), regionRadius * 5, regionRadius * 5)
+            
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+            let viewRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), latitudinalMeters: regionRadius * 5, longitudinalMeters: regionRadius * 5)
+#else
+print("Running old Swift")
             let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), regionRadius * 5, regionRadius * 5)
+#endif
+            
             mapView.setRegion(viewRegion, animated: true)
             let coordinatesOfPoints = CLLocationCoordinate2DMake(userLocation.latitude, userLocation.longitude)
             let annotation = droppablePiDALn(coordinate: coordinatesOfPoints,title: R.string.localizable.yourLocation(), identifier: "droppablePin")

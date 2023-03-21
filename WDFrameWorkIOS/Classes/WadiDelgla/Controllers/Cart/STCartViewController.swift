@@ -100,7 +100,14 @@ extension STCartViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.separatorStyle = .none
 //        tableView.estimatedRowHeight = 60.0
+//        tableView.rowHeight = UITableViewAutomaticDimension
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+        tableView.rowHeight = tableView.estimatedRowHeight
+#else
+print("Running old Swift")
         tableView.rowHeight = UITableViewAutomaticDimension
+#endif
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {

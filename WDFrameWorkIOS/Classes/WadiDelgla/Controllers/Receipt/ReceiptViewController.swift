@@ -82,7 +82,13 @@ extension ReceiptViewController: UITableViewDelegate,UITableViewDataSource,IBase
 //        tableView.register(nibFooter, forHeaderFooterViewReuseIdentifier: "ReceiptCashDetailsFooter")
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+        return UITableView.automaticDimension
+#else
+print("Running old Swift")
         return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
+#endif
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         guard  (self.viewModel?.order != nil) else { return 0 }
@@ -106,11 +112,23 @@ extension ReceiptViewController: UITableViewDelegate,UITableViewDataSource,IBase
 // MARK: - Table Header & Foooter
 extension ReceiptViewController {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+        return UITableView.automaticDimension
+#else
+print("Running old Swift")
+        return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
+#endif
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        return UITableViewAutomaticDimension
+#if swift(>=5.0)
+print("Running Swift 5.0 or later")
+        return UITableView.automaticDimension
+#else
+print("Running old Swift")
+        return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
+#endif
     }
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ReceiptMainHeaderView") as! ReceiptMainHeaderView

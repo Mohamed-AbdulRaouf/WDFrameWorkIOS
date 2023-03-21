@@ -4,6 +4,11 @@ use_frameworks!
 
 platform :ios, '13.0'
 # , :exclusive => true
+
+def WDFrameWorkIOS_Example
+    pod 'SwinjectStoryboard', git: 'https://github.com/Mohamed-AbdulRaouf/SwinjectStoryboard.git', branch: 'master'
+end
+
 target 'WDFrameWorkIOS_Example' do
   pod 'WDFrameWorkIOS', :path => '../'
 #  pod 'FirebaseCore'

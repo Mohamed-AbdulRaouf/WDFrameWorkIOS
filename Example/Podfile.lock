@@ -114,7 +114,7 @@ PODS:
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
   - Localize-Swift (1.7.0)
-  - MOLH (0.4)
+  - MOLH (1.4.3)
   - MyFatoorah (2.0.131)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
@@ -160,7 +160,7 @@ PODS:
     - Swinject (~> 2.1)
   - TextFieldEffects (1.6.0)
   - Toast-Swift (5.0.1)
-  - WDFrameWorkIOS (1.1.2):
+  - WDFrameWorkIOS (1.1.3):
     - Alamofire (~> 4.7)
     - Bond
     - CachyKit
@@ -185,8 +185,8 @@ PODS:
     - SVProgressHUD
     - SwifterSwift
     - SwiftyJSON (~> 4.0)
-    - Swinject (~> 2.1.1)
-    - SwinjectStoryboard (~> 1.1.2)
+    - Swinject
+    - SwinjectStoryboard
     - TextFieldEffects
     - Toast-Swift (~> 5.0.0)
 
@@ -265,7 +265,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   Localize-Swift: 61ff1bf8916155dd8e95d5e3f49df7be5e8afe9f
-  MOLH: e5da53263c1bd1aaefb783d49ae620702288b40d
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   MyFatoorah: e94546dd48c2507c17b0bf1020da2151754a794c
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
@@ -281,8 +281,8 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  WDFrameWorkIOS: cfc5027f786d45cb1562e595292a5b6a2789de98
+  WDFrameWorkIOS: 6b7b44c370905605ef346026b64d0c487bb5c2c3
 
-PODFILE CHECKSUM: 5eec755484acaf74d3596193118d99b27aad062c
+PODFILE CHECKSUM: c2a46d73d3762b84f9daedb0df2d9e640dd3aa64
 
 COCOAPODS: 1.12.0
