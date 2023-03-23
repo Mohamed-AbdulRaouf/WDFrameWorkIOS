@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Toast_Swift
 import PopupDialog
 
 // MARK: - ICheckoutViewController Protocol

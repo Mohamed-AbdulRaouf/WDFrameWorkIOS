@@ -8,6 +8,6 @@
 
 import Foundation
 import UIKit
-import Toast_Swift
+//import Toast_Swift
 import PopupDialog
 extension RedeemViewController : IRedeemViewController{}

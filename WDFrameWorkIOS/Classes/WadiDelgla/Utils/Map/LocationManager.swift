@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
-import Toast_Swift
+//import Toast_Swift
 public class LocationManager: NSObject {
     static let sharedInstance = LocationManager()
     private var locationManager = CLLocationManager()

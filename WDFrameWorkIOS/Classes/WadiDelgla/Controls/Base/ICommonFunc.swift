@@ -16,6 +16,6 @@ extension ICommonFunc  where Self: STUIViewController{
         self.showMessage(andMessage: error)
     }
     func onShowToast(_ message: String){
-        self.view.makeToast(message, duration: 2.0)
+        self.view.makeToast(message, duration: 2.0, position: .bottom)
     }
 }
