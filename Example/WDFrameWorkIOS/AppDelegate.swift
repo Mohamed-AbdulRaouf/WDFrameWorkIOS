@@ -65,9 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
-        let storyboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainHomeScreen: "ViewController"))
+        let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+        let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController()))
         return true
     }
     

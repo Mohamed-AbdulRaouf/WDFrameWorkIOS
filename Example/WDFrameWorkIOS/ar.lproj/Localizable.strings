@@ -388,3 +388,4 @@
 "Success" = "تم";
 "Your request has been sent successfully" = "تم ارسال طلبك بنجاح";
 "Enter your phone number" = "من فضلك ادخل رقم الهاتف";
+"transaction failed" = "فشلت العملية";

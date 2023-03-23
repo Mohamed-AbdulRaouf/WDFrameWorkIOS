@@ -13,6 +13,8 @@ public class TestViewController: UIViewController {
     var mobile = ""
     var email = ""
     var membershipNumber = ""
+    var mainStoryboard = UIStoryboard()
+    var viewController = UIViewController()
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ public class TestViewController: UIViewController {
 
 extension TestViewController {
     
-    public func create(name: String, mobile: String, email: String ,membershipNumber: String, mainHomeScreen: String) -> TestViewController {
+    public func create(name: String, mobile: String, email: String ,membershipNumber: String, mainStoryboard: UIStoryboard, viewController: UIViewController) -> TestViewController {
         let vc = TestViewController()
         vc.name = name
         vc.mobile = mobile
@@ -41,7 +43,8 @@ extension TestViewController {
         GlobalConstants.shared.mobile = mobile
         GlobalConstants.shared.email = email
         GlobalConstants.shared.membershipNumber = membershipNumber
-        GlobalConstants.shared.mainHomeScreen = mainHomeScreen
+        GlobalConstants.shared.mainStoryboard = mainStoryboard
+        GlobalConstants.shared.viewController = viewController
         UserDefaults.loginData?.mobile.value = mobile
         UserDefaults.loginData?.password.value = membershipNumber
         UserDefaults.loginData?.brandId.value = 0

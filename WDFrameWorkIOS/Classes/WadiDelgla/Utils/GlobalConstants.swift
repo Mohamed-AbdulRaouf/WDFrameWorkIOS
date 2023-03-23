@@ -15,16 +15,19 @@ class GlobalConstants {
     var mobile: String = ""
     var email: String = ""
     var membershipNumber: String = ""
-    var mainHomeScreen: String = ""
+    var mainStoryboard: UIStoryboard = UIStoryboard()
+    var viewController: UIViewController = UIViewController()
     
     init() {}
     
-    init(name: String, mobile: String, email: String, membershipNumber: String, mainHomeScreen: String) {
+    init(name: String, mobile: String, email: String, membershipNumber: String, mainStoryboard: UIStoryboard,
+         viewController: UIViewController) {
         self.name = name
         self.mobile = mobile
         self.email = email
         self.membershipNumber = membershipNumber
-        self.mainHomeScreen = mainHomeScreen
+        self.mainStoryboard = mainStoryboard
+        self.viewController = viewController
     }
     
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.3'
+  spec.version          = '1.1.4'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -97,7 +97,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   #  }
   spec.dependency 'GoogleMaps'
   spec.dependency 'GooglePlaces'
-  spec.dependency 'Alamofire' , '~> 4.7'
+  spec.dependency 'Alamofire' , '~> 5.6.4'
   spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'R.swift'
   spec.dependency 'SwifterSwift'
@@ -114,7 +114,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'IQKeyboardManagerSwift'
   spec.dependency 'FontAwesome.swift'
   spec.dependency 'SVProgressHUD'
-  spec.dependency 'RxSwift', '~> 5.1.0'
+  spec.dependency 'RxSwift'
   spec.dependency 'Toast-Swift', '~> 5.0.0'
   spec.dependency 'PopupDialog', '~> 1.1'
   spec.dependency 'Kingfisher', '~> 5.0'
@@ -123,6 +123,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
+  spec.dependency 'FawryPaySDK'
 #  spec.dependency 'AZDialogView' not working
   
   # s.public_header_files = 'Pod/Classes/**/*.h'

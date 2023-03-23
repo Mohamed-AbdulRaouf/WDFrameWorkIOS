@@ -33,7 +33,11 @@ class STCartViewController: STUIViewController ,IBaseController{
         } else {
             // Fallback on earlier versions
         }
-
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+//        self.view.addSubview(view)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,6 +49,11 @@ class STCartViewController: STUIViewController ,IBaseController{
     }
     
     // MARK: - IBActions
+    // function which is triggered when handleTap is called
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func onShoppingTapped(_ sender: Any) {
         TabsData.sharedInstance.searchTerm = ""
         TabsData.sharedInstance.isLoyality = false
