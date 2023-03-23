@@ -109,6 +109,10 @@ extension CheckOutViewController : ICheckoutViewController{
 //        self.navigationController?.pushViewController(vc)
     }
     
+    func confirmPaymentWithCreditCard() {
+        self.FawryPayment()
+    }
+    
 }
 
 // MARK: - LoginProtocol Protocol

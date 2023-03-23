@@ -72,8 +72,9 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
      }
     
     @objc func backToMainApp() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "\(GlobalConstants.shared.mainHomeScreen)")
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let vc = mainStoryboard.instantiateViewController(withIdentifier: "\(GlobalConstants.shared.mainHomeScreen)")
+        guard let vc = GlobalConstants.shared.mainStoryboard.instantiateInitialViewController() else {return}
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }

@@ -13,5 +13,6 @@ protocol ICheckoutViewController:ICommonFunc {
     func openLogin()
     func openLoyaltyDiscountVC()
     func openReceipt(_ customerHistoryId: Int)
+    func confirmPaymentWithCreditCard()
 }
 

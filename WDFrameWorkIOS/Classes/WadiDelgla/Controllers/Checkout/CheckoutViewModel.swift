@@ -41,6 +41,8 @@ protocol ICheckoutViewModel: IBaseViewModel {
     func makeOrder()
     func getPaymentSubTitle() -> String
     func getOrderByFrontReference()
+    var orderId: Int? {get set}
+    func handleOnlinePayment(merchantRefNumber: String, referenceNumber: String, status: Bool)
 }
 
 class CheckoutViewModel: ICheckoutViewModel{
@@ -73,6 +75,7 @@ class CheckoutViewModel: ICheckoutViewModel{
         }
     }
     var brandService: BrandServiceBLL?
+    var orderId: Int?
     
     //MARK: - Functions
     public  init (cartService: CartServiceBLL, orderService: OrderServiceBLL, paymentService: STKashierService,errorModel: IOrderValidationDTOBLL,brandService:BrandServiceBLL){
@@ -185,7 +188,9 @@ class CheckoutViewModel: ICheckoutViewModel{
                             return
                         }
                         if let orderId = _data["OrderId"] as? Int {
-                            self.handleOnlinePayment(String(orderId))
+//                            self.handleOnlinePayment(String(orderId))
+                            self.orderId = orderId
+                            self.delegate?.confirmPaymentWithCreditCard()
                         }
                     }
                     
@@ -193,12 +198,12 @@ class CheckoutViewModel: ICheckoutViewModel{
             })
         }
     }
-    func handleOnlinePayment(_ orderId: String){
-        #warning("check from code")
-        self.delegate?.onError("Online Payment not available right now".localized())
-        return
+    func handleOnlinePayment(merchantRefNumber: String, referenceNumber: String, status: Bool) {
+//        #warning("check from code")
+//        self.delegate?.onError("Online Payment not available right now".localized())
+//        return
         guard let _ = paymentData?.cardToken else {
-//            self.payWithCard(orderId)
+            self.confirmOnlinePaymentForOrder(transactionID: referenceNumber, merchanOrderId: merchantRefNumber, status: status)
             return
         }
 //        self.payWithToken(orderId)
@@ -245,40 +250,41 @@ class CheckoutViewModel: ICheckoutViewModel{
 //                        if let error = error {
 //                            self.delegate?.onError(error)
 //                        }
-//                        self.confirmOnlinePaymentForOrder(nil, orderId, false)
+//                        self.confirmOnlinePaymentForOrder(orderId, false)
 //                        return
 //                    }
-//                    if let model = data as? PaymentResponse {
-//                        self.confirmOnlinePaymentForOrder(model, orderId, true)
-//                    }
+////                    if let model = data as? PaymentResponse {
+////                        self.confirmOnlinePaymentForOrder(orderId, true)
+////                    }
 //                }
 //            })
 //
 //        }
 //    }
     
-//    func confirmOnlinePaymentForOrder(_ model: PaymentResponse?,_ orderId: String?,_ status: Bool){
-//        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
-//        doInBackground {
-//            let payment = self.paymentService?.getPaymentData(from: model, orderId, status)
-//            self.orderService?.confirmOnLinePaymentForOrder(payment as! IConfirmPaymentDTO, completion: { (response) in
-//                doOnMain {
-//                    self.hideHUD()
-//                    guard let data = response?.data else {
-//                        self.errorModel = response?.error?.validateError as? IOrderValidationDTO
-//                        if response?.error?.APIError != nil {
-//                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
-//                        }
-//                        return
-//                    }
-//                    if model?.transactionID != nil && status {
-//                        self.deleteCart()
-//                    }
-//                }
-//            })
-//
-//        }
-//    }
+    func confirmOnlinePaymentForOrder(transactionID: String?, merchanOrderId: String?, status: Bool) {
+        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
+        doInBackground {
+            let payment = ConfirmPaymentDTODAL(transactionId: transactionID ?? "", merchanOrderId: merchanOrderId ?? "", orderId: self.orderId?.string ?? "", status: status)
+            self.orderService?.confirmOnLinePaymentForOrder(payment, completion: { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let data = response?.data else {
+                        self.errorModel = response?.error?.validateError as? IOrderValidationDTOBLL
+                        if response?.error?.APIError != nil {
+                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                        }
+                        return
+                    }
+                    if transactionID != nil && status {
+                        self.deleteCart()
+                    }
+                }
+            })
+
+        }
+    }
+    
     func getPaymentSubTitle() -> String {
         if self.paymentData?.cardData != nil {
             var title = "\(self.paymentData?.cardData?.cardNumber.value ?? "")" + " - "
@@ -333,7 +339,7 @@ class CheckoutViewModel: ICheckoutViewModel{
                           self.customerHistoryId = data.customerHistoryId.value
                           self.deleteCart()
                       }else {
-                          self.handleOnlinePayment(String(data.orderHeaderId.value ?? 0))
+                          self.handleOnlinePayment(merchantRefNumber: "", referenceNumber: String(data.orderHeaderId.value ?? 0), status: false)
                       }
                       
                   }

@@ -64,10 +64,7 @@ public class NetworkBLL: NetworkingBLL {
         //       try? Alamofire.request(apiRoute.asURLRequest())
         print("LOG -> TRY CaLLING  \(apiRoute.requestURL.absoluteString)")
         print("WITH PARAMS -> \(String(describing: apiRoute.parameters?.jsonString()))")
-//         mohamed
-        print("WITH Headers -> \(String(describing: apiRoute.headers.jsonString()))")
-//         mohamed
-        Alamofire.request(apiRoute.requestURL, method: apiRoute.method, parameters: apiRoute.parameters, encoding: apiRoute.encoding, headers: apiRoute.headers)
+        AF.request(apiRoute.requestURL, method: apiRoute.method, parameters: apiRoute.parameters, encoding: apiRoute.encoding, headers: apiRoute.headers)
             .responseJSON { [weak self] (response) in
                 //                guard self != nil else { return }
                 switch response.result {
@@ -102,8 +99,7 @@ public class NetworkBLL: NetworkingBLL {
         var request = URLRequest(url: apiRoute.requestURL)
         request.httpMethod = apiRoute.method.rawValue
         for header in apiRoute.headers {
-            // mohamed
-            request.setValue(header.key, forHTTPHeaderField: header.value)
+            request.setValue(header.name, forHTTPHeaderField: header.value)
         }
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
