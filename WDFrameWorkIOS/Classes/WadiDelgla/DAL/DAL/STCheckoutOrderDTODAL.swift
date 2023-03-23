@@ -69,6 +69,9 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
     public var frontOrderReferenceId: String? = ""
 
     public var phone2: String? = ""
+    public var merchantRefNumber: String? = ""
+    public var referenceNumber: String? = ""
+
     
     public  init(){
 //        super.init()
@@ -105,6 +108,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case isSelectDeliveryAtStore = "isSelectDeliveryAtStore"
         case frontOrderReferenceId = "FrontOrderReferenceId"
         case phone2 = "Phone2"
+        case merchantRefNumber = "merchantRefNumber"
+        case referenceNumber = "referenceNumber"
 //        case paymentData = "paymentData"
      }
     
@@ -142,6 +147,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         try container.encode(isSelectDeliveryAtStore, forKey: .isSelectDeliveryAtStore)
         try container.encode(frontOrderReferenceId, forKey: .frontOrderReferenceId)
         try container.encode(phone2, forKey: .phone2)
+        try container.encode(merchantRefNumber, forKey: .merchantRefNumber)
+        try container.encode(referenceNumber, forKey: .referenceNumber)
 
 //         try container.encode(paymentData, forKey: .paymentData)
 
@@ -180,6 +187,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         isSelectDeliveryAtStore = try container.decode(Bool.self, forKey: .isSelectDeliveryAtStore)
         frontOrderReferenceId = try container.decode(String.self, forKey: .frontOrderReferenceId)
         phone2 = try container.decode(String.self, forKey: .phone2)
+        merchantRefNumber = try container.decode(String.self, forKey: .merchantRefNumber)
+        referenceNumber = try container.decode(String.self, forKey: .referenceNumber)
 //        paymentData = try container.decode(STCartPaymentDTO.self, forKey: .paymentData)
      }
     enum CALCCodingKeys: String, CodingKey {
@@ -195,6 +204,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case deliveryAtStore = "DeliveryAtStore"
         case frontOrderReferenceId = "FrontOrderReferenceId"
         case phone2 = "Phone2"
+        case merchantRefNumber = "merchantRefNumber"
+        case referenceNumber = "referenceNumber"
     }
    public  var JSONRepresentation: Dictionary<String, Any>  {
         var jsonedDict = [String:Any]()
@@ -210,6 +221,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         jsonedDict[CALCCodingKeys.deliveryAtStore.rawValue] = isSelectDeliveryAtStore
         jsonedDict[CALCCodingKeys.frontOrderReferenceId.rawValue] = frontOrderReferenceId
         jsonedDict[CALCCodingKeys.phone2.rawValue] = phone2
+       jsonedDict[CALCCodingKeys.merchantRefNumber.rawValue] = merchantRefNumber
+       jsonedDict[CALCCodingKeys.referenceNumber.rawValue] = referenceNumber
 
 //        jsonedDict[CALCCodingKeys.deliveryAtStore.rawValue] = deliveryAtStore
         if cartItems.count > 0 {

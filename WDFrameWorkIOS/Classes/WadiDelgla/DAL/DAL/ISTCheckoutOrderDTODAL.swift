@@ -41,5 +41,6 @@ public protocol ISTCheckoutOrderDTODAL :AnyObject {
 //    var paymentData : STCartPaymentDTO? {get set}
     var frontOrderReferenceId: String? {get set}
     var phone2: String? {get set}
-    
+    var merchantRefNumber: String? {get set}
+    var referenceNumber: String? {get set}
 }

@@ -187,11 +187,16 @@ class CheckoutViewModel: ICheckoutViewModel{
                             self.deleteCart()
                             return
                         }
-                        if let orderId = _data["OrderId"] as? Int {
-//                            self.handleOnlinePayment(String(orderId))
-                            self.orderId = orderId
-                            self.delegate?.confirmPaymentWithCreditCard()
+                        
+                        guard  cart.orderPaymentTypeId != PaymentType.creditCard.orderPaymentId else {
+                            self.deleteCart()
+                            return
                         }
+//                        if let orderId = _data["OrderId"] as? Int {
+//                            self.handleOnlinePayment(String(orderId))
+//                            self.orderId = orderId
+//                            self.delegate?.confirmPaymentWithCreditCard()
+//                        }
                     }
                     
                 }

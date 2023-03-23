@@ -83,8 +83,8 @@ class CheckOutViewController: STUIViewController,IBaseController {
     }
     func openCreditCardForm(){
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId else{ return }
-        self.viewModel?.makeOrder()
-//        self.FawryPayment()
+//        self.viewModel?.makeOrder()
+        self.FawryPayment()
 //            let vc = StoryboardScene.Payment.creditCardViewController.instantiate()
 //            vc.viewModel?.sourceDelegate = self
 //            self.navigationController?.pushViewController(vc)
@@ -176,7 +176,10 @@ extension CheckOutViewController {
             let chargeResponse = response as? PaymentChargeResponse
             print("Payment Method: onSuccessHandler: \(chargeResponse?.merchantRefNumber)")
             print("Payment Method: onSuccessHandler: \(chargeResponse?.orderStatus)")
-            self.viewModel?.handleOnlinePayment(merchantRefNumber: chargeResponse?.merchantRefNumber ?? "", referenceNumber: chargeResponse?.referenceNumber ?? "", status: true)
+            self.viewModel?.cart?.isOnlinePayment = true
+            self.viewModel?.cart?.merchantRefNumber = chargeResponse?.merchantRefNumber ?? ""
+            self.viewModel?.cart?.referenceNumber = chargeResponse?.referenceNumber ?? ""
+            self.viewModel?.makeOrder()
         })
     }
 }
