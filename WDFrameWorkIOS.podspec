@@ -104,7 +104,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'SwifterSwift'
   spec.dependency 'CachyKit'
   spec.dependency 'TextFieldEffects'
-  spec.dependency 'SideMenu', '~> 5.0.3'
+#  spec.dependency 'SideMenu', '~> 5.0.3'
   spec.dependency 'Firebase'
   spec.dependency 'FirebaseCore'
   spec.dependency 'FirebaseAuth'

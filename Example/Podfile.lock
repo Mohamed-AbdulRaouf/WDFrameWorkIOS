@@ -139,7 +139,6 @@ PODS:
   - SDWebImage (5.15.5):
     - SDWebImage/Core (= 5.15.5)
   - SDWebImage/Core (5.15.5)
-  - SideMenu (5.0.3)
   - SVProgressHUD (2.2.5)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
@@ -196,7 +195,6 @@ PODS:
     - PopupDialog (~> 1.1)
     - R.swift
     - RxSwift
-    - SideMenu (~> 5.0.3)
     - SVProgressHUD
     - SwifterSwift
     - SwiftyJSON (~> 4.0)
@@ -244,7 +242,6 @@ SPEC REPOS:
     - ReactiveKit
     - RxSwift
     - SDWebImage
-    - SideMenu
     - SVProgressHUD
     - SwifterSwift
     - SwiftMessages
@@ -293,7 +290,6 @@ SPEC CHECKSUMS:
   ReactiveKit: a36ebeb959fe6852dd674cc423163bfffb7e0541
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
-  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
@@ -301,7 +297,7 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  WDFrameWorkIOS: b6b4d6d58ca4037d16f2c5f452502f03e9340fee
+  WDFrameWorkIOS: ce4d95368d3c89ba0638906571ee83c5274e12a0
 
 PODFILE CHECKSUM: 7c56564e74aaf92d8f2282c7d8f9fd7524ba4420
 
