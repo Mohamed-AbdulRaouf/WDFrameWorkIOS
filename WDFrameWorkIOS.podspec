@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.4'
+  spec.version          = '1.1.5'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -124,7 +124,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
-  spec.dependency 'FawryPaySDK'
+#  spec.dependency 'FawryPaySDK'
 #  spec.dependency 'AZDialogView' not working
   
   # s.public_header_files = 'Pod/Classes/**/*.h'

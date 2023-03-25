@@ -9,7 +9,7 @@
 
 import UIKit
 //import AZDialogView
-//import Toast_Swift
+import Toast_Swift
 import RswiftResources
 //import BLL
 open class STUIViewController: UIViewController {

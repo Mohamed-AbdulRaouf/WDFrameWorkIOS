@@ -7,14 +7,6 @@ PODS:
   - Cosmos (23.0.0)
   - Differ (1.4.5)
   - DynamicBlurView (4.1.0)
-  - FawryPaySDK (0.1.9):
-    - Alamofire (~> 5.6.4)
-    - IQKeyboardManagerSwift (~> 6.5.11)
-    - MBRadioButton (~> 1.4)
-    - RxSwift (~> 6.5.0)
-    - SDWebImage (~> 5.15.0)
-    - SVProgressHUD (~> 2.2.5)
-    - SwiftMessages (~> 9.0.6)
   - Firebase (10.7.0):
     - Firebase/Core (= 10.7.0)
   - Firebase/Core (10.7.0):
@@ -122,7 +114,6 @@ PODS:
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
   - Localize-Swift (1.7.0)
-  - MBRadioButton (1.4)
   - MOLH (1.4.3)
   - MyFatoorah (2.0.131)
   - nanopb (2.30909.0):
@@ -136,9 +127,6 @@ PODS:
   - R.swift (7.3.0)
   - ReactiveKit (3.19.1)
   - RxSwift (6.5.0)
-  - SDWebImage (5.15.5):
-    - SDWebImage/Core (= 5.15.5)
-  - SDWebImage/Core (5.15.5)
   - SideMenu (6.5.0)
   - SVProgressHUD (2.2.5)
   - SwifterSwift (5.2.0):
@@ -166,9 +154,6 @@ PODS:
   - SwifterSwift/StoreKit (5.2.0)
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
-  - SwiftMessages (9.0.6):
-    - SwiftMessages/App (= 9.0.6)
-  - SwiftMessages/App (9.0.6)
   - SwiftyJSON (4.3.0)
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.2):
@@ -180,7 +165,6 @@ PODS:
     - Bond
     - CachyKit
     - Cosmos
-    - FawryPaySDK
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -217,7 +201,6 @@ SPEC REPOS:
     - Cosmos
     - Differ
     - DynamicBlurView
-    - FawryPaySDK
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -236,7 +219,6 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - Localize-Swift
-    - MBRadioButton
     - MOLH
     - MyFatoorah
     - nanopb
@@ -245,11 +227,9 @@ SPEC REPOS:
     - R.swift
     - ReactiveKit
     - RxSwift
-    - SDWebImage
     - SideMenu
     - SVProgressHUD
     - SwifterSwift
-    - SwiftMessages
     - SwiftyJSON
     - Swinject
     - SwinjectStoryboard
@@ -267,7 +247,6 @@ SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Differ: 3b6bd78e2b20cc795d9a86f7641d087524e4273e
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
-  FawryPaySDK: 4f87f6bcddcea4a4f9e2b18cb2ab57a8fd3ea141
   Firebase: 0219acf760880eeec8ce479895bd7767466d9f81
   FirebaseAnalytics: f8133442ee6f8512e28ff19e62ce15398bfaeace
   FirebaseAuth: dd64c01631df724b09f33e584625775c52f7d71f
@@ -286,7 +265,6 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   Localize-Swift: 61ff1bf8916155dd8e95d5e3f49df7be5e8afe9f
-  MBRadioButton: dcf111c9bb633d4cf6e83200d804af6e025033c8
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   MyFatoorah: e94546dd48c2507c17b0bf1020da2151754a794c
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
@@ -295,17 +273,15 @@ SPEC CHECKSUMS:
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
   ReactiveKit: a36ebeb959fe6852dd674cc423163bfffb7e0541
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
-  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  WDFrameWorkIOS: 241865043843725193d130f49092f1d861af1a04
+  WDFrameWorkIOS: 2cd198563b540fef997ee889960c6c2a9b52a56e
 
 PODFILE CHECKSUM: 1d0402875842981346adacf70cb3eb2c23b83589
 

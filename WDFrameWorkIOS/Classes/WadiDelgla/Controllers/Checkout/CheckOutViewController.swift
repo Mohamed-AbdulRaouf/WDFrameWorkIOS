@@ -9,7 +9,7 @@
 import UIKit
 //import DAL
 import SVProgressHUD
-import FawryPaySDK
+//import FawryPaySDK
 
 class CheckOutViewController: STUIViewController,IBaseController {
     
@@ -118,68 +118,69 @@ extension CheckOutViewController: IUserAddressProtocol{
 // MARK: - FawryPay Func
 extension CheckOutViewController {
     func FawryPayment() {
-        let customerInfo = LaunchCustomerModel(customerName: "Name",
-                                               customerEmail: "email@gmail.com",
-                                               customerMobile: "+0100000000",
-                                               customerProfileId: customerProfileId)
-        
-        let merchantInfo = LaunchMerchantModel(merchantCode: merchantCode,
-                                               merchantRefNum: FrameworkHelper.shared?.getMerchantReferenceNumber(),
-                                               secureKey: secureKey)
-        
-        let chargeInfo = ChargeItemsParamsModel(itemId: "101",
-                                                charge_description: "item description",
-                                                price: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0),
-                                                quantity: 1)
-        
-        //total taxes of the items if not included in the item price
-//        let taxesInfo = ChargeItemsParamsModel(itemId: "taxes",
-//                                               charge_description: "",
-//                                               price: 28,
-//                                               quantity: 1)
-        
-        
-        let launchModel = FawryLaunchModel(customer: customerInfo,
-                                           merchant: merchantInfo,
-                                           chargeItems: [chargeInfo], // taxesInfo
-                                           signature: nil,
-                                           allowVoucher: false,
-                                           paymentWithCardToken: false,
-                                           paymentMethod: .card)
-        
-        launchModel.skipCustomerInput = true
-        launchModel.skipReceipt = false
-        FrameworkHelper.shared?.launchAnonymousSDK(on: self,
-                                                   launchModel: launchModel,
-                                                   baseURL: serverURL,
-                                                   appLanguage: AppLanguage.English,
-                                                   enable3Ds: true,
-                                                   authCaptureModePayment: false,
-                                                   completionBlock: { (status) in
-            print("Payment Method: completionBlock \(status)")
-        }, onPreCompletionHandler: { (error) in
-            print("Payment Method: onPreCompletionHandler \(error?.message)")
-        }, errorBlock: { (error) in
-            print("Payment Method: errorBlock with CODE:\(error?.errorCode) and MSG:\(error?.message)")
-            self.showToast(error?.message ?? "transaction failed".localized())
-        }, onPaymentCompletedHandler: { (chargeResponse) in
-            print("Payment Method: onPaymentCompletedHandler chargeResponse \(chargeResponse.debugDescription)")
-            if let response = chargeResponse as? PaymentChargeResponse {
-                print(response.merchantRefNumber)
-                print(response.orderStatus)
-            }
-            if let er = chargeResponse as? FawryError{
-                print(er.message)
-                self.showToast(er.message ?? "transaction failed".localized())
-            }
-        }, onSuccessHandler: { (response) in
-            let chargeResponse = response as? PaymentChargeResponse
-            print("Payment Method: onSuccessHandler: \(chargeResponse?.merchantRefNumber)")
-            print("Payment Method: onSuccessHandler: \(chargeResponse?.orderStatus)")
-            self.viewModel?.cart?.isOnlinePayment = true
-            self.viewModel?.cart?.merchantRefNumber = chargeResponse?.merchantRefNumber ?? ""
-            self.viewModel?.cart?.referenceNumber = chargeResponse?.referenceNumber ?? ""
-            self.viewModel?.makeOrder()
-        })
+        self.view.makeToast("Online Payment not available right now".localized(), duration: 3.0, position: .bottom)
+//        let customerInfo = LaunchCustomerModel(customerName: "Name",
+//                                               customerEmail: "email@gmail.com",
+//                                               customerMobile: "+0100000000",
+//                                               customerProfileId: customerProfileId)
+//        
+//        let merchantInfo = LaunchMerchantModel(merchantCode: merchantCode,
+//                                               merchantRefNum: FrameworkHelper.shared?.getMerchantReferenceNumber(),
+//                                               secureKey: secureKey)
+//        
+//        let chargeInfo = ChargeItemsParamsModel(itemId: "101",
+//                                                charge_description: "item description",
+//                                                price: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0),
+//                                                quantity: 1)
+//        
+//        //total taxes of the items if not included in the item price
+////        let taxesInfo = ChargeItemsParamsModel(itemId: "taxes",
+////                                               charge_description: "",
+////                                               price: 28,
+////                                               quantity: 1)
+//        
+//        
+//        let launchModel = FawryLaunchModel(customer: customerInfo,
+//                                           merchant: merchantInfo,
+//                                           chargeItems: [chargeInfo], // taxesInfo
+//                                           signature: nil,
+//                                           allowVoucher: false,
+//                                           paymentWithCardToken: false,
+//                                           paymentMethod: .card)
+//        
+//        launchModel.skipCustomerInput = true
+//        launchModel.skipReceipt = false
+//        FrameworkHelper.shared?.launchAnonymousSDK(on: self,
+//                                                   launchModel: launchModel,
+//                                                   baseURL: serverURL,
+//                                                   appLanguage: AppLanguage.English,
+//                                                   enable3Ds: true,
+//                                                   authCaptureModePayment: false,
+//                                                   completionBlock: { (status) in
+//            print("Payment Method: completionBlock \(status)")
+//        }, onPreCompletionHandler: { (error) in
+//            print("Payment Method: onPreCompletionHandler \(error?.message)")
+//        }, errorBlock: { (error) in
+//            print("Payment Method: errorBlock with CODE:\(error?.errorCode) and MSG:\(error?.message)")
+//            self.showToast(error?.message ?? "transaction failed".localized())
+//        }, onPaymentCompletedHandler: { (chargeResponse) in
+//            print("Payment Method: onPaymentCompletedHandler chargeResponse \(chargeResponse.debugDescription)")
+//            if let response = chargeResponse as? PaymentChargeResponse {
+//                print(response.merchantRefNumber)
+//                print(response.orderStatus)
+//            }
+//            if let er = chargeResponse as? FawryError{
+//                print(er.message)
+//                self.showToast(er.message ?? "transaction failed".localized())
+//            }
+//        }, onSuccessHandler: { (response) in
+//            let chargeResponse = response as? PaymentChargeResponse
+//            print("Payment Method: onSuccessHandler: \(chargeResponse?.merchantRefNumber)")
+//            print("Payment Method: onSuccessHandler: \(chargeResponse?.orderStatus)")
+//            self.viewModel?.cart?.isOnlinePayment = true
+//            self.viewModel?.cart?.merchantRefNumber = chargeResponse?.merchantRefNumber ?? ""
+//            self.viewModel?.cart?.referenceNumber = chargeResponse?.referenceNumber ?? ""
+//            self.viewModel?.makeOrder()
+//        })
     }
 }
