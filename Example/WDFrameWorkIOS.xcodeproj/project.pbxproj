@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5063A6B386C4270CBF951330 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCEB0D4E6F498AEE3349668F /* Pods_WDFrameWorkIOS_Tests.framework */; };
+		34E1DD23800EEDAC24D4A3E5 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 		73F48B8029BAED0E0075ED3F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7F29BAED0E0075ED3F /* PushNotificationManager.swift */; };
 		73F48B8329BAEF210075ED3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F48B8129BAEF210075ED3F /* GoogleService-Info.plist */; };
 		73F48B8429BAEF210075ED3F /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F48B8229BAEF210075ED3F /* Configurations.plist */; };
-		7A27399029CE08DD74307982 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5999C1D08D253996D0C534 /* Pods_WDFrameWorkIOS_Example.framework */; };
+		7A72D5DEF95EBCD05EA0EBB3 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25B4D93A4C4F7950D6B1D550 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4E14F8F7CDF1B38A215C2D7D /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		58F4CC7870AE7E83D04F8766 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WDFrameWorkIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDFrameWorkIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,12 +59,10 @@
 		73F48B7F29BAED0E0075ED3F /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		73F48B8129BAEF210075ED3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73F48B8229BAEF210075ED3F /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
+		7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7994A1B7BC25AFE5108DD83F /* WDFrameWorkIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WDFrameWorkIOS.podspec; path = ../WDFrameWorkIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F56CF9797800E4326D757BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A6CCB086F89D021209854D27 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CCEB0D4E6F498AEE3349668F /* Pods_WDFrameWorkIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F856E0773F534094BAD92F65 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FF5999C1D08D253996D0C534 /* Pods_WDFrameWorkIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A27399029CE08DD74307982 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */,
+				34E1DD23800EEDAC24D4A3E5 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5063A6B386C4270CBF951330 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */,
+				7A72D5DEF95EBCD05EA0EBB3 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +88,21 @@
 		1DFC080D1A8871D88DFA68C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4E14F8F7CDF1B38A215C2D7D /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */,
-				A6CCB086F89D021209854D27 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */,
-				F856E0773F534094BAD92F65 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */,
-				25B4D93A4C4F7950D6B1D550 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */,
+				7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */,
+				DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */,
+				55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */,
+				5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		511808185A095C5AA5207384 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */,
+				1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -105,7 +114,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1DFC080D1A8871D88DFA68C6 /* Pods */,
-				8475FD18344F433CD0FC1457 /* Frameworks */,
+				511808185A095C5AA5207384 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,15 +182,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		8475FD18344F433CD0FC1457 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF5999C1D08D253996D0C534 /* Pods_WDFrameWorkIOS_Example.framework */,
-				CCEB0D4E6F498AEE3349668F /* Pods_WDFrameWorkIOS_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WDFrameWorkIOS_Example" */;
 			buildPhases = (
-				F0B0B77DF02926F94607B34E /* [CP] Check Pods Manifest.lock */,
+				248ADE16B1569C9D8FFA2DC0 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				FE07FB5F82F26B2448931E00 /* [CP] Embed Pods Frameworks */,
-				FC014D218C8E858083FAF936 /* [CP] Copy Pods Resources */,
+				1E5F317BFE5DE8AB8C1DC0EF /* [CP] Embed Pods Frameworks */,
+				812A813F1FC278265C4BEEA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,7 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WDFrameWorkIOS_Tests" */;
 			buildPhases = (
-				52D6CE03C037B53EDF3B9068 /* [CP] Check Pods Manifest.lock */,
+				99C15910D236D37D1BDAAFF7 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -292,77 +292,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52D6CE03C037B53EDF3B9068 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0B0B77DF02926F94607B34E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC014D218C8E858083FAF936 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework/ios-arm64/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.xcframework/ios-arm64/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.xcframework/ios-arm64_x86_64-simulator/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MyFatoorah/MyFatoorah.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/WDFrameWorkIOS/resources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MyFatoorah.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/resources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE07FB5F82F26B2448931E00 /* [CP] Embed Pods Frameworks */ = {
+		1E5F317BFE5DE8AB8C1DC0EF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,21 +318,24 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBRadioButton/MBRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift/RswiftResources.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FawryPaySDK/FawryPaySDK.framework/FawryPaySDK",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MyFatoorah/MFSDK.framework/MFSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -426,26 +359,99 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOLH.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RswiftResources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FawryPaySDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		248ADE16B1569C9D8FFA2DC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		812A813F1FC278265C4BEEA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework/ios-arm64/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.xcframework/ios-arm64/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.xcframework/ios-arm64_x86_64-simulator/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MyFatoorah/MyFatoorah.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WDFrameWorkIOS/resources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MyFatoorah.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/resources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99C15910D236D37D1BDAAFF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -613,7 +619,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E14F8F7CDF1B38A215C2D7D /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */;
+			baseConfigurationReference = 7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
@@ -632,7 +638,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6CCB086F89D021209854D27 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */;
+			baseConfigurationReference = DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
@@ -651,7 +657,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F856E0773F534094BAD92F65 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = 55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 6628XBBKSX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -674,7 +680,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25B4D93A4C4F7950D6B1D550 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */;
+			baseConfigurationReference = 5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 6628XBBKSX;
 				FRAMEWORK_SEARCH_PATHS = (

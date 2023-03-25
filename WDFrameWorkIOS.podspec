@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.5'
+  spec.version          = '1.1.6'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -34,6 +34,7 @@ Pod::Spec.new do |spec|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   spec.ios.deployment_target = '13.0'
+  spec.swift_version    = '5.0'
 #  spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
   
 #  spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
@@ -116,7 +117,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'FontAwesome.swift'
   spec.dependency 'SVProgressHUD'
   spec.dependency 'RxSwift'
-  spec.dependency 'Toast-Swift'
+#  spec.dependency 'Toast-Swift'
   spec.dependency 'PopupDialog', '~> 1.1'
   spec.dependency 'Kingfisher', '~> 5.0'
   spec.dependency 'Cosmos'
@@ -124,7 +125,9 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
-#  spec.dependency 'FawryPaySDK'
+  spec.dependency 'FawryPaySDK'
+#  spec.dependency 'MBRadioCheckboxButton'
+#  spec.dependency 'MBRadioButton'
 #  spec.dependency 'AZDialogView' not working
   
   # s.public_header_files = 'Pod/Classes/**/*.h'

@@ -107,7 +107,7 @@ extension STUIViewController {
     //MARK: - show Dialog message with ok action
     func showMessage(withTitle title: String = "", andMessage message: String, withcompletion completion: (() -> Void )? = nil) {
         
-        self.view.makeToast(message, duration: 3.0, position: .bottom)
+        self.showAlertMessage(message: message)
 #warning("check from code")
 //        DispatchQueue.main.async {
 //            let dialog = AZDialogViewController(title: title, message: message)
@@ -130,7 +130,7 @@ extension STUIViewController {
     //MARK: - show Dialog message with custom actions
     func showMessage(withTitle title: String,andMessage message: String,withCancel showCancel: Bool){
 #warning("check from code")
-        self.view.makeToast(message, duration: 3.0)
+        self.showAlertMessage(message: message)
 //        DispatchQueue.main.async {
 //            let dialog = AZDialogViewController(title: title, message: message)
 //            dialog.imageHandler = { (imageView) in
@@ -154,7 +154,28 @@ extension STUIViewController {
     
     //MARK: - show bottom toast with message
     func showToast(_ message: String){
-        self.view.makeToast(message , duration: 3.0)
+        self.showAlertMessage(message: message)
+    }
+    
+    func showAlertMessage(title: String? = "", message: String?, selfDismissing: Bool = true, time: TimeInterval = 3) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        
+        alert.title = title
+        alert.message = message
+        
+        if !selfDismissing {
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        }
+        
+        present(alert, animated: true)
+        
+        if selfDismissing {
+            Timer.scheduledTimer(withTimeInterval: time, repeats: false) { t in
+                t.invalidate()
+                alert.dismiss(animated: true)
+            }
+        }
     }
     
 }
