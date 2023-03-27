@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public typealias onResponse = ((MainResponseBLL?,NetworkErrorBLL?) -> ())
 public class MainResponseBLL {
     var statusCode: Int?

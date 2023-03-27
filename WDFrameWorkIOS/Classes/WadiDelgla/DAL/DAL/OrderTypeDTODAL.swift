@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class OrderTypeDTODAL : IOrderTypeDTODAL{
     
     public var itemId: Observable<Int?> = Observable<Int?>(nil)

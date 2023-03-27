@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class NotificationDTODAL : INotificationDTODAL{
     
     public var id: Observable<String?>  = Observable<String?>(nil)

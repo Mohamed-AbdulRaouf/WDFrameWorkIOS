@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public class STItemAttributeDTODAL : Codable,ISTItemAttributeDTODAL{
     public var itemId: Int = 0
     

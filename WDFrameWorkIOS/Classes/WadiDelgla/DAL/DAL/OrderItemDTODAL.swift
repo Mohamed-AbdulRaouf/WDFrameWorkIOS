@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class OrderItemDTODAL : IOrderItemDTODAL{
     public var currencyCode: Observable<String?> = Observable<String?>(nil)
     

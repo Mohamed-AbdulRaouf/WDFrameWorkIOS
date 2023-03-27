@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class UserDTODAL :BaseUserDTODAL, Codable, IUserDTODAL{
     
     public var userId = Observable<String?>(nil)

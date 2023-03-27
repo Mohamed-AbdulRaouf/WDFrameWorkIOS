@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 //import DAL
-public class QRcodeViewController: QRController,IBaseController{
+class QRcodeViewController: QRController,IBaseController{
     
     // MARK: - Properties
     public typealias T = IQRViewModel
@@ -25,7 +25,7 @@ public class QRcodeViewController: QRController,IBaseController{
     @IBOutlet weak var skiptBtn: UIButton!
     
     // MARK: - View Life Cycle
-    open override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         //bind UI
@@ -33,17 +33,17 @@ public class QRcodeViewController: QRController,IBaseController{
         self.bindingData()
     }
     
-     open override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.navigationController?.navigationBar.topItem?.title = R.string.localizable.scan_earn()
     }
-    open override func viewWillDisappear(_ animated: Bool) {
+     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
     // MARK: - Functions
-    public override func presentCamera()  {
+    override func presentCamera()  {
         DispatchQueue.main.async {
             self.captureSession = AVCaptureSession()
             guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }

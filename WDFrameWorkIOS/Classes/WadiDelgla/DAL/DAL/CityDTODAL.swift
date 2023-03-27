@@ -25,7 +25,7 @@
 //}
 //import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class CityDTODAL :SearchItemDTOModelDAL,ICityDTODAL  {
     
     public  var areas: Observable<[SearchItemDTOModelDAL]?> = Observable<[SearchItemDTOModelDAL]?>(nil)

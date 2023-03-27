@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.6'
+  spec.version          = '1.1.9'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -100,7 +100,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'GoogleMaps'
   spec.dependency 'GooglePlaces'
   spec.dependency 'Alamofire' , '~> 5.6.4'
-  spec.dependency 'SwiftyJSON', '~> 4.0'
+#  spec.dependency 'SwiftyJSON', '~> 4.0'
   spec.dependency 'R.swift'
   spec.dependency 'SwifterSwift'
   spec.dependency 'CachyKit'
@@ -125,7 +125,11 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
-  spec.dependency 'FawryPaySDK'
+  spec.dependency 'AcceptCardSDK'
+  spec.dependency 'Japx'
+  spec.dependency 'Japx/Codable'
+#  spec.dependency 'MBProgressHUD'
+#  spec.dependency 'FawryPaySDK'
 #  spec.dependency 'MBRadioCheckboxButton'
 #  spec.dependency 'MBRadioButton'
 #  spec.dependency 'AZDialogView' not working

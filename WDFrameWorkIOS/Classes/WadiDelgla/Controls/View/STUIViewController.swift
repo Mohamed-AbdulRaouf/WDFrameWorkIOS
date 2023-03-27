@@ -12,9 +12,9 @@ import UIKit
 //import Toast_Swift
 import RswiftResources
 //import BLL
-open class STUIViewController: UIViewController {
+class STUIViewController: UIViewController {
     //MARK: - VIEW LIFE CYCLE
-    open override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // remove dark mode
         // overrideUserInterfaceStyle is available with iOS 13
@@ -23,11 +23,11 @@ open class STUIViewController: UIViewController {
             overrideUserInterfaceStyle = .light
         }
     }
-    open override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getCattItemsCountBadget()
     }
-    open override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.defaultUI()
     }
@@ -157,7 +157,7 @@ extension STUIViewController {
         self.showAlertMessage(message: message)
     }
     
-    func showAlertMessage(title: String? = "", message: String?, selfDismissing: Bool = true, time: TimeInterval = 3) {
+    func showAlertMessage(title: String? = "", message: String?, selfDismissing: Bool = true, time: TimeInterval = 2) {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         

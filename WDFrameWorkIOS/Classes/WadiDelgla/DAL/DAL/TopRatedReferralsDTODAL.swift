@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class TopRatedReferralsDTODAL : ITopRatedReferralsDTODAL{
     public var customerId: Observable<Int?> = Observable<Int?>(nil)
     

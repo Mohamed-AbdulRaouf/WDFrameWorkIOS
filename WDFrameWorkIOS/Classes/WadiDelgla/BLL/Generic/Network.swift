@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
 public class NetworkBLL: NetworkingBLL {
     public init() {}
     /*

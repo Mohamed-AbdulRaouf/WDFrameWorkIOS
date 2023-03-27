@@ -8,7 +8,7 @@
 
 import Foundation
 ////import DAL
-import SwiftyJSON
+//import SwiftyJSON
 /*---UserDefaults---*/
 public extension UserDefaults {
     //makes the string safer

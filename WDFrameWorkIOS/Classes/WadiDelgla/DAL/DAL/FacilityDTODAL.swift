@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class FacilityDTODAL : BaseFilterDTODAL,Codable, IFacilityDTODAL{
     public var facilityDescription: Observable<String?> = Observable<String?>(nil)
     

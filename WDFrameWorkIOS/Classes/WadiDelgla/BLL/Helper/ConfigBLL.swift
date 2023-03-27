@@ -13,7 +13,7 @@
 //import Firebase
 import Alamofire
 ////import DAL
-import SwiftyJSON
+//import SwiftyJSON
 //import FirebaseAuth
 //import FirebaseCore
 public protocol BLLConfigBLL {

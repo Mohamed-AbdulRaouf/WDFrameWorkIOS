@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public class STCartPaymentDTODAL : Codable,ISTCartPaymentDTODAL{
     
     public var cardData: CardDTODAL? = nil

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
     
     public var brandId: Int = 0

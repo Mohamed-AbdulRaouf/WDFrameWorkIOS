@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class BranchDTODAL :IBranchDTODAL{
 
     public var branchId: Observable<Int?> = Observable<Int?>(nil)

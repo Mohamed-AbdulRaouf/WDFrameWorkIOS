@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class ChoiceDTODAL : IChoiceDTODAL{
  
     public var choiceId: Observable<Int?> = Observable<Int?>(nil)

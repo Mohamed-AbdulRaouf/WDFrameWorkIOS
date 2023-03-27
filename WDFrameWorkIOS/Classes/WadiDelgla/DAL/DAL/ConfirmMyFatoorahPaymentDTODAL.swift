@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class ConfirmMyFatoorahPaymentDTODAL : IConfirmMyFatoorahPaymentDTODAL,Codable{
     
     public var referencePaymentId: Observable<String?> = Observable<String?>(nil)

@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class CardDTODAL :Codable,ICardDTODAL{
     public var cardHolderName: Observable<String?> = Observable<String?>(nil)
     

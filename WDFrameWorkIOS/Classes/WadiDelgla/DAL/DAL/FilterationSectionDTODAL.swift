@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class FilterationSectionDTODAL : IFilterationSectionDTODAL{
 
     public var title: Observable<String?> = Observable<String?>(nil)
