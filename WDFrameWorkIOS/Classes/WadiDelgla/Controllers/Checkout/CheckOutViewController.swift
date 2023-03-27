@@ -7,9 +7,7 @@
 //
 
 import UIKit
-//import DAL
 import SVProgressHUD
-//import FawryPaySDK
 import AcceptSDK
 
 class CheckOutViewController: STUIViewController,IBaseController {
