@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import Network
 ////import DAL
-import SwiftyJSON
+//import SwiftyJSON
 public class LocationUseCasesBLL : LocationServiceBLL  {
    
     

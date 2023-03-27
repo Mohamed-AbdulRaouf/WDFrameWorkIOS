@@ -7,7 +7,7 @@
 //
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class UserAddressDTODAL :IUserAddressDTODAL{
     
     public var id: Observable<Int?> = Observable<Int?>(nil)

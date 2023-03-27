@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class CategoryMenuItemsDTODAL : ICategoryMenuItemsDTODAL{
     public var categoryID: Observable<Int?> = Observable<Int?>(nil)
     

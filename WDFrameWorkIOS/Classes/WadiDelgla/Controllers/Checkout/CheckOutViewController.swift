@@ -9,7 +9,8 @@
 import UIKit
 //import DAL
 import SVProgressHUD
-import FawryPaySDK
+//import FawryPaySDK
+import AcceptSDK
 
 class CheckOutViewController: STUIViewController,IBaseController {
     
@@ -24,15 +25,21 @@ class CheckOutViewController: STUIViewController,IBaseController {
     @IBOutlet weak var finalizeOrderButton: UIButton!
     
     // MARK: - FawryPay Var
-    let serverURL = "https://atfawry.fawrystaging.com/"
-    let merchantCode = "+/IAAY2nothN6tNlekupwA=="
-    let secureKey = "4b815c12-891c-42ab-b8de-45bd6bd02c3d"
-    let customerProfileId = "7117"
+//    let serverURL = "https://atfawry.fawrystaging.com/"
+//    let merchantCode = "+/IAAY2nothN6tNlekupwA=="
+//    let secureKey = "4b815c12-891c-42ab-b8de-45bd6bd02c3d"
+//    let customerProfileId = "7117"
+    // MARK: - Paymob Var
+    let accept = AcceptSDK()
+    // place your payment key here
+    let KEY: String = ""
+    let repo = RepositoryPaymob(network: MainNetworkPaymob())
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // paymob delegate
+        self.accept.delegate = self
         //bind UI
         self.setupTableView()
         self.finalizeOrderButton.setTitle(R.string.localizable.finalize_order(), for: .normal)
@@ -84,7 +91,9 @@ class CheckOutViewController: STUIViewController,IBaseController {
     func openCreditCardForm(){
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId else{ return }
 //        self.viewModel?.makeOrder()
-        self.FawryPayment()
+//        self.FawryPayment()
+        paymobPayment()
+//        self.authenticationRequest()
 //            let vc = StoryboardScene.Payment.creditCardViewController.instantiate()
 //            vc.viewModel?.sourceDelegate = self
 //            self.navigationController?.pushViewController(vc)
@@ -115,71 +124,171 @@ extension CheckOutViewController: IUserAddressProtocol{
     }
 }
 
-// MARK: - FawryPay Func
+// MARK: - Paymob AcceptSDKDelegate
+extension CheckOutViewController: AcceptSDKDelegate {
+    func userDidCancel() {
+        debugPrint("")
+        self.showToast("transaction is cancelled".localized())
+    }
+
+    func paymentAttemptFailed(_ error: AcceptSDKError, detailedDescription: String) {
+        debugPrint("paymentAttemptFailed")
+        self.showToast("transaction failed".localized())
+    }
+
+    func transactionRejected(_ payData: PayResponse) {
+        debugPrint("transactionRejected")
+        self.showToast("transaction failed".localized())
+    }
+
+    func transactionAccepted(_ payData: PayResponse) {
+        debugPrint("transactionAccepted")
+        self.viewModel?.makeOrder()
+    }
+
+    func transactionAccepted(_ payData: PayResponse, savedCardData: SaveCardResponse) {
+        debugPrint("transactionAccepted")
+        self.viewModel?.makeOrder()
+    }
+
+    func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {
+        debugPrint("userDidCancel3dSecurePayment")
+        self.showToast("transaction failed".localized())
+    }
+
+}
+
+// MARK: - Paymob Func
 extension CheckOutViewController {
-    func FawryPayment() {
-        let customerInfo = LaunchCustomerModel(customerName: "Name",
-                                               customerEmail: "email@gmail.com",
-                                               customerMobile: "+0100000000",
-                                               customerProfileId: customerProfileId)
-        
-        let merchantInfo = LaunchMerchantModel(merchantCode: merchantCode,
-                                               merchantRefNum: FrameworkHelper.shared?.getMerchantReferenceNumber(),
-                                               secureKey: secureKey)
-        
-        let chargeInfo = ChargeItemsParamsModel(itemId: "101",
-                                                charge_description: "item description",
-                                                price: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0),
-                                                quantity: 1)
-        
-        //total taxes of the items if not included in the item price
-//        let taxesInfo = ChargeItemsParamsModel(itemId: "taxes",
-//                                               charge_description: "",
-//                                               price: 28,
-//                                               quantity: 1)
-        
-        
-        let launchModel = FawryLaunchModel(customer: customerInfo,
-                                           merchant: merchantInfo,
-                                           chargeItems: [chargeInfo], // taxesInfo
-                                           signature: nil,
-                                           allowVoucher: false,
-                                           paymentWithCardToken: false,
-                                           paymentMethod: .card)
-        
-        launchModel.skipCustomerInput = true
-        launchModel.skipReceipt = false
-        FrameworkHelper.shared?.launchAnonymousSDK(on: self,
-                                                   launchModel: launchModel,
-                                                   baseURL: serverURL,
-                                                   appLanguage: AppLanguage.English,
-                                                   enable3Ds: true,
-                                                   authCaptureModePayment: false,
-                                                   completionBlock: { (status) in
-            print("Payment Method: completionBlock \(status)")
-        }, onPreCompletionHandler: { (error) in
-            print("Payment Method: onPreCompletionHandler \(error?.message)")
-        }, errorBlock: { (error) in
-            print("Payment Method: errorBlock with CODE:\(error?.errorCode) and MSG:\(error?.message)")
-            self.showToast(error?.message ?? "transaction failed".localized())
-        }, onPaymentCompletedHandler: { (chargeResponse) in
-            print("Payment Method: onPaymentCompletedHandler chargeResponse \(chargeResponse.debugDescription)")
-            if let response = chargeResponse as? PaymentChargeResponse {
-                print(response.merchantRefNumber)
-                print(response.orderStatus)
+    // func
+    func authenticationRequest() {
+        repo.authenticationRequest { [weak self] result in
+            guard let self = self else {return}
+            switch result {
+            case .success(let res):
+                guard let token = res.token else {
+                    self.showToast("please try again later".localized())
+                    return
+                }
+                UserDefaultsApp.shared.auth_token = token
+                self.orderRegistration()
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
             }
-            if let er = chargeResponse as? FawryError{
-                print(er.message)
-                self.showToast(er.message ?? "transaction failed".localized())
+        }
+    }
+    
+    func orderRegistration() {
+        repo.orderRegistration(amount: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)) { [weak self] result in
+            guard let self = self else {return}
+            switch result {
+            case .success(let res):
+                guard let orderID = res.id else {
+                    self.showToast("please try again later".localized())
+                    return
+                }
+                UserDefaultsApp.shared.orderPayID = "\(orderID)"
+                self.paymentKeyRequest()
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
             }
-        }, onSuccessHandler: { (response) in
-            let chargeResponse = response as? PaymentChargeResponse
-            print("Payment Method: onSuccessHandler: \(chargeResponse?.merchantRefNumber)")
-            print("Payment Method: onSuccessHandler: \(chargeResponse?.orderStatus)")
-            self.viewModel?.cart?.isOnlinePayment = true
-            self.viewModel?.cart?.merchantRefNumber = chargeResponse?.merchantRefNumber ?? ""
-            self.viewModel?.cart?.referenceNumber = chargeResponse?.referenceNumber ?? ""
-            self.viewModel?.makeOrder()
-        })
+        }
+    }
+    
+    func paymentKeyRequest() {
+        repo.paymentKeyRequest(amount: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)) { [weak self] result in
+            guard let self = self else {return}
+            switch result {
+            case .success(let res):
+                guard let token = res.token else {
+                    self.showToast("please try again later".localized())
+                    return
+                }
+                UserDefaultsApp.shared.orderPaymentKey = "\(token)"
+                self.paymobPayment()
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }
+    }
+    
+    func paymobPayment() {
+        do {
+            try accept.presentPayVC(vC: self, paymentKey: UserDefaultsApp.shared.orderPaymentKey, saveCardDefault:
+                                        true, showSaveCard: true, showAlerts: true)
+        } catch AcceptSDKError.MissingArgumentError(let errorMessage) {
+            print(errorMessage)
+        }  catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
+
+// MARK: - FawryPay Func
+//extension CheckOutViewController {
+//    func FawryPayment() {
+//        let customerInfo = LaunchCustomerModel(customerName: "Name",
+//                                               customerEmail: "email@gmail.com",
+//                                               customerMobile: "+0100000000",
+//                                               customerProfileId: customerProfileId)
+//        
+//        let merchantInfo = LaunchMerchantModel(merchantCode: merchantCode,
+//                                               merchantRefNum: FrameworkHelper.shared?.getMerchantReferenceNumber(),
+//                                               secureKey: secureKey)
+//        
+//        let chargeInfo = ChargeItemsParamsModel(itemId: "101",
+//                                                charge_description: "item description",
+//                                                price: Double(self.viewModel?.calcResponse?.totalPay.value ?? 0.0),
+//                                                quantity: 1)
+//        
+//        //total taxes of the items if not included in the item price
+////        let taxesInfo = ChargeItemsParamsModel(itemId: "taxes",
+////                                               charge_description: "",
+////                                               price: 28,
+////                                               quantity: 1)
+//        
+//        
+//        let launchModel = FawryLaunchModel(customer: customerInfo,
+//                                           merchant: merchantInfo,
+//                                           chargeItems: [chargeInfo], // taxesInfo
+//                                           signature: nil,
+//                                           allowVoucher: false,
+//                                           paymentWithCardToken: false,
+//                                           paymentMethod: .card)
+//        
+//        launchModel.skipCustomerInput = true
+//        launchModel.skipReceipt = false
+//        FrameworkHelper.shared?.launchAnonymousSDK(on: self,
+//                                                   launchModel: launchModel,
+//                                                   baseURL: serverURL,
+//                                                   appLanguage: AppLanguage.English,
+//                                                   enable3Ds: true,
+//                                                   authCaptureModePayment: false,
+//                                                   completionBlock: { (status) in
+//            print("Payment Method: completionBlock \(status)")
+//        }, onPreCompletionHandler: { (error) in
+//            print("Payment Method: onPreCompletionHandler \(error?.message)")
+//        }, errorBlock: { (error) in
+//            print("Payment Method: errorBlock with CODE:\(error?.errorCode) and MSG:\(error?.message)")
+//            self.showToast(error?.message ?? "transaction failed".localized())
+//        }, onPaymentCompletedHandler: { (chargeResponse) in
+//            print("Payment Method: onPaymentCompletedHandler chargeResponse \(chargeResponse.debugDescription)")
+//            if let response = chargeResponse as? PaymentChargeResponse {
+//                print(response.merchantRefNumber)
+//                print(response.orderStatus)
+//            }
+//            if let er = chargeResponse as? FawryError{
+//                print(er.message)
+//                self.showToast(er.message ?? "transaction failed".localized())
+//            }
+//        }, onSuccessHandler: { (response) in
+//            let chargeResponse = response as? PaymentChargeResponse
+//            print("Payment Method: onSuccessHandler: \(chargeResponse?.merchantRefNumber)")
+//            print("Payment Method: onSuccessHandler: \(chargeResponse?.orderStatus)")
+//            self.viewModel?.cart?.isOnlinePayment = true
+//            self.viewModel?.cart?.merchantRefNumber = chargeResponse?.merchantRefNumber ?? ""
+//            self.viewModel?.cart?.referenceNumber = chargeResponse?.referenceNumber ?? ""
+//            self.viewModel?.makeOrder()
+//        })
+//    }
+//}

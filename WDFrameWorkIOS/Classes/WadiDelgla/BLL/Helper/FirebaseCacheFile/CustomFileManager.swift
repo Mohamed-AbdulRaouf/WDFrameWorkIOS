@@ -8,7 +8,7 @@
 
 import Foundation
 ////import DAL
-import SwiftyJSON
+//import SwiftyJSON
 class CustomFileManagerBLL {
     static func getSaveFileUrl(fileName: String) -> String{
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

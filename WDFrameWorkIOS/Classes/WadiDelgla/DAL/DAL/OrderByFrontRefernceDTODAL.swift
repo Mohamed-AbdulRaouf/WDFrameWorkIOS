@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class OrderByFrontRefernceDTODAL : IOrderByFrontRefernceDTODAL{
     
     public var status: Observable<Bool?> = Observable<Bool?>(nil)

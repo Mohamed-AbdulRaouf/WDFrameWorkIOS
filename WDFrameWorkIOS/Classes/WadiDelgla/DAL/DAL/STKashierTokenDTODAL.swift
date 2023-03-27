@@ -8,7 +8,7 @@
 
   
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public class STKashierTokenDTODAL : Codable,ISTKashierTokenDTODAL{
   
     public var cardNumber: String = ""

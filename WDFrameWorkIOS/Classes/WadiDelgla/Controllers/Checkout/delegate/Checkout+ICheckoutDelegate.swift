@@ -109,7 +109,7 @@ extension CheckOutViewController : ICheckoutViewController{
     }
     
     func confirmPaymentWithCreditCard() {
-        self.FawryPayment()
+//        self.FawryPayment()
     }
     
 }

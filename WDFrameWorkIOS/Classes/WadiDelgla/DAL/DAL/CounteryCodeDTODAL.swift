@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class CountryDTODAL : ICountryDTODAL,Codable{
     
     public var countryId: Observable<String?> = Observable<String?>(nil)

@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class PagingDTODAL : IPagingDTODAL{
     public var pageNumber: Observable<Int?> = Observable<Int?>(nil)
     

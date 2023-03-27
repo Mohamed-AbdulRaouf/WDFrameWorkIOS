@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class OrderDetailsDTODAL :IOrderDetailsDTODAL{
     public var brandName: Observable<String?> = Observable<String?>(nil)
     

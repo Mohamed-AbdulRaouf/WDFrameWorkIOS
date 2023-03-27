@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public class CustomErrorDTODAL :Codable,ICustomErrorDTODAL{
     public var code: Observable<Int?>  = Observable<Int?>(nil)
     

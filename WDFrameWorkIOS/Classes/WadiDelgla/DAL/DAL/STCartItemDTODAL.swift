@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 public class STCartItemDTODAL:Codable, ISTCartItemDTODAL  {
     public var itemId: Int = 0
     

@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class BaseFilterDTO : IBaseFilterDTO{
     public var id: Observable<Int?> = Observable<Int?>(nil)
     

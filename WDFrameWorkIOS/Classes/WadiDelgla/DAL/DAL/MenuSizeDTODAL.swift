@@ -8,7 +8,7 @@
 
 import Foundation
 import Bond
-import SwiftyJSON
+//import SwiftyJSON
 public  class MenuSizeDTODAL : IMenuSizeDTODAL{
     public var sizeId: Observable<Int?> = Observable<Int?>(nil)
     
