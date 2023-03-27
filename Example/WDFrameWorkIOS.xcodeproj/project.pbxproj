@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34E1DD23800EEDAC24D4A3E5 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		6CE6F838AAAEFC90DE6D9CF3 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A8140F1CD55BDC1EC7DCDE /* Pods_WDFrameWorkIOS_Example.framework */; };
 		734DF81A29BC89A800FE1BF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 734DF81C29BC89A800FE1BF6 /* Localizable.strings */; };
 		73F48B7C29BAEC520075ED3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7B29BAEC520075ED3F /* Config.swift */; };
 		73F48B7E29BAECB90075ED3F /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7D29BAECB90075ED3F /* AppDelegate+.swift */; };
 		73F48B8029BAED0E0075ED3F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7F29BAED0E0075ED3F /* PushNotificationManager.swift */; };
 		73F48B8329BAEF210075ED3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F48B8129BAEF210075ED3F /* GoogleService-Info.plist */; };
 		73F48B8429BAEF210075ED3F /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F48B8229BAEF210075ED3F /* Configurations.plist */; };
-		7A72D5DEF95EBCD05EA0EBB3 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */; };
+		9670075129A5736F44195CE9 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C47C5679248D5C6625BE56 /* Pods_WDFrameWorkIOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		010E91367890CB84F3C10DEA /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		33C47C5679248D5C6625BE56 /* Pods_WDFrameWorkIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F4CC7870AE7E83D04F8766 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WDFrameWorkIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDFrameWorkIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +57,12 @@
 		73F48B7F29BAED0E0075ED3F /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		73F48B8129BAEF210075ED3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73F48B8229BAEF210075ED3F /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
-		7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7994A1B7BC25AFE5108DD83F /* WDFrameWorkIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WDFrameWorkIOS.podspec; path = ../WDFrameWorkIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7C9824DA07FF507EED63FAFF /* Pods-WDFrameWorkIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		93A8140F1CD55BDC1EC7DCDE /* Pods_WDFrameWorkIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDFrameWorkIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F56CF9797800E4326D757BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A6CDCAC0D745AAEEEFD8E10A /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D286A10A42196AD89B8998BD /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDFrameWorkIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-WDFrameWorkIOS_Tests/Pods-WDFrameWorkIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E1DD23800EEDAC24D4A3E5 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */,
+				6CE6F838AAAEFC90DE6D9CF3 /* Pods_WDFrameWorkIOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A72D5DEF95EBCD05EA0EBB3 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */,
+				9670075129A5736F44195CE9 /* Pods_WDFrameWorkIOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,19 +88,19 @@
 		1DFC080D1A8871D88DFA68C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */,
-				DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */,
-				55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */,
-				5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */,
+				A6CDCAC0D745AAEEEFD8E10A /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */,
+				7C9824DA07FF507EED63FAFF /* Pods-WDFrameWorkIOS_Example.release.xcconfig */,
+				010E91367890CB84F3C10DEA /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */,
+				D286A10A42196AD89B8998BD /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		511808185A095C5AA5207384 /* Frameworks */ = {
+		2E5BAEB2C05FA044283A88F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4AD86A6889EC09EEC66E044E /* Pods_WDFrameWorkIOS_Example.framework */,
-				1E8B45F7B16E1408D26817C0 /* Pods_WDFrameWorkIOS_Tests.framework */,
+				93A8140F1CD55BDC1EC7DCDE /* Pods_WDFrameWorkIOS_Example.framework */,
+				33C47C5679248D5C6625BE56 /* Pods_WDFrameWorkIOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,7 +114,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				1DFC080D1A8871D88DFA68C6 /* Pods */,
-				511808185A095C5AA5207384 /* Frameworks */,
+				2E5BAEB2C05FA044283A88F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WDFrameWorkIOS_Example" */;
 			buildPhases = (
-				248ADE16B1569C9D8FFA2DC0 /* [CP] Check Pods Manifest.lock */,
+				FC1B92C0E7DC2F1787E19596 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				1E5F317BFE5DE8AB8C1DC0EF /* [CP] Embed Pods Frameworks */,
-				812A813F1FC278265C4BEEA9 /* [CP] Copy Pods Resources */,
+				19CA1BF13B731DB878C2EB95 /* [CP] Embed Pods Frameworks */,
+				E5ADD1980510CAF28C585515 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,7 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WDFrameWorkIOS_Tests" */;
 			buildPhases = (
-				99C15910D236D37D1BDAAFF7 /* [CP] Check Pods Manifest.lock */,
+				09F9881D9F032F5E8D4E883E /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -292,7 +292,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E5F317BFE5DE8AB8C1DC0EF /* [CP] Embed Pods Frameworks */ = {
+		09F9881D9F032F5E8D4E883E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19CA1BF13B731DB878C2EB95 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,29 +400,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		248ADE16B1569C9D8FFA2DC0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		812A813F1FC278265C4BEEA9 /* [CP] Copy Pods Resources */ = {
+		E5ADD1980510CAF28C585515 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -426,7 +426,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDFrameWorkIOS_Example/Pods-WDFrameWorkIOS_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99C15910D236D37D1BDAAFF7 /* [CP] Check Pods Manifest.lock */ = {
+		FC1B92C0E7DC2F1787E19596 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -441,7 +441,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WDFrameWorkIOS_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -613,7 +613,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7969C2D113C4487CBF290AAB /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */;
+			baseConfigurationReference = A6CDCAC0D745AAEEEFD8E10A /* Pods-WDFrameWorkIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
@@ -632,7 +632,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD64746CF9BA345AF2B60900 /* Pods-WDFrameWorkIOS_Example.release.xcconfig */;
+			baseConfigurationReference = 7C9824DA07FF507EED63FAFF /* Pods-WDFrameWorkIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
@@ -651,7 +651,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55E2FAF7C2A29228BAF56A92 /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = 010E91367890CB84F3C10DEA /* Pods-WDFrameWorkIOS_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 6628XBBKSX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -674,7 +674,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F8FB11D71E717682D249175 /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */;
+			baseConfigurationReference = D286A10A42196AD89B8998BD /* Pods-WDFrameWorkIOS_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 6628XBBKSX;
 				FRAMEWORK_SEARCH_PATHS = (
