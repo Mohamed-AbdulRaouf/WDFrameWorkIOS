@@ -92,8 +92,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId else{ return }
 //        self.viewModel?.makeOrder()
 //        self.FawryPayment()
-        paymobPayment()
-//        self.authenticationRequest()
+        self.authenticationRequest()
 //            let vc = StoryboardScene.Payment.creditCardViewController.instantiate()
 //            vc.viewModel?.sourceDelegate = self
 //            self.navigationController?.pushViewController(vc)
