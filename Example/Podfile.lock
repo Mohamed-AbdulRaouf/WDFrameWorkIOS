@@ -164,7 +164,7 @@ PODS:
   - SwinjectStoryboard (2.2.2):
     - Swinject (~> 2.7.1)
   - TextFieldEffects (1.6.0)
-  - WDFrameWorkIOS (1.1.8):
+  - WDFrameWorkIOS (1.1.9):
     - AcceptCardSDK
     - Alamofire (~> 5.6.4)
     - Bond
@@ -286,7 +286,7 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  WDFrameWorkIOS: b87a3be8d101f55cbc51af4174c119a87b32f19f
+  WDFrameWorkIOS: a376abac31dcd8a1803d02bcc30733b947ad7a15
 
 PODFILE CHECKSUM: a4de8f8e79aa95b4c2fdd8ce7f24316ed0d91060
 
