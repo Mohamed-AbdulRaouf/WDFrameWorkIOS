@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-import AcceptSDK
+//import AcceptSDK
 
 class CheckOutViewController: STUIViewController,IBaseController {
     
@@ -28,7 +28,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
 //    let secureKey = "4b815c12-891c-42ab-b8de-45bd6bd02c3d"
 //    let customerProfileId = "7117"
     // MARK: - Paymob Var
-    let accept = AcceptSDK()
+//    let accept = AcceptSDK()
     // place your payment key here
     let KEY: String = ""
     let repo = RepositoryPaymob(network: MainNetworkPaymob())
@@ -37,7 +37,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // paymob delegate
-        self.accept.delegate = self
+//        self.accept.delegate = self
         //bind UI
         self.setupTableView()
         self.finalizeOrderButton.setTitle(R.string.localizable.finalize_order(), for: .normal)
@@ -122,38 +122,38 @@ extension CheckOutViewController: IUserAddressProtocol{
 }
 
 // MARK: - Paymob AcceptSDKDelegate
-extension CheckOutViewController: AcceptSDKDelegate {
-    func userDidCancel() {
-        debugPrint("")
-        self.showToast("transaction is cancelled".localized())
-    }
-
-    func paymentAttemptFailed(_ error: AcceptSDKError, detailedDescription: String) {
-        debugPrint("paymentAttemptFailed")
-        self.showToast("transaction failed".localized())
-    }
-
-    func transactionRejected(_ payData: PayResponse) {
-        debugPrint("transactionRejected")
-        self.showToast("transaction failed".localized())
-    }
-
-    func transactionAccepted(_ payData: PayResponse) {
-        debugPrint("transactionAccepted")
-        self.viewModel?.makeOrder()
-    }
-
-    func transactionAccepted(_ payData: PayResponse, savedCardData: SaveCardResponse) {
-        debugPrint("transactionAccepted")
-        self.viewModel?.makeOrder()
-    }
-
-    func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {
-        debugPrint("userDidCancel3dSecurePayment")
-        self.showToast("transaction failed".localized())
-    }
-
-}
+//extension CheckOutViewController: AcceptSDKDelegate {
+//    func userDidCancel() {
+//        debugPrint("")
+//        self.showToast("transaction is cancelled".localized())
+//    }
+//
+//    func paymentAttemptFailed(_ error: AcceptSDKError, detailedDescription: String) {
+//        debugPrint("paymentAttemptFailed")
+//        self.showToast("transaction failed".localized())
+//    }
+//
+//    func transactionRejected(_ payData: PayResponse) {
+//        debugPrint("transactionRejected")
+//        self.showToast("transaction failed".localized())
+//    }
+//
+//    func transactionAccepted(_ payData: PayResponse) {
+//        debugPrint("transactionAccepted")
+//        self.viewModel?.makeOrder()
+//    }
+//
+//    func transactionAccepted(_ payData: PayResponse, savedCardData: SaveCardResponse) {
+//        debugPrint("transactionAccepted")
+//        self.viewModel?.makeOrder()
+//    }
+//
+//    func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {
+//        debugPrint("userDidCancel3dSecurePayment")
+//        self.showToast("transaction failed".localized())
+//    }
+//
+//}
 
 // MARK: - Paymob Func
 extension CheckOutViewController {
@@ -210,14 +210,14 @@ extension CheckOutViewController {
     }
     
     func paymobPayment() {
-        do {
-            try accept.presentPayVC(vC: self, paymentKey: UserDefaultsApp.shared.orderPaymentKey, saveCardDefault:
-                                        true, showSaveCard: true, showAlerts: true)
-        } catch AcceptSDKError.MissingArgumentError(let errorMessage) {
-            print(errorMessage)
-        }  catch let error {
-            print(error.localizedDescription)
-        }
+//        do {
+//            try accept.presentPayVC(vC: self, paymentKey: UserDefaultsApp.shared.orderPaymentKey, saveCardDefault:
+//                                        true, showSaveCard: true, showAlerts: true)
+//        } catch AcceptSDKError.MissingArgumentError(let errorMessage) {
+//            print(errorMessage)
+//        }  catch let error {
+//            print(error.localizedDescription)
+//        }
     }
 }
 
