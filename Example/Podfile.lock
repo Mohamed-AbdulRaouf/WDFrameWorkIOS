@@ -130,7 +130,7 @@ PODS:
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
   - PromisesObjC (2.2.0)
-  - R.swift (7.3.0)
+  - R.swift (7.2.4)
   - ReactiveKit (3.19.1)
   - RxSwift (6.5.0)
   - SideMenu (6.5.0)
@@ -164,7 +164,7 @@ PODS:
   - SwinjectStoryboard (2.2.2):
     - Swinject (~> 2.7.1)
   - TextFieldEffects (1.6.0)
-  - WDFrameWorkIOS (1.1.9):
+  - WDFrameWorkIOS (1.1.10):
     - AcceptCardSDK
     - Alamofire (~> 5.6.4)
     - Bond
@@ -186,7 +186,7 @@ PODS:
     - MOLH
     - MyFatoorah
     - PopupDialog (~> 1.1)
-    - R.swift
+    - R.swift (~> 7.2.4)
     - RxSwift
     - SideMenu
     - SVProgressHUD
@@ -277,7 +277,7 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
-  R.swift: cef1c530541cb49412752721797f10dae6b32d11
+  R.swift: 681bb9135f482e7a81d9d27445b837fef5467e11
   ReactiveKit: a36ebeb959fe6852dd674cc423163bfffb7e0541
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
@@ -286,8 +286,8 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  WDFrameWorkIOS: a376abac31dcd8a1803d02bcc30733b947ad7a15
+  WDFrameWorkIOS: 0add3236f15451237ea5ba5167d76a5c150b49c0
 
-PODFILE CHECKSUM: a4de8f8e79aa95b4c2fdd8ce7f24316ed0d91060
+PODFILE CHECKSUM: a61dac83a5857730232be662eb4c69b4e7ca4fe8
 
 COCOAPODS: 1.12.0
