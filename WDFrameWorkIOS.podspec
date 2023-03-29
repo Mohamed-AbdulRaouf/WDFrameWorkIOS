@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.1.6'
+  spec.version          = '3.1.7'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -131,7 +131,9 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'MOLH'
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
-  spec.dependency 'AcceptCardSDK','5.5.1'
+#  spec.dependency 'AcceptSDK', 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
+spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
+#  spec.vendored_frameworks = 'WDFrameWorkIOS.xcframework', 'AcceptSDK.xcframework'
 
 
 #  spec.dependency 'MBProgressHUD'
