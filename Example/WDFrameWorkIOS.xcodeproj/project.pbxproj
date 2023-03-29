@@ -619,7 +619,7 @@
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
 				CUSTOMER_SOURCE_ID = 5;
 				DEVELOPMENT_TEAM = 6628XBBKSX;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WDFrameWorkIOS/Info.plist;
@@ -641,7 +641,7 @@
 				CODE_SIGN_ENTITLEMENTS = WDFrameWorkIOS_Example.entitlements;
 				CUSTOMER_SOURCE_ID = 5;
 				DEVELOPMENT_TEAM = 6628XBBKSX;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = WDFrameWorkIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
