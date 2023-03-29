@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '2.1.1'
+  spec.version          = '2.2.1'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
