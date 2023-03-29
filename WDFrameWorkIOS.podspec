@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.1.7'
+  spec.version          = '3.1.8'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -58,7 +58,7 @@ spec.requires_arc = true
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg,storyboardc,xcframework}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,storyboard,xib,png,jpeg,jpg,storyboardc,xcframework}'}
 spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
