@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '1.1.11'
+  spec.version          = '2.1.0'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -34,8 +34,8 @@ Pod::Spec.new do |spec|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   spec.ios.deployment_target = '13.0'
-#  spec.swift_version    = '5.0'
-  spec.swift_versions = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7']
+  spec.swift_version  = '5.0'
+#  spec.swift_versions = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7']
   
 #  spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
 #  spec.resource_bundles = {
@@ -125,7 +125,6 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
-  spec.dependency 'AcceptCardSDK'
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
 #  spec.dependency 'MBProgressHUD'

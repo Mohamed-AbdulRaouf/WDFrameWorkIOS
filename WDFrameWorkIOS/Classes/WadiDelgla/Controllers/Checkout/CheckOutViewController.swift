@@ -8,7 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-//import AcceptSDK
 
 class CheckOutViewController: STUIViewController,IBaseController {
     
