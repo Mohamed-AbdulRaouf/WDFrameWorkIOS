@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.1.8'
+  spec.version          = '3.1.9'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -56,9 +56,9 @@ spec.static_framework = true
 spec.requires_arc = true
 
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework}'
+spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework,framework}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,storyboard,xib,png,jpeg,jpg,storyboardc,xcframework}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,storyboard,xib,png,jpeg,jpg,storyboardc,xcframework,framework}'}
 spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
@@ -132,7 +132,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
 #  spec.dependency 'AcceptSDK', 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
-spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
+spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.framework'
 #  spec.vendored_frameworks = 'WDFrameWorkIOS.xcframework', 'AcceptSDK.xcframework'
 
 
