@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.1.3'
+  spec.version          = '3.1.4'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -53,12 +53,12 @@ Pod::Spec.new do |spec|
 #}
 
 spec.static_framework = true
-#spec.requires_arc = true
+spec.requires_arc = true
 
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc}'
+spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg,storyboardc}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg,storyboardc,xcframework}'}
 spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
@@ -129,6 +129,8 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
   spec.dependency 'AcceptCardSDK','5.5.1'
+  spec.vendored_frameworks = 'AcceptSDK.xcframework'
+
 #  spec.dependency 'MBProgressHUD'
 #  spec.dependency 'FawryPaySDK'
 #  spec.dependency 'MBRadioCheckboxButton'
