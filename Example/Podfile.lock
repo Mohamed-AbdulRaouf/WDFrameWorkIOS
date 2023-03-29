@@ -1,4 +1,5 @@
 PODS:
+  - AcceptCardSDK (5.4.5)
   - Alamofire (5.6.4)
   - Bond (7.8.1):
     - Differ (~> 1.4)
@@ -163,7 +164,8 @@ PODS:
   - SwinjectStoryboard (2.2.2):
     - Swinject (~> 2.7.1)
   - TextFieldEffects (1.6.0)
-  - WDFrameWorkIOS (2.1.0):
+  - WDFrameWorkIOS (2.1.1):
+    - AcceptCardSDK
     - Alamofire (~> 5.6.4)
     - Bond
     - CachyKit
@@ -198,6 +200,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AcceptCardSDK
     - Alamofire
     - Bond
     - CachyKit
@@ -243,6 +246,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AcceptCardSDK: 0ab9ad9d88e8124eb1063acb77f92a130e620245
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Bond: 87075c7f20f37ea3e73dc7057fce839787bf46eb
   CachyKit: faf004f56dc0435d7eadbe2569844a59fdc4f334
@@ -282,7 +286,7 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  WDFrameWorkIOS: 9537967f555ab4bf510a256a485522a527c9ba6d
+  WDFrameWorkIOS: f722e55d463bf1108d65f9dd3f5e88ca87316083
 
 PODFILE CHECKSUM: a61dac83a5857730232be662eb4c69b4e7ca4fe8
 

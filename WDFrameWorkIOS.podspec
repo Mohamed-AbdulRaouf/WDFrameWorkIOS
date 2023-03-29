@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '2.1.0'
+  spec.version          = '2.1.1'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -127,6 +127,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'MOLH'
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
+  spec.dependency 'AcceptCardSDK'
 #  spec.dependency 'MBProgressHUD'
 #  spec.dependency 'FawryPaySDK'
 #  spec.dependency 'MBRadioCheckboxButton'
