@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.2.0'
+  spec.version          = '3.2.2'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -34,7 +34,7 @@ Pod::Spec.new do |spec|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   spec.ios.deployment_target = '13.0'
-  spec.swift_version  = '5.0'
+  spec.swift_version  = '5.3.2'
 #  spec.swift_versions = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7']
   
 #  spec.source_files = 'WDFrameWorkIOS/Classes/**/*'
@@ -54,11 +54,16 @@ Pod::Spec.new do |spec|
 
 spec.static_framework = true
 spec.requires_arc = true
+spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e armv7 armv7s x86_64' }
+#s.ios.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
+
+
 
 #spec.resources = "WDFrameWorkIOS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc}'
+
+spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework,framework}'
 spec.resource_bundles = {
-  'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,storyboard,xib,png,jpeg,jpg,storyboardc}'}
+  'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,storyboard,xib,png,jpeg,jpg,storyboardc,xcframework,framework}'}
 spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
 
 
@@ -98,8 +103,8 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   #  spec.resource_bundles = {
   #    'Resources' => ['WDFrameWorkIOS/Assets/Contents.json']
   #  }
-  spec.preserve_paths = "*"
-  spec.libraries = 'c++','z'
+#  spec.preserve_paths = "*"
+#  spec.libraries = 'c++','z'
 
   spec.dependency 'GoogleMaps'
   spec.dependency 'GooglePlaces'
@@ -131,8 +136,9 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'MOLH'
   spec.dependency 'Japx'
   spec.dependency 'Japx/Codable'
+  spec.dependency 'AcceptSDK'
 #  spec.dependency 'AcceptSDK', 'WDFrameWorkIOS/Classes/AcceptSDK.xcframework'
-spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.framework'
+#spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/AcceptSDK.framework'
 #  spec.vendored_frameworks = 'WDFrameWorkIOS.xcframework', 'AcceptSDK.xcframework'
 
 
