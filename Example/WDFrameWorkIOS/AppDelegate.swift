@@ -29,10 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.makeKeyAndVisible()
-        self.window = window
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(exitWDFramework), name: NSNotification.Name("exit_wdframework"), object: nil)
         // google maps api
         GMSServices.provideAPIKey(Config.googlePlacesAPIKey)
         // google places api
@@ -48,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         if #available(iOS 13.0, *) {
-            window.overrideUserInterfaceStyle = .light
+            window?.overrideUserInterfaceStyle = .light
         }
         if #available(iOS 10.0, *){
             //For iOS 10 display notifiication ( sent via APNS )
@@ -70,6 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController()))
         self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    @objc func exitWDFramework() {
+        debugPrint("exit from wdframework")
+
     }
     
     func applicationDidFinishLaunching(_ application: UIApplication) {

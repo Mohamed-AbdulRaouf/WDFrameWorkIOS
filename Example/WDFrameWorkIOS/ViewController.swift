@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnTapped(_ sender: Any) {
+        debugPrint(storyboard)
         
         let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
@@ -35,7 +36,6 @@ class ViewController: UIViewController {
         let vc = storyboard.instantiateInitialViewController()! //instantiateViewController(withIdentifier: "QRcodeViewController")
         AppDelegate.shared.window?.rootViewController = vc
         AppDelegate.shared.window?.makeKeyAndVisible()
-//        self.present(vc, animated: false, completion: nil)
     }
     
 }

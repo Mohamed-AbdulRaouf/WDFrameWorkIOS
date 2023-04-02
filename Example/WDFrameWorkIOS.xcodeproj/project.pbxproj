@@ -13,7 +13,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		734DF81A29BC89A800FE1BF6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 734DF81C29BC89A800FE1BF6 /* Localizable.strings */; };
 		73F48B7C29BAEC520075ED3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7B29BAEC520075ED3F /* Config.swift */; };
 		73F48B7E29BAECB90075ED3F /* AppDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7D29BAECB90075ED3F /* AppDelegate+.swift */; };
 		73F48B8029BAED0E0075ED3F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F48B7F29BAED0E0075ED3F /* PushNotificationManager.swift */; };
@@ -48,10 +47,8 @@
 		607FACE51AFB9204008FA782 /* WDFrameWorkIOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WDFrameWorkIOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		734DF81B29BC89A800FE1BF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		734DF81D29BC89D300FE1BF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		734DF81E29BC89D400FE1BF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		734DF81F29BC89E000FE1BF6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		73F48B7A29BADDAE0075ED3F /* WDFrameWorkIOS_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WDFrameWorkIOS_Example.entitlements; sourceTree = "<group>"; };
 		73F48B7B29BAEC520075ED3F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		73F48B7D29BAECB90075ED3F /* AppDelegate+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+.swift"; sourceTree = "<group>"; };
@@ -130,7 +127,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				734DF81C29BC89A800FE1BF6 /* Localizable.strings */,
 			);
 			name = "Example for WDFrameWorkIOS";
 			path = WDFrameWorkIOS;
@@ -274,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				734DF81A29BC89A800FE1BF6 /* Localizable.strings in Resources */,
 				73F48B8329BAEF210075ED3F /* GoogleService-Info.plist in Resources */,
 				73F48B8429BAEF210075ED3F /* Configurations.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -498,15 +493,6 @@
 				734DF81E29BC89D400FE1BF6 /* ar */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		734DF81C29BC89A800FE1BF6 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				734DF81B29BC89A800FE1BF6 /* en */,
-				734DF81F29BC89E000FE1BF6 /* ar */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

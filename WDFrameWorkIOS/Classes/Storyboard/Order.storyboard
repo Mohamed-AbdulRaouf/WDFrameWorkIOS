@@ -2092,9 +2092,6 @@
         <designable name="iVF-bb-W1J">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
-        <designable name="tdf-yd-6GW">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
     </designables>
     <resources>
         <image name="Ic_burger" width="16" height="16"/>
