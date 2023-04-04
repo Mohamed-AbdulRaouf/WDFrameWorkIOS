@@ -73,7 +73,7 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
     
     @objc func backToMainApp() {
         doPostNotification("exit_wdframework")
-        self.navigationController?.popToRootViewController(animated: true)
+//        self.navigationController?.popToRootViewController(animated: true)
     }
    
 }
