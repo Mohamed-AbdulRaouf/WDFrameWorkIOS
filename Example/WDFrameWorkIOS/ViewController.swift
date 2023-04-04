@@ -27,10 +27,11 @@ class ViewController: UIViewController {
         let bundle = Bundle(path: bundlePath!)
         let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        let firstScreenWDframework = vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController())
         // set app delegate to push view controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        var rootViewController = appDelegate?.window?.rootViewController as? UINavigationController
-        rootViewController?.pushViewController(vc, animated: true)
+        let rootViewController = appDelegate?.window?.rootViewController as? UINavigationController
+        rootViewController?.pushViewController(firstScreenWDframework, animated: true)
     }
     
 }
