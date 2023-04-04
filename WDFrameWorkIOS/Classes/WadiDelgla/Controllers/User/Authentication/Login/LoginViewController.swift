@@ -55,19 +55,9 @@ class LoginViewController: STUIViewController ,IBaseController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = UserDefaults.user  {
-//            let vc = StoryboardScene.User.userProfileNavigationViewController.instantiate()
-//            let vc = StoryboardScene.Location.locationViewController.instantiate()
-//            self.present(vc, animated: true, completion: nil)
-            
-//            let vc = StoryboardScene.Location.locationViewController.instantiate()
-//            self.navigationController?.pushViewController(vc)
             let vc = StoryboardScene.Location.locationViewController.instantiate()
-            let window = UIApplication.shared.keyWindow
-            window?.rootViewController = UINavigationController(rootViewController: vc)
-            window?.makeKeyAndVisible()
-//            self.navigationController.pus
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            
             self.phoneNumberTextField.text = GlobalConstants.shared.mobile
             self.passwordTextField.text = GlobalConstants.shared.membershipNumber
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
@@ -191,21 +181,7 @@ extension LoginViewController: ILoginViewController{
     
     func onSuccessLogin() {
         let vc = StoryboardScene.Location.locationViewController.instantiate()
-        let window = UIApplication.shared.keyWindow
-        window?.rootViewController = UINavigationController(rootViewController: vc)
-        window?.makeKeyAndVisible()
-        
-//        let vc = StoryboardScene.Location.locationViewController.instantiate()
-//        let window = UIApplication.shared.keyWindow
-//        window?.rootViewController = UINavigationController(rootViewController: vc)
-        
-//        let location = StoryboardScene.Location.locationViewController.instantiate()
-//        self.present(location, animated: true)
-        
-//        if let _ = self.delegate {
-//            self.delegate?.onUserLogedIn()
-//        }
-//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func onUpdateLayout() {

@@ -25,7 +25,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5jf-eW-z6W" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="2Gi-59-vaL"/>
                             <constraint firstItem="ZbF-rO-wN2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5Tp-fS-T3j"/>
@@ -78,6 +78,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TYf-oe-gjv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -46,7 +46,7 @@ class ReceiptViewController: STUIViewController,IBaseController {
     // MARK: - IBActions
     @IBAction func onDoneTapped(_ sender: Any) {
         let vc = StoryboardScene.Main.tabBarViewController.instantiate()
-        UIApplication.shared.keyWindow?.rootViewController = vc
+        UIApplication.shared.keyWindow?.rootViewController?.navigationController?.popToRootViewController(animated: true)
     }
 }
 

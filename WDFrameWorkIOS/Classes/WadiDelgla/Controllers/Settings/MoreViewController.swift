@@ -124,8 +124,7 @@ extension MoreViewController: IMoreProtocol,UIDocumentInteractionControllerDeleg
     }
     func openLocation() {
         let vc = StoryboardScene.Location.locationViewController.instantiate()
-        let nav = UINavigationController(rootViewController: vc)
-        UIApplication.shared.keyWindow?.rootViewController = nav
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func onReloadTable() {
         self.tableView.reloadData()

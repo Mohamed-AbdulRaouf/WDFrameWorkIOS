@@ -62,12 +62,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber = 0
         application.registerForRemoteNotifications()
-        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
-        let bundle = Bundle(path: bundlePath!)
-        let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
-        let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController()))
+        let main = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = main.instantiateInitialViewController()
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
+        
+//        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
+//        let bundle = Bundle(path: bundlePath!)
+//        let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+//        let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+//        self.window?.rootViewController = UINavigationController(rootViewController: vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController()))
+//        self.window?.makeKeyAndVisible()
         return true
     }
     
