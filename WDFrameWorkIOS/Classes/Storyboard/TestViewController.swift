@@ -18,6 +18,7 @@ public class TestViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         debugPrint("TestViewController Loaded")
     }
     
@@ -26,7 +27,7 @@ public class TestViewController: UIViewController {
         let vc = StoryboardScene.Location.locationViewController.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
 
 extension TestViewController {

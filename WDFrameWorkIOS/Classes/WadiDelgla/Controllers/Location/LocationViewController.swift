@@ -36,6 +36,7 @@ extension LocationViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         //initialize data
         viewModel?.getCitiesAndAreas()
         //bind UI
