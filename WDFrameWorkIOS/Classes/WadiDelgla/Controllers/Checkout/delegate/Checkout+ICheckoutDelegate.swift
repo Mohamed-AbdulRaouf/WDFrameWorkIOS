@@ -98,14 +98,14 @@ extension CheckOutViewController : ICheckoutViewController{
     func openReceipt(_ customerHistoryId: Int) {
 //        self.tabBarItem.badgeValue = nil
         #warning("chck from code")
-        self.showAlert(title: "Success".localized(), message: "Your request has been sent successfully".localized()) { [weak self] _ in
-            guard let self = self else {return}
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-//        let vc = StoryboardScene.Order.receiptViewController.instantiate()
-//        vc.viewModel?.customerHistoryId = customerHistoryId
-//        vc.viewModel?.isFromCart = true
-//        self.navigationController?.pushViewController(vc)
+//        self.showAlert(title: "Success".localized(), message: "Your request has been sent successfully".localized()) { [weak self] _ in
+//            guard let self = self else {return}
+//            self.navigationController?.popToRootViewController(animated: true)
+//        }
+        let vc = StoryboardScene.Order.receiptViewController.instantiate()
+        vc.viewModel?.customerHistoryId = customerHistoryId
+        vc.viewModel?.isFromCart = true
+        self.navigationController?.pushViewController(vc)
     }
     
     func confirmPaymentWithCreditCard() {
