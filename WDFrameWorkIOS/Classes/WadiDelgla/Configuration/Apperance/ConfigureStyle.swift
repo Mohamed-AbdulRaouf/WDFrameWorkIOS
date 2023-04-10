@@ -41,6 +41,7 @@ let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold) //UIFont(
 let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular) //UIFont(resource: APP_FONT_REGULAR, size: 14)
 
 let APP_FONT_REGULAR10 = UIFont.systemFont(ofSize: 10, weight: .regular)
+let APP_FONT_REGULAR11 = UIFont.systemFont(ofSize: 11, weight: .regular)
 let APP_FONT_REGULAR12 = UIFont.systemFont(ofSize: 12, weight: .regular)
 let APP_FONT_REGULAR13 = UIFont.systemFont(ofSize: 13, weight: .regular)
 let APP_FONT_REGULAR16 = UIFont.systemFont(ofSize: 16, weight: .regular)

@@ -74,17 +74,15 @@ class SetAppLanguage {
 //        UINavigationBar.appearance().tintColor = .black
 //        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
 //        UINavigationBar.appearance().isTranslucent = false
-        
         // To change background colour.
         UINavigationBar.appearance().barTintColor = .black
-
         // To change colour of tappable items.
-        UINavigationBar.appearance().tintColor = UIColor(named: "MainColor")
-
+        UINavigationBar.appearance().tintColor = UIColor(named: "MainColor")!
         // To apply textAttributes to title i.e. colour, font etc.
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.black ]
         // To control navigation bar's translucency.
         UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
         
         
 

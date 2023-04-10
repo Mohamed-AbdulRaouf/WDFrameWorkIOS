@@ -195,7 +195,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-pq-ifD">
-                                <rect key="frame" x="20" y="70" width="374" height="40"/>
+                                <rect key="frame" x="20" y="45" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysO-nN-7uf">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
@@ -249,13 +249,13 @@
                         <viewLayoutGuide key="safeArea" id="dIb-yJ-SfT"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YYz-pq-ifD" firstAttribute="top" secondItem="Cti-Ez-Abk" secondAttribute="bottom" id="4Na-9u-QdS"/>
                             <constraint firstItem="dIb-yJ-SfT" firstAttribute="trailing" secondItem="YYz-pq-ifD" secondAttribute="trailing" constant="20" id="AYd-zb-4Ph"/>
                             <constraint firstItem="Qqy-ht-4mr" firstAttribute="centerX" secondItem="dIb-yJ-SfT" secondAttribute="centerX" id="Fvh-lF-D6J"/>
                             <constraint firstItem="Cti-Ez-Abk" firstAttribute="top" secondItem="7Oq-mu-BeN" secondAttribute="top" id="IkS-5s-AAT"/>
                             <constraint firstItem="Cti-Ez-Abk" firstAttribute="trailing" secondItem="dIb-yJ-SfT" secondAttribute="trailing" id="Jmn-UR-EEb"/>
                             <constraint firstItem="xqG-nn-1g5" firstAttribute="top" secondItem="Qqy-ht-4mr" secondAttribute="bottom" id="NsI-Lt-u0V"/>
                             <constraint firstItem="YYz-pq-ifD" firstAttribute="leading" secondItem="dIb-yJ-SfT" secondAttribute="leading" constant="20" id="RZi-W0-cBS"/>
+                            <constraint firstItem="YYz-pq-ifD" firstAttribute="top" secondItem="7Oq-mu-BeN" secondAttribute="top" constant="45" id="a9A-ZB-29b"/>
                             <constraint firstItem="dIb-yJ-SfT" firstAttribute="trailing" secondItem="xqG-nn-1g5" secondAttribute="trailing" constant="20" id="cZL-44-ecr"/>
                             <constraint firstItem="xqG-nn-1g5" firstAttribute="leading" secondItem="dIb-yJ-SfT" secondAttribute="leading" constant="20" id="fcL-2t-KFV"/>
                             <constraint firstItem="Cti-Ez-Abk" firstAttribute="leading" secondItem="dIb-yJ-SfT" secondAttribute="leading" id="ins-BV-urw"/>
@@ -323,7 +323,7 @@
         <image name="menu-rounded-90.png" width="90" height="90"/>
         <image name="notification" width="15" height="16.5"/>
         <namedColor name="MainColor">
-            <color red="0.99199998378753662" green="0.84299999475479126" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96862745098039216" green="0.84705882352941175" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

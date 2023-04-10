@@ -102,14 +102,10 @@ extension ExploreViewController{
     func setupNavigationBar(){
         self.navigationController?.title = "Explore".localized()
         self.navigationController?.navigationBar.topItem?.title = "Explore".localized()
-//        let sort = UIBarButtonItem(image: R.image.ic_sort(), style: .plain, target: self, action: #selector(onSortTapped))
-//        let filter =   UIBarButtonItem(image: R.image.funnel(), style: .plain, target: self, action: #selector(onFilterTapped))
-//        self.navigationItem.rightBarButtonItems = [sort, filter]
         let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
         self.navigationItem.rightBarButtonItem = backToMainApp
         self.tabBarController?.delegate = self
-        
-//        self.navigationItem.titleView = self.searchController.searchBar
+        UINavigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
         
     }
     func addRefreshControl(){

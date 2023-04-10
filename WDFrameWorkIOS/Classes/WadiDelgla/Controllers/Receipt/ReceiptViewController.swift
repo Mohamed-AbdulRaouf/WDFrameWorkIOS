@@ -128,6 +128,8 @@ print("Running old Swift")
         let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 60))
         let nameLabel = UILabel()
         let priceLabel = UILabel()
+        nameLabel.font = APP_FONT_BOLD12
+        priceLabel.font = APP_FONT_BOLD12
         nameLabel.numberOfLines = 0
         if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             nameLabel.text = "\(String(describing: self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0).enToArDigits)* \(self.viewModel?.order?.orderItems.value?[section].itemTitle.value ?? "")"
@@ -171,6 +173,8 @@ print("Running old Swift")
         
         let subTotalTitleLabel = UILabel()
         let subTotalLabel = UILabel()
+        subTotalTitleLabel.font = APP_FONT_BOLD12
+        subTotalLabel.font = APP_FONT_BOLD12
         subTotalTitleLabel.text = "sub_total".localized()
         subTotalLabel.text = String(format: "%.2f \(String(describing: order.currencyCode.value ?? ""))", order.subTotal.value ?? 0)
         let subTotalStack : UIStackView = {
@@ -186,6 +190,8 @@ print("Running old Swift")
         
         let deliveryFeesLabelTitle = UILabel()
         let deliveryFeesLabel = UILabel()
+        deliveryFeesLabelTitle.font = APP_FONT_BOLD12
+        deliveryFeesLabel.font = APP_FONT_BOLD12
         deliveryFeesLabelTitle.text = "delivery_fees".localized()
         deliveryFeesLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")", order.deliveryFees.value ?? 0)
         let deliveryFeesStack : UIStackView = {
@@ -200,7 +206,9 @@ print("Running old Swift")
         deliveryFeesLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let loyalityDiscountLabelTitle = UILabel()
+        loyalityDiscountLabelTitle.font = APP_FONT_BOLD12
         let loyalityDiscountLabel = UILabel()
+        loyalityDiscountLabel.font = APP_FONT_BOLD12
         loyalityDiscountLabelTitle.text = "loyalty_discount".localized()
         loyalityDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")",order.loyaltyDiscount.value ?? 0)
         let loyalityDiscountStack : UIStackView = {
@@ -215,7 +223,9 @@ print("Running old Swift")
         loyalityDiscountLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let vatTitleLabel = UILabel()
+        vatTitleLabel.font = APP_FONT_BOLD12
         let vatLabel = UILabel()
+        vatLabel.font = APP_FONT_BOLD12
         vatTitleLabel.text = "VAT".localized()
         vatLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")",order.totalTax.value ?? 0)
         let vatStack : UIStackView = {
@@ -231,6 +241,8 @@ print("Running old Swift")
         
         let totalDiscountTitleLabel = UILabel()
         let totalDiscountLabel = UILabel()
+        totalDiscountLabel.font = APP_FONT_BOLD12
+        totalDiscountTitleLabel.font = APP_FONT_BOLD12
         totalDiscountTitleLabel.text = "discount".localized()
         totalDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.totalDiscount.value ?? 0)
         let totalDiscountStack : UIStackView = {
@@ -246,6 +258,8 @@ print("Running old Swift")
         
         let totalTitleLabel = UILabel()
         let totalLabel = UILabel()
+        totalTitleLabel.font = APP_FONT_BOLD12
+        totalLabel.font = APP_FONT_BOLD12
         totalTitleLabel.text = "total".localized()
         totalLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.orderTotal.value ?? 0)
         let totalStack : UIStackView = {
