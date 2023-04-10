@@ -169,7 +169,7 @@ print("Running old Swift")
         guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return UIView()}
         guard let order = self.viewModel?.order?.orderDetails.value else { return UIView()}
         
-        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 206))
+        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width - 50, height: 206))
         
         let subTotalTitleLabel = UILabel()
         let subTotalLabel = UILabel()
@@ -300,16 +300,16 @@ print("Running old Swift")
         }()
         lineView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         headerLineView.heightAnchor.constraint(equalToConstant: 2).isActive = true
-        fullStack.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 206)
+        fullStack.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width - 50, height: 206)
         sectionHeader.addSubview(fullStack)
         
         [subTotalTitleLabel,subTotalLabel,deliveryFeesLabel,deliveryFeesLabelTitle,loyalityDiscountLabel,loyalityDiscountLabelTitle,vatTitleLabel,vatLabel,totalDiscountLabel,totalDiscountTitleLabel].forEach {
-            $0.font = APP_FONT_REGULAR
+            $0.font = APP_FONT_REGULAR11
             $0.textColor = COLOR_PRIMARY_TEXT
         }
         
         [ totalTitleLabel,totalLabel].forEach {
-            $0.font = APP_FONT_BOLD
+            $0.font = APP_FONT_BOLD12
             $0.sizeToFit()
             $0.textColor = COLOR_PRIMARY_TEXT
         }
