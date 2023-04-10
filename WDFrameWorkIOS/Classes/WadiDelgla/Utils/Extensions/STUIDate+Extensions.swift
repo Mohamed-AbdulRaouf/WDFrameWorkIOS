@@ -24,7 +24,7 @@ extension Date{
                 dateFormatter.dateFormat = dateFormateToConvertTo
                 dateFormatter.timeZone = NSTimeZone.local
            
-                dateFormatter.locale = NSLocale(localeIdentifier: "\(K.shared.APP_LANGUAGE)")
+                dateFormatter.locale = NSLocale(localeIdentifier: "\(LocalizationSystem.sharedInstance.getLanguage())")
                     as Locale
 
                 

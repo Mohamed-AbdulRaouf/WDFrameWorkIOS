@@ -21,7 +21,7 @@ class CommentViewController: UIViewController {
     }
     func setupUI(){
         commentTextView.delegate = self
-        commentTextView.text = comment.replacingOccurrences(of: " ", with: "") == "" ? R.string.localizable.comment_description() : comment
+        commentTextView.text = comment.replacingOccurrences(of: " ", with: "") == "" ? "comment_description".localized() : comment
         commentTextView.textColor = comment.replacingOccurrences(of: " ", with: "") == "" ? UIColor.lightGray : .black
         commentTextView.becomeFirstResponder()
         commentTextView.selectedTextRange = commentTextView.textRange(from: commentTextView.beginningOfDocument, to: commentTextView.beginningOfDocument)
@@ -62,7 +62,7 @@ extension CommentViewController: UITextViewDelegate {
         // and set the cursor to the beginning of the text view
         if updatedText.isEmpty {
 
-            textView.text = R.string.localizable.comment_description()
+            textView.text = "comment_description".localized()
             textView.textColor = UIColor.lightGray
 
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)

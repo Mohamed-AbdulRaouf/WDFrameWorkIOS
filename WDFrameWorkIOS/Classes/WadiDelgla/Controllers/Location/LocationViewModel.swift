@@ -66,7 +66,7 @@ class LocationViewModel: ILocationViewModel{
     func getCitiesAndAreas() {
         self.showHud()
         doInBackground {
-            self.apiClient?.getCitiesAndAreas(withBrandId: Config.BRAND_ID,forLang: K.shared.APP_LANGUAGE) { (response) in
+            self.apiClient?.getCitiesAndAreas(withBrandId: Config.BRAND_ID,forLang: LocalizationSystem.sharedInstance.getLanguage()) { (response) in
                 doOnMain {
                     self.hideHUD()
                     guard let data = response?.data else {
@@ -100,7 +100,7 @@ class LocationViewModel: ILocationViewModel{
      
     func validateOnChangeLocation(){
         guard let currentCity = currentCity , let currentArea = currentArea else{
-            self.delegate?.onError(R.string.localizable.select_city_and_area_msg())
+            self.delegate?.onError("select_city_and_area_msg".localized())
             return
         }
         if let _ = UserDefaults.order, let oldCityId = oldCityId, let oldCountryId = self.oldCountryId{
@@ -120,7 +120,7 @@ class LocationViewModel: ILocationViewModel{
         }
     func validateOnCartHasItemsForCountry(country: ICountryDTODAL) {
              guard  cartService?.getCart() == nil else{
-                 self.delegate?.onShowClearCartAlert(messageText: R.string.localizable.clear_cart_due_to_change_country(), actionButtonText: R.string.localizable.clear_cart(), actionButtonClosure: {
+                 self.delegate?.onShowClearCartAlert(messageText: "clear_cart_due_to_change_country".localized(), actionButtonText: "clear_cart".localized(), actionButtonClosure: {
                      self.cartService?.deleteCart(completion: { (success) in
                          if success {
                              changeCountry(withCountry: country)

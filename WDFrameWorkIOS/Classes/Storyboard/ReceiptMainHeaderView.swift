@@ -28,7 +28,7 @@ class ReceiptMainHeaderView: UITableViewHeaderFooterView {
     }
     
     func configureCell(_ model: IOrderItemDTODAL){
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
 //            self.nameLabel.text = "\(String(describing: model.itemQty.value ?? 0).enToArDigits)* \(model.itemTitle.value ?? "")"
             
         }else{

@@ -42,6 +42,11 @@ class STCartViewController: STUIViewController ,IBaseController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel?.viewDidLoad()
+        if LocalizationSystem().isCurrentLanguageArabic() {
+            self.title = "السله"
+        } else {
+            self.title = "Cart"
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -61,13 +66,13 @@ class STCartViewController: STUIViewController ,IBaseController{
     }
     @IBAction func onCheckoutTapped(_ sender: Any) {
         self.view.endEditing(true)
-        self.viewModel?.validateUserLocationWithSelectedCountry()
-//        self.viewModel?.validateCheckout()
+//        self.viewModel?.validateUserLocationWithSelectedCountry()
+        self.viewModel?.validateCheckout()
     }
     @available(iOS 16.0, *)
     @objc func userNotAllowedAccessLocation(_ notification: Notification) {
       print("Location services are not enabled")
-        createSettingsAlertController(title: K.shared.SELECTED_BRAND?.brandName.value ?? "", message: R.string.localizable.location_permission_denied())
+        createSettingsAlertController(title: K.shared.SELECTED_BRAND?.brandName.value ?? "", message: "location_permission_denied".localized())
       }
     deinit {
            removeNotificationObserver(NotificationName.userNotAllowAccessLocation.rawValue)
@@ -80,20 +85,19 @@ extension STCartViewController{
         self.viewModel?.delegate = self
         self.setupTableView()
         
-        self.checkoutButton.setTitle(R.string.localizable.checkout(), for: .normal)
-        self.emptyCartLabel.text = R.string.localizable.empty_cart()
+        self.checkoutButton.setTitle("checkout".localized(), for: .normal)
+        self.emptyCartLabel.text = "empty_cart".localized()
         self.emptyCartLabel.textColor = COLOR_ACCENT
-        self.emptyCartLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
-        self.emptyCartMessageLabel.text = R.string.localizable.empty_cart_message()
+        self.emptyCartLabel.font = APP_FONT_BOLD20 //UIFont(resource: APP_FONT_BOLD, size: 20)
+        self.emptyCartMessageLabel.text = "empty_cart_message".localized()
         self.emptyCartMessageLabel.textColor = COLOR_PRIMARY_TEXT
         self.emptyCartMessageLabel.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 16)
-        self.addItemButton.setTitle(R.string.localizable.add_item(), for: .normal)
+        self.addItemButton.setTitle("add_item".localized(), for: .normal)
         self.addItemButton.titleLabel?.font = FONT_PRIMARY_BUTTON
         self.addItemButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
         
     }
     func setupNavigationBar(){
-        self.navigationController?.navigationBar.topItem?.title = R.string.localizable.cart()
         let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 30, height: 30),.darkGray)
         let clearCart =   UIBarButtonItem(image: iconImage, style: .plain, target: self, action: #selector(onClearCartTapped))
         self.navigationItem.rightBarButtonItems = [clearCart]
@@ -146,9 +150,10 @@ print("Running old Swift")
             return cell
         } else if indexPath.section == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "OrderPhoneTableViewCell", for: indexPath) as! OrderPhoneTableViewCell
-                cell.configureCell(self.viewModel?.cart?.phone2 ?? "")
+                cell.configureCell(UserDefaults.orderPhone)
                 cell.onChangePhone = { [weak self ] phone in
                     self?.viewModel?.cart?.phone2 = phone
+                    UserDefaults.orderPhone = phone
                 }
                 return cell
         }else{

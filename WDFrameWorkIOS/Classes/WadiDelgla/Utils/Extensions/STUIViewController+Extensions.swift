@@ -19,8 +19,8 @@ public extension UIViewController {
 
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-           let cancelAction = UIAlertAction(title: NSLocalizedString(R.string.localizable.cancel(), comment: ""), style: .cancel, handler: nil)
-           let settingsAction = UIAlertAction(title: NSLocalizedString(R.string.localizable.settings(), comment: ""), style: .default) { (UIAlertAction) in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel".localized(), comment: ""), style: .cancel, handler: nil)
+        let settingsAction = UIAlertAction(title: NSLocalizedString("settings".localized(), comment: ""), style: .default) { (UIAlertAction) in
                UIApplication.shared.open(URL(string: UIApplication.openNotificationSettingsURLString)! as URL, options: [:], completionHandler: nil)
             }
 

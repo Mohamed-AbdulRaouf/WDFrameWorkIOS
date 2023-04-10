@@ -58,21 +58,21 @@ extension CreditCardViewController {
     func setupUI(){
         
         self.viewModel?.delegate = self
-        self.headerTitleLabel.text = R.string.localizable.add_credit_card()
+        self.headerTitleLabel.text = "add_credit_card".localized()
         self.headerTitleLabel.textColor = COLOR_PRIMARY_TEXT
-        self.headerTitleLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
+        self.headerTitleLabel.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
         
-        self.headerSubTitleLabel.text = R.string.localizable.add_credit_card_hint()
+        self.headerSubTitleLabel.text = "add_credit_card_hint".localized()
         self.headerSubTitleLabel.textColor = COLOR_PRIMARY_TEXT
         self.headerSubTitleLabel.font = APP_FONT_REGULAR16 // UIFont(resource: APP_FONT_REGULAR, size: 16)
         [self.cardHolderNameTextField,self.cardNumberTextField,cardExpiryDateTextField,cardCvvTextField].forEach{
             $0?.underlineTextField(.lightGray)
         }
         
-        self.cardHolderNameTextField.placeholder = R.string.localizable.name_on_card()
-        self.cardNumberTextField.placeholder = R.string.localizable.card_number()
-        self.cardExpiryDateTextField.placeholder = R.string.localizable.expiry_date()
-        self.cardCvvTextField.placeholder = R.string.localizable.cvv()
+        self.cardHolderNameTextField.placeholder = "name_on_card".localized()
+        self.cardNumberTextField.placeholder = "card_number".localized()
+        self.cardExpiryDateTextField.placeholder = "expiry_date".localized()
+        self.cardCvvTextField.placeholder = "cvv".localized()
         [cardNumberTextField,cardCvvTextField,cardExpiryDateTextField].forEach{
             $0?.delegate = self
         }
@@ -84,7 +84,7 @@ extension CreditCardViewController {
         [self.cardHolderNameErrorLabel,self.cardNumberErrorLabel,self.cardExpiryDateErrorLabel,self.cardCvvErrorLabel].forEach {
             $0?.textColor = .red
         }
-        let title = self.viewModel?.sourceDelegate == nil ? R.string.localizable.save() :  R.string.localizable.continue()
+        let title = self.viewModel?.sourceDelegate == nil ? "save".localized() :  "continue".localized()
         self.continueButton.setTitle(title, for: .normal)
         
     }

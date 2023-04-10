@@ -40,7 +40,7 @@ class CheckoutItemTableViewCell: UITableViewCell,IBaseTableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ model: ISTCartItemDTODAL) {
-        if K.shared.APP_LANGUAGE == "ar" {
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             self.itemNameQLabel.text =
            "\(String(describing: model.amount ).enToArDigits) * \(String(describing: model.itemName ))"
 
@@ -52,7 +52,7 @@ class CheckoutItemTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.itemPriceLabel.text = "\(String(format: "%.2f", price ) + "\(String(describing: model.itemCurrencyCode ))")"
         self.choices = model.choices
         [self.itemNameQLabel].forEach {
-            $0?.textAlignment = K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? .right : .left
+            $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         }
 
     }

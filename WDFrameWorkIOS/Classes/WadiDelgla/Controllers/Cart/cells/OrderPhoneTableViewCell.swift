@@ -18,7 +18,7 @@ class OrderPhoneTableViewCell: UITableViewCell {
     }
     
     func configureCell(_ phone: String){
-        if K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue {
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             phoneTextView.textAlignment = .right
         }
         phoneTextView.delegate = self
@@ -79,5 +79,21 @@ extension OrderPhoneTableViewCell: UITextViewDelegate {
         // ...otherwise return false since the updates have already
         // been made
         return false
+    }
+}
+
+// MARK: UITextfield Delegates
+extension OrderPhoneTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.keyboardType == .phonePad && string != "" {
+            let numberStr: String = string
+            let formatter: NumberFormatter = NumberFormatter()
+            formatter.locale = Locale(identifier: "EN")
+            if let final = formatter.number(from: numberStr) {
+                textField.text =  "\(textField.text ?? "")\(final)"
+            }
+            return false
+        }
+        return true
     }
 }

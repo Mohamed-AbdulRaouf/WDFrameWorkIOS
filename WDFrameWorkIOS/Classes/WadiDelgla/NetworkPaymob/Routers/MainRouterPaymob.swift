@@ -23,7 +23,7 @@ struct Constants {
     }
     
     static var PayMobApiKey: String {
-        return "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8zTXpBMk1UZ3NJbTVoYldVaU9pSnBibWwwYVdGc0lpd2lZMnhoYzNNaU9pSk5aWEpqYUdGdWRDSjkuMGt5cW9jLW84UTRPcjdjSzNmQ3VQZHNNc25pY0dYQzJLT3gwNkcwYXJZUER2WTVLTWJaRC0zVmJIeklNV3BaSTZQTnBqQkpKUFhqOTRPTHlmRkxhNEE="
+        return "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRJMU1UUXlMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuaGxYZmRRaWU4ZXNwWnJSa1ZnUXdWSnlLalJYQ2h0WEoyYmxQSlBHM3lxeEUySUxuWW5zeEVfZGpiOUZ0N0d4WkFXb0RKZVpOeGhrVmdNa1daOWtZUHc="
     }
 }
 
@@ -60,7 +60,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                 "delivery_needed": "false",
                 "amount_cents": "\(Int(amount * 100))",
                 "currency": "EGP",
-                "integration_id": 3697136,
+                "integration_id": 1025114,
                 "lock_order_when_paid": "false",
                 "billing_data": [
                     "apartment": "803",

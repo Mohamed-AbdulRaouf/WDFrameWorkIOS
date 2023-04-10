@@ -22,7 +22,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8P-iB-gu3">
                                 <rect key="frame" x="36" y="194" width="303" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Wadi Degla Main App"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Wadi Degla Framework"/>
                                 <connections>
                                     <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgr-MB-cB8"/>
                                 </connections>
@@ -36,6 +36,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MPw-Te-JLq"/>
+                    <connections>
+                        <outlet property="homeStartBtn" destination="b8P-iB-gu3" id="qKW-5m-X8R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

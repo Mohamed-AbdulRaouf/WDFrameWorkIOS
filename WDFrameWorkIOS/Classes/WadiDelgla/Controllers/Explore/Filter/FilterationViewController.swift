@@ -38,7 +38,7 @@ extension FilterationViewController{
     func setupUI(){
         self.viewModel?.viewDidLoad()
         self.setupTableView()
-        self.doneButton.setTitle(R.string.localizable.done(), for: .normal)
+        self.doneButton.setTitle("done".localized(), for: .normal)
     }
     
     func bindingData() {}

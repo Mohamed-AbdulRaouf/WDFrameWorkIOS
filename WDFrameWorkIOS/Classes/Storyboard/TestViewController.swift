@@ -20,6 +20,7 @@ public class TestViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         debugPrint("TestViewController Loaded")
+        setUIAppearance()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -28,11 +29,19 @@ public class TestViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func setUIAppearance() {
+        if LocalizationSystem().isCurrentLanguageArabic() {
+            SetAppLanguage.shared.doFurtherProcessingWithResult(languageCode: "ar")
+        } else {
+            SetAppLanguage.shared.doFurtherProcessingWithResult(languageCode: "en")
+        }
+    }
+    
 }
 
 extension TestViewController {
     
-    public func create(name: String, mobile: String, email: String ,membershipNumber: String, mainStoryboard: UIStoryboard, viewController: UIViewController) -> TestViewController {
+    public func create(name: String, mobile: String, email: String, membershipNumber: String, mainStoryboard: UIStoryboard, viewController: UIViewController, language: String) -> TestViewController {
         let vc = TestViewController()
         vc.name = name
         vc.mobile = mobile
@@ -49,6 +58,7 @@ extension TestViewController {
         UserDefaults.loginData?.brandId.value = 0
 //        UserDefaults.loginData?.countryId.value = "1"
 //        UserDefaults.loginData?.dialCode.value = "+2"
+        Bundle.setLanguage(language)
         return vc
     }
     

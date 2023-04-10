@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class LocalizationSystem:NSObject {
+public class LocalizationSystem:NSObject {
     
     var bundle: Bundle!
     
-    class var sharedInstance: LocalizationSystem {
+public class var sharedInstance: LocalizationSystem {
         struct Singleton {
             static let instance: LocalizationSystem = LocalizationSystem()
         }
@@ -40,7 +40,7 @@ class LocalizationSystem:NSObject {
     // Sets the desired language of the ones you have.
     // If this function is not called it will use the default OS language.
     // If the language does not exists y returns the default OS language.
-    func setLanguage(languageCode:String) {
+    public func setLanguage(languageCode:String) {
         var appleLanguages = UserDefaults.standard.object(forKey: "AppleLanguages") as! [String]
         appleLanguages.remove(at: 0)
         appleLanguages.insert(languageCode, at: 0)
@@ -62,7 +62,7 @@ class LocalizationSystem:NSObject {
     
     //MARK:- getLanguage
     // Just gets the current setted up language.
-    func getLanguage() -> String {
+    public func getLanguage() -> String {
         let appleLanguages = UserDefaults.standard.object(forKey: "AppleLanguages") as! [String]
         let prefferedLanguage = appleLanguages[0]
         if prefferedLanguage.contains("-") {
@@ -76,4 +76,3 @@ class LocalizationSystem:NSObject {
         return LocalizationSystem.sharedInstance.getLanguage() == "ar"
     }
 }
-

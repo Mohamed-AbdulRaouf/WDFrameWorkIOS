@@ -38,7 +38,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
     }
     func configureCell(_ model: ISTCartItemDTODAL) {
         item = model
-        self.quantityTitleLabel.text = R.string.localizable.quantity()
+        self.quantityTitleLabel.text = "quantity".localized()
         
         let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 20, height: 20))
         deleteItemButton.setImage(iconImage, for: .normal)
@@ -51,9 +51,9 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
         } else {
             self.itemImageView.image = UIImage(named: "dobites_splash")
         }
-        self.itemPriceLabel.attributedText = setupLabels(R.string.localizable.item_price(), "  \(String(format: "%.2f", model.itemPrice) + (model.itemCurrencyCode))")
+        self.itemPriceLabel.attributedText = setupLabels("item_price".localized(), "  \(String(format: "%.2f", model.itemPrice) + (model.itemCurrencyCode))")
         
-         self.itemSubTotalLabel.attributedText = setupLabels(R.string.localizable.total(), "  \(String(format: "%.2f", Float(model.subTotal)) + (model.itemCurrencyCode)) ")
+        self.itemSubTotalLabel.attributedText = setupLabels("total".localized(), "  \(String(format: "%.2f", Float(model.subTotal)) + (model.itemCurrencyCode)) ")
         
         
         itemQuantityLabel.text = "\(model.amount)"
@@ -69,7 +69,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
        
         [itemCommentLabel,itemSizeLabel].forEach { (label) in
             label?.textColor = COLOR_ACCENT
-            label?.font = APP_FONT_BOLD //UIFont(resource: , size: 10)
+            label?.font = APP_FONT_BOLD10 //UIFont(resource: , size: 10)
             
         }
         self.itemCommentLabel.text = "\(model.itemComment)"
@@ -102,7 +102,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
         let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR12, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD12, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)

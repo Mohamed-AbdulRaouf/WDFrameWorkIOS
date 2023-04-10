@@ -21,8 +21,8 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource,UITe
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 { return ""}
-        if section == 1 { return R.string.localizable.select_size()}
-        else if section == ((self.viewModel?.getNumberOfSections() ?? 0) - 1){ return R.string.localizable.special_instructions()}
+        if section == 1 { return "select_size".localized()}
+        else if section == ((self.viewModel?.getNumberOfSections() ?? 0) - 1){ return "special_instructions".localized()}
         else {
             guard let choicesGroup = self.viewModel?.product?.sizes.value?[(self.viewModel?.selectedSizeIndex!)!].choiceGroups.value ,choicesGroup.count > 0 else { return ""}
             return choicesGroup[section - 2].choiceGroupTitle.value ?? ""

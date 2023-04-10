@@ -36,13 +36,13 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
     }
     func configureCell(_ model: IOrderDTODAL) {
         self.accessoryView = UIImageView(image: R.image.accessoryRed())
-        if K.shared.APP_LANGUAGE == "ar" {
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             self.accessoryView?.transform = CGAffineTransform(rotationAngle: .pi)
         }
         model.brandName.bind(to: self.brandNameLabel.reactive.text)
         model.orderDate.bind(to: self.orderDateLabel.reactive.text)
-        self.orderNumberLabel.text = "\(R.string.localizable.order_number()): \(model.orderNumber.value ?? 0)"
-        self.orderRefLabel.text = "\(R.string.localizable.order_ref()): \(model.customerHistoryId.value ?? 0)"
+        self.orderNumberLabel.text = "\("order_number".localized()): \(model.orderNumber.value ?? 0)"
+        self.orderRefLabel.text = "\("order_ref".localized()): \(model.customerHistoryId.value ?? 0)"
         
         
         if let imageUrl = URL(string: model.brandLogoURL.value ?? ""){
@@ -51,7 +51,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         } else {
             self.brandLogoImageView.image = UIImage(named: "dobites_splash")
         }
-        let title = model.isOrderRatedBefore.value ?? false ? R.string.localizable.show_rate() : R.string.localizable.rate_order()
+        let title = model.isOrderRatedBefore.value ?? false ? "show_rate".localized() : "rate_order".localized()
         self.rateButton.setTitle(title, for: .normal)
         self.accessoryType = !(model.isOrderHasDetails.value ?? false) ? .none : .disclosureIndicator
         self.rateView.rating = Double(model.rating.value ?? 0.0)
@@ -60,7 +60,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.rateView.isHidden = !(model.isOrderStatusValidToRate.value ?? true)
         self.rateButton.isHidden = !(model.isOrderStatusValidToRate.value ?? true)
         [brandNameLabel].forEach { (label) in
-            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 18)
+            label?.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 18)
             label?.textColor = COLOR_PRIMARY_TEXT
         }
         
@@ -69,7 +69,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
             label?.textColor = COLOR_PRIMARY_TEXT
         }
        
-        self.orderStatusLabel.attributedText = setupLabels("\(R.string.localizable.order_status()) : ", "\(model.orderStatus.value ?? "")", UIColor.init(hexString: String(model.colorCode.value?.dropFirst() ?? "")) ?? COLOR_PRIMARY_TEXT)
+        self.orderStatusLabel.attributedText = setupLabels("\("order_status".localized()) : ", "\(model.orderStatus.value ?? "")", UIColor.init(hexString: String(model.colorCode.value?.dropFirst() ?? "")) ?? COLOR_PRIMARY_TEXT)
         
         if let ishasdetails = model.isOrderHasDetails.value ,!ishasdetails{
             self.accessoryView = .none
@@ -81,7 +81,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR12, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
 //        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 13), NSAttributedString.Key.foregroundColor : strColor]
-        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : strColor]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD13, NSAttributedString.Key.foregroundColor : strColor]
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)
         

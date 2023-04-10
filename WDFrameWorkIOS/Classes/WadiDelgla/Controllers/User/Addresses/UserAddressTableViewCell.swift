@@ -35,16 +35,16 @@ class UserAddressTableViewCell: UITableViewCell,IBaseTableViewCell {
     }
     func configureCell(_ model: IUserAddressDTODAL) {
         
-        self.buildingNoLabel.text = "\(R.string.localizable.building_no()) : \(model.buildingNo.value ?? "")"
-        self.streetNameLabel.text = "\(R.string.localizable.street_name()) : \(model.streetName.value ?? "")"
+        self.buildingNoLabel.text = "\("building_no".localized()) : \(model.buildingNo.value ?? "")"
+        self.streetNameLabel.text = "\("street_name".localized()) : \(model.streetName.value ?? "")"
         self.companyNameLabel.text = "\(model.companyName.value ?? "")"
         self.landMarkLabel.text = "\(model.addressDescription.value ?? "")"
         
         [buildingNoLabel,streetNameLabel,companyNameLabel,landMarkLabel].forEach { (label) in
-            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
+            label?.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
             label?.textColor = .lightGray
         }
-        self.floorNoLabel.text = "\(R.string.localizable.floor_no()) : \(model.floorNo.value ?? "")"
+        self.floorNoLabel.text = "\("floor_no".localized()) : \(model.floorNo.value ?? "")"
         self.apartmentNoLabel.text = ""
         self.areaNameLabel.text = "\(model.areaName.value ?? "")"
         [floorNoLabel,apartmentNoLabel,areaNameLabel].forEach { (label) in

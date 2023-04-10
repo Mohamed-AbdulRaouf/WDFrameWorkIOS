@@ -11,9 +11,15 @@ import WDFrameWorkIOS
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var homeStartBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.homeStartBtn.setTitle("Wadi Degla Framework".localized(), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +33,7 @@ class ViewController: UIViewController {
         let bundle = Bundle(path: bundlePath!)
         let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        let firstScreenWDframework = vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController())
+        let firstScreenWDframework = vc.create(name: "sobhy", mobile: "01113713682", email: "msobhy@gmail.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController(), language: LocalizationSystem.sharedInstance.getLanguage())
         // set app delegate to push view controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let rootViewController = appDelegate?.window?.rootViewController as? UINavigationController

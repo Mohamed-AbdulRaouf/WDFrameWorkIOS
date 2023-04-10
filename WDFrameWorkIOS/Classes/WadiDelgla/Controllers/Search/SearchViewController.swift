@@ -109,7 +109,7 @@ extension SearchViewController {
         // 2
         searchController.obscuresBackgroundDuringPresentation = false
         // 3
-        searchController.searchBar.placeholder = R.string.localizable.searching()
+        searchController.searchBar.placeholder = "searching".localized()
         // 4
         navigationItem.searchController = searchController
 //        tableView.tableHeaderView = searchController.searchBar
@@ -117,7 +117,7 @@ extension SearchViewController {
         // 5
         definesPresentationContext = true
         self.searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.searchTextField.textAlignment =  K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? .right : .left
+        self.searchController.searchBar.searchTextField.textAlignment =  LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         
 //        let notificationCenter = NotificationCenter.default
 //        notificationCenter.addObserver(

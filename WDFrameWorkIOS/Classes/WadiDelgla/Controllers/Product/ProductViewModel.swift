@@ -86,7 +86,7 @@ extension ProductViewModel{
                     }
                     guard let success = model as? Bool,success else { return }
                     doOnMain(deadline: 2.0, {
-                        self.delegate?.onShowToast(R.string.localizable.success_add_item())
+                        self.delegate?.onShowToast("success_add_item".localized())
                     })
                     self.delegate?.onDismissViewController()
                 }

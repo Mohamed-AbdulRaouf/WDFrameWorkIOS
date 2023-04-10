@@ -51,7 +51,7 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         }
         
         self.brandNameLabel.font = APP_FONT_BOLD //UIFont.init(resource: APP_FONT_BOLD, size: 16)
-        self.brandNameLabel.textAlignment = K.shared.APP_LANGUAGE == "en" ? .left : .right
+        self.brandNameLabel.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         self.brandNameLabel.text = model.brandName.value ?? ""
         
         
@@ -65,9 +65,9 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
 //        self.ratingView.rating = Double(model.ratingValue.value ?? 0)
 //        self.ratingView.text = "(\(model.numberOfUserRate.value ?? 0))"
         
-        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.delivery_time()) : ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.estimatedDeliveryTime.value ?? 0) \(R.string.localizable.minute())")
+        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\("delivery_time".localized()) : ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.estimatedDeliveryTime.value ?? 0) \("minute".localized())")
         
-        self.minOrderLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\(R.string.localizable.min_order_to_deliver()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
+        self.minOrderLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\("min_order_to_deliver".localized()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
         
         self.paymentLabel.font = APP_FONT_BOLD10 //UIFont.init(resource: APP_FONT_BOLD, size: 10)
         
@@ -97,7 +97,7 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         
         
         if model.isOnlineOrder.value ?? false {
-            self.onlineOrderLabel.text = R.string.localizable.online_order()
+            self.onlineOrderLabel.text = "online_order".localized()
             self.onlineOrderLabel.font = APP_FONT_REGULAR //UIFont.init(resource: APP_FONT_REGULAR, size: 14)
             
         }else{
@@ -114,14 +114,14 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
             if model.currentCustomerIsRegistered.value ?? false {
                 self.currentPointsButton.isEnabled = false
                 self.currentPointsButton.setBackgroundImage(R.image.ic_balance_section(), for: .normal)
-                self.getHaveLabel.text = R.string.localizable.balance()
-                self.bitesLabel.text = "\(Int(model.currentCustomerPointsInBrand.value ?? 0)) \(R.string.localizable.bites())"
+                self.getHaveLabel.text = "balance".localized()
+                self.bitesLabel.text = "\(Int(model.currentCustomerPointsInBrand.value ?? 0)) \("bites".localized())"
             } else {
                 if model.isDefaultRewardValid.value ?? false{
-                    self.getHaveLabel.text = R.string.localizable.get()
+                    self.getHaveLabel.text = "get".localized()
                     self.currentPointsButton.setBackgroundImage(R.image.ic_reward_section(), for: .normal)
                     self.currentPointsButton.isEnabled = true
-                    self.bitesLabel.text = "\(Int(model.registerPointsAmount.value ?? 0)) \(R.string.localizable.bites())"
+                    self.bitesLabel.text = "\(Int(model.registerPointsAmount.value ?? 0)) \("bites".localized())"
                     
                 }else{
                     [getHaveLabel,currentPointsButton,equivelantCashLabel,bitesLabel].forEach { (cview) in

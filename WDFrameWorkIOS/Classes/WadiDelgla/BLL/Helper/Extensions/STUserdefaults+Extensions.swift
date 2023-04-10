@@ -32,6 +32,7 @@ public extension UserDefaults {
         case showNotRatedOrders = "showNotRatedOrders"
         case myFatoorahBrandPaymentDataDTO = "myFatoorahBrandPaymentDataDTO"
         case enableShowQRCodeVC = "enableShowQRCodeVC"
+        case orderPhone = "orderPhone"
     }
     static var user : UserDTODAL? {
         get {
@@ -283,6 +284,16 @@ public extension UserDefaults {
         }
         set{
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeysBLL.enableShowQRCodeVC.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static var orderPhone : String {
+        get {
+            return UserDefaults.standard.value(forKey:UserDefaultsKeysBLL.orderPhone.rawValue) as? String ?? ""
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeysBLL.orderPhone.rawValue)
             UserDefaults.standard.synchronize()
         }
     }

@@ -32,7 +32,7 @@ class MenuTableViewCell: UITableViewCell,IBaseTableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ model: IMenuItemsDTODAL) {
-        self.itemNameLabel.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 12)
+        self.itemNameLabel.font = APP_FONT_BOLD12 //UIFont(resource: APP_FONT_BOLD, size: 12)
         self.itemNameLabel.textColor = COLOR_PRIMARY_TEXT
         [self.itemDescriptionLabel,self.itemCaloriesLabel,self.itemIngredientsLabel].forEach {
             $0?.font = APP_FONT_REGULAR10 //UIFont(resource: APP_FONT_REGULAR, size: 10)
@@ -51,14 +51,14 @@ class MenuTableViewCell: UITableViewCell,IBaseTableViewCell {
         
         
         if let isHasMultipleSizes = model.isItemHasMultipleSize.value,let sizes = model.sizes.value{
-            let addBtnTitle = isHasMultipleSizes ? R.string.localizable.price_on_selection() : "\(sizes[0].sizePrice.value ?? 0) \(model.currencyCode.value ?? "")"
+            let addBtnTitle = isHasMultipleSizes ? "price_on_selection".localized() : "\(sizes[0].sizePrice.value ?? 0) \(model.currencyCode.value ?? "")"
             self.addItemButton.setTitle(addBtnTitle, for: .normal)
         }
         
         
         self.itemDescriptionLabel.text = model.categoryDescription.value ?? ""
         self.itemIngredientsLabel.text = model.ingredients.value ?? ""
-        self.itemCaloriesLabel.text = "\(model.itemCalories.value ?? 0) \(R.string.localizable.calories())"
+        self.itemCaloriesLabel.text = "\(model.itemCalories.value ?? 0) \("calories".localized())"
     }
     
     @objc func animate(){

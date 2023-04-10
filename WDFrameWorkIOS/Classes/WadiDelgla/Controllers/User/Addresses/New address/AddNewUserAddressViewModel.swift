@@ -63,7 +63,7 @@ class AddNewUserAddressViewModel: IAddNewUserAddressViewModel{
     func getCitiesAndAreas() {
         self.showHud()
         doInBackground {
-            self.apiLocation?.getCitiesAndAreas(withBrandId:0,forLang: K.shared.APP_LANGUAGE) { (response) in
+            self.apiLocation?.getCitiesAndAreas(withBrandId:0,forLang: LocalizationSystem.sharedInstance.getLanguage()) { (response) in
                 doOnMain {
                     self.hideHUD()
                     guard let data = response?.data else {
@@ -144,7 +144,7 @@ class AddNewUserAddressViewModel: IAddNewUserAddressViewModel{
     /// - Parameter completion: if user not select city and area it will return error message
     func validateCityAndArea(completion: @escaping ((Bool) -> Void)){
         guard let _ = currentCity , let _ = currentArea else{
-            self.delegate?.onError(R.string.localizable.select_city_and_area_msg())
+            self.delegate?.onError("select_city_and_area_msg".localized())
             completion(false)
             return
         }

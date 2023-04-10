@@ -89,8 +89,8 @@ extension CountryListViewController {
                 controller.searchResultsUpdater = self
                 controller.obscuresBackgroundDuringPresentation = false
                 controller.searchBar.sizeToFit()
-                controller.searchBar.placeholder = R.string.localizable.search_country()
-                controller.searchBar.searchTextField.textAlignment = K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? .right : .left
+             controller.searchBar.placeholder = "search_country".localized()
+                controller.searchBar.searchTextField.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
 
                 tableView.tableHeaderView = controller.searchBar
 

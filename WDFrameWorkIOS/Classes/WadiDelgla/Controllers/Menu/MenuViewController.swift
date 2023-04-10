@@ -14,17 +14,36 @@ class MenuViewController: STUIViewController,IBaseController {
     var viewModel: IMenuViewModel?
 
     // MARK: - IBOutlets
+    @IBOutlet weak var backgroundAdsImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var cartCountLbl: UILabel = {
+        let label = UILabel(frame: CGRect(x: 3, y: -5, width: 25, height: 20))
+        label.text = "\(UserDefaults.order?.cartItems.count ?? 0)"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.backgroundColor =  .red
+        label.layer.cornerRadius = 8
+        label.layer.masksToBounds = true
+        return label
+    }()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Menu"
         setupNavigationBarItems()
         //bind UI
         self.setupUI()
-//        self.setupNavigationBarItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if LocalizationSystem().isCurrentLanguageArabic() {
+            self.title = "القائمه"
+        } else {
+            self.title = "Cart"
+        }
     }
 }
 
@@ -39,12 +58,14 @@ extension MenuViewController{
     }
     
     func setupNavigationBarItems() {
-//        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cart.png"), style: .plain, target: self, action: #selector(openCartVC))
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(openCartVC))
-        
-        let cartBtn =   UIBarButtonItem(image: R.image.ic_cart(), style: .plain, target: self, action: #selector(openCartVC))
-        cartBtn.tintColor = .black
-        self.navigationItem.rightBarButtonItems = [cartBtn]
+        let button =  UIButton(type: .custom)
+        button.setImage(R.image.ic_cart(), for: .normal)
+        button.addTarget(self, action: #selector(openCartVC), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 53, height: 31)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)//move image to the right
+        button.addSubview(self.cartCountLbl)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItems = [barButton]
         self.navigationItem.backBarButtonItem?.tintColor = .black
     }
     

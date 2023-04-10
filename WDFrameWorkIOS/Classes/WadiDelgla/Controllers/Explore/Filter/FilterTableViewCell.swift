@@ -17,7 +17,7 @@ class FilterTableViewCell: UITableViewCell,IBaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        filterSwitch.semanticContentAttribute = K.shared.APP_LANGUAGE == "ar" ? .forceRightToLeft : .forceLeftToRight
+        filterSwitch.semanticContentAttribute = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .forceRightToLeft : .forceLeftToRight
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

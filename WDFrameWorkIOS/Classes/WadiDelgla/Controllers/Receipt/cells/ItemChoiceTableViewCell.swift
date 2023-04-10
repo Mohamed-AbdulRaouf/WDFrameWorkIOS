@@ -27,7 +27,7 @@ class ItemChoiceTableViewCell: UITableViewCell,IBaseTableViewCell {
     
     func configureCell(_ model: IOrderItemChoiceDTODAL) {
         let q = "\(model.choiceQTY.value ?? 0)".enToArDigits
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             self.itemChoiceNameLabel.text =  "\(q)* \(model.choiceName.value ?? "")"
 
         }else{
@@ -37,7 +37,7 @@ class ItemChoiceTableViewCell: UITableViewCell,IBaseTableViewCell {
         
         self.itemChoicePriceLabel.text = " \(String(format: "%.2f", price ) + "\(String(describing: model.currencyCode.value ?? "" ))")"
         [self.itemChoiceNameLabel].forEach {
-              $0?.textAlignment = K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? .right : .left
+              $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         }
     }
 }

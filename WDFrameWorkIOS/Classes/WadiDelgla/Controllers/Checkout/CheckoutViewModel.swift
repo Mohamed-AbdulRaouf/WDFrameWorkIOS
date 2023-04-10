@@ -53,7 +53,7 @@ class CheckoutViewModel: ICheckoutViewModel{
     var errorModel : IOrderValidationDTOBLL?
     var calcResponse: ICalOrderResponseDTODAL?
     var cartService: CartServiceBLL?
-    var titles = [R.string.localizable.address(),R.string.localizable.my_items(),R.string.localizable.discount(),""]
+    var titles = ["address".localized(),"my_items".localized(),"discount".localized(),""]
     var paymentData: ISTCartPaymentDTODAL?
     var isSaveCard: Bool?
     var paymentService: STKashierService?
@@ -104,13 +104,13 @@ class CheckoutViewModel: ICheckoutViewModel{
         self.paymentMethods?.append(SelectedPaymentMethodDTO(.creditCard, false))
         // sections
         if !(cart?.isSelectDeliveryAtStore ?? false){
-            sections?.append(R.string.localizable.address())
+            sections?.append("address".localized())
         }
-        sections?.append(R.string.localizable.my_items())
-        sections?.append(R.string.localizable.discount())
+        sections?.append("my_items".localized())
+        
         
         if let cart = cart, cart.isOnlinePayment ?? false{
-            sections?.append(R.string.localizable.payment_methods())
+            sections?.append("payment_methods".localized())
             if UserDefaults.brandPaymentData != nil {
                 doInBackground{
                     self.initKashier()
@@ -121,7 +121,8 @@ class CheckoutViewModel: ICheckoutViewModel{
         }else{
             selectedPaymentMethodIndex = 0
         }
-        sections?.append(R.string.localizable.checkout_cash_details())
+        sections?.append("discount".localized())
+        sections?.append("checkout_cash_details".localized())
     }
     
     func calcOrder() {
@@ -160,7 +161,7 @@ class CheckoutViewModel: ICheckoutViewModel{
         if cart.frontOrderReferenceId == "" {
             cart.frontOrderReferenceId = self.orderService?.generateFrontOrderReferenceId(forBrandId: K.shared.SELECTED_BRAND?.brandId.value ?? 0, withUserId: UserDefaults.user?.userId.value ?? "")
         }
-        self.showHud(R.string.localizable.donT_close_app_message())
+        self.showHud("don't_close_app_message".localized())
         
         doInBackground {
             self.orderService?.makeOrder(cart, completion: { (response) in
@@ -268,7 +269,7 @@ class CheckoutViewModel: ICheckoutViewModel{
 //    }
     
     func confirmOnlinePaymentForOrder(transactionID: String?, merchanOrderId: String?, status: Bool) {
-        self.showHud(R.string.localizable.donT_close_app_during_purchasing_message())
+        self.showHud("don't_close_app_during_purchasing_message".localized())
         doInBackground {
             let payment = ConfirmPaymentDTODAL(transactionId: transactionID ?? "", merchanOrderId: merchanOrderId ?? "", orderId: self.orderId?.string ?? "", status: status)
             self.orderService?.confirmOnLinePaymentForOrder(payment, completion: { (response) in

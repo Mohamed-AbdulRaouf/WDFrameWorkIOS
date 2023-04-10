@@ -35,11 +35,14 @@ let COLOR_SUB_TITLE_TEXT = UIColor.init(hexString: "1A1824", transparency: 0.5)!
 // MARK: - FONT_CONFIGURATIONS
 let APP_FONT_REGULAR = UIFont.systemFont(ofSize: 14, weight: .regular) // R.font.ramblaRegular
 let APP_FONT_BOLD = UIFont.systemFont(ofSize: 16, weight: .bold) //R.font.ramblaBold
+let APP_FONT_BOLD12 = UIFont.systemFont(ofSize: 12, weight: .bold) //R.font.ramblaBold
+let APP_FONT_BOLD14 = UIFont.systemFont(ofSize: 14, weight: .bold) //R.font.ramblaBold
 let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 19)
 let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular) //UIFont(resource: APP_FONT_REGULAR, size: 14)
 
 let APP_FONT_REGULAR10 = UIFont.systemFont(ofSize: 10, weight: .regular)
 let APP_FONT_REGULAR12 = UIFont.systemFont(ofSize: 12, weight: .regular)
+let APP_FONT_REGULAR13 = UIFont.systemFont(ofSize: 13, weight: .regular)
 let APP_FONT_REGULAR16 = UIFont.systemFont(ofSize: 16, weight: .regular)
 let APP_FONT_BOLD18 = UIFont.systemFont(ofSize: 18, weight: .bold)
 

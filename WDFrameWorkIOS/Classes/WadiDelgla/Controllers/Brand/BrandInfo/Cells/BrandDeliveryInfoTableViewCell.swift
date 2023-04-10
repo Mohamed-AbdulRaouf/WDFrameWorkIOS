@@ -33,17 +33,17 @@ class BrandDeliveryInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
     func configureCell(_ model: IBrandDTODAL) {
         self.setupHeaderTitle()
         self.selectionStyle = .none
-        self.minDeliveryLabel.attributedText = setupLabels(R.string.localizable.min_order_to_deliver(),": \(model.minOrderValueToDeliver.value ?? 0.0) \(model.currency.value ?? "") \(R.string.localizable.minute())")
+        self.minDeliveryLabel.attributedText = setupLabels("min_order_to_deliver".localized(),": \(model.minOrderValueToDeliver.value ?? 0.0) \(model.currency.value ?? "") \("minute".localized())")
 //        self.deliveryFeesLabel.attributedText = setupLabels(R.string.localizable.delivery_fees(), ": \(model.deliveryFeesAmount.value ?? 0.0) \(model.currency.value ?? "")")
         
         
 //        self.deliveryTimeLabel.attributedText = setupLabels(R.string.localizable.delivery_time(), ": \(model.estimatedDeliveryTime.value ?? 0) \(R.string.localizable.minute())")
-        let isonlinePayment = model.isOnLinePayment.value == nil  ? R.string.localizable.online_payment() : R.string.localizable.no_online_payment()
+        let isonlinePayment = model.isOnLinePayment.value == nil  ? "online_payment".localized() : "no_online_payment".localized()
         self.paymentStatusLabel.attributedText = setupLabels("\(isonlinePayment)", "")
         if model.openTime.value != "" && model.closeTime.value != "" {
-            self.workingRangeLabel.attributedText = setupLabels(R.string.localizable.working_hrs(), ": \(model.openTime.value ?? "") - \(model.closeTime.value ?? "")")
+            self.workingRangeLabel.attributedText = setupLabels("working_hrs".localized(), ": \(model.openTime.value ?? "") - \(model.closeTime.value ?? "")")
         }else{
-            self.workingRangeLabel.attributedText = setupLabels(R.string.localizable.working_hrs(), ": 24 \(R.string.localizable.hr())")
+            self.workingRangeLabel.attributedText = setupLabels("working_hrs".localized(), ": 24 \("hr".localized())")
         }
 //        callButton.setImage(R.image.ic_call(), for: .normal)
 
@@ -62,14 +62,14 @@ class BrandDeliveryInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
 //        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 12), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
-        var attributedString1 = NSMutableAttributedString(string:R.string.localizable.delivery(), attributes:attrs1)
+        var attributedString1 = NSMutableAttributedString(string:"delivery".localized(), attributes:attrs1)
         
-        var attributedString2 = NSMutableAttributedString(string: "\n \(R.string.localizable.info())", attributes:attrs2)
+        var attributedString2 = NSMutableAttributedString(string: "\n \("info".localized())", attributes:attrs2)
         
-        if K.shared.APP_LANGUAGE == "ar" {
-            attributedString1 = NSMutableAttributedString(string:R.string.localizable.info(), attributes:attrs2)
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
+            attributedString1 = NSMutableAttributedString(string:"info".localized(), attributes:attrs2)
             
-            attributedString2 = NSMutableAttributedString(string: "\n \(R.string.localizable.delivery())", attributes:attrs1)
+            attributedString2 = NSMutableAttributedString(string: "\n \("delivery".localized())", attributes:attrs1)
             
         }
         
@@ -79,7 +79,7 @@ class BrandDeliveryInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
     }
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
 //        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 14), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
-        let attrs1 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font : APP_FONT_BOLD14, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
 //        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_REGULAR, size: 12), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         let attrs2 = [NSAttributedString.Key.font : APP_FONT_REGULAR12, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]

@@ -16,7 +16,7 @@ extension UITextField {
     func underlineTextField(_ color : UIColor){
         let bottomLine = CALayer()
 
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             bottomLine.frame = CGRect(origin: CGPoint(x: 20, y:self.frame.height - 1), size: CGSize(width: self.frame.width - 60 , height:  1))
 
         }else{
@@ -40,9 +40,9 @@ extension UITextField {
         toolbar.tintColor = UIColor(red: 230/255, green: 45/255, blue: 40/255, alpha: 1)
         
         
-        let doneButton = UIBarButtonItem(title: R.string.localizable.done(), style: .plain, target: self, action:doneBlock);
+        let doneButton = UIBarButtonItem(title: "done".localized(), style: .plain, target: self, action:doneBlock);
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: R.string.localizable.cancel(), style: .plain, target: self, action:#selector(onCancelTapped(_:)));
+        let cancelButton = UIBarButtonItem(title: "cancel".localized(), style: .plain, target: self, action:#selector(onCancelTapped(_:)));
         
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
@@ -58,7 +58,7 @@ extension UITextField {
 extension UITextField {
     open override func awakeFromNib() {
         super.awakeFromNib()
-        let lang : String  = K.shared.APP_LANGUAGE
+        let lang : String  = LocalizationSystem.sharedInstance.getLanguage()
         if lang == "ar" {
             if textAlignment == .natural {
                 self.textAlignment = .right

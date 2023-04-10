@@ -8,8 +8,8 @@
 
 import UIKit
 
-class STUIView: UIView {
-    override func draw(_ rect: CGRect) {
+public class STUIView: UIView {
+    public override func draw(_ rect: CGRect) {
         super.draw(rect)
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds

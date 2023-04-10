@@ -32,7 +32,7 @@ class STBackButton: UIButton {
     }
     
     func setUpView(){
-        self.setImage(K.shared.APP_LANGUAGE == "ar" ? R.image.ic_back_ar() : R.image.ic_back(), for: .normal)
+        self.setImage(LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? R.image.ic_back_ar() : R.image.ic_back(), for: .normal)
     }
 }
 

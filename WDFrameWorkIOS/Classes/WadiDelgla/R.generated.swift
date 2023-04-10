@@ -315,7 +315,7 @@ struct _R {
       /// Key: cancel
       ///
       /// Locales: en, ar
-      var cancel: RswiftResources.StringResource { .init(key: "cancel", tableName: "Localizable", source: source, developmentValue: "Cancel", comment: nil) }
+      var cancel: RswiftResources.StringResource { .init(key: "Cancel", tableName: "Localizable", source: source, developmentValue: "Cancel", comment: nil) }
 
       /// en translation: Card Number
       ///
@@ -462,7 +462,7 @@ struct _R {
       /// Key: club
       ///
       /// Locales: en, ar
-      var club: RswiftResources.StringResource { .init(key: "club", tableName: "Localizable", source: source, developmentValue: "Club", comment: nil) }
+      var club: RswiftResources.StringResource { .init(key: "club", tableName: "Localizable", source: source, developmentValue: "club", comment: nil) }
 
       /// en translation: COD & Online
       ///
@@ -1674,6 +1674,13 @@ struct _R {
       ///
       /// Locales: en, ar
       var view_our_menu: RswiftResources.StringResource { .init(key: "view_our_menu", tableName: "Localizable", source: source, developmentValue: "View our Menu", comment: nil) }
+        
+        /// en translation: Menu
+        ///
+        /// Key: menu_list
+        ///
+        /// Locales: en, ar
+        var menu_list: RswiftResources.StringResource { .init(key: "menu_list", tableName: "Localizable", source: source, developmentValue: "Menu", comment: nil) }
 
       /// en translation: Yes
       ///

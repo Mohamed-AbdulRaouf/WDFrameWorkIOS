@@ -39,7 +39,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
         self.accept.delegate = self
         //bind UI
         self.setupTableView()
-        self.finalizeOrderButton.setTitle(R.string.localizable.finalize_order(), for: .normal)
+        self.finalizeOrderButton.setTitle("finalize_order".localized(), for: .normal)
         self.viewModel?.delegate = self
         self.viewModel?.viewDidLoad()
         
@@ -105,7 +105,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
 extension CheckOutViewController{
     func bindingData() {}
     func updateFinalizeButton(){
-          let finalizeOrderTitle = self.viewModel?.cart?.orderPaymentTypeId == PaymentType.cashOnDelivery.orderPaymentId ? "\(R.string.localizable.place_order()) - \(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)" : (self.viewModel?.paymentData?.cardData == nil && self.viewModel?.paymentData?.cardToken == nil ? "\(R.string.localizable.continue())" : "\(R.string.localizable.place_order()) - \(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)")
+        let finalizeOrderTitle = self.viewModel?.cart?.orderPaymentTypeId == PaymentType.cashOnDelivery.orderPaymentId ? "\("place_order".localized()) - \(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)" : (self.viewModel?.paymentData?.cardData == nil && self.viewModel?.paymentData?.cardToken == nil ? "\("continue".localized())" : "\("place_order".localized()) - \(self.viewModel?.calcResponse?.totalPay.value ?? 0.0)")
           self.finalizeOrderButton.alpha = self.viewModel?.selectedPaymentMethodIndex == -1 ? 0.5 : 1
           self.finalizeOrderButton.isUserInteractionEnabled = self.viewModel?.selectedPaymentMethodIndex != -1
           self.finalizeOrderButton.setTitle(finalizeOrderTitle, for: .normal)

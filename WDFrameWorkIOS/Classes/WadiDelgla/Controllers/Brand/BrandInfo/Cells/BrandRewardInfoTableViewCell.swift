@@ -40,10 +40,10 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.selectionStyle = .none
 
         self.setupHeaderTitle()
-        self.rewardTitleLabel.text = R.string.localizable.rewards()
-        self.balanceTitleLabel.text = R.string.localizable.balance()
-        self.redeemTitleLabel.text = R.string.localizable.redeemed()
-        self.loginButton.setTitle(R.string.localizable.view_balance_info(), for: .normal)
+        self.rewardTitleLabel.text = "Rewards".localized()
+        self.balanceTitleLabel.text = "balance".localized()
+        self.redeemTitleLabel.text = "redeemed".localized()
+        self.loginButton.setTitle("view_balance_info".localized(), for: .normal)
         self.loginView.alpha = UserDefaults.user == nil ? 0.8 : 0.0
         self.loginButton.isHidden = !(UserDefaults.user == nil)
         
@@ -58,9 +58,9 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
             label?.textColor = .darkGray
         }
         
-        self.rewardBitesAmountLabel.text = "\(model.totalReword.value ?? 0) \(R.string.localizable.bites())"
-        self.balanceBitesAmountLabel.text = "\(model.currentCustomerPointsInBrand.value ?? 0) \(R.string.localizable.bites())"
-        self.redeemedBitesAmountLabel.text = "\(model.totalRedeemValue.value ?? 0) \(R.string.localizable.bites())"
+        self.rewardBitesAmountLabel.text = "\(model.totalReword.value ?? 0) \("bites".localized())"
+        self.balanceBitesAmountLabel.text = "\(model.currentCustomerPointsInBrand.value ?? 0) \("bites".localized())"
+        self.redeemedBitesAmountLabel.text = "\(model.totalRedeemValue.value ?? 0) \("bites".localized())"
         
         [rewardBitesAmountLabel,balanceBitesAmountLabel,redeemedBitesAmountLabel].forEach { (label) in
             label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 16)
@@ -79,11 +79,11 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         var attributedString1 = NSMutableAttributedString(string:"My", attributes:attrs1)
-        var attributedString2 = NSMutableAttributedString(string: "\n \(R.string.localizable.rewards())", attributes:attrs2)
+        var attributedString2 = NSMutableAttributedString(string: "\n \("Rewards".localized())", attributes:attrs2)
         
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             attributedString1 = NSMutableAttributedString(string:"", attributes:attrs1)
-            attributedString2 = NSMutableAttributedString(string: " \(R.string.localizable.rewards())", attributes:attrs2)
+            attributedString2 = NSMutableAttributedString(string: " \("Rewards".localized())", attributes:attrs2)
             
         }
         

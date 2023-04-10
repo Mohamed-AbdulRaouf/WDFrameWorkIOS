@@ -36,14 +36,14 @@ class CheckoutDetailsTableViewCell: UITableViewCell,IBaseTableViewCell {
             label?.textColor = COLOR_PRIMARY_TEXT
         }
         [totalTitleLabel,totalLabel].forEach { (label) in
-            label?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 20)
+            label?.font = APP_FONT_BOLD20 //UIFont(resource: APP_FONT_BOLD, size: 20)
             label?.textColor = COLOR_PRIMARY_TEXT
         }
-        self.subTotalTitleLabel.text = R.string.localizable.sub_total()
-        self.vatTitleLabel.text = R.string.localizable.vaT()
-        self.deliveryFeesTitleLabel.text = R.string.localizable.delivery_fees()
-        self.totalDiscountTitleLabel.text = R.string.localizable.total_discount()
-        self.totalTitleLabel.text = R.string.localizable.total()
+        self.subTotalTitleLabel.text = "sub_total".localized()
+        self.vatTitleLabel.text = "VAT".localized()
+        self.deliveryFeesTitleLabel.text = "delivery_fees".localized()
+        self.totalDiscountTitleLabel.text = "total_discount".localized()
+        self.totalTitleLabel.text = "total".localized()
 
         
         subTotalLabel.text = "\(model.subTotal.value ?? 0.0) \(model.currencyCode.value ?? "")"

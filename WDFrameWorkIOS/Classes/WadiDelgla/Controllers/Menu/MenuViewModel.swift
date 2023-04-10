@@ -64,6 +64,7 @@ class MenuViewModel: IMenuViewModel{
                     self.categoryList = data as? [ICategoryMenuItemsDTODAL]
                     self.delegate?.onReloadTableView()
                     self.delegate?.onReloadCategoryCollectionView()
+                    self.delegate?.updateBageCount()
                  }
             }
         }
@@ -132,7 +133,7 @@ class MenuViewModel: IMenuViewModel{
                     }
                     guard let success = model as? Bool,success else { return }
                     doOnMain(deadline: 0.0, {
-                        self.delegate?.onShowToast(R.string.localizable.success_add_item())
+                        self.delegate?.onShowToast("success_add_item".localized())
                         self.delegate?.updateBageCount()
                     })
                 }

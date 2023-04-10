@@ -61,6 +61,7 @@ class LoginViewController: STUIViewController ,IBaseController{
             self.phoneNumberTextField.text = GlobalConstants.shared.mobile
             self.passwordTextField.text = GlobalConstants.shared.membershipNumber
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
+            UserDefaults.currentAppCountry?.countryCode.value = "EG"
             UserDefaults.currentAppCountry = country
                     self.updateCountryCode(country: country)
                     viewModel?.sendLoginRequest()
@@ -140,9 +141,9 @@ extension LoginViewController{
 //            $0?.backgroundColor = COLOR_ACCENT
         }
         self.phoneNumberTextField.keyboardType = .phonePad
-        self.passwordTextField.placeholder = R.string.localizable.password()
-        self.signupButton.setTitle(R.string.localizable.sign_up(), for: .normal)
-        self.loginButton.setTitle(R.string.localizable.login(), for: .normal)
+        self.passwordTextField.placeholder = "password".localized()
+        self.signupButton.setTitle("sign_up".localized(), for: .normal)
+        self.loginButton.setTitle("login".localized(), for: .normal)
         
         self.dismissButton.layer.cornerRadius = self.dismissButton.frame.height / 2
         self.dismissButton.setTitle("X", for: .normal)
@@ -150,7 +151,7 @@ extension LoginViewController{
         self.dismissButton.layer.borderWidth = 2
         self.dismissButton.layer.borderColor = COLOR_ACCENT.cgColor
         self.dismissButton.backgroundColor = COLOR_ACCENT
-        self.forgotPasswordButton.setTitle(R.string.localizable.forgot_password(), for: .normal)
+        self.forgotPasswordButton.setTitle("forgot_password".localized(), for: .normal)
         
         if let countrylist = K.shared.ALL_AVAILABLE_COUNTRY_LIST,countrylist.count > 0 {
             self.updateCountryCode(country: countrylist[0])
@@ -168,7 +169,7 @@ extension LoginViewController{
     }
     func updateCountryCode(country: ICountryDTODAL) {
            self.countryCodeButton.setTitle("\(country.emoji.value ?? "") \(country.dialCode.value ?? "")", for: .normal)
-        self.phoneNumberTextField.placeholder = country.hintNumber.value ?? R.string.localizable.phone_number()
+        self.phoneNumberTextField.placeholder = country.hintNumber.value ?? "phone_number".localized()
          self.phoneNumberTextField.maxLength = country.hintNumber.value?.count ?? 0
         self.viewModel?.user_login_data?.countryId = country.countryId
            self.viewModel?.user_login_data?.dialCode = country.dialCode

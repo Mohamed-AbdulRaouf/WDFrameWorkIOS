@@ -33,10 +33,10 @@ print("Running old Swift")
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let titles = self.viewModel?.sections else { return 0}
-        if titles[section] == R.string.localizable.my_items() {
+        if titles[section] == "my_items".localized() {
             guard let items = self.viewModel?.cart?.cartItems else { return 0 }
             return items.count
-        }else if titles[section] == R.string.localizable.payment_methods() {
+        }else if titles[section] == "payment_methods".localized() {
             return self.viewModel?.paymentMethods?.count ?? 0
         }else{
             return 1
@@ -58,7 +58,7 @@ print("Running old Swift")
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let titles = self.viewModel?.sections
-        if titles?[indexPath.section] == R.string.localizable.address(){
+        if titles?[indexPath.section] == "address".localized(){
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutAddressTableViewCell", for: indexPath) as! CheckoutAddressTableViewCell
             if let address = self.viewModel?.cart?.userAddressDetails {
                 cell.configureCell(address)
@@ -70,34 +70,14 @@ print("Running old Swift")
                 }
             }
             return cell
-        }else if titles?[indexPath.section] == R.string.localizable.my_items() {
+        }else if titles?[indexPath.section] == "my_items".localized() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutItemTableViewCell", for: indexPath) as! CheckoutItemTableViewCell
             if let items = self.viewModel?.cart?.cartItems,indexPath.row <= items.count - 1 {
                 cell.choiceCount = items[indexPath.row].amount
                 cell.configureCell(items[indexPath.row])
             }
             return cell
-        }else if titles?[indexPath.section] == R.string.localizable.discount(){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutDiscountTableViewCell", for: indexPath) as! CheckoutDiscountTableViewCell
-            if let order = self.viewModel?.calcResponse {
-                cell.configureCell(order)
-                cell.onApplyCouponCode = { coupon in
-                    self.endEditing()
-                    self.viewModel?.applyCouponCode(coupon)
-                }
-                cell.onChangeCouponCode = { coupon in
-                    self.endEditing()
-                    self.viewModel?.changeCouponCode(coupon)
-                }
-                cell.onApplyLoyalty = { redeemPoints in
-                    
-                    self.openLoyaltyDiscountVC()
-                }
-                
-            }
-            
-            return cell
-        }else if titles?[indexPath.section] == R.string.localizable.payment_methods() {
+        }else if titles?[indexPath.section] == "payment_methods".localized() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutPaymentTableViewCell", for: indexPath) as! CheckoutPaymentTableViewCell
             
             cell.configureCell((self.viewModel?.paymentMethods?[indexPath.row])!,(self.viewModel?.getPaymentSubTitle())!)
@@ -111,7 +91,24 @@ print("Running old Swift")
                 }
             }
             return cell
-        }else if titles?[indexPath.section] == R.string.localizable.checkout_cash_details(){
+        }else if titles?[indexPath.section] == "discount".localized(){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutDiscountTableViewCell", for: indexPath) as! CheckoutDiscountTableViewCell
+            if let order = self.viewModel?.calcResponse {
+                cell.configureCell(order)
+                cell.onApplyCouponCode = { coupon in
+                    self.endEditing()
+                    self.viewModel?.applyCouponCode(coupon)
+                }
+                cell.onChangeCouponCode = { coupon in
+                    self.endEditing()
+                    self.viewModel?.changeCouponCode(coupon)
+                }
+                cell.onApplyLoyalty = { redeemPoints in
+                    self.openLoyaltyDiscountVC()
+                }
+            }
+            return cell
+        }else if titles?[indexPath.section] == "checkout_cash_details".localized() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutDetailsTableViewCell", for: indexPath) as! CheckoutDetailsTableViewCell
             if let cart = self.viewModel?.calcResponse {
                 cell.configureCell(cart)
@@ -130,7 +127,7 @@ extension CheckOutViewController {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let titles = self.viewModel?.sections else { return ""}
-        guard titles[section] != R.string.localizable.checkout_cash_details() else {
+        guard titles[section] != "checkout_cash_details".localized() else {
             return ""
         }
         return titles[section]
@@ -139,14 +136,14 @@ extension CheckOutViewController {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let titles = self.viewModel?.sections
-        if titles?[section] == R.string.localizable.discount() {
+        if titles?[section] == "discount".localized() {
             guard let order =  self.viewModel?.calcResponse,order.isCurrentRewardIdValid.value ?? false && order.currentCustomerIsRegistered.value ?? false else { return 0 }
         }
         switch titles?[section] {
-        case R.string.localizable.address() ,
-             R.string.localizable.my_items(),
-             R.string.localizable.discount(),
-             R.string.localizable.payment_methods():
+        case "address".localized() ,
+             "my_items".localized(),
+             "discount".localized(),
+             "payment_methods".localized():
             return 30
         default:
             return 0
@@ -157,19 +154,19 @@ extension CheckOutViewController {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 30))
         
         let label = UILabel()
-        if K.shared.APP_LANGUAGE == "ar" {
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             label.frame = CGRect.init(x: -30, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }else{
             label.frame = CGRect.init(x: 30, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }
         if let titles = self.viewModel?.sections,titles.count > 0 {
-            if titles[section] == R.string.localizable.checkout_cash_details() {
+            if titles[section] == "checkout_cash_details".localized() {
                 label.text = ""
             }else{
                 label.text = titles[section]
             }
         }
-        label.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
+        label.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
         label.textColor = COLOR_ACCENT_DARK
         headerView.addSubview(label)
         

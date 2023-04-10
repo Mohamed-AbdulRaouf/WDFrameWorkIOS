@@ -111,7 +111,7 @@ extension LocationManager {
         center.longitude = lon
         
         let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-        let lang: String = K.shared.APP_LANGUAGE == "ar" ? "ar" : "en_US"
+        let lang: String = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? "ar" : "en_US"
         
         var address = ""
         
@@ -161,8 +161,8 @@ extension LocationManager {
         runLocationBlock {
             let location = CLLocation(latitude: self.getLatitude(), longitude: self.getLongitude())
                        self.getCountry(forLocation: location) { country in
-//                           completion(country?.isoCountryCode)
-                        completion("EG")
+                           completion(country?.isoCountryCode)
+//                        completion("EG")
                        }
         }
     }

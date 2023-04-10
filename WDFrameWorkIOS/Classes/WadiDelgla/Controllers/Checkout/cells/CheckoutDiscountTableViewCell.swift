@@ -48,17 +48,17 @@ class CheckoutDiscountTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.couponCodeTextField.delegate = self
         self.loyaltyDiscountTextField.delegate = self
         
-        self.loyaltyDiscountTextField.placeholder = R.string.localizable.loyalty_discount_amount()
-        self.couponCodeTextField.placeholder = R.string.localizable.enter_promo_code()
+        self.loyaltyDiscountTextField.placeholder = "loyalty_discount_amount".localized()
+        self.couponCodeTextField.placeholder = "enter_promo_code".localized()
 
         
-        self.balanceTitleLabel.text = R.string.localizable.balance()
+        self.balanceTitleLabel.text = "balance".localized()
         self.balanceAmountLabel.sizeToFit()
         self.bitesAmountLabel.sizeToFit()
         self.balanceAmountLabel.text = "\(model.equivalentPointsAmount.value ?? 0) \(model.currencyCode.value ?? "")"
-        self.bitesAmountLabel.text = "\(model.currentCustomerPointsInBrand.value ?? 0) \(R.string.localizable.bites())"
+        self.bitesAmountLabel.text = "\(model.currentCustomerPointsInBrand.value ?? 0) \("bites".localized())"
         
-        self.applyButton.setTitle(R.string.localizable.apply(), for: .normal)
+        self.applyButton.setTitle("apply".localized(), for: .normal)
         
 //        self.couponCodeTextField.text = "\(model.couponCode)"
         var roundedAmount = ""

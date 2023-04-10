@@ -20,5 +20,48 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.739319251387-s1tj22fpk5cihb9qfdm0dvnnr6umpnvh</string>
+			</array>
+		</dict>
+	</array>
+	<key>Configuration</key>
+	<string>${CONFIGURATION}</string>
+	<key>CustomerSourceId</key>
+	<string>$(CUSTOMER_SOURCE_ID)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<string>NO</string>
+	<key>GOOGLE_PLACES_API_KEY</key>
+	<string>AIzaSyAzbQHVG-yfKbg5fxyKtWjOPKCIvz9eYA8</string>
+	<key>KashierSDKMode</key>
+	<string>$(KASHIER_SDK_MODE)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callback</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>App need your camera to read the QR code to earn new Bites</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>By allowing sharing your location you can get the nearby resturants</string>
+	<key>ServerURL</key>
+	<string>$(SERVER_URL)</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

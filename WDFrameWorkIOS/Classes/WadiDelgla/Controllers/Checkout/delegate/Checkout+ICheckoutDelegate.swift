@@ -38,11 +38,11 @@ extension CheckOutViewController : ICheckoutViewController{
                                          panGestureDismissal: false)
                  
                  // Create first button
-                 let buttonOne = CancelButton(title: R.string.localizable.cancel(), height: 60) {
+        let buttonOne = CancelButton(title: "cancel".localized(), height: 60) {
                  }
                  
                  // Create second button
-                 let buttonTwo = DefaultButton(title: R.string.localizable.apply(), height: 60,dismissOnTap: false) {
+        let buttonTwo = DefaultButton(title: "apply".localized(), height: 60,dismissOnTap: false) {
                      redeemVC.applyRedeem(onComplete: { (applied,redeemPoints) in
                          popup.dismiss(animated: true, completion: {
                              if applied {
@@ -75,11 +75,11 @@ extension CheckOutViewController : ICheckoutViewController{
                                 panGestureDismissal: false)
         
         // Create first button
-        let buttonOne = CancelButton(title: R.string.localizable.cancel(), height: 60) {
+        let buttonOne = CancelButton(title: "cancel".localized(), height: 60) {
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: R.string.localizable.apply(), height: 60,dismissOnTap: false) {
+        let buttonTwo = DefaultButton(title: "apply".localized(), height: 60,dismissOnTap: false) {
             redeemVC.applyRedeem(onComplete: { (applied,redeemPoints) in
                 popup.dismiss(animated: true, completion: {
                     if applied {

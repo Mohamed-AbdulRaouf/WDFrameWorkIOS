@@ -24,7 +24,7 @@ class LocationViewController :STUIViewController ,IBaseController{
     @IBOutlet weak var countryButton: UIButton!
     @IBOutlet weak var title1Label: UILabel!
     @IBOutlet weak var title2Label: UILabel!
-    
+    @IBOutlet weak var myOrdersBtn: UIButton!
     
     var selectedCity: SearchItemDTODAL?
     var selectedArea: SearchItemDTODAL?
@@ -48,6 +48,7 @@ extension LocationViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigationBarHidden(true)
+        self.myOrdersBtn.setTitle("my_orders".localized(), for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,14 +70,14 @@ extension LocationViewController {
             self?.bindingData()
         }
         vc.data = data
-        vc.title = R.string.localizable.club()
+        vc.title = "club".localized()
         self.navigationController?.pushViewController(vc)
         
     }
     
     @IBAction func onAreaTapped(_ sender: Any) {
         if viewModel?.currentCity == nil {
-            self.showMessage(andMessage: R.string.localizable.select_government_msg())
+            self.showMessage(andMessage: "select_government_msg".localized())
             return
         }
         let vc = StoryboardScene.Features.searchViewController.instantiate()
@@ -85,7 +86,7 @@ extension LocationViewController {
             self?.bindingData()
         }
         vc.data = self.data.filter({$0.id.value == self.viewModel?.currentCity?.id.value!}).first?.areas.value ?? [SearchItemDTOModelDAL]()
-        vc.title = R.string.localizable.area()
+        vc.title = "area".localized()
         self.navigationController?.pushViewController(vc)
         
     }
@@ -104,6 +105,12 @@ extension LocationViewController {
     func reloadData() {
         self.bindingData()
     }
+    
+    @IBAction func onMyOrdersBtnTapped(_ sender: Any) {
+        let vc = StoryboardScene.User.orderListViewController.instantiate()
+        self.navigationController?.pushViewController(vc)
+    }
+    
 }
 
 // MARK: - Internal
@@ -111,7 +118,7 @@ extension LocationViewController{
     func setupUI(){
         self.viewModel?.delegate = self
 //        self.startButton.backgroundColor = COLOR_ACCENT
-        self.title1Label.text = R.string.localizable.logo_title1()
+        self.title1Label.text = "logo_title1".localized()
         self.title2Label.text = "Order the Food You Love".localized()
         self.title1Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
         self.title2Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
@@ -119,13 +126,13 @@ extension LocationViewController{
         self.startButton.layer.cornerRadius = 30
         self.startButton.layer.borderColor = UIColor.clear.cgColor
         self.startButton.titleLabel?.font = FONT_PRIMARY_BUTTON
-        self.startButton.setTitle(R.string.localizable.order(), for: .normal)
+        self.startButton.setTitle("order".localized(), for: .normal)
         
-        self.cityLabel.text = R.string.localizable.club()
-        self.areaLabel.text = R.string.localizable.area()
-        self.cityButton.setTitle(R.string.localizable.select_government(), for: .normal)
-        self.areaButton.setTitle(R.string.localizable.select_club(), for: .normal)
-        let lang = K.shared.APP_LANGUAGE == "ar"  ? "English" : "العربية"
+        self.cityLabel.text = "select_club".localized()
+        self.areaLabel.text = "select_area".localized()
+        self.cityButton.setTitle("select_club".localized(), for: .normal)
+        self.areaButton.setTitle("select_area".localized(), for: .normal)
+        let lang = LocalizationSystem.sharedInstance.isCurrentLanguageArabic()  ? "English" : "العربية"
         self.languageButton.setTitle(lang, for: .normal)
         
         /*
@@ -141,8 +148,8 @@ extension LocationViewController{
         
         if let viewModel = viewModel{
             
-            self.cityButton.setTitle(viewModel.currentCity == nil ? R.string.localizable.select_government() : viewModel.currentCity?.name.value, for: .normal)
-            self.areaButton.setTitle(viewModel.currentArea == nil ? R.string.localizable.select_club() :viewModel.currentArea?.name.value, for: .normal)
+            self.cityButton.setTitle(viewModel.currentCity == nil ? "select_club".localized() : viewModel.currentCity?.name.value, for: .normal)
+            self.areaButton.setTitle(viewModel.currentArea == nil ? "select_area".localized() :viewModel.currentArea?.name.value, for: .normal)
         }
     }
     
@@ -161,7 +168,7 @@ extension LocationViewController {
         let clearAction = UIAlertAction(title: actionButtonText, style: .destructive) { (pressed) in
             actionButtonClosure()
         }
-        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
         alertVC.addAction(clearAction)
         alertVC.addAction(cancelAction)
         present(alertVC, animated: true, completion: nil)
@@ -194,8 +201,8 @@ extension LocationViewController: ILocationViewController{
         
     }
     func onShowClearCartAlert() {
-        let alertVC = UIAlertController(title: "", message: R.string.localizable.clear_cart_due_to_change_location(), preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: R.string.localizable.clear_cart(), style: .destructive) { (pressed) in
+        let alertVC = UIAlertController(title: "", message: "clear_cart_due_to_change_location".localized(), preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "clear_cart".localized(), style: .destructive) { (pressed) in
             self.viewModel?.cartService?.deleteCart(completion: { (success) in
                 if success{
                     UserDefaults.brandPaymentData = nil
@@ -203,22 +210,22 @@ extension LocationViewController: ILocationViewController{
                 }
             })
         }
-        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
         
         alertVC.addAction(clearAction)
         alertVC.addAction(cancelAction)
         present(alertVC, animated: true, completion: nil)
     }
     func onShowClearCartByChangingLanguage(){
-        let alertVC = UIAlertController(title: "", message: R.string.localizable.clear_cart_due_to_change_language(), preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: R.string.localizable.clear_cart(), style: .destructive) { (pressed) in
+        let alertVC = UIAlertController(title: "", message: "clear_cart_due_to_change_language".localized(), preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "clear_cart".localized(), style: .destructive) { (pressed) in
             self.viewModel?.cartService?.deleteCart(completion: { (success) in
                 if success{
                     changeLanguage()
                 }
             })
         }
-        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil)
         alertVC.addAction(clearAction)
         alertVC.addAction(cancelAction)
         present(alertVC, animated: true, completion: nil)

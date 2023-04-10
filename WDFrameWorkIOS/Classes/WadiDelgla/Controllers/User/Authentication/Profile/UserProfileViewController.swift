@@ -66,7 +66,7 @@ class UserProfileViewController: STUIViewController,IBaseController {
     @IBAction func dp(_ sender: UITextField) {
         let datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
-        if K.shared.APP_LANGUAGE == "ar"
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic()
         {
             datePickerView.locale = Locale(identifier: "ar")
         }
@@ -133,7 +133,7 @@ extension UserProfileViewController{
         self.saveButton.layer.cornerRadius = 10
         self.saveButton.layer.borderColor = UIColor.clear.cgColor
         self.saveButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
-        self.saveButton.setTitle(R.string.localizable.save(), for: .normal)
+        self.saveButton.setTitle("save".localized(), for: .normal)
         
         [self.userPhoneNumberTextField].forEach {
             $0?.isEnabled = false
@@ -142,7 +142,7 @@ extension UserProfileViewController{
         self.userAddressButton.setTitle(R.string.localizable.my_addresses(), for: .normal)
         [self.userAddressButton,self.changePasswordButton].forEach {
             $0?.setTitleColor(COLOR_ACCENT, for: .normal)
-            $0?.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
+            $0?.titleLabel?.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
             $0?.layer.cornerRadius = 18.2
             // set backgroundColor in order to cover the shadow inside the bounds
             $0?.layer.backgroundColor = UIColor.white.cgColor

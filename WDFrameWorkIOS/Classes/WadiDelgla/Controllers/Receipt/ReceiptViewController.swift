@@ -55,8 +55,8 @@ extension ReceiptViewController{
         self.viewModel?.delegate = self
         self.setupTableView()
         self.doneButton.layer.cornerRadius = 16
-        self.navigationItem.title = R.string.localizable.order_details()
-        self.doneButton.setTitle(R.string.localizable.done(), for: .normal)
+        self.navigationItem.title = "order_details".localized()
+        self.doneButton.setTitle("done".localized(), for: .normal)
     }
     func bindingData() {}
 }
@@ -129,7 +129,7 @@ print("Running old Swift")
         let nameLabel = UILabel()
         let priceLabel = UILabel()
         nameLabel.numberOfLines = 0
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             nameLabel.text = "\(String(describing: self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0).enToArDigits)* \(self.viewModel?.order?.orderItems.value?[section].itemTitle.value ?? "")"
                  
              }else{
@@ -140,7 +140,7 @@ print("Running old Swift")
              
              priceLabel.text = " \(String(format: "%.2f", price ) + "\(String(describing: self.viewModel?.order?.orderItems.value?[section].currencyCode.value ?? "" ))")"
              [nameLabel].forEach {
-                 $0?.textAlignment = K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? .right : .left
+                 $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
              }
         
         let subTotalStack : UIStackView = {
@@ -171,7 +171,7 @@ print("Running old Swift")
         
         let subTotalTitleLabel = UILabel()
         let subTotalLabel = UILabel()
-        subTotalTitleLabel.text = R.string.localizable.sub_total()
+        subTotalTitleLabel.text = "sub_total".localized()
         subTotalLabel.text = String(format: "%.2f \(String(describing: order.currencyCode.value ?? ""))", order.subTotal.value ?? 0)
         let subTotalStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [subTotalTitleLabel, subTotalLabel])
@@ -186,7 +186,7 @@ print("Running old Swift")
         
         let deliveryFeesLabelTitle = UILabel()
         let deliveryFeesLabel = UILabel()
-        deliveryFeesLabelTitle.text = R.string.localizable.delivery_fees()
+        deliveryFeesLabelTitle.text = "delivery_fees".localized()
         deliveryFeesLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")", order.deliveryFees.value ?? 0)
         let deliveryFeesStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [deliveryFeesLabelTitle, deliveryFeesLabel])
@@ -201,7 +201,7 @@ print("Running old Swift")
         
         let loyalityDiscountLabelTitle = UILabel()
         let loyalityDiscountLabel = UILabel()
-        loyalityDiscountLabelTitle.text = R.string.localizable.loyalty_discount()
+        loyalityDiscountLabelTitle.text = "loyalty_discount".localized()
         loyalityDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")",order.loyaltyDiscount.value ?? 0)
         let loyalityDiscountStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [loyalityDiscountLabelTitle, loyalityDiscountLabel])
@@ -216,7 +216,7 @@ print("Running old Swift")
         
         let vatTitleLabel = UILabel()
         let vatLabel = UILabel()
-        vatTitleLabel.text = R.string.localizable.vaT()
+        vatTitleLabel.text = "VAT".localized()
         vatLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")",order.totalTax.value ?? 0)
         let vatStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [vatTitleLabel, vatLabel])
@@ -231,7 +231,7 @@ print("Running old Swift")
         
         let totalDiscountTitleLabel = UILabel()
         let totalDiscountLabel = UILabel()
-        totalDiscountTitleLabel.text = R.string.localizable.discount()
+        totalDiscountTitleLabel.text = "discount".localized()
         totalDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.totalDiscount.value ?? 0)
         let totalDiscountStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [totalDiscountTitleLabel, totalDiscountLabel])
@@ -246,7 +246,7 @@ print("Running old Swift")
         
         let totalTitleLabel = UILabel()
         let totalLabel = UILabel()
-        totalTitleLabel.text = R.string.localizable.total()
+        totalTitleLabel.text = "total".localized()
         totalLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.orderTotal.value ?? 0)
         let totalStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [totalTitleLabel, totalLabel])
@@ -317,7 +317,7 @@ extension ReceiptViewController : IReceiptViewController{
             self.brandLogoImageView.image = UIImage(named: "dobites_splash")
         }
         self.brandNameLabel.text = self.viewModel?.order?.orderDetails.value?.brandName.value ?? ""
-        self.headerLabel.text = R.string.localizable.my_items()
+        self.headerLabel.text = "my_items".localized()
         self.onReloadTableView()
     }
 }

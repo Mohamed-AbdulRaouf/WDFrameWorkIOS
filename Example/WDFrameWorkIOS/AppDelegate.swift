@@ -23,12 +23,13 @@ import WDFrameWorkIOS
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var locationManager:CLLocationManager? = CLLocationManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
+        setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(exitWDFramework), name: NSNotification.Name("exit_wdframework"), object: nil)
         // google maps api
         GMSServices.provideAPIKey(Config.googlePlacesAPIKey)
@@ -38,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ------------------
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
+        }
+        if CLLocationManager.authorizationStatus() == .notDetermined || CLLocationManager.authorizationStatus() == .denied {
+            locationManager?.requestAlwaysAuthorization()
         }
         Messaging.messaging().delegate = self
         let pushManager = PushNotificationManager(userID: "currently_logged_in_user_id")
@@ -60,10 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.applicationIconBadgeNumber = 0
         application.registerForRemoteNotifications()
-        let main = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = main.instantiateInitialViewController()
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
+        self.openMainVC()
         
 //        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
 //        let bundle = Bundle(path: bundlePath!)
@@ -74,9 +75,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func openMainVC() {
+        let main = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = main.instantiateInitialViewController()
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func setupUI() {
+//        UIApplication.shared.isStatusBarHidden = false
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+//        statusBar.backgroundColor = .orange
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
+        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(STUIView.self)
+    }
+    
     @objc func exitWDFramework() {
         debugPrint("exit from wdframework")
-
+        self.openMainVC()
     }
     
     func applicationDidFinishLaunching(_ application: UIApplication) {

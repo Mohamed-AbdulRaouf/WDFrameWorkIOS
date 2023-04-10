@@ -40,7 +40,7 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
         }
         self.radioButton.isSelected = model.isSelected
         
-        self.changeButton.setTitle(R.string.localizable.change(), for: .normal)
+        self.changeButton.setTitle("change".localized(), for: .normal)
         self.changeButton.setTitleColor(UIColor.init(hexString: "#0DA946"), for: .normal)
         self.changeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         

@@ -27,7 +27,7 @@ class CheckoutAddressTableViewCell: UITableViewCell {
         self.addressLabel.text = address
         self.addressLabel.textColor = COLOR_SUB_TITLE_TEXT
         self.addressLabel.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR, size: 14)
-        self.changeAddressButton.setTitle(R.string.localizable.change(), for: .normal)
+        self.changeAddressButton.setTitle("change".localized(), for: .normal)
         self.changeAddressButton.setTitleColor(UIColor.init(hexString: "#0DA946"), for: .normal)
         self.changeAddressButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         self.changeAddressButton.addTarget(self, action: #selector(onButtonTapped(_:)), for: .touchUpInside)

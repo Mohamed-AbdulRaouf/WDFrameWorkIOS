@@ -34,7 +34,7 @@ extension OrderTypeViewController {
     func setupUI(){
         self.viewModel?.delegate = self
         self.setupCollectionView()
-        self.headerLabel.text = R.string.localizable.order_type_choices()
+        self.headerLabel.text = "order_type_choices".localized()
         self.headerLabel.textColor = COLOR_PRIMARY_TEXT
 
        

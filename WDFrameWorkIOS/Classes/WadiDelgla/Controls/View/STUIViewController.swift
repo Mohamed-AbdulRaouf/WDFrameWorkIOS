@@ -62,7 +62,7 @@ extension STUIViewController {
         self.dismissCnfiguration(withTitle: "X")
     }
     func addSkipButton(){
-        self.dismissCnfiguration(withTitle: R.string.localizable.skip())
+        self.dismissCnfiguration(withTitle: "skip".localized())
     }
     private func dismissCnfiguration(withTitle dismissTitle: String) {
         self.navigationController?.navigationBar.topItem?.title = ""
@@ -189,7 +189,7 @@ extension STUIViewController {
             dialog.addAction(action)
         }
         if showCancel {
-            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel) { (_) in }
+            let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel) { (_) in }
             dialog.addAction(cancelAction)
         }
         //finally presenting the dialog box
@@ -210,7 +210,7 @@ extension STUIViewController {
             dialog.addAction(action)
         }
         if showCancel {
-            let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel) { (_) in }
+            let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel) { (_) in }
             dialog.addAction(cancelAction)
         }
         //finally presenting the dialog box

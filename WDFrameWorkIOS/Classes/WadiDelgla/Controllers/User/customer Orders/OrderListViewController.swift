@@ -22,7 +22,6 @@ class OrderListViewController: STUIViewController,IBaseController {
         // Do any additional setup after loading the view.
         self.setupUI()
         self.bindingData()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +33,11 @@ class OrderListViewController: STUIViewController,IBaseController {
         super.viewDidAppear(animated)
         
     }
+    
     func setupUI(){
         self.viewModel?.delegate = self
         self.setupTableView()
-        self.navigationItem.title = R.string.localizable.my_orders()
+        self.navigationItem.title = "my_orders".localized()
     }
     func bindingData() {
          
@@ -57,7 +57,7 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource,IBa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel?.order?.items.value?.count ?? 0 == 0 {
-                   self.tableView.setEmptyMessage( R.string.localizable.no_orders())
+            self.tableView.setEmptyMessage("no_orders".localized())
            
                } else {
                    self.tableView.restore()

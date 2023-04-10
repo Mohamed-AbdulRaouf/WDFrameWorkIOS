@@ -88,7 +88,7 @@ class STCartViewModel: ISTCartViewModel{
         LocationManager.sharedInstance.getUserCurrentISOCountry { (countryCode) in
             if let countryCode = countryCode {
                 guard countryCode == (UserDefaults.currentAppCountry?.countryCode.value) else {
-                    self.delegate?.onError(R.string.localizable.error_country_location())
+                    self.delegate?.onError("error_country_location".localized())
                     return
                 }
                 self.validateCheckout()
@@ -107,8 +107,10 @@ class STCartViewModel: ISTCartViewModel{
     }
     
     func checkout() {
-        if self.cart?.phone2 == "" {
-            self.delegate?.onError("Please add your phone".localized())
+        let orderPhone = UserDefaults.orderPhone
+        self.cart?.phone2 = orderPhone
+        if orderPhone == "" || orderPhone == " " || orderPhone == "0" || orderPhone.count <= 10 || (orderPhone.isValidPhone == false) || (orderPhone.isNumeric == false) {
+            self.delegate?.onError("Please check from your phone".localized())
             return
         }
         guard let cart = cart else { return}
@@ -124,7 +126,7 @@ class STCartViewModel: ISTCartViewModel{
                         self.errorModel = response?.error?.validateError as? IOrderValidationDTOBLL
                         if response?.error?.APIError != nil {
                             if response?.error?.ErrorCode == ErrorsCodeBLL.InvalidMinOrderToDeliver.rawValue {
-                                self.delegate?.onShowToast(R.string.localizable.min_order_error_msg())
+                                self.delegate?.onShowToast("min_order_error_msg".localized())
                             }else if response?.error?.ErrorCode == ErrorsCodeBLL.EmptyAddress.rawValue {
                                 if !(cart.isBrandDeliveryAtStore ?? false){
                                     self.delegate?.openUserAddresses()

@@ -24,7 +24,7 @@ extension SplashViewController {
         // Do any additional setup after loading the view.
         self.bindingData()
         self.viewModel?.delegate = self
-        K.shared.APP_LANGUAGE = UserDefaults.currentAppLanguage
+//        K.shared.APP_LANGUAGE = UserDefaults.currentAppLanguage
       DispatchQueue.main.async(execute: {
                   setup(with: Config.self, completion: {
                       DispatchQueue.global(qos: .background).async {

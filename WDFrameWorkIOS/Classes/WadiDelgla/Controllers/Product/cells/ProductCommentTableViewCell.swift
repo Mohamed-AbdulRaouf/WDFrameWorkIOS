@@ -27,13 +27,13 @@ class ProductCommentTableViewCell: UITableViewCell,UITextViewDelegate {
         commentTextView.delegate = self
         if model == "" {
             placeholderLabel = UILabel()
-            placeholderLabel.text = R.string.localizable.special_instructions_example()
+            placeholderLabel.text = "special_instructions_example".localized()
             placeholderLabel.text = ""
             placeholderLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 13)
             placeholderLabel.sizeToFit()
             commentTextView.addSubview(placeholderLabel)
-            placeholderLabel.textAlignment = K.shared.APP_LANGUAGE == "ar" ? .right : .left
-            if K.shared.APP_LANGUAGE == "ar"{
+            placeholderLabel.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
+            if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
                 placeholderLabel.frame.origin = CGPoint(x: commentTextView.frame.width - 150, y: (commentTextView.font?.pointSize)! / 2)
 
             }else{

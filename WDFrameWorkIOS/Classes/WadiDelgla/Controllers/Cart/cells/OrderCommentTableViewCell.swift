@@ -19,14 +19,14 @@ class OrderCommentTableViewCell: UITableViewCell {
     }
     
     func configureCell(_ comment: String){
-        if K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue {
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             commentTextView.textAlignment = .right
         }
         commentTextView.delegate = self
         commentTextView.backgroundColor = .white
         commentTextView.layer.borderColor = UIColor.lightGray.cgColor
         commentTextView.layer.borderWidth = 1
-        commentTextView.text = comment.replacingOccurrences(of: " ", with: "") == "" ? R.string.localizable.order_comment_description() : comment
+        commentTextView.text = comment.replacingOccurrences(of: " ", with: "") == "" ? "order_comment_description".localized() : comment
         commentTextView.textColor = comment.replacingOccurrences(of: " ", with: "") == "" ? UIColor.lightGray : .black
         commentTextView.selectedTextRange = commentTextView.textRange(from: commentTextView.beginningOfDocument, to: commentTextView.beginningOfDocument)
         
@@ -41,7 +41,7 @@ class OrderCommentTableViewCell: UITableViewCell {
 }
 extension OrderCommentTableViewCell: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        let comment = textView.text == R.string.localizable.order_comment_description() ? "" : textView.text
+        let comment = textView.text == "order_comment_description".localized() ? "" : textView.text
                onChangeComment!(comment!)
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -56,7 +56,7 @@ extension OrderCommentTableViewCell: UITextViewDelegate {
         // and set the cursor to the beginning of the text view
         if updatedText.isEmpty {
             
-            textView.text = R.string.localizable.order_comment_description()
+            textView.text = "order_comment_description".localized()
             textView.textColor = UIColor.lightGray
             
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="STFooterBackGround" customModule="resources" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="STFooterBackGround" customModule="WDFrameWorkIOS" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="STFooterBackGround"/>
             </userDefinedRuntimeAttributes>
@@ -23,7 +23,7 @@
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="2KP-pj-wEu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="559-JN-9mK"/>
                 <constraint firstItem="2KP-pj-wEu" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="aNq-2v-cUI"/>

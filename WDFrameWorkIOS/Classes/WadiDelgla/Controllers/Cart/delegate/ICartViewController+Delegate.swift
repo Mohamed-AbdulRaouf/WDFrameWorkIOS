@@ -26,11 +26,11 @@ extension STCartViewController : ISTCartViewController{
     @objc func onClearCartTapped(){
         doOnMain {
             
-            let deleteAction =  UIAlertAction(title: R.string.localizable.ok(), style: .default) { (dialog) in
+            let deleteAction =  UIAlertAction(title: "ok".localized(), style: .default) { (dialog) in
                 self.viewModel?.clearCartDB()
             }
                 
-                self.showAlert(withTitle: R.string.localizable.clear_cart_title(), andMessage: R.string.localizable.clear_cart_mesg(), withActions: [deleteAction],withCancel: true)
+            self.showAlert(withTitle: "clear_cart_title".localized(), andMessage: "clear_cart_mesg".localized(), withActions: [deleteAction],withCancel: true)
         }
     }
     
@@ -60,8 +60,8 @@ extension STCartViewController : ISTCartViewController{
       }
     /// This Function to show clear cart from offline dialogue
     func onShowClearCartAlert() {
-        let alertVC = UIAlertController(title: "", message: R.string.localizable.items_changed_error_msg(), preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: R.string.localizable.clear_cart(), style: .destructive) { (pressed) in
+        let alertVC = UIAlertController(title: "", message: "items_changed_error_msg".localized(), preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "clear_cart".localized(), style: .destructive) { (pressed) in
             self.viewModel?.cartService?.deleteCart(completion: { (success) in
                 if success{
                     self.viewModel?.getCartDB()
@@ -72,9 +72,12 @@ extension STCartViewController : ISTCartViewController{
         alertVC.addAction(clearAction)
         present(alertVC, animated: true, completion: nil)
     }
-    func showCommentDialog(_ visualCode: String,_ comment:String){
+    func showCommentDialog(_ visualCode: String,_ comment:String) {
         // Create a custom view controller
-        let commentVC = CommentViewController(nibName: "CommentViewController", bundle: nil)
+        let bundlePath = Bundle(for: UserTestPath.self).path(forResource: "resources", ofType: "bundle")
+        let bundle = Bundle(path: bundlePath!)
+        
+        let commentVC = CommentViewController(nibName: "CommentViewController", bundle: bundle)
         commentVC.comment = comment
         // Create the dialog
         let popup = PopupDialog(viewController: commentVC,
@@ -84,13 +87,13 @@ extension STCartViewController : ISTCartViewController{
                                 panGestureDismissal: false)
         
         // Create first button
-        let buttonOne = CancelButton(title: R.string.localizable.cancel(), height: 60) {
+        let buttonOne = CancelButton(title: "cancel".localized(), height: 60) {
             
         }
         
         // Create second button
-        let buttonTwo = DefaultButton(title: R.string.localizable.ok(), height: 60) {
-            let updatedComment = commentVC.commentTextView.text == R.string.localizable.comment_description() ? "" : commentVC.commentTextView.text
+        let buttonTwo = DefaultButton(title: "ok".localized(), height: 60) {
+            let updatedComment = commentVC.commentTextView.text == "comment_description".localized() ? "" : commentVC.commentTextView.text
             self.viewModel?.updateComment(visualCode, withComment: updatedComment ?? "")
             
         }

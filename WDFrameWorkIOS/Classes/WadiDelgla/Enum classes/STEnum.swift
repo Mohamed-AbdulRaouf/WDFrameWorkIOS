@@ -29,9 +29,9 @@ enum PaymentType : CaseIterable{
      var name: String {
         switch self {
         case .cashOnDelivery:
-            return R.string.localizable.cash_on_delivery()
+            return "cash_on_delivery".localized()
         case .creditCard:
-            return R.string.localizable.pay_with_credit_card()
+            return "pay_with_credit_card".localized()
         }
   }
 }
@@ -79,15 +79,15 @@ enum OrderType {
     var name : String {
         switch self {
         case .online:
-            return R.string.localizable.online()
+            return "online".localized()
         case .atStore:
-            return R.string.localizable.atStore()
+            return "atStore".localized()
         case .dine_in:
-            return R.string.localizable.dine_in()
+            return "dine_in".localized()
         case .drive_thrue:
-            return R.string.localizable.drive_thru()
+            return "drive_thru".localized()
         case .delivery:
-            return R.string.localizable.delivery()
+            return "delivery".localized()
         }
     }
     var imageName : String {

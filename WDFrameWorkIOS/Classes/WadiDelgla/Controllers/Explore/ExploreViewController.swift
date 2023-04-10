@@ -53,7 +53,7 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
     
     // MARK: - Functions
     @objc func onFilterTapped(){
-        guard let _ = self.viewModel?.filterAndSeviceList?.sortList.value else { self.onShowToast(R.string.localizable.no_data_found())
+        guard let _ = self.viewModel?.filterAndSeviceList?.sortList.value else { self.onShowToast("no_data_found".localized())
             return
         }
         let vc = StoryboardScene.Brand.filterationViewController.instantiate()
@@ -62,7 +62,7 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
         self.navigationController?.pushViewController(vc)
     }
     @objc func onSortTapped(){
-        guard let _ = self.viewModel?.filterAndSeviceList?.sortList.value else { self.onShowToast(R.string.localizable.no_data_found())
+        guard let _ = self.viewModel?.filterAndSeviceList?.sortList.value else { self.onShowToast("no_data_found".localized())
             return
         }
         let vc = StoryboardScene.Brand.sortViewController.instantiate()
@@ -100,8 +100,8 @@ extension ExploreViewController{
     func bindingData() {}
     
     func setupNavigationBar(){
-        self.navigationController?.title = R.string.localizable.explore()
-        self.navigationController?.navigationBar.topItem?.title = R.string.localizable.explore()
+        self.navigationController?.title = "Explore".localized()
+        self.navigationController?.navigationBar.topItem?.title = "Explore".localized()
 //        let sort = UIBarButtonItem(image: R.image.ic_sort(), style: .plain, target: self, action: #selector(onSortTapped))
 //        let filter =   UIBarButtonItem(image: R.image.funnel(), style: .plain, target: self, action: #selector(onFilterTapped))
 //        self.navigationItem.rightBarButtonItems = [sort, filter]

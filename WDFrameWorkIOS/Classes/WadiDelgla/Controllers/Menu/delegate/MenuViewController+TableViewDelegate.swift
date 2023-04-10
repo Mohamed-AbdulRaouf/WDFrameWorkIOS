@@ -48,13 +48,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         headerView.backgroundColor = .white
         let label = STUnderlinedLabel()
-        if K.shared.APP_LANGUAGE == "ar"{
+        if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             label.frame = CGRect.init(x: -20, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }else{
             label.frame = CGRect.init(x: 20, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }
         label.text = self.viewModel?.categoryList?[section].categoryName.value ?? ""
-        label.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 14)
+        label.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
         label.textColor = COLOR_PRIMARY_TEXT
         headerView.addSubview(label)
         return headerView

@@ -41,12 +41,12 @@ extension LocationPickerViewController {
 extension LocationPickerViewController {
     func setupUI(){
         
-        self.navigationItem.title = R.string.localizable.check_address_search()
-        self.title = R.string.localizable.check_address_search()
-        self.locationConfirmAddressButton.setTitle(R.string.localizable.next(), for: .normal)
+        self.navigationItem.title = "check_address_search".localized()
+        self.title = "check_address_search".localized()
+        self.locationConfirmAddressButton.setTitle("next".localized(), for: .normal)
         self.locationConfirmAddressButton.cornerRadius = 10.0
         
-        self.locationSkip.setTitle(R.string.localizable.select_manually(), for: .normal)
+        self.locationSkip.setTitle("select_manually".localized(), for: .normal)
         self.locationSkip.setTitleColor(.black, for: .normal)
         
         if let currentLocation = locationManager.location?.coordinate {
@@ -63,7 +63,7 @@ extension LocationPickerViewController {
         //GOOGLE MAPS SDK: USER'S LOCATION
         locationMapView.isMyLocationEnabled = true
         locationMapView.settings.myLocationButton = true
-        let padding = K.shared.APP_LANGUAGE == SupportedLanguage.Arabic.rawValue ? UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 0) : UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10)
+        let padding = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 0) : UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10)
         locationMapView.padding = padding
         
         self.getUserAAddressccessPermision()

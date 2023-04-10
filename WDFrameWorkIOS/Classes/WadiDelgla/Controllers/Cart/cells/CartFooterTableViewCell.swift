@@ -24,13 +24,13 @@ class CartFooterTableViewCell: UITableViewCell,IBaseTableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ model: ICalOrderResponseDTODAL) {
-        self.quantityLabel.attributedText =  setupLabels(R.string.localizable.quantity(), ": \(model.itemsCount.value ?? 0) ")
-        self.subTotalLabel.attributedText =  setupLabels(R.string.localizable.sub_total(), ": \(model.subTotal.value ?? 0.0) \(model.currencyCode.value ?? "")")
+        self.quantityLabel.attributedText =  setupLabels("quantity".localized(), ": \(model.itemsCount.value ?? 0) ")
+        self.subTotalLabel.attributedText =  setupLabels("sub_total".localized(), ": \(model.subTotal.value ?? 0.0) \(model.currencyCode.value ?? "")")
     }    
     func setupLabels(_ str1:String,_ str2:String) -> NSMutableAttributedString {
-        let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
+        let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR13, NSAttributedString.Key.foregroundColor :COLOR_PRIMARY_TEXT]
         
-        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
+        let attrs2 = [NSAttributedString.Key.font : APP_FONT_BOLD13, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)

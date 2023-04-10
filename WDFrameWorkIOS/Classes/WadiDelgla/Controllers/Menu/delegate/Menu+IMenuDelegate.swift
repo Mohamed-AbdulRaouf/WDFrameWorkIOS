@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 //import Toast_Swift
 //import DAL
 
@@ -24,20 +25,32 @@ extension MenuViewController : IMenuViewController{
         self.navigationController?.pushViewController(vc)
     }
     func onShowClearCartAlert(_ completion: @escaping ((Bool) -> Void)) {
-        let alertVC = UIAlertController(title: R.string.localizable.changing_brand_error_title(), message: R.string.localizable.changing_brand_error_msg(), preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: R.string.localizable.clear_and_add(), style: .destructive) { (pressed) in
+        let alertVC = UIAlertController(title: "changing_brand_error_title".localized(), message: "changing_brand_error_msg".localized(), preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "clear_and_add".localized(), style: .destructive) { (pressed) in
             self.viewModel?.cartService?.deleteCart(completion: { (response) in
                     completion(response)
             })
         }
-        let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: "cancel".localized(), style: .cancel) { (_) in
             completion(false)
         }
         alertVC.addAction(clearAction)
         alertVC.addAction(cancelAction)
         present(alertVC, animated: true, completion: nil)
     }
+    
     func updateBageCount() {
+        if let imageUrl = URL(string: K.shared.SELECTED_BRAND?.backgroundAdsImage.value?.replacingOccurrences(of: "http", with: "https") ?? "") {
+            let resource = ImageResource(downloadURL: imageUrl, cacheKey: K.shared.SELECTED_BRAND?.backgroundAdsImage.value)
+            self.backgroundAdsImage.kf.setImage(with: resource)
+        } else {
+            self.backgroundAdsImage.image = UIImage(named: "defaultimg")
+        }
+        if let count = UserDefaults.order?.cartItems.count {
+            self.cartCountLbl.text = "\(count)"
+        } else {
+            self.cartCountLbl.text = "0"
+        }
         self.getCattItemsCountBadget()
     }
    

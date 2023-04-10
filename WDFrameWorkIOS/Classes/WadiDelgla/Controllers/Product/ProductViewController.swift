@@ -50,8 +50,8 @@ extension ProductViewController{
         self.setupTableView()
         self.addToCartButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
         self.addToCartButton.backgroundColor = COLOR_ACCENT
-        self.addToCartButton.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 13)
-        self.addToCartButton.setTitle(R.string.localizable.add_to_cart(), for: .normal)
+        self.addToCartButton.titleLabel?.font = APP_FONT_BOLD13 //UIFont(resource: APP_FONT_BOLD, size: 13)
+        self.addToCartButton.setTitle("add_to_cart".localized().localized(), for: .normal)
         self.dismissButton.layer.cornerRadius = self.dismissButton.frame.height / 2
         self.dismissButton.setTitle("X", for: .normal)
         self.dismissButton.setTitleColor(.white, for: .normal)

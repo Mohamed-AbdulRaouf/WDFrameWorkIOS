@@ -11,7 +11,7 @@ import UIKit
 //import BLL
 func changeLanguage() {
        
-    let newLang = (K.shared.APP_LANGUAGE == "en") ? "ar" : "en"
+    let newLang = (LocalizationSystem.sharedInstance.getLanguage() == "en") ? "ar" : "en"
        
        UserDefaults.currentAppLanguage = newLang
        UserDefaults.standard.synchronize()
@@ -20,14 +20,14 @@ func changeLanguage() {
        Bundle.setLanguage(newLang)
       
        // Done to reintantiate the storyboards instantly
-       
-       let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-       rootviewcontroller.rootViewController = UINavigationController(rootViewController: StoryboardScene.Main.splashViewController.instantiate())
-       let mainwindow = (UIApplication.shared.delegate?.window!)!
-    mainwindow.backgroundColor = .black
-       UIView.transition(with: mainwindow, duration: 0.55001, options: .transitionFlipFromLeft, animations: { () -> Void in
-       }) { (finished) -> Void in
-       }
+        doPostNotification("exit_wdframework")
+//       let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+//       rootviewcontroller.rootViewController = UINavigationController(rootViewController: StoryboardScene.Location.locationViewController.instantiate())
+//       let mainwindow = (UIApplication.shared.delegate?.window!)!
+//    mainwindow.backgroundColor = .black
+//       UIView.transition(with: mainwindow, duration: 0.55001, options: .transitionFlipFromLeft, animations: { () -> Void in
+//       }) { (finished) -> Void in
+//       }
        
    }
 func changeCountry(withCountry country: ICountryDTODAL) {

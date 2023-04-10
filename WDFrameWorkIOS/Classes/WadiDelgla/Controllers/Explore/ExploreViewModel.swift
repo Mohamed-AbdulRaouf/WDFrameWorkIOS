@@ -52,7 +52,7 @@ class ExploreViewModel: IExploreViewModel{
         self.brand?.items.value?.removeAll()
         //for I crave
         self.requestBrandDTO?.feedMe.value = "0"
-        self.requestBrandDTO?.lang.value = K.shared.APP_LANGUAGE
+        self.requestBrandDTO?.lang.value = LocalizationSystem.sharedInstance.getLanguage()
         self.requestBrandDTO?.pageIndex.value = "1"
         self.requestBrandDTO?.pageSize.value = "1000"
         self.requestBrandDTO?.serviceIDs.value = "0"
@@ -84,7 +84,7 @@ class ExploreViewModel: IExploreViewModel{
                     self.hideHUD()
                     guard let data = response?.data else { return }
                     self.filterAndSeviceList = data as? IFilterationListDTODAL
-                    self.filterAndSeviceList?.serviceList.value?.insert(ServiceDTODAL(id: "0", name: R.string.localizable.all_service(),icon: ""), at: 0)
+                    self.filterAndSeviceList?.serviceList.value?.insert(ServiceDTODAL(id: "0", name: "all_service".localized(),icon: ""), at: 0)
                     self.delegate?.onReloadServiceCollectionView()
                 }
             }
@@ -164,7 +164,7 @@ class ExploreViewModel: IExploreViewModel{
                         }
                         return
                     }
-                    self.delegate?.onShowToast(R.string.localizable.success_register_to_brand())
+                    self.delegate?.onShowToast("success_register_to_brand".localized())
                         self.initdata()
                      self.delegate?.onReloadTableView()
                     self.getBrandList()
