@@ -22,8 +22,12 @@ struct Constants {
         return "https://accept.paymob.com/api/"
     }
     
+    static var PayMobIntegrationID: Int {
+        return UserDefaults.standard.integer(forKey: "PayMobIntegrationID") ?? 0
+    }
+    
     static var PayMobApiKey: String {
-        return "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8zTXpBd01EY3NJbTVoYldVaU9pSnBibWwwYVdGc0lpd2lZMnhoYzNNaU9pSk5aWEpqYUdGdWRDSjkuV3FBdnBOcHlCYzFGUDdiaU0tU0RCZGhVbWtDTjczUUJMMTZLRXAxRDYyZnJqUG9fdjZ1QXJReTAyb1FYZGhSekxhbWs5a0U4TklIbEdGa01NWEtIWmc="
+        return UserDefaults.standard.string(forKey: "PayMobApiKey") ?? ""
     }
 }
 
@@ -60,7 +64,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                 "delivery_needed": "false",
                 "amount_cents": "\(Int(amount * 100))",
                 "currency": "EGP",
-                "integration_id": 3694576,
+                "integration_id": Constants.PayMobIntegrationID,
                 "lock_order_when_paid": "false",
                 "billing_data": [
                     "apartment": "803",

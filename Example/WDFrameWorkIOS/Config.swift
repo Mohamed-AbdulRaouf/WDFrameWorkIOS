@@ -29,13 +29,21 @@ class Config {
         return "123456"
     }
     static var kashierSDKMode: String {
-        return "Production" //"Production" ? .PRODUCTION : .DEVELOPMENT
+        return "Production"
     }
     static var googlePlacesAPIKey: String {
         return UIApplication.googlePlacesAPIKey
     }
     static var BRAND_ID: Int {
         return UIApplication.brandId
+    }
+    
+    static var PayMobIntegrationID: Int {
+        return 3694576
+    }
+    
+    static var PayMobApiKey: String {
+        return "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8zTXpBd01EY3NJbTVoYldVaU9pSnBibWwwYVdGc0lpd2lZMnhoYzNNaU9pSk5aWEpqYUdGdWRDSjkuV3FBdnBOcHlCYzFGUDdiaU0tU0RCZGhVbWtDTjczUUJMMTZLRXAxRDYyZnJqUG9fdjZ1QXJReTAyb1FYZGhSekxhbWs5a0U4TklIbEdGa01NWEtIWmc="
     }
 //    static var BRAND_NAME_EN: String {
 //        return UIApplication.BRAND_NAME_EN

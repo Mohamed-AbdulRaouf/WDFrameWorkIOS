@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        setupUI()
+        setupConfig()
         NotificationCenter.default.addObserver(self, selector: #selector(exitWDFramework), name: NSNotification.Name("exit_wdframework"), object: nil)
         // google maps api
         GMSServices.provideAPIKey(Config.googlePlacesAPIKey)
@@ -82,12 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    func setupUI() {
-//        UIApplication.shared.isStatusBarHidden = false
-//        UIApplication.shared.statusBarStyle = .lightContent
-//        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-//        statusBar.backgroundColor = .orange
-        
+    func setupConfig() {
+        UserDefaults.standard.set(Config.PayMobIntegrationID, forKey: "PayMobIntegrationID")
+        UserDefaults.standard.set(Config.PayMobApiKey, forKey: "PayMobApiKey")
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(STUIView.self)
