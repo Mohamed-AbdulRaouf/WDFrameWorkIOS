@@ -36,7 +36,7 @@ final class STUIButton: UIButton {
     func setUpView(){
         self.backgroundColor = COLOR_BUTTON
         self.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
-        self.titleLabel?.font = FONT_PRIMARY_BUTTON
+        self.titleLabel?.font = FONT_PRIMARY_BUTTON14
     }
     
 }
