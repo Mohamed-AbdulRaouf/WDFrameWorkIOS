@@ -105,7 +105,16 @@ extension ExploreViewController{
         let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
         self.navigationItem.rightBarButtonItem = backToMainApp
         self.tabBarController?.delegate = self
-        UINavigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
+//        UINavigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
+        
+//        self.navigationController?.navigationBar.barTintColor = .black
+//        // To change colour of tappable items.
+//        navigationController?.navigationBar.tintColor = UIColor(named: "MainColor")!
+//        // To apply textAttributes to title i.e. colour, font etc.
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black ]
+//        // To control navigation bar's translucency.
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
         
     }
     func addRefreshControl(){

@@ -43,9 +43,17 @@ extension STUIViewController {
         self.tabBarController?.tabBar.items?[2].badgeValue = "\(totalSum)"
     }
     func defaultUI(){
-        self.tabBarController?.navigationItem.titleView = nil
-        self.tabBarController?.navigationItem.rightBarButtonItems = nil
-        self.tabBarController?.navigationItem.leftBarButtonItems = nil
+//        self.navigationController?.navigationBar.barTintColor = .orange
+//        self.navigationController?.toolbar.barTintColor = .orange
+//        UINavigationBar.appearance().barTintColor = .orange
+//        UINavigationBar.appearance().tintColor = .white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().isTranslucent = false
+
+//        self.tabBarController?.navigationItem.titleView = nil
+//        self.tabBarController?.navigationItem.rightBarButtonItems = nil
+//        self.tabBarController?.navigationItem.leftBarButtonItems = nil
+        
         
     }
     func addDismissKeyboardTapGesture(){

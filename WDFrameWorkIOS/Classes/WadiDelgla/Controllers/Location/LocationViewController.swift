@@ -182,7 +182,7 @@ extension LocationViewController: ILocationViewController{
 //        let vc = StoryboardScene.Main.tabBarViewController.instantiate()
 //        UIApplication.shared.keyWindow?.rootViewController = vc
         let vc = StoryboardScene.Main.exploreViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc)
     }
     func onSuccessLoadCitiesAndAreas(_ cities: [CityDTODAL]) {
         self.data = cities

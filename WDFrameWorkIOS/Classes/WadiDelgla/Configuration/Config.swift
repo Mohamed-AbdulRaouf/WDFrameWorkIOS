@@ -51,7 +51,7 @@ class Config {
 //MARK: - BLL CONFIGURATION
 extension Config: BLLConfigBLL {
     static var language: String {
-        return UserDefaults.currentAppLanguage
+        return LocalizationSystem.sharedInstance.getLanguage()
     }
     static var customerSourceId: Int {
         return UIApplication.CustomerSourceId

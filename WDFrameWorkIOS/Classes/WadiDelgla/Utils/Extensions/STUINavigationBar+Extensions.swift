@@ -31,7 +31,7 @@ extension UINavigationBar {
     static func setColors(background: UIColor, text: UIColor) {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = background
-        UINavigationBar.appearance().tintColor = text
+        UINavigationBar.appearance().tintColor = background
         UINavigationBar.appearance().barTintColor = background
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor:text]

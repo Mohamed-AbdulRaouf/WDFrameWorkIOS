@@ -26,7 +26,7 @@ public class TestViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let vc = StoryboardScene.Location.locationViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc)
     }
     
     func setUIAppearance() {

@@ -222,7 +222,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6qB-3i-9tt"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MainColor"/>
                         <constraints>
                             <constraint firstItem="6qB-3i-9tt" firstAttribute="trailing" secondItem="npH-zu-bsx" secondAttribute="trailing" id="5Ln-4l-IyE"/>
                             <constraint firstItem="npH-zu-bsx" firstAttribute="top" secondItem="7eE-8C-3z3" secondAttribute="bottom" id="6A7-AJ-w2B"/>
@@ -2122,6 +2122,9 @@
         <image name="ic_share" width="34.5" height="34.5"/>
         <image name="logo" width="160" height="160"/>
         <image name="rubbishBinRed" width="16" height="16"/>
+        <namedColor name="MainColor">
+            <color red="0.96899998188018799" green="0.84700000286102295" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="PrimaryRed_Dark">
             <color red="0.0" green="0.49799999594688416" blue="0.68999999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

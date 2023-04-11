@@ -35,6 +35,14 @@ class OrderListViewController: STUIViewController,IBaseController {
     }
     
     func setupUI(){
+//        self.navigationController?.navigationBar.barTintColor = .black
+//        // To change colour of tappable items.
+//        navigationController?.navigationBar.tintColor = UIColor(named: "MainColor")!
+//        // To apply textAttributes to title i.e. colour, font etc.
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black ]
+//        // To control navigation bar's translucency.
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
         self.viewModel?.delegate = self
         self.setupTableView()
         self.navigationItem.title = "my_orders".localized()
