@@ -54,6 +54,7 @@ extension CheckOutViewController : ICheckoutViewController{
                  }
                  
                  // Add buttons to dialog
+                 buttonTwo.titleLabel?.font = APP_FONT_BOLD12
                  popup.addButtons([buttonOne, buttonTwo])
                  // Present dialog
                  self.present(popup, animated: true, completion: nil)
@@ -91,6 +92,7 @@ extension CheckOutViewController : ICheckoutViewController{
         }
         
         // Add buttons to dialog
+        buttonTwo.titleLabel?.font = APP_FONT_BOLD12
         popup.addButtons([buttonOne, buttonTwo])
         // Present dialog
         self.present(popup, animated: true, completion: nil)

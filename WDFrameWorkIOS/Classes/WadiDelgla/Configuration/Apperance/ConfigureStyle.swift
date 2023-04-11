@@ -38,7 +38,7 @@ let APP_FONT_BOLD = UIFont.systemFont(ofSize: 16, weight: .bold) //R.font.rambla
 let APP_FONT_BOLD12 = UIFont.systemFont(ofSize: 12, weight: .bold) //R.font.ramblaBold
 let APP_FONT_BOLD14 = UIFont.systemFont(ofSize: 14, weight: .bold) //R.font.ramblaBold
 let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 19)
-let FONT_PRIMARY_BUTTON14 = UIFont.systemFont(ofSize: 19, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 19)
+let FONT_PRIMARY_BUTTON14 = UIFont.systemFont(ofSize: 14, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 14)
 let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular) //UIFont(resource: APP_FONT_REGULAR, size: 14)
 
 let APP_FONT_REGULAR10 = UIFont.systemFont(ofSize: 10, weight: .regular)

@@ -59,7 +59,7 @@ class CheckoutDiscountTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.bitesAmountLabel.text = "\(model.currentCustomerPointsInBrand.value ?? 0) \("bites".localized())"
         
         self.applyButton.setTitle("apply".localized(), for: .normal)
-        
+        self.applyButton.titleLabel?.font = APP_FONT_BOLD14
 //        self.couponCodeTextField.text = "\(model.couponCode)"
         var roundedAmount = ""
         if model.redeemPoint.value != 0 {

@@ -78,7 +78,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQh-tC-rZb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQh-tC-rZb">
                                                             <rect key="frame" x="0.0" y="24" width="65" height="17.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Rambla-Regular" family="Rambla" pointSize="14"/>
@@ -622,6 +622,6 @@
     </designables>
     <resources>
         <image name="defaultimg.png" width="720" height="405"/>
-        <image name="ic_menu" width="38" height="37.5"/>
+        <image name="ic_menu" width="38" height="38"/>
     </resources>
 </document>

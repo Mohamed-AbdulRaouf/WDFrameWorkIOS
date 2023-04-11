@@ -54,10 +54,10 @@ class LoginViewController: STUIViewController ,IBaseController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let _ = UserDefaults.user  {
-            let vc = StoryboardScene.Location.locationViewController.instantiate()
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
+//        if let _ = UserDefaults.user  {
+//            let vc = StoryboardScene.Location.locationViewController.instantiate()
+//            self.navigationController?.pushViewController(vc)
+//        } else {
             self.phoneNumberTextField.text = GlobalConstants.shared.mobile
             self.passwordTextField.text = GlobalConstants.shared.membershipNumber
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
@@ -65,7 +65,7 @@ class LoginViewController: STUIViewController ,IBaseController{
             UserDefaults.currentAppCountry = country
                     self.updateCountryCode(country: country)
                     viewModel?.sendLoginRequest()
-        }
+//        }
     }
     
     // MARK: - IBActions
@@ -182,7 +182,7 @@ extension LoginViewController: ILoginViewController{
     
     func onSuccessLogin() {
         let vc = StoryboardScene.Location.locationViewController.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc)
     }
     
     func onUpdateLayout() {

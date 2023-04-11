@@ -63,6 +63,7 @@ public enum StoryboardScene {
         
         static let loginViewController = SceneType<LoginViewController>(storyboard: User.self, identifier: "LoginViewController")
         
+        
         static let registerViewController = SceneType<RegisterationViewController>(storyboard: User.self, identifier: R.storyboard.user.registerationViewController.identifier)
         static let forgotPasswordVerifyCodeViewController = SceneType<ForgotPasswordVerifyCodeViewController>(storyboard: User.self, identifier: R.storyboard.user.forgotPasswordVerifyCodeViewController.identifier)
         static let resetPasswordViewController = SceneType<ResetPasswordViewController>(storyboard: User.self, identifier: "ResetPasswordViewController")
