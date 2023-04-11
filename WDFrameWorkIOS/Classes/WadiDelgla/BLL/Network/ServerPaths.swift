@@ -9,7 +9,7 @@
 import Foundation
 public enum ServerPathsBLL: String {
     //User Authentication
-    case LOGIN = "api/Loyalty/CustomerApp/Login"
+    case LOGIN = "https://wdorderonlineapi.azurewebsites.net/api/Loyalty/CustomerApp/Login"
     case REGISTER = "api/Loyalty/CustomerApp/Register"
     case RESEND_VERIFY_CODE = "api/Loyalty/CustomerApp/ResendVerifyCode"
     case CHECK_VERIFICATION_CODE = "api/Loyalty/CustomerApp/CheckMobileVerfingCode/"
