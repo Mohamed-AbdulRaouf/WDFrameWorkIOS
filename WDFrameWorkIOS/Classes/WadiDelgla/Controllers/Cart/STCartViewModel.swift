@@ -100,7 +100,7 @@ class STCartViewModel: ISTCartViewModel{
         
         guard let _ = cart else { return}
         if  UserDefaults.user == nil {
-            self.delegate?.openLogin()
+            self.delegate?.onError("Please try again and reopen online ordering".localized())
         }else{
             self.checkout()
         }

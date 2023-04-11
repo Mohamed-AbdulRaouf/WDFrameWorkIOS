@@ -25,7 +25,9 @@ public class TestViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let vc = StoryboardScene.Location.locationViewController.instantiate()
+//        let vc = StoryboardScene.Location.locationViewController.instantiate()
+//        self.navigationController?.pushViewController(vc)
+        let vc = StoryboardScene.User.loginViewController.instantiate()
         self.navigationController?.pushViewController(vc)
     }
     
