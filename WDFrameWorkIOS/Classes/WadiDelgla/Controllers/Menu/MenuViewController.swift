@@ -44,6 +44,7 @@ class MenuViewController: STUIViewController,IBaseController {
         } else {
             self.title = "Cart"
         }
+        self.setCountOfCartToLbl()
     }
 }
 

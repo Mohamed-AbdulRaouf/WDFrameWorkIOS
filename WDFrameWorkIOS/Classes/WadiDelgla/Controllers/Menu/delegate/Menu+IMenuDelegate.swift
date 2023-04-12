@@ -46,12 +46,16 @@ extension MenuViewController : IMenuViewController{
         } else {
             self.backgroundAdsImage.image = UIImage(named: "defaultimg")
         }
+        self.setCountOfCartToLbl()
+        self.getCattItemsCountBadget()
+    }
+    
+    func setCountOfCartToLbl() {
         if let count = UserDefaults.order?.cartItems.count {
             self.cartCountLbl.text = "\(count)"
         } else {
             self.cartCountLbl.text = "0"
         }
-        self.getCattItemsCountBadget()
     }
    
 }

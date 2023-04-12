@@ -21,6 +21,7 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        radioButton.setTitleColor(.clear, for: .normal)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,10 +34,13 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
         self.nameLabel.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
         self.nameLabel.textColor = COLOR_PRIMARY_TEXT
         [radioButton].forEach {
-            $0?.circleColor = COLOR_ACCENT_DARK
-            $0?.strokeColor = UIColor(hexString: "EFEFEF")!
+            $0?.circleColor = COLOR_ACCENT
+            $0?.strokeColor = COLOR_PRIMARY_TEXT
             $0?.circleRadius = 10.0
-            $0?.setTitle("", for: .normal)
+//            $0?.circleColor = COLOR_ACCENT_DARK
+//            $0?.strokeColor = UIColor(hexString: "EFEFEF")!
+//            $0?.circleRadius = 10.0
+//            $0?.setTitle("", for: .normal)
         }
         self.radioButton.isSelected = model.isSelected
         
