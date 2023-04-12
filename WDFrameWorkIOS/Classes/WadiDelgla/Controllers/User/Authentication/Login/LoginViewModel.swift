@@ -47,12 +47,11 @@ class LoginViewModel: ILoginViewModel{
         self.showHud()
         doInBackground {
             self.user_login_data.mobile.value = GlobalConstants.shared.mobile
-            self.user_login_data.password.value = GlobalConstants.shared.membershipNumber
+            self.user_login_data.password.value = GlobalConstants.shared.password
             self.user_login_data.hintNumber.value = "01001234567"
             self.user_login_data.countryId.value = "12"
             self.user_login_data.dialCode.value = "+20"
             self.user_login_data.brandId.value = 0
-            
             
             self.country_data.hintNumber.value = "01001234567"
 //            self.user_login_data.countryId.value = "1"
@@ -78,7 +77,7 @@ class LoginViewModel: ILoginViewModel{
                         return
                     }
                     
-                    self.delegate?.onUpdateLayout()
+//                    self.delegate?.onUpdateLayout()
                     if let model = model as? UserDTODAL {
                         self.user_login_data.hintNumber = self.country_data.hintNumber
                         UserDefaults.loginData = self.user_login_data as? LoginDTODAL

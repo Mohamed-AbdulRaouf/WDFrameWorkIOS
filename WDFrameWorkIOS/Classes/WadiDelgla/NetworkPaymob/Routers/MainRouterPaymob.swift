@@ -67,19 +67,19 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                 "integration_id": Constants.PayMobIntegrationID,
                 "lock_order_when_paid": "false",
                 "billing_data": [
-                    "apartment": "803",
-                    "email": "mohamed.a.raouf@icloud.com",
-                    "floor": "42",
-                    "first_name": "Mohamed",
-                    "street": "Ethan Land",
-                    "building": "8028",
-                    "phone_number": "+201002002829",
+                    "apartment": "1",
+                    "email": GlobalConstants.shared.email,
+                    "floor": "1",
+                    "first_name": GlobalConstants.shared.name,
+                    "street": "Cairo",
+                    "building": "1",
+                    "phone_number": GlobalConstants.shared.mobile,
                     "shipping_method": "PKG",
-                    "postal_code": "01898",
+                    "postal_code": "1",
                     "city": "Cairo",
                     "country": "EGY",
-                    "last_name": "Nicolas",
-                    "state": "Utah"
+                    "last_name": GlobalConstants.shared.name,
+                    "state": "none"
                 ]
             ]
         }

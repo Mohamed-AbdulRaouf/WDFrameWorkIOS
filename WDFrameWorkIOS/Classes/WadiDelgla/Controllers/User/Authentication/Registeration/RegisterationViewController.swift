@@ -44,6 +44,11 @@ class RegisterationViewController: STUIViewController,IBaseController,SSRadioBut
         self.bindingData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.startRegister()
+    }
     // MARK: - IBActions
     @IBAction func onRegisterTapped(_ sender: Any) {
         viewModel?.register()
@@ -71,6 +76,23 @@ class RegisterationViewController: STUIViewController,IBaseController,SSRadioBut
         else if !maleButton.isSelected && !femaleButton.isSelected && !notSpecifiyGenderButton.isSelected {
             self.notSpecifiyGenderButton.isSelected = true
         }
+    }
+    
+    func startRegister() {
+        self.viewModel?.user_data?.mobile.value = GlobalConstants.shared.mobile
+        self.viewModel?.user_data?.membershipNumber.value = GlobalConstants.shared.membershipNumber
+        self.viewModel?.user_data?.lastName.value = GlobalConstants.shared.name
+        self.viewModel?.user_data?.firstName.value = GlobalConstants.shared.name
+        self.viewModel?.user_data?.email.value = GlobalConstants.shared.email
+        self.viewModel?.user_data?.gender.value = Gender.male.rawValue
+        self.viewModel?.user_data?.password.value = GlobalConstants.shared.password
+        self.viewModel?.user_data?.confirmPassword.value = GlobalConstants.shared.password
+        self.viewModel?.user_data?.brandId.value = 0
+        let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
+        UserDefaults.currentAppCountry?.countryCode.value = "EG"
+        UserDefaults.currentAppCountry = country
+        updateCountryCode(country: country)
+        viewModel?.register()
     }
     
     deinit {
@@ -177,10 +199,12 @@ extension RegisterationViewController: IRegisterViewController{
         self.bindingData()
     }
     func successfullyRegister(){
-        self.bindingData()
-        self.dismiss(animated: true, completion: {
-            self.onSuccessRegister!(self.viewModel?.user_data?.mobile.value ?? "",self.viewModel?.user_data?.countryId.value ?? "",self.viewModel?.user_data?.dialCode.value ?? "")
-        })
+        let vc = StoryboardScene.User.loginViewController.instantiate()
+        self.navigationController?.pushViewController(vc)
+//        self.bindingData()
+//        self.dismiss(animated: true, completion: {
+//            self.onSuccessRegister!(self.viewModel?.user_data?.mobile.value ?? "",self.viewModel?.user_data?.countryId.value ?? "",self.viewModel?.user_data?.dialCode.value ?? "")
+//        })
     }
 }
 //MARK: - CountrySelectorDelegate

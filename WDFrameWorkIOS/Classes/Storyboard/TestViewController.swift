@@ -25,9 +25,7 @@ public class TestViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        let vc = StoryboardScene.Location.locationViewController.instantiate()
-//        self.navigationController?.pushViewController(vc)
-        let vc = StoryboardScene.User.loginViewController.instantiate()
+        let vc = StoryboardScene.User.registerViewController.instantiate()
         self.navigationController?.pushViewController(vc)
     }
     
@@ -56,7 +54,7 @@ extension TestViewController {
         GlobalConstants.shared.mainStoryboard = mainStoryboard
         GlobalConstants.shared.viewController = viewController
         UserDefaults.loginData?.mobile.value = mobile
-        UserDefaults.loginData?.password.value = membershipNumber
+        UserDefaults.loginData?.password.value = GlobalConstants.shared.password
         UserDefaults.loginData?.brandId.value = 0
 //        UserDefaults.loginData?.countryId.value = "1"
 //        UserDefaults.loginData?.dialCode.value = "+2"

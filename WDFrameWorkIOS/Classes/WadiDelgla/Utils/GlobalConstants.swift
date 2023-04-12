@@ -17,6 +17,7 @@ class GlobalConstants {
     var membershipNumber: String = ""
     var mainStoryboard: UIStoryboard = UIStoryboard()
     var viewController: UIViewController = UIViewController()
+    var password: String = "123456"
     
     init() {}
     

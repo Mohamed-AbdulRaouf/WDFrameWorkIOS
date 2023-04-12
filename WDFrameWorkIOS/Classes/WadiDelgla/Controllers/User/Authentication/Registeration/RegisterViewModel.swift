@@ -20,6 +20,7 @@ protocol IRegisterViewModel: IBaseViewModel {
     var errorModel : IRegisterValidationDTOBLL? {get set}
     func register()
     var delegate: IRegisterViewController? {get set}
+    func validateCustomer()
 
 }
 class RegisterViewModel: IRegisterViewModel{
@@ -41,19 +42,31 @@ class RegisterViewModel: IRegisterViewModel{
         doInBackground {
             self.apiClient?.register(self.user_data!, hintNumber: self.country_data!.hintNumber.value) { (response) in
                 doOnMain {
-                    self.hideHUD()
-                    guard let _ = response?.data else {
-                        self.errorModel = response?.error?.validateError as? IRegisterValidationDTOBLL
-                        self.delegate?.onUpdateLayout()
-                        if response?.error?.APIError != nil {
-                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
-                        }
-                        return
-                    }
-                    self.delegate?.successfullyRegister()
+                    self.validateCustomer()
+//                    self.hideHUD()
+//                    guard let _ = response?.data else {
+//                        self.errorModel = response?.error?.validateError as? IRegisterValidationDTOBLL
+////                        self.delegate?.onUpdateLayout()
+//                        if response?.error?.APIError != nil {
+////                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+//                        }
+//                        return
+//                    }
+//                    self.delegate?.successfullyRegister()
                 }
             }
         }
     }
     
+    func validateCustomer() {
+//        self.showHud()
+//        doInBackground {
+            self.apiClient?.validateCustomer(GlobalConstants.shared.mobile, "12", 0) { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    self.delegate?.successfullyRegister()
+                }
+            }
+//        }
+    }
 }
