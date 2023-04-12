@@ -71,6 +71,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
     public var phone2: String? = ""
     public var merchantRefNumber: String? = ""
     public var referenceNumber: String? = ""
+    public var referenceTransactionId: String = ""
 
     
     public  init(){
@@ -110,6 +111,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case phone2 = "Phone2"
         case merchantRefNumber = "merchantRefNumber"
         case referenceNumber = "referenceNumber"
+        case referenceTransactionId = "referenceTransactionId"
 //        case paymentData = "paymentData"
      }
     
@@ -149,6 +151,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         try container.encode(phone2, forKey: .phone2)
         try container.encode(merchantRefNumber, forKey: .merchantRefNumber)
         try container.encode(referenceNumber, forKey: .referenceNumber)
+        try container.encode(referenceTransactionId, forKey: .referenceTransactionId)
 
 //         try container.encode(paymentData, forKey: .paymentData)
 
@@ -189,6 +192,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         phone2 = try container.decode(String.self, forKey: .phone2)
         merchantRefNumber = try container.decode(String.self, forKey: .merchantRefNumber)
         referenceNumber = try container.decode(String.self, forKey: .referenceNumber)
+        referenceTransactionId = try container.decode(String.self, forKey: .referenceTransactionId)
+        
 //        paymentData = try container.decode(STCartPaymentDTO.self, forKey: .paymentData)
      }
     enum CALCCodingKeys: String, CodingKey {
@@ -206,6 +211,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case phone2 = "Phone2"
         case merchantRefNumber = "merchantRefNumber"
         case referenceNumber = "referenceNumber"
+        case referenceTransactionId = "referenceTransactionId"
     }
    public  var JSONRepresentation: Dictionary<String, Any>  {
         var jsonedDict = [String:Any]()

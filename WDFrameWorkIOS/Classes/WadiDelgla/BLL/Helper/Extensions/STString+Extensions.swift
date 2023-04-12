@@ -87,4 +87,7 @@ extension String {
         return true
     }
 
+    var getPhoneNumberOnlyWithCountry: String {
+        return self.replacingOccurrences(of: "+2", with: "")
+    }
 }

@@ -68,7 +68,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                 "lock_order_when_paid": "false",
                 "billing_data": [
                     "apartment": "1",
-                    "email": GlobalConstants.shared.email,
+                    "email": GlobalConstants.shared.membershipNumber,
                     "floor": "1",
                     "first_name": GlobalConstants.shared.name,
                     "street": "Cairo",

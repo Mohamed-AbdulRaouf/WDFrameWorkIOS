@@ -58,7 +58,7 @@ class LoginViewController: STUIViewController ,IBaseController{
 //            let vc = StoryboardScene.Location.locationViewController.instantiate()
 //            self.navigationController?.pushViewController(vc)
 //        } else {
-            self.phoneNumberTextField.text = GlobalConstants.shared.mobile
+        self.phoneNumberTextField.text = GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry
             self.passwordTextField.text = GlobalConstants.shared.password
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
             UserDefaults.currentAppCountry?.countryCode.value = "EG"

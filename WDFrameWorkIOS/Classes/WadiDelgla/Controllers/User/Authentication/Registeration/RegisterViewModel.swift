@@ -61,7 +61,7 @@ class RegisterViewModel: IRegisterViewModel{
     func validateCustomer() {
 //        self.showHud()
 //        doInBackground {
-            self.apiClient?.validateCustomer(GlobalConstants.shared.mobile, "12", 0) { (response) in
+        self.apiClient?.validateCustomer(GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry, "12", 0) { (response) in
                 doOnMain {
                     self.hideHUD()
                     self.delegate?.successfullyRegister()

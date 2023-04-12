@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         let bundle = Bundle(path: bundlePath!)
         let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        let firstScreenWDframework = vc.create(name: "raouf", mobile: "01010975049", email: "mohamed.a.raouf@icloud.com", membershipNumber: "123456", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController(), language: LocalizationSystem.sharedInstance.getLanguage())
+        let firstScreenWDframework = vc.create(name: "raouf", mobile: "+201226372125", email: "mohamed.a.raouf@icloud.com", membershipNumber: "0040071777", mainStoryboard: UIStoryboard(name: "Main", bundle: Bundle.main), viewController: UIApplication.topViewController() ?? UIViewController(), language: LocalizationSystem.sharedInstance.getLanguage())
         // set app delegate to push view controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let rootViewController = appDelegate?.window?.rootViewController as? UINavigationController

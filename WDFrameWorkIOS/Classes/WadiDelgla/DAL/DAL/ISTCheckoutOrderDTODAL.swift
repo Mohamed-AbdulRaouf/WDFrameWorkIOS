@@ -14,6 +14,7 @@ public protocol ISTCheckoutOrderDTODAL :AnyObject {
     var brandImage: String {get set}
     var brandName: String {get set}
     var redeemPointsAmount: Int {get set}
+    var referenceTransactionId: String {get set}
 
 //    var allowCouponRedeem: Bool {get set}
 //    var currencyCode: String {get set}
