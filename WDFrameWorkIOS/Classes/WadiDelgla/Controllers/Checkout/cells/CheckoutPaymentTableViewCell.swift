@@ -48,7 +48,7 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
         self.subTitleLabel.font = APP_FONT_REGULAR10 //UIFont(resource: APP_FONT_REGULAR, size: 10)
         self.subTitleLabel.textColor = COLOR_SUB_TITLE_TEXT
        
-        self.changeButton.isHidden = model.paymentType == PaymentType.cashOnDelivery
+//        self.changeButton.isHidden = model.paymentType == PaymentType.cashOnDelivery
         self.subTitleLabel.isHidden = model.paymentType == PaymentType.cashOnDelivery
 
         
