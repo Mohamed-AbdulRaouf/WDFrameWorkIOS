@@ -287,7 +287,7 @@
                                 <rect key="frame" x="127" y="98" width="160" height="160"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="R9i-E6-0qS" userLabel="fieldsStack View">
-                                <rect key="frame" x="50" y="585" width="314" height="105"/>
+                                <rect key="frame" x="50" y="586" width="314" height="105"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nfx-wk-lvS">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="45"/>
@@ -327,7 +327,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wn1-Vq-zg0">
-                                <rect key="frame" x="50" y="705" width="314" height="90"/>
+                                <rect key="frame" x="50" y="706" width="314" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44M-oY-4HN" customClass="STUISecondaryButton" customModule="WDFrameWorkIOS" customModuleProvider="target">
                                         <rect key="frame" x="127" y="0.0" width="60" height="45"/>
@@ -344,7 +344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n9-HM-ZXL">
-                                        <rect key="frame" x="91.5" y="45" width="131" height="45"/>
+                                        <rect key="frame" x="84" y="45" width="146" height="45"/>
                                         <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="14"/>
                                         <state key="normal" title="Forgot your Password?">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -356,10 +356,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-G6-Xa1" userLabel="last Stack View">
-                                <rect key="frame" x="50" y="795" width="314" height="27"/>
+                                <rect key="frame" x="50" y="796" width="314" height="26"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-tX-m8l">
-                                        <rect key="frame" x="89.5" y="0.0" width="135" height="27"/>
+                                        <rect key="frame" x="83" y="0.0" width="148" height="26"/>
                                         <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="12"/>
                                         <state key="normal" title="Haven't registered? sign up">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1972,7 +1972,7 @@
     </scenes>
     <designables>
         <designable name="44M-oY-4HN">
-            <size key="intrinsicContentSize" width="30" height="36"/>
+            <size key="intrinsicContentSize" width="30" height="35"/>
         </designable>
         <designable name="Bgp-na-4Uv">
             <size key="intrinsicContentSize" width="48" height="34"/>

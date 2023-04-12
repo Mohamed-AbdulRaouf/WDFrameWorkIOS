@@ -13,7 +13,8 @@ extension Date{
         // create dateFormatter with UTC time format
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormateToConvertFrom
-        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+       dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+       dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
 
         var orderDate = convertorderDate
         if let dotRange = orderDate.range(of: ".") {
@@ -22,12 +23,6 @@ extension Date{
             if  let date = dateFormatter.date(from: orderDate)  {
                 // change to a readable time format and change to local time zone
                 dateFormatter.dateFormat = dateFormateToConvertTo
-                dateFormatter.timeZone = NSTimeZone.local
-           
-                dateFormatter.locale = NSLocale(localeIdentifier: "\(LocalizationSystem.sharedInstance.getLanguage())")
-                    as Locale
-
-                
                 
                 let timeStamp = dateFormatter.string(from: date)
                 result = timeStamp

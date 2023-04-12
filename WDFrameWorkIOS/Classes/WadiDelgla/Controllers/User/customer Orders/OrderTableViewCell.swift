@@ -93,4 +93,25 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
     @IBAction func onRateTapped(_ sender: Any) {
         self.onRateTapped!()
     }
+    
+    func getRequiredFormat(dateStrInTwentyFourHourFomat: String) -> String? {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+
+        if let newDate = dateFormatter.date(from: dateStrInTwentyFourHourFomat) {
+
+            let timeFormat = DateFormatter()
+            timeFormat.timeZone = TimeZone.autoupdatingCurrent
+            timeFormat.locale = Locale(identifier: "en_US_POSIX")
+            timeFormat.dateFormat = "hh:mm a"
+
+            let requiredStr = timeFormat.string(from: newDate)
+            return requiredStr
+        } else {
+            return nil
+        }
+    }
 }
