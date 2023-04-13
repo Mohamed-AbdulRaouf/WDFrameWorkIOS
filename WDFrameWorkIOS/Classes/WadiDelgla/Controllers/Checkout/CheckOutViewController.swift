@@ -139,11 +139,15 @@ extension CheckOutViewController: AcceptSDKDelegate {
 
     func transactionAccepted(_ payData: PayResponse) {
         debugPrint("transactionAccepted")
+        OrderConstants.shared.orderID = "\(payData.order)"
+        OrderConstants.shared.transactionID = "\(payData.id)"
         self.viewModel?.makeOrder()
     }
 
     func transactionAccepted(_ payData: PayResponse, savedCardData: SaveCardResponse) {
         debugPrint("transactionAccepted")
+        OrderConstants.shared.orderID = "\(payData.order)"
+        OrderConstants.shared.transactionID = "\(payData.id)"
         self.viewModel?.makeOrder()
     }
 

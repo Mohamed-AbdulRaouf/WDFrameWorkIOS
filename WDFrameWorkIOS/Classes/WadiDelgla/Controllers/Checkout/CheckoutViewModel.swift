@@ -161,7 +161,8 @@ class CheckoutViewModel: ICheckoutViewModel{
         if cart.frontOrderReferenceId == "" {
             cart.frontOrderReferenceId = self.orderService?.generateFrontOrderReferenceId(forBrandId: K.shared.SELECTED_BRAND?.brandId.value ?? 0, withUserId: UserDefaults.user?.userId.value ?? "")
         }
-        cart.referenceTransactionId = UserDefaultsApp.shared.orderPayID
+        cart.referenceTransactionId = OrderConstants.shared.transactionID
+        cart.referenceInvoiceId = OrderConstants.shared.orderID
         self.showHud("don't_close_app_message".localized())
         
         doInBackground {
