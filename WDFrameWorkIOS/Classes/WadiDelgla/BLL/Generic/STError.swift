@@ -15,13 +15,15 @@ public class STErrorBLL {
     public var FireBaseError: String?
     public var KashierError: String?
     public var ErrorCode : Int?
+    public var Message: String?
     
-    init(validateError : IBaseValidationDTOBLL?,APIError : StandardMessagesBLL?,networkError:NetworkErrorBLL? = nil,firebaseError:String? = nil,ErrorCode: Int? = nil,KashierError: String? = nil){
+    init(validateError : IBaseValidationDTOBLL?,APIError : StandardMessagesBLL?,networkError:NetworkErrorBLL? = nil,firebaseError:String? = nil,ErrorCode: Int? = nil,KashierError: String? = nil, Message: String? = nil){
         self.validateError = validateError
         self.APIError = APIError
         self.networkError = networkError
         self.FireBaseError = firebaseError
         self.ErrorCode = ErrorCode
         self.KashierError = KashierError
+        self.Message = Message
     }
 }

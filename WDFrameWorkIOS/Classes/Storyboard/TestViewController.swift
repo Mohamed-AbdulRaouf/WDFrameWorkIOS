@@ -58,6 +58,11 @@ extension TestViewController {
         UserDefaults.loginData?.brandId.value = 0
 //        UserDefaults.loginData?.countryId.value = "1"
 //        UserDefaults.loginData?.dialCode.value = "+2"
+        // reset choose area and club, if language is changed
+        if L102Language.currentAppleLanguageFull() != language {
+            UserDefaults.currentArea = nil
+            UserDefaults.currentCity = nil
+        }
         Bundle.setLanguage(language)
         return vc
     }

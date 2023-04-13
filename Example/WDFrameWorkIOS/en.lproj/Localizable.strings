@@ -152,12 +152,12 @@
 "verify" = "VERIFY";
 //MARK:- Location
 "start" = "START";
-"city" = "City";
+"city" = "Club";
 "area" = "area";
-"select_city" = "Select City";
+"select_city" = "Select Club";
 "select_area" = "Select Area";
-"select_city_msg" = "You haven't select city yet, to continue please select city first";
-"select_city_and_area_msg" = "you should select city and area to continue";
+"select_city_msg" = "You haven't select club yet, to continue please select club first";
+"select_city_and_area_msg" = "you should select club and area to continue";
 "clear_cart_due_to_change_location" = "by changing your area you will empty cart";
 "clear_cart_due_to_change_language" = "by changing your language you will empty cart";
 "clear_cart_due_to_change_country" = "by changing your country you will empty cart";
@@ -170,8 +170,8 @@
 "government" = "Government";
 "select_club" = "Select club";
 "select_government" = "Select government";
-"select_government_msg" = "You haven't select government yet, to continue please select government first";
-"select_club_and_government_msg" = "you should select club and government to continue";
+"select_government_msg" = "You haven't select club yet, to continue please select club first";
+"select_club_and_government_msg" = "you should select club and area to continue";
 
 
 //MARK : - General
@@ -402,3 +402,4 @@
 "menu_list" = "Menu";
 "Please check from your phone" = "Please enter a valid mobile phone number";
 "Please try again and reopen online ordering" = "Please try again and reopen online ordering";
+"coupon_code_is_invalid" = "Coupon code is invalid";

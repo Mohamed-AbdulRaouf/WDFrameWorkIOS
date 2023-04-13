@@ -150,12 +150,12 @@
 "verify" = "تآكيد";
 //MARK:- Location
 "start" = "إبدأ";
-"city" = "المدينة";
+"city" = "النادي";
 "area" = "المنطقة";
-"select_city" = "إختر المدينة";
+"select_city" = "إختر النادي";
 "select_area" = "إختر المنطقة";
-"select_city_msg" = "قم بإختيار المدينة أولاً";
-"select_city_and_area_msg" = "قم بإختيار المدينه و المنطقه أولا للأستمرار";
+"select_city_msg" = "قم بإختيار النادي أولاً";
+"select_city_and_area_msg" = "قم بإختيار النادي و المنطقه أولا للأستمرار";
 "clear_cart_due_to_change_location" = "بتغيير المنطقه سيتم تفرغة السلة";
 "clear_cart_due_to_change_language" = "بتغيير اللغة سيتم تفرغة السلة";
 "clear_cart_due_to_change_country" = "بتغيير الدولة سيتم تفرغة السلة";
@@ -166,8 +166,8 @@
 "government" = "فرع";
 "select_club" = "إختر نادي";
 "select_government" = "إختر المحافظة";
-"select_government_msg" = "قم بإختيار المحافظة أولاً";
-"select_club_and_government_msg" = "قم بإختيار النادي و المحافظة أولا للأستمرار";
+"select_government_msg" = "قم بإختيار النادي أولاً";
+"select_club_and_government_msg" = "قم بإختيار النادي و المنطقة أولا للأستمرار";
 
 "success_register_to_brand" = "تم التسجيل بنجاح. ";
 "searching" = "إبحث";
@@ -394,3 +394,4 @@
 "menu_list" = "القائمه";
 "Please check from your phone" = "الرجاء إدخال رقم هاتف صحيح";
 "Please try again and reopen online ordering" = "يرجى المحاولة مرة أخرى وإعادة فتح الطلب اونلاين ";
+"coupon_code_is_invalid" = "الكوبون غير صالح";
