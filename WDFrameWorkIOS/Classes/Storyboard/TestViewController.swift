@@ -9,7 +9,8 @@ import UIKit
 
 public class TestViewController: UIViewController {
 
-    var name = ""
+    var firstName = ""
+    var lastName = ""
     var mobile = ""
     var email = ""
     var membershipNumber = ""
@@ -41,23 +42,21 @@ public class TestViewController: UIViewController {
 
 extension TestViewController {
     
-    public func create(name: String, mobile: String, email: String, membershipNumber: String, mainStoryboard: UIStoryboard, viewController: UIViewController, language: String) -> TestViewController {
+    public func create(firstName: String, lastName: String = "NA", mobile: String, email: String, membershipNumber: String, language: String) -> TestViewController {
         let vc = TestViewController()
-        vc.name = name
+        vc.firstName = firstName
+        vc.lastName = lastName
         vc.mobile = mobile
         vc.email = email
         vc.membershipNumber = membershipNumber
-        GlobalConstants.shared.name = name
+        GlobalConstants.shared.firstName = firstName
+        GlobalConstants.shared.lastName = lastName == "" ? "NA" : lastName
         GlobalConstants.shared.mobile = mobile
         GlobalConstants.shared.email = email
         GlobalConstants.shared.membershipNumber = membershipNumber
-        GlobalConstants.shared.mainStoryboard = mainStoryboard
-        GlobalConstants.shared.viewController = viewController
         UserDefaults.loginData?.mobile.value = mobile
         UserDefaults.loginData?.password.value = GlobalConstants.shared.password
         UserDefaults.loginData?.brandId.value = 0
-//        UserDefaults.loginData?.countryId.value = "1"
-//        UserDefaults.loginData?.dialCode.value = "+2"
         // reset choose area and club, if language is changed
         if L102Language.currentAppleLanguageFull() != language {
             UserDefaults.currentArea = nil

@@ -438,14 +438,26 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1r-uW-jFF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                            <connections>
+                                                                <action selector="selectSizeBtnTapped:" destination="ZS1-Lw-Hly" eventType="touchUpInside" id="xUg-bS-F5O"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="skY-n5-rPD" firstAttribute="leading" secondItem="ytG-IX-iJ0" secondAttribute="trailing" constant="8" id="1r9-Za-ExS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="k1r-uW-jFF" secondAttribute="trailing" id="78s-p2-4j8"/>
                                                         <constraint firstAttribute="bottom" secondItem="skY-n5-rPD" secondAttribute="bottom" id="DAo-7g-aEE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="k1r-uW-jFF" secondAttribute="bottom" id="LKc-Rh-q2J"/>
                                                         <constraint firstItem="ytG-IX-iJ0" firstAttribute="centerY" secondItem="Uqd-ry-ZsZ" secondAttribute="centerY" id="ZNg-t9-Pu1"/>
+                                                        <constraint firstItem="k1r-uW-jFF" firstAttribute="top" secondItem="Uqd-ry-ZsZ" secondAttribute="top" id="d1D-Id-oQq"/>
                                                         <constraint firstItem="ytG-IX-iJ0" firstAttribute="leading" secondItem="Uqd-ry-ZsZ" secondAttribute="leading" constant="8" id="i4M-qB-Nuk"/>
                                                         <constraint firstItem="skY-n5-rPD" firstAttribute="top" secondItem="Uqd-ry-ZsZ" secondAttribute="top" id="lHa-pi-j5e"/>
+                                                        <constraint firstItem="k1r-uW-jFF" firstAttribute="leading" secondItem="Uqd-ry-ZsZ" secondAttribute="leading" id="nBm-hT-dXD"/>
                                                         <constraint firstAttribute="trailing" secondItem="skY-n5-rPD" secondAttribute="trailing" constant="16" id="zlE-QG-fxd"/>
                                                     </constraints>
                                                 </view>
@@ -459,6 +471,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="radioButton" destination="ytG-IX-iJ0" id="Toc-EV-rl2"/>
+                                            <outlet property="selectSizeBtn" destination="k1r-uW-jFF" id="jxg-7w-DPF"/>
                                             <outlet property="sizeNameLabel" destination="lyo-jn-ofR" id="dkt-x0-9MV"/>
                                             <outlet property="sizePriceLabel" destination="oF9-zG-Ec3" id="T42-nr-XBC"/>
                                         </connections>

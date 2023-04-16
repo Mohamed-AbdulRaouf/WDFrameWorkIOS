@@ -70,7 +70,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                     "apartment": "1",
                     "email": GlobalConstants.shared.membershipNumber,
                     "floor": "1",
-                    "first_name": GlobalConstants.shared.name,
+                    "first_name": GlobalConstants.shared.firstName,
                     "street": "Cairo",
                     "building": "1",
                     "phone_number": GlobalConstants.shared.mobile,
@@ -78,7 +78,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                     "postal_code": "1",
                     "city": "Cairo",
                     "country": "EGY",
-                    "last_name": GlobalConstants.shared.name,
+                    "last_name": GlobalConstants.shared.lastName,
                     "state": "none"
                 ]
             ]

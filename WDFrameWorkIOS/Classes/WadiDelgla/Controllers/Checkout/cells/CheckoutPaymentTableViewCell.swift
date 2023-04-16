@@ -63,4 +63,8 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
     @IBAction func onChangeCreditCardButtonTapped(_ sender: Any) {
         self.onSelectChangeCreditCard!()
     }
+    
+    @IBAction func selectPaymentBtnTapped(_ sender: Any) {
+        self.onSelectedPaymentMethod!()
+    }
 }

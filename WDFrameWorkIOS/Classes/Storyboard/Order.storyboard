@@ -1171,9 +1171,21 @@
                                                         <constraint firstItem="25q-dT-2w4" firstAttribute="top" secondItem="IQ5-bB-ZiY" secondAttribute="top" constant="10" id="xom-lJ-NC6"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L92-km-aQ4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                    <connections>
+                                                        <action selector="selectPaymentBtnTapped:" destination="S2g-Fo-jWR" eventType="touchUpInside" id="VrW-lX-h4g"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="L92-km-aQ4" firstAttribute="leading" secondItem="maa-wc-8Xq" secondAttribute="leading" id="7YT-nB-Mde"/>
+                                                <constraint firstAttribute="trailing" secondItem="L92-km-aQ4" secondAttribute="trailing" id="AmF-th-kvm"/>
                                                 <constraint firstAttribute="trailing" secondItem="IQ5-bB-ZiY" secondAttribute="trailing" id="FDx-Nc-oCs"/>
+                                                <constraint firstItem="L92-km-aQ4" firstAttribute="top" secondItem="maa-wc-8Xq" secondAttribute="top" id="GaY-HX-4VV"/>
+                                                <constraint firstAttribute="bottom" secondItem="L92-km-aQ4" secondAttribute="bottom" id="exC-z2-Q42"/>
                                                 <constraint firstItem="IQ5-bB-ZiY" firstAttribute="top" secondItem="maa-wc-8Xq" secondAttribute="top" id="hKE-VI-zoe"/>
                                                 <constraint firstItem="IQ5-bB-ZiY" firstAttribute="leading" secondItem="maa-wc-8Xq" secondAttribute="leading" id="hlx-Nd-vK6"/>
                                                 <constraint firstAttribute="bottom" secondItem="IQ5-bB-ZiY" secondAttribute="bottom" id="hqi-4X-Amo"/>

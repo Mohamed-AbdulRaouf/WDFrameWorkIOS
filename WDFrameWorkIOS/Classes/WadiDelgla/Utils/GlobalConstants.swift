@@ -11,24 +11,21 @@ class GlobalConstants {
     
     static var shared = GlobalConstants()
     
-    var name: String = ""
+    var firstName: String = ""
+    var lastName: String = "NA"
     var mobile: String = ""
     var email: String = ""
     var membershipNumber: String = ""
-    var mainStoryboard: UIStoryboard = UIStoryboard()
-    var viewController: UIViewController = UIViewController()
     var password: String = "123456"
     
     init() {}
     
-    init(name: String, mobile: String, email: String, membershipNumber: String, mainStoryboard: UIStoryboard,
-         viewController: UIViewController) {
-        self.name = name
+    init(firstName: String, lastName: String, mobile: String, email: String, membershipNumber: String) {
+        self.firstName = firstName
+        self.lastName = lastName
         self.mobile = mobile
         self.email = email
         self.membershipNumber = membershipNumber
-        self.mainStoryboard = mainStoryboard
-        self.viewController = viewController
     }
     
 }

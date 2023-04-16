@@ -11,7 +11,7 @@ import UIKit
 class ProductSizeTableViewCell: UITableViewCell,IBaseTableViewCell {
     typealias T = IMenuSizeDTODAL
     @IBOutlet weak var sizePriceLabel: UILabel!
-    
+    @IBOutlet weak var selectSizeBtn: UIButton!
     @IBOutlet weak var sizeNameLabel: UILabel!
     @IBOutlet weak var radioButton: SSRadioButton!
     var onSelectedSize: (() -> Void)?
@@ -44,4 +44,7 @@ class ProductSizeTableViewCell: UITableViewCell,IBaseTableViewCell {
         self.onSelectedSize!()
     }
     
+    @IBAction func selectSizeBtnTapped(_ sender: Any) {
+        self.onSelectedSize!()
+    }
 }

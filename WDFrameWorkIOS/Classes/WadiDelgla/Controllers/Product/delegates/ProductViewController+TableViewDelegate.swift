@@ -104,4 +104,14 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource,UITe
         }
         
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section == 1{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductSizeTableViewCell", for: indexPath) as! ProductSizeTableViewCell
+//            cell.onSelectedSize = { [weak self] in
+//                self?.viewModel?.selectedSizeIndex = indexPath.row
+//            }
+////            cell.radioButton.se
+//        }
+//    }
 }

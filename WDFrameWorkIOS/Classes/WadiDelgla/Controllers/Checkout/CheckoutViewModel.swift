@@ -138,7 +138,7 @@ class CheckoutViewModel: ICheckoutViewModel{
                             if response?.error?.ErrorCode == 645 {
                                 self.delegate?.onError("coupon_code_is_invalid".localized())
                             } else {
-                                self.delegate?.onError(response?.error?.Message ?? "Please try again and reopen online ordering".localized())
+                                self.delegate?.onError(response?.error?.APIError?.description ?? "")
                             }
                         }
                         return
