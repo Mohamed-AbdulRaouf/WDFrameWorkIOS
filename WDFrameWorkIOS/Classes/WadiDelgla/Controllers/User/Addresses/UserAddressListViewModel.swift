@@ -60,6 +60,7 @@ class UserAddressListViewModel: IUserAddressListViewModel{
                     self.hideHUD()
                     guard let data = response?.data else {
                         if response?.error?.ErrorCode == ErrorsCodeBLL.noDataFound.rawValue{
+                            self.delegate?.addNewAddress()
                            return
                         }else if response?.error?.APIError != nil {
                             self.delegate?.onError(response?.error?.APIError?.description ?? "")
@@ -90,6 +91,7 @@ class UserAddressListViewModel: IUserAddressListViewModel{
                     self.hideHUD()
                     guard let data = response?.data else {
                         if response?.error?.ErrorCode == ErrorsCodeBLL.noDataFound.rawValue{
+                            self.delegate?.addNewAddress()
                             return
                         }else if response?.error?.APIError != nil {
                             self.delegate?.onError(response?.error?.APIError?.description ?? "")

@@ -148,4 +148,9 @@ extension UserAddressListViewController: IUserAddressListViewController{
             self.tableView.reloadData()
         }
     }
+    
+    func addNewAddress() {
+        let vc = StoryboardScene.User.addNewUserAddressViewController.instantiate()
+        self.navigationController?.pushViewController(vc)
+    }
 }

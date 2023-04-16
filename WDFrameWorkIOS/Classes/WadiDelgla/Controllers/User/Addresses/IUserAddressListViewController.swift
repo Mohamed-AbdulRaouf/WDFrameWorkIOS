@@ -9,4 +9,5 @@
 import Foundation
 protocol IUserAddressListViewController:ICommonFunc {
     func onReloadTableView()
+    func addNewAddress()
 }

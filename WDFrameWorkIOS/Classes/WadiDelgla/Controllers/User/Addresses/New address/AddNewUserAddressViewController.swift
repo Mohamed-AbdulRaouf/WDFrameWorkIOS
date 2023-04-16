@@ -32,6 +32,14 @@ import RxSwift
         self.viewModel?.viewDidLoad()
     }
    
+     override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         self.viewModel?.addAddress(completion: {[weak self] value in
+             guard let self = self else {return}
+             debugPrint(value)
+             self.navigationController?.popViewController(animated: true)
+         })
+     }
     func setupUI(){
         self.addDismissKeyboardTapGesture()
         self.saveButton.setTitle(R.string.localizable.save(), for: .normal)
@@ -152,11 +160,11 @@ extension AddNewUserAddressViewController: IAddNewUserAddressViewController{
     }
     
     func successAddNewAddress() {
-        self.bindingData()
-        self.showToast(R.string.localizable.success_add_address())
-        doOnMain(deadline: 0.2, {
+//        self.bindingData()
+//        self.showToast(R.string.localizable.success_add_address())
+//        doOnMain(deadline: 0.2, {
             self.navigationController?.popViewController(animated: true)
-        })
+//        })
     }
     
     func onError(_ error: String) {

@@ -120,18 +120,29 @@ class AddNewUserAddressViewModel: IAddNewUserAddressViewModel{
                 return
             }
             self.showHud()
+            self.address_data?.brandId.value = 0
+            self.address_data?.streetName.value = "ST"
+            self.address_data?.addressDescription.value = "ST"
+            self.address_data?.buildingNo.value = "1"
+            self.address_data?.floorNo.value = "1"
+            self.address_data?.addressDescription.value = "ST"
+            self.address_data?.addressDetailsText = ""
+            self.address_data?.cityName.value = ""
+            self.address_data?.companyName.value = "Wadi Degla"
+            self.address_data?.latitude.value = 0.0
+            self.address_data?.longitude.value = 0.0
             doInBackground {
                 self.apiClient?.addCustomerAddress(self.address_data!) { (response) in
                     doOnMain {
                         self.hideHUD()
-                        guard let _ = response?.data else {
-                            self.errorModel = response?.error?.validateError as? IAddressValidationDTOBLL
-                            self.delegate?.onUpdateLayout()
-                            if response?.error?.APIError != nil {
-                                self.delegate?.onError(response?.error?.APIError?.description ?? "")
-                            }
-                            return
-                        }
+//                        guard let _ = response?.data else {
+//                            self.errorModel = response?.error?.validateError as? IAddressValidationDTOBLL
+//                            self.delegate?.onUpdateLayout()
+//                            if response?.error?.APIError != nil {
+//                                self.delegate?.onError(response?.error?.APIError?.description ?? "")
+//                            }
+//                            return
+//                        }
                         self.delegate?.successAddNewAddress()
                     }
                 }
