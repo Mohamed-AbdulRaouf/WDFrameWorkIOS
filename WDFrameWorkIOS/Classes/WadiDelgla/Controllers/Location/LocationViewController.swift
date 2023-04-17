@@ -15,6 +15,7 @@ class LocationViewController :STUIViewController ,IBaseController{
     typealias T = ILocationViewModel
     var viewModel: ILocationViewModel?
     
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var languageButton: UIButton!
     @IBOutlet weak var startButton: STUISecondaryButton!
     @IBOutlet weak var areaLabel: UILabel!
@@ -49,6 +50,11 @@ extension LocationViewController{
         super.viewWillAppear(animated)
         setNavigationBarHidden(true)
         self.myOrdersBtn.setTitle("my_orders".localized(), for: .normal)
+        if L102Language.isCurrentLanguageArabic() {
+            backBtn.setImage(UIImage(named: "ic_back_ar"), for: .normal)
+        } else {
+            backBtn.setImage(UIImage(named: "ic_back"), for: .normal)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,6 +115,11 @@ extension LocationViewController {
     @IBAction func onMyOrdersBtnTapped(_ sender: Any) {
         let vc = StoryboardScene.User.orderListViewController.instantiate()
         self.navigationController?.pushViewController(vc)
+    }
+    
+    @IBAction func backBtnTapped(_ sender: Any) {
+        // back to main app
+        doPostNotification("exit_wdframework")
     }
     
 }
@@ -237,5 +248,15 @@ extension LocationViewController : CountrySelectorDelegate {
     func selectCountry(country: ICountryDTODAL) {
         print("OLd Country = \(String(describing: UserDefaults.currentAppCountry?.countryCode.value ?? ""))")
         self.viewModel?.validateOnCartHasItemsForCountry(country: country)
+    }
+}
+extension URL {
+    static var documentsDirectory: URL {
+        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        return try! documentsDirectory.asURL()
+    }
+
+    static func urlInDocumentsDirectory(with filename: String) -> URL {
+        return documentsDirectory.appendingPathComponent(filename)
     }
 }

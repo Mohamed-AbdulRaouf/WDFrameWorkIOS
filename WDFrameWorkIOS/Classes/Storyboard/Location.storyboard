@@ -197,8 +197,30 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-pq-ifD">
                                 <rect key="frame" x="20" y="45" width="374" height="40"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-NR-Nlm">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="GQL-9P-ZRS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="ic_back" title=" "/>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="B30-bc-9pb" eventType="touchUpInside" id="FOX-BG-QFd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-d9-NSA">
+                                        <rect key="frame" x="58" y="0.0" width="96" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onCountryTapped:" destination="B30-bc-9pb" eventType="touchUpInside" id="Opu-FN-ghK"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-TW-TlT">
+                                        <rect key="frame" x="162" y="0.0" width="74" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysO-nN-7uf">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
+                                        <rect key="frame" x="244" y="0.0" width="130" height="40"/>
                                         <color key="backgroundColor" name="MainColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="8g6-hY-vbO"/>
@@ -213,17 +235,6 @@
                                             <action selector="onMyOrdersBtnTapped:" destination="B30-bc-9pb" eventType="touchUpInside" id="Poe-Aw-k7T"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-d9-NSA">
-                                        <rect key="frame" x="138" y="0.0" width="154" height="40"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="onCountryTapped:" destination="B30-bc-9pb" eventType="touchUpInside" id="Opu-FN-ghK"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNJ-TW-TlT">
-                                        <rect key="frame" x="300" y="0.0" width="74" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAB-MR-Cmg">
                                         <rect key="frame" x="378" y="0.0" width="100" height="40"/>
                                         <color key="backgroundColor" name="MainColor"/>
@@ -266,6 +277,7 @@
                     <connections>
                         <outlet property="areaButton" destination="qnb-5V-hms" id="KnN-Gk-hZh"/>
                         <outlet property="areaLabel" destination="zZg-Hx-IEs" id="5OS-Gm-7sh"/>
+                        <outlet property="backBtn" destination="EiH-NR-Nlm" id="pUC-E7-Nhu"/>
                         <outlet property="cityButton" destination="gAq-zY-MMh" id="9cE-dx-FEd"/>
                         <outlet property="cityLabel" destination="tTA-eG-4Bv" id="ElY-vl-6Ae"/>
                         <outlet property="countryButton" destination="gPt-d9-NSA" id="yQt-tK-lty"/>
@@ -320,6 +332,7 @@
     </designables>
     <resources>
         <image name="escallope_elnady.png" width="408.75" height="515.25"/>
+        <image name="ic_back" width="32" height="32"/>
         <image name="menu-rounded-90.png" width="90" height="90"/>
         <image name="notification" width="15" height="16.5"/>
         <namedColor name="MainColor">
