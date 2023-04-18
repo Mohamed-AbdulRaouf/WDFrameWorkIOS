@@ -250,13 +250,3 @@ extension LocationViewController : CountrySelectorDelegate {
         self.viewModel?.validateOnCartHasItemsForCountry(country: country)
     }
 }
-extension URL {
-    static var documentsDirectory: URL {
-        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        return try! documentsDirectory.asURL()
-    }
-
-    static func urlInDocumentsDirectory(with filename: String) -> URL {
-        return documentsDirectory.appendingPathComponent(filename)
-    }
-}
