@@ -9,6 +9,7 @@
 import Foundation
 import Bond
 public  class ResetPasswordDTODAL : BaseUserDTODAL, IResetPasswordDTODAL{
+    public var mobile: Observable<String?> = Observable<String?>(nil)
     public var brandId = Observable<Int?>(nil)
     public var password = Observable<String?>(nil)
     public var confirmPassword = Observable<String?>(nil)

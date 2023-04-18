@@ -79,15 +79,6 @@ class RegisterationViewController: STUIViewController,IBaseController,SSRadioBut
     }
     
     func startRegister() {
-        self.viewModel?.user_data?.mobile.value = GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry
-        self.viewModel?.user_data?.membershipNumber.value = GlobalConstants.shared.membershipNumber
-        self.viewModel?.user_data?.firstName.value = GlobalConstants.shared.firstName
-        self.viewModel?.user_data?.lastName.value = GlobalConstants.shared.lastName
-        self.viewModel?.user_data?.email.value = GlobalConstants.shared.email
-        self.viewModel?.user_data?.gender.value = Gender.male.rawValue
-        self.viewModel?.user_data?.password.value = GlobalConstants.shared.password
-        self.viewModel?.user_data?.confirmPassword.value = GlobalConstants.shared.password
-        self.viewModel?.user_data?.brandId.value = 0
         let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
         UserDefaults.currentAppCountry?.countryCode.value = "EG"
         UserDefaults.currentAppCountry = country

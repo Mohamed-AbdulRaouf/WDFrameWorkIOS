@@ -37,7 +37,16 @@ class RegisterViewModel: IRegisterViewModel{
     }
     
     /// This Function to call register API with registeration data
-    func register(){
+    func register() {
+        self.user_data?.mobile.value = GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry
+        self.user_data?.membershipNumber.value = GlobalConstants.shared.membershipNumber
+        self.user_data?.firstName.value = GlobalConstants.shared.firstName
+        self.user_data?.lastName.value = GlobalConstants.shared.lastName
+        self.user_data?.email.value = GlobalConstants.shared.email
+        self.user_data?.gender.value = Gender.male.rawValue
+        self.user_data?.password.value = GlobalConstants.shared.password
+        self.user_data?.confirmPassword.value = GlobalConstants.shared.password
+        self.user_data?.brandId.value = 0
         self.showHud()
         doInBackground {
             self.apiClient?.register(self.user_data!, hintNumber: self.country_data!.hintNumber.value) { (response) in

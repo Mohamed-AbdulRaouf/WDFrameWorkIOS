@@ -27,6 +27,8 @@ class City: SearchItemDAL {
 import Foundation
 import Bond
 public class SearchItemDTODAL :BaseUserDTODAL, Codable, IRegisterDTODAL{
+    public var mobile: Observable<String?> = Observable<String?>(nil)
+    
     public var countryId =  Observable<String?>(nil)
     
     public var dialCode = Observable<String?>(nil)
@@ -84,6 +86,7 @@ public class SearchItemDTODAL :BaseUserDTODAL, Codable, IRegisterDTODAL{
         try container.encode(shareCode.value, forKey: .shareCode)
         try container.encode(brandId.value, forKey: .brandId)
         try container.encode(name.value, forKey: .name)
+        try container.encode(mobile.value, forKey: .mobile)
     }
     
     required public init(from decoder: Decoder) throws {

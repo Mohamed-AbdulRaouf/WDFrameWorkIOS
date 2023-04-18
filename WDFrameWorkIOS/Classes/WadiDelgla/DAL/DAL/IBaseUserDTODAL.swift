@@ -9,5 +9,5 @@
 import Foundation
 import Bond
 public protocol  IBaseUserDTODAL  {
-    var mobile: Observable<String?> { get set }
+//    var mobile: Observable<String?> { get set }
 }

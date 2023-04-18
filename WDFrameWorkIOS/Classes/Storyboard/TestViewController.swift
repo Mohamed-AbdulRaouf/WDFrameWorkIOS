@@ -42,14 +42,14 @@ public class TestViewController: UIViewController {
 
 extension TestViewController {
     
-    public func create(name: String, lastName: String = " ", mobile: String, email: String, membershipNumber: String, language: String) -> TestViewController {
+    public func create(firstName: String, lastName: String, mobile: String, email: String, membershipNumber: String, language: String) -> TestViewController {
         let vc = TestViewController()
-        vc.firstName = name
+        vc.firstName = firstName
         vc.lastName = lastName
         vc.mobile = mobile
         vc.email = email
         vc.membershipNumber = membershipNumber
-        GlobalConstants.shared.firstName = name
+        GlobalConstants.shared.firstName = firstName
         GlobalConstants.shared.lastName = lastName
         GlobalConstants.shared.mobile = mobile
         GlobalConstants.shared.email = email

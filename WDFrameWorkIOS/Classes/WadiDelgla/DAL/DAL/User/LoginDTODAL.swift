@@ -9,6 +9,7 @@
 import Foundation
 import Bond
 public  class LoginDTODAL : BaseUserDTODAL,Codable, ILoginDTODAL{
+    public var mobile: Observable<String?> = Observable<String?>(nil)
     public var password = Observable<String?>(nil)
     public var brandId: Observable<Int?> = Observable<Int?>(nil)
     public var countryId: Observable<String?> = Observable<String?>(nil)
@@ -31,6 +32,7 @@ public  class LoginDTODAL : BaseUserDTODAL,Codable, ILoginDTODAL{
         try container.encode(countryId.value, forKey: .countryId)
         try container.encode(dialCode.value, forKey: .dialCode)
         try container.encode(hintNumber.value, forKey: .hintNumber)
+        try container.encode(mobile.value, forKey: .mobile)
     }
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -41,5 +43,6 @@ public  class LoginDTODAL : BaseUserDTODAL,Codable, ILoginDTODAL{
         dialCode.value = try container.decodeIfPresent(String.self,forKey: .dialCode)
         hintNumber.value = try container.decodeIfPresent(String.self,forKey: .hintNumber)
         brandId.value =  try container.decodeIfPresent(Int.self,forKey: .brandId)
+        mobile.value =  try container.decodeIfPresent(String.self,forKey: .mobile)
     }
 }

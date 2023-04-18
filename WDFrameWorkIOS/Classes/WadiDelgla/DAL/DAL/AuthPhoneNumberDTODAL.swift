@@ -9,6 +9,7 @@
 import Foundation
 import Bond
 public  class AuthPhoneNumberDTODAL : BaseUserDTODAL, IAuthPhoneNumberDTODAL{
+    public var mobile: Observable<String?> = Observable<String?>(nil)
     
     public var countryId: Observable<String?> = Observable<String?>(nil)
     

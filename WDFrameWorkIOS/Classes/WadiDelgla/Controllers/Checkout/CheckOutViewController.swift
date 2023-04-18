@@ -109,6 +109,7 @@ extension CheckOutViewController{
           self.finalizeOrderButton.alpha = self.viewModel?.selectedPaymentMethodIndex == -1 ? 0.5 : 1
           self.finalizeOrderButton.isUserInteractionEnabled = self.viewModel?.selectedPaymentMethodIndex != -1
           self.finalizeOrderButton.setTitle(finalizeOrderTitle, for: .normal)
+        self.finalizeOrderButton.isEnabled = true
           
       }
 }

@@ -10,6 +10,8 @@ import Foundation
 import Bond
 //import SwiftyJSON
 public class UserDTODAL :BaseUserDTODAL, Codable, IUserDTODAL{
+    public var mobile: Observable<String?> = Observable<String?>(nil)
+    
     
     public var userId = Observable<String?>(nil)
     
