@@ -1385,7 +1385,7 @@
                                     <constraint firstAttribute="width" constant="30" id="eDJ-vq-4pJ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-tb-aew">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-tb-aew">
                                 <rect key="frame" x="107" y="832" width="200" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="7HD-1P-PJn"/>
