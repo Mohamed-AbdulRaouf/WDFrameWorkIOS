@@ -151,7 +151,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsW-Bi-MYI">
-                                                                            <rect key="frame" x="29.5" y="60" width="53" height="20"/>
+                                                                            <rect key="frame" x="30" y="60" width="52" height="20"/>
                                                                             <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="16"/>
                                                                             <state key="normal" title="explore">
                                                                                 <color key="titleColor" red="0.90196078431372551" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -181,7 +181,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s76-gb-dd7">
-                                                                            <rect key="frame" x="15.5" y="56" width="81" height="24"/>
+                                                                            <rect key="frame" x="17.5" y="56" width="77" height="24"/>
                                                                             <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="17"/>
                                                                             <state key="normal" title="scan&amp;earn">
                                                                                 <color key="titleColor" red="0.90196078430000004" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -211,7 +211,7 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3Q-Lc-aMV">
-                                                                            <rect key="frame" x="25.5" y="54" width="60" height="26"/>
+                                                                            <rect key="frame" x="26" y="54" width="59" height="26"/>
                                                                             <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="18"/>
                                                                             <state key="normal" title="ranking">
                                                                                 <color key="titleColor" red="0.90196078430000004" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,7 +350,7 @@
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-6u-epe">
                                                                                 <rect key="frame" x="16" y="117.5" width="322" height="53.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Z-Pi-NcP">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Z-Pi-NcP">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="322" height="23.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                                         <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -358,7 +358,7 @@
                                                                                         <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <size key="shadowOffset" width="1" height="2"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etj-P1-XnE">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etj-P1-XnE">
                                                                                         <rect key="frame" x="0.0" y="33.5" width="322" height="20"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -590,15 +590,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BrandTableViewCell" id="Cqy-MI-gJG" customClass="BrandTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BrandTableViewCell" id="Cqy-MI-gJG" customClass="BrandTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cqy-MI-gJG" id="I6z-jJ-APR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-By-gBp">
-                                                    <rect key="frame" x="116" y="149" width="259" height="1"/>
+                                                    <rect key="frame" x="116" y="149" width="232.5" height="1"/>
                                                     <color key="backgroundColor" red="0.98431372549019602" green="0.83137254901960778" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="7CT-iR-frX"/>
@@ -623,7 +623,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gcA-ZG-YPE" userLabel="names Stack View">
-                                                    <rect key="frame" x="116" y="13" width="159" height="114.5"/>
+                                                    <rect key="frame" x="116" y="13" width="252.5" height="114.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Longest Name ever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lFg-8D-GMZ" customClass="STLabel" customModule="WDFrameWorkIOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="136.5" height="20.5"/>
@@ -657,7 +657,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-MH-omS" userLabel="get bites Stack View">
-                                                    <rect key="frame" x="317.5" y="33.5" width="41.5" height="103"/>
+                                                    <rect key="frame" x="291" y="33.5" width="41.5" height="103"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-wh-ZwW">
                                                             <rect key="frame" x="1" y="0.0" width="40" height="40"/>
@@ -712,7 +712,7 @@
                                                 <constraint firstItem="qjc-ZD-nVc" firstAttribute="top" secondItem="I6z-jJ-APR" secondAttribute="top" constant="13" id="LhS-mG-MaP"/>
                                                 <constraint firstItem="Ebd-MH-omS" firstAttribute="top" secondItem="lFg-8D-GMZ" secondAttribute="bottom" id="M5w-hN-Sw8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ebd-MH-omS" secondAttribute="trailing" constant="16" id="Rng-RM-uH2"/>
-                                                <constraint firstItem="gcA-ZG-YPE" firstAttribute="trailing" secondItem="I6z-jJ-APR" secondAttribute="trailing" constant="-100" id="cH1-wl-nQl"/>
+                                                <constraint firstItem="gcA-ZG-YPE" firstAttribute="trailing" secondItem="I6z-jJ-APR" secondAttribute="trailing" constant="20" id="cH1-wl-nQl"/>
                                                 <constraint firstItem="qjc-ZD-nVc" firstAttribute="leading" secondItem="I6z-jJ-APR" secondAttribute="leading" constant="16" id="h43-hY-qWR"/>
                                                 <constraint firstItem="gcA-ZG-YPE" firstAttribute="leading" secondItem="qjc-ZD-nVc" secondAttribute="trailing" constant="20" id="ksl-Ks-M1u"/>
                                                 <constraint firstItem="tQ2-By-gBp" firstAttribute="leading" secondItem="gcA-ZG-YPE" secondAttribute="leading" id="znv-kW-WVC"/>
@@ -792,7 +792,7 @@
         <image name="ic_home_compass" width="52" height="52"/>
         <image name="ic_home_podium" width="46" height="46"/>
         <image name="ic_home_qr_code" width="48" height="48"/>
-        <image name="ic_menu" width="38" height="37.5"/>
+        <image name="ic_menu" width="38" height="38"/>
         <image name="ic_reward_section" width="25" height="25"/>
         <image name="logo" width="160" height="160"/>
         <namedColor name="MainColor">
