@@ -150,7 +150,7 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
@@ -172,7 +172,10 @@ print("Running old Swift")
         let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width - 50, height: 206))
         
         let subTotalTitleLabel = UILabel()
+        subTotalTitleLabel.showsLargeContentViewer = false
         let subTotalLabel = UILabel()
+        subTotalLabel.showsLargeContentViewer = false
+        
         subTotalTitleLabel.font = APP_FONT_BOLD12
         subTotalLabel.font = APP_FONT_BOLD12
         subTotalTitleLabel.text = "sub_total".localized()
@@ -182,14 +185,16 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        subTotalTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        subTotalTitleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         let deliveryFeesLabelTitle = UILabel()
+        deliveryFeesLabelTitle.showsLargeContentViewer = false
         let deliveryFeesLabel = UILabel()
+        deliveryFeesLabel.showsLargeContentViewer = false
         deliveryFeesLabelTitle.font = APP_FONT_BOLD12
         deliveryFeesLabel.font = APP_FONT_BOLD12
         deliveryFeesLabelTitle.text = "delivery_fees".localized()
@@ -199,15 +204,17 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
         deliveryFeesLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let loyalityDiscountLabelTitle = UILabel()
+        loyalityDiscountLabelTitle.showsLargeContentViewer = false
         loyalityDiscountLabelTitle.font = APP_FONT_BOLD12
         let loyalityDiscountLabel = UILabel()
+        loyalityDiscountLabel.showsLargeContentViewer = false
         loyalityDiscountLabel.font = APP_FONT_BOLD12
         loyalityDiscountLabelTitle.text = "loyalty_discount".localized()
         loyalityDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")",order.loyaltyDiscount.value ?? 0)
@@ -216,15 +223,17 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
         loyalityDiscountLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let vatTitleLabel = UILabel()
+        vatTitleLabel.showsLargeContentViewer = false
         vatTitleLabel.font = APP_FONT_BOLD12
         let vatLabel = UILabel()
+        vatLabel.showsLargeContentViewer = false
         vatLabel.font = APP_FONT_BOLD12
         vatTitleLabel.text = "VAT".localized()
         vatLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")",order.totalTax.value ?? 0)
@@ -233,14 +242,16 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
         vatTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let totalDiscountTitleLabel = UILabel()
+        totalDiscountTitleLabel.showsLargeContentViewer = false
         let totalDiscountLabel = UILabel()
+        totalDiscountTitleLabel.showsLargeContentViewer = false
         totalDiscountLabel.font = APP_FONT_BOLD12
         totalDiscountTitleLabel.font = APP_FONT_BOLD12
         totalDiscountTitleLabel.text = "discount".localized()
@@ -250,14 +261,16 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
         totalDiscountTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let totalTitleLabel = UILabel()
+        totalTitleLabel.showsLargeContentViewer = false
         let totalLabel = UILabel()
+        totalLabel.showsLargeContentViewer = false
         totalTitleLabel.font = APP_FONT_BOLD12
         totalLabel.font = APP_FONT_BOLD12
         totalTitleLabel.text = "total".localized()
@@ -267,7 +280,7 @@ print("Running old Swift")
             stackView.axis = .horizontal
             stackView.distribution = .fill
             stackView.alignment = .leading
-            stackView.spacing = 20
+            stackView.spacing = 0
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()

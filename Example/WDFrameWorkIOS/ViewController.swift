@@ -28,16 +28,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnTapped(_ sender: Any) {
-        
+        self.openWDFramework(language: LocalizationSystem.sharedInstance.getLanguage())
+    }
+    
+    
+    @IBAction func arabicBtnTapped(_ sender: Any) {
+        self.openWDFramework(language: "ar")
+    }
+    
+    @IBAction func englishBtnTapped(_ sender: Any) {
+        self.openWDFramework(language: "en")
+    }
+    
+    
+    private func openWDFramework(language: String) {
         let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
         let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        let firstScreenWDframework = vc.create(firstName: "Mohamed",lastName: "Abdulraouf", mobile: "01002038240", email: "moham40ed.f19@icloud.com", membershipNumber: "201400717779", language: LocalizationSystem.sharedInstance.getLanguage())
+        let firstScreenWDframework = vc.create(firstName: "Mohamed",lastName: "Abdulraouf", mobile: "+201226372125", email: "mohamed.a.raouf@icloud.com", membershipNumber: "0040071777", language: language)
         // set app delegate to push view controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let rootViewController = appDelegate?.window?.rootViewController as? UINavigationController
         rootViewController?.pushViewController(firstScreenWDframework, animated: true)
     }
-    
 }

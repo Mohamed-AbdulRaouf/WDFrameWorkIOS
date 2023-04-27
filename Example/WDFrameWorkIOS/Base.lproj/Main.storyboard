@@ -19,20 +19,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8P-iB-gu3">
-                                <rect key="frame" x="36" y="194" width="303" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Wadi Degla Framework"/>
-                                <connections>
-                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgr-MB-cB8"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zPx-xX-PyP">
+                                <rect key="frame" x="20" y="151" width="335" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8P-iB-gu3">
+                                        <rect key="frame" x="68" y="0.0" width="199.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Wadi Degla Framework"/>
+                                        <connections>
+                                            <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgr-MB-cB8"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-XB-D6l">
+                                        <rect key="frame" x="76" y="42.5" width="183" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cj-qH-HVZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Arabic"/>
+                                                <connections>
+                                                    <action selector="arabicBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oKP-zg-1is"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUI-zl-oXd">
+                                                <rect key="frame" x="104" y="0.0" width="79" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="English"/>
+                                                <connections>
+                                                    <action selector="englishBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="80H-4r-Spy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="b8P-iB-gu3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="DmP-pu-Nct"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b8P-iB-gu3" secondAttribute="trailing" constant="20" id="J2w-IX-clz"/>
-                            <constraint firstItem="b8P-iB-gu3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="150" id="cfb-a2-bza"/>
+                            <constraint firstAttribute="trailing" secondItem="zPx-xX-PyP" secondAttribute="trailing" constant="20" id="2ZT-HZ-sHE"/>
+                            <constraint firstItem="zPx-xX-PyP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="107" id="Cc8-Kl-iIz"/>
+                            <constraint firstItem="zPx-xX-PyP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="Fsp-b5-CHr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MPw-Te-JLq"/>

@@ -50,7 +50,7 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
             self.brandLogoImageView.image = UIImage(named: "dobites_splash")
         }
         
-        self.brandNameLabel.font = APP_FONT_BOLD //UIFont.init(resource: APP_FONT_BOLD, size: 16)
+        self.brandNameLabel.font = APP_FONT_BOLD15 //UIFont.init(resource: APP_FONT_BOLD, size: 16)
         self.brandNameLabel.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         self.brandNameLabel.text = model.brandName.value ?? ""
         
