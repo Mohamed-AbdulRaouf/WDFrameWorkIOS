@@ -395,3 +395,7 @@
 "Please check from your phone" = "الرجاء إدخال رقم هاتف صحيح";
 "Please try again and reopen online ordering" = "يرجى المحاولة مرة أخرى وإعادة فتح الطلب اونلاين ";
 "coupon_code_is_invalid" = "الكوبون غير صالح";
+"transaction_cancelled" = "تم الغاء عملية الدفع";
+"transaction_failed" = "فشلت عملية الدفع";
+"please_try_again_later" = "الرجاء معاودة المحاولة في وقت لاحق";
+"cod_online" = "الدفع عند الاستلام او فيزا";

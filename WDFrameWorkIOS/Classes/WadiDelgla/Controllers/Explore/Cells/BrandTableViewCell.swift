@@ -73,9 +73,9 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         
         
         if model.isOnLinePayment.value ?? false {
-            self.paymentLabel.text = NSLocalizedString("COD & Online", comment: "COD & Online")
+            self.paymentLabel.text = "COD & Online".localized() //NSLocalizedString("COD & Online", comment: "COD & Online")
         } else {
-            self.paymentLabel.text = NSLocalizedString("COD", comment: "COD")
+            self.paymentLabel.text = "COD".localized() //NSLocalizedString("COD", comment: "COD")
         }
         
         

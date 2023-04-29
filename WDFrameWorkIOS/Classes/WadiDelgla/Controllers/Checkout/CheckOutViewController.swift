@@ -125,17 +125,17 @@ extension CheckOutViewController: IUserAddressProtocol{
 extension CheckOutViewController: AcceptSDKDelegate {
     func userDidCancel() {
         debugPrint("")
-        self.showToast("transaction is cancelled".localized())
+        self.showToast("transaction_cancelled".localized())
     }
 
     func paymentAttemptFailed(_ error: AcceptSDKError, detailedDescription: String) {
         debugPrint("paymentAttemptFailed")
-        self.showToast("transaction failed".localized())
+        self.showToast("transaction_failed".localized())
     }
 
     func transactionRejected(_ payData: PayResponse) {
         debugPrint("transactionRejected")
-        self.showToast("transaction failed".localized())
+        self.showToast("transaction_failed".localized())
     }
 
     func transactionAccepted(_ payData: PayResponse) {
@@ -154,7 +154,7 @@ extension CheckOutViewController: AcceptSDKDelegate {
 
     func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {
         debugPrint("userDidCancel3dSecurePayment")
-        self.showToast("transaction failed".localized())
+        self.showToast("transaction_failed".localized())
     }
 
 }
@@ -168,14 +168,14 @@ extension CheckOutViewController {
             switch result {
             case .success(let res):
                 guard let token = res.token else {
-                    self.showToast("please try again later".localized())
+                    self.showToast("please_try_again_later".localized())
                     return
                 }
                 UserDefaultsApp.shared.auth_token = token
                 self.orderRegistration()
             case .failure(let error):
                 debugPrint(error.localizedDescription)
-                self.showToast("please try again later".localized())
+                self.showToast("please_try_again_later".localized())
             }
         }
     }
@@ -186,14 +186,14 @@ extension CheckOutViewController {
             switch result {
             case .success(let res):
                 guard let orderID = res.id else {
-                    self.showToast("please try again later".localized())
+                    self.showToast("please_try_again_later".localized())
                     return
                 }
                 UserDefaultsApp.shared.orderPayID = "\(orderID)"
                 self.paymentKeyRequest()
             case .failure(let error):
                 debugPrint(error.localizedDescription)
-                self.showToast("please try again later".localized())
+                self.showToast("please_try_again_later".localized())
             }
         }
     }
@@ -204,14 +204,14 @@ extension CheckOutViewController {
             switch result {
             case .success(let res):
                 guard let token = res.token else {
-                    self.showToast("please try again later".localized())
+                    self.showToast("please_try_again_later".localized())
                     return
                 }
                 UserDefaultsApp.shared.orderPaymentKey = "\(token)"
                 self.paymobPayment()
             case .failure(let error):
                 debugPrint(error.localizedDescription)
-                self.showToast("please try again later".localized())
+                self.showToast("please_try_again_later".localized())
             }
         }
     }

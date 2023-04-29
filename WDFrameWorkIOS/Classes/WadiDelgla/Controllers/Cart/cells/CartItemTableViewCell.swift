@@ -51,7 +51,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
         } else {
             self.itemImageView.image = UIImage(named: "dobites_splash")
         }
-        self.itemPriceLabel.attributedText = setupLabels("item_price".localized(), "  \(String(format: "%.2f", model.itemPrice))") //  + (model.itemCurrencyCode)
+        self.itemPriceLabel.attributedText = setupLabels("item_price".localized(), "  \(String(format: "%.2f", model.itemPrice) + (model.itemCurrencyCode))")
         self.itemPriceLabel.font = APP_FONT_REGULAR11
         
         self.itemSubTotalLabel.attributedText = setupLabels("total".localized(), "  \(String(format: "%.2f", Float(model.subTotal)) + (model.itemCurrencyCode)) ")

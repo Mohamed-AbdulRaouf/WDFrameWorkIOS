@@ -268,8 +268,8 @@
 "hr" = "HR";
 "share_code_message" =  "You’ve got free points, open this link %@ to sign up in DoBites and get free points for %@ or use this code %@ in referal code field when regsitering or after registeration.";
 "brand_location" = "Brand Location";
-"COD" = "COD";
-"cod_online" = "COD & Online";
+"COD" = "Cash on delivery";
+"cod_online" = "Cash on delivery or Visa";
 "no_online_order" = "No Online Ordering";
 "get" = "Get";
 /* Explore */
@@ -403,3 +403,6 @@
 "Please check from your phone" = "Please enter a valid mobile phone number";
 "Please try again and reopen online ordering" = "Please try again and reopen online ordering";
 "coupon_code_is_invalid" = "Coupon code is invalid";
+"transaction_cancelled" = "Transaction is cancelled";
+"transaction_failed" = "Transaction failed";
+"please_try_again_later" = "Please try again later";

@@ -61,9 +61,13 @@ extension TestViewController {
         if L102Language.currentAppleLanguageFull() != language {
             UserDefaults.currentArea = nil
             UserDefaults.currentCity = nil
+            self.deleteCart()
         }
         Bundle.setLanguage(language)
         return vc
     }
     
+    func deleteCart() {
+        UserDefaults.order = nil
+    }
 }
