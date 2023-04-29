@@ -406,3 +406,5 @@
 "transaction_cancelled" = "Transaction is cancelled";
 "transaction_failed" = "Transaction failed";
 "please_try_again_later" = "Please try again later";
+"cart_empty" = "The cart is empty !";
+"branch_inactive" = "Branch is Inactive.";

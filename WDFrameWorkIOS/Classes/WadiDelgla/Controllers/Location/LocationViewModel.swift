@@ -103,8 +103,8 @@ class LocationViewModel: ILocationViewModel{
             self.delegate?.onError("select_city_and_area_msg".localized())
             return
         }
-        if let _ = UserDefaults.order, let oldCityId = oldCityId, let oldCountryId = self.oldCountryId{
-            if oldCityId != currentCity.id.value ?? "" || oldCountryId != currentArea.id.value ?? "" {
+        if let order = UserDefaults.order, let oldCityId = oldCityId, let oldCountryId = UserDefaults.currentArea?.id.value {
+            if oldCityId != currentCity.id.value ?? "" || oldCountryId != "\(Int(order.selectedAreaId))" {
                 self.delegate?.onShowClearCartAlert()
                return
             }

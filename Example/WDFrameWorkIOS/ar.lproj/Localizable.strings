@@ -178,7 +178,7 @@
 "confirm_password" = "تآكيد كلمة السر";
 "seconds" = "ثواني";
 "save" = "حفظ";
-"cancel" = "إالغاء";
+"cancel" = "إلغاء";
 "done" = "تآكيد";
 //Tab Bar Items
 "Home" = "الصفحه الرئيسيه";
@@ -399,3 +399,5 @@
 "transaction_failed" = "فشلت عملية الدفع";
 "please_try_again_later" = "الرجاء معاودة المحاولة في وقت لاحق";
 "cod_online" = "الدفع عند الاستلام او فيزا";
+"cart_empty" = "السلة فارغة !";
+"branch_inactive" = "الفرع غير متاح حاليا.";

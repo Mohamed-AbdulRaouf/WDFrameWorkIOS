@@ -25,12 +25,14 @@ extension STCartViewController : ISTCartViewController{
     /// this Function to call clear cart DB from offline
     @objc func onClearCartTapped(){
         doOnMain {
-            
-            let deleteAction =  UIAlertAction(title: "ok".localized(), style: .default) { (dialog) in
-                self.viewModel?.clearCartDB()
+            if let _ = UserDefaults.order {
+                let deleteAction =  UIAlertAction(title: "ok".localized(), style: .default) { (dialog) in
+                    self.viewModel?.clearCartDB()
+                }
+                self.showAlert(withTitle: "clear_cart_title".localized(), andMessage: "clear_cart_mesg".localized(), withActions: [deleteAction],withCancel: true)
+            } else {
+                self.showToast("cart_empty".localized())
             }
-                
-            self.showAlert(withTitle: "clear_cart_title".localized(), andMessage: "clear_cart_mesg".localized(), withActions: [deleteAction],withCancel: true)
         }
     }
     

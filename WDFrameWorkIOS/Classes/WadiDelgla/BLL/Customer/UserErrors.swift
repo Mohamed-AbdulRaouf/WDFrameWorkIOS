@@ -15,6 +15,7 @@ public enum ErrorsCodeBLL : Int{
     case ItemsInCartChanged = 674
     case InvalidMinOrderToDeliver = 675
     case EmptyAddress = 643
+    case BranchisInactive = 672
 }
 
  
@@ -64,6 +65,7 @@ public enum StandardMessagesBLL: Error, CustomStringConvertible {
     case InvalidMinOrderToDeliver
     case FailedValidateCustomer
     case InvalidRate
+    case BranchisInactive
     case customError(errorCode: Int)
     
     init(rawValue: Int) {
@@ -168,6 +170,8 @@ public enum StandardMessagesBLL: Error, CustomStringConvertible {
             return RBLL.string.localizable.failed_validate_customer()
         case .InvalidRate:
             return RBLL.string.localizable.invalid_rate()
+        case .BranchisInactive:
+            return "branch_inactive".localized()
         case let .customError(errorCode):
             return HandleAPIErrorsBLL.handleError(errorCode: errorCode)
         }

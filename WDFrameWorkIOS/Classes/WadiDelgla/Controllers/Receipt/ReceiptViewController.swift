@@ -189,7 +189,7 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        subTotalTitleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        subTotalTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         let deliveryFeesLabelTitle = UILabel()
         deliveryFeesLabelTitle.showsLargeContentViewer = false

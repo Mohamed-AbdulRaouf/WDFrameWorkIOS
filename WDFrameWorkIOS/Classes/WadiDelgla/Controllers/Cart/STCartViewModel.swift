@@ -135,8 +135,9 @@ class STCartViewModel: ISTCartViewModel{
                                 }
                             }else if response?.error?.ErrorCode == ErrorsCodeBLL.ItemsInCartChanged.rawValue{
                                 self.delegate?.onShowClearCartAlert()
-                            }
-                            else{
+                            } else if response?.error?.ErrorCode == ErrorsCodeBLL.BranchisInactive.rawValue {
+                                self.delegate?.onError(StandardMessagesBLL.BranchisInactive.description)
+                            } else {
                                 self.delegate?.onError(response?.error?.APIError?.description ?? "")
                             }
                         }
