@@ -179,34 +179,17 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-8h-bMC">
-                                                <rect key="frame" x="16" y="894" width="382" height="55"/>
-                                                <color key="backgroundColor" red="0.90196078430000004" green="0.1764705882" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="jbU-xT-IgS"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <state key="normal" title="Done">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onDoneTapped:" destination="NNd-k7-T5n" eventType="touchUpInside" id="pLe-PL-ipg"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="keQ-zv-IkN" firstAttribute="centerX" secondItem="sR6-UD-yFz" secondAttribute="centerX" id="03b-lW-HHH"/>
-                                            <constraint firstAttribute="bottom" secondItem="VZJ-8h-bMC" secondAttribute="bottom" constant="10" id="7Pv-sM-fgk"/>
-                                            <constraint firstAttribute="trailing" secondItem="VZJ-8h-bMC" secondAttribute="trailing" constant="16" id="9rv-js-mue"/>
                                             <constraint firstItem="ysL-pZ-cdn" firstAttribute="centerX" secondItem="keQ-zv-IkN" secondAttribute="centerX" id="BO8-Hy-wYV"/>
                                             <constraint firstItem="rU3-BI-7cd" firstAttribute="leading" secondItem="sR6-UD-yFz" secondAttribute="leading" constant="8" id="Bnl-xz-7LI"/>
                                             <constraint firstItem="keQ-zv-IkN" firstAttribute="top" secondItem="sR6-UD-yFz" secondAttribute="top" constant="8" id="GOc-Fl-tza"/>
-                                            <constraint firstItem="VZJ-8h-bMC" firstAttribute="top" secondItem="rU3-BI-7cd" secondAttribute="bottom" constant="20" id="UUz-pw-5fi"/>
                                             <constraint firstItem="rU3-BI-7cd" firstAttribute="top" secondItem="ysL-pZ-cdn" secondAttribute="bottom" constant="20" id="Z8r-YE-x0J"/>
+                                            <constraint firstAttribute="bottom" secondItem="rU3-BI-7cd" secondAttribute="bottom" constant="85" id="hV4-V3-Ci0"/>
                                             <constraint firstAttribute="trailing" secondItem="rU3-BI-7cd" secondAttribute="trailing" constant="8" id="nhp-q7-c4J"/>
                                             <constraint firstItem="ysL-pZ-cdn" firstAttribute="top" secondItem="keQ-zv-IkN" secondAttribute="bottom" constant="8" id="rqr-Ad-1kk"/>
-                                            <constraint firstItem="VZJ-8h-bMC" firstAttribute="leading" secondItem="sR6-UD-yFz" secondAttribute="leading" constant="16" id="xjB-oa-3TQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -230,12 +213,24 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="STFooterBackGround"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-8h-bMC">
+                                <rect key="frame" x="182" y="835" width="50" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDoneTapped:" destination="NNd-k7-T5n" eventType="touchUpInside" id="pLe-PL-ipg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6qB-3i-9tt"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
                             <constraint firstItem="6qB-3i-9tt" firstAttribute="trailing" secondItem="npH-zu-bsx" secondAttribute="trailing" id="5Ln-4l-IyE"/>
                             <constraint firstItem="npH-zu-bsx" firstAttribute="top" secondItem="7eE-8C-3z3" secondAttribute="bottom" id="6A7-AJ-w2B"/>
+                            <constraint firstItem="VZJ-8h-bMC" firstAttribute="top" secondItem="tQW-oF-mlW" secondAttribute="top" constant="14" id="FqN-4t-YRQ"/>
                             <constraint firstItem="7eE-8C-3z3" firstAttribute="leading" secondItem="6qB-3i-9tt" secondAttribute="leading" id="KkP-BQ-Ome"/>
                             <constraint firstItem="tQW-oF-mlW" firstAttribute="leading" secondItem="6qB-3i-9tt" secondAttribute="leading" id="UXw-d8-btt"/>
                             <constraint firstItem="6qB-3i-9tt" firstAttribute="trailing" secondItem="7eE-8C-3z3" secondAttribute="trailing" id="Vem-mf-lyv"/>
@@ -243,6 +238,7 @@
                             <constraint firstItem="npH-zu-bsx" firstAttribute="leading" secondItem="6qB-3i-9tt" secondAttribute="leading" id="a5P-NZ-U7z"/>
                             <constraint firstItem="6qB-3i-9tt" firstAttribute="bottom" secondItem="npH-zu-bsx" secondAttribute="bottom" id="gme-7M-oyX"/>
                             <constraint firstItem="tQW-oF-mlW" firstAttribute="trailing" secondItem="6qB-3i-9tt" secondAttribute="trailing" id="htc-EY-KQQ"/>
+                            <constraint firstItem="VZJ-8h-bMC" firstAttribute="centerX" secondItem="tJj-BK-Yd6" secondAttribute="centerX" id="mC3-Yp-OAc"/>
                             <constraint firstAttribute="bottom" secondItem="tQW-oF-mlW" secondAttribute="bottom" id="rQq-f9-oL9"/>
                         </constraints>
                     </view>
@@ -2131,9 +2127,6 @@
     <designables>
         <designable name="25q-dT-2w4">
             <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="VZJ-8h-bMC">
-            <size key="intrinsicContentSize" width="50" height="36"/>
         </designable>
         <designable name="Z1o-el-3zi">
             <size key="intrinsicContentSize" width="98" height="22"/>
