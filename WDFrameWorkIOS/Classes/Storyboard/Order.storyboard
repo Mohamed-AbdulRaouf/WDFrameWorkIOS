@@ -60,7 +60,7 @@
                                                 <rect key="frame" x="8" y="166" width="398" height="708"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUl-ak-Lxl">
-                                                        <rect key="frame" x="20" y="10" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="5" y="10" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="17"/>
                                                         <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                                                     <constraint firstItem="mSQ-Az-vj9" firstAttribute="leading" secondItem="rU3-BI-7cd" secondAttribute="leading" constant="5" id="0gU-hO-d4I"/>
                                                     <constraint firstAttribute="bottom" secondItem="mSQ-Az-vj9" secondAttribute="bottom" id="0tU-ef-XqT"/>
                                                     <constraint firstAttribute="trailing" secondItem="mSQ-Az-vj9" secondAttribute="trailing" constant="5" id="Ae2-y0-KcJ"/>
-                                                    <constraint firstItem="TUl-ak-Lxl" firstAttribute="leading" secondItem="rU3-BI-7cd" secondAttribute="leading" constant="20" id="Bsg-fc-dDC"/>
+                                                    <constraint firstItem="TUl-ak-Lxl" firstAttribute="leading" secondItem="rU3-BI-7cd" secondAttribute="leading" constant="5" id="Bsg-fc-dDC"/>
                                                     <constraint firstItem="TUl-ak-Lxl" firstAttribute="top" secondItem="rU3-BI-7cd" secondAttribute="top" constant="10" id="dld-l4-9Kq"/>
                                                     <constraint firstItem="mSQ-Az-vj9" firstAttribute="top" secondItem="TUl-ak-Lxl" secondAttribute="bottom" constant="8" id="gP9-dj-PKT"/>
                                                 </constraints>
