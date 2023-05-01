@@ -128,7 +128,7 @@ print("Running old Swift")
 #endif
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 60))
         let nameLabel = UILabel()
         let priceLabel = UILabel()
         nameLabel.font = APP_FONT_BOLD12
@@ -143,7 +143,7 @@ print("Running old Swift")
              
              let price = Float(self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0) * (self.viewModel?.order?.orderItems.value?[section].itemPrice.value ?? 0.0)
              
-             priceLabel.text = " \(String(format: "%.2f", price ) + "\(String(describing: self.viewModel?.order?.orderItems.value?[section].currencyCode.value ?? "" ))")"
+             priceLabel.text = "\(String(format: "%.2f", price) + " \(String(describing: self.viewModel?.order?.orderItems.value?[section].currencyCode.value ?? ""))")"
              [nameLabel].forEach {
                  $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
              }
@@ -157,9 +157,11 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        nameLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        subTotalStack.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 60)
+        priceLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        subTotalStack.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 60)
         sectionHeader.addSubview(subTotalStack)
+        subTotalStack.leadingAnchor.constraint(equalTo: sectionHeader.leadingAnchor).isActive = true
+        subTotalStack.trailingAnchor.constraint(equalTo: sectionHeader.trailingAnchor).isActive = true
         
         return sectionHeader
     }
@@ -171,18 +173,19 @@ print("Running old Swift")
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return UIView()}
         guard let order = self.viewModel?.order?.orderDetails.value else { return UIView()}
-        
-        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width - 50, height: 206))
-        
+
+        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 206))
+
         let subTotalTitleLabel = UILabel()
-        subTotalTitleLabel.showsLargeContentViewer = false
+//        subTotalTitleLabel.showsLargeContentViewer = false
         let subTotalLabel = UILabel()
-        subTotalLabel.showsLargeContentViewer = false
-        
+//        subTotalLabel.showsLargeContentViewer = false
+
         subTotalTitleLabel.font = APP_FONT_BOLD12
         subTotalLabel.font = APP_FONT_BOLD12
         subTotalTitleLabel.text = "sub_total".localized()
         subTotalLabel.text = String(format: "%.2f \(String(describing: order.currencyCode.value ?? ""))", order.subTotal.value ?? 0)
+        subTotalTitleLabel.numberOfLines = 0
         let subTotalStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [subTotalTitleLabel, subTotalLabel])
             stackView.axis = .horizontal
@@ -192,8 +195,8 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        subTotalTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
+        subTotalLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+
         let deliveryFeesLabelTitle = UILabel()
         deliveryFeesLabelTitle.showsLargeContentViewer = false
         let deliveryFeesLabel = UILabel()
@@ -202,6 +205,7 @@ print("Running old Swift")
         deliveryFeesLabel.font = APP_FONT_BOLD12
         deliveryFeesLabelTitle.text = "delivery_fees".localized()
         deliveryFeesLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")", order.deliveryFees.value ?? 0)
+        deliveryFeesLabelTitle.numberOfLines = 0
         let deliveryFeesStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [deliveryFeesLabelTitle, deliveryFeesLabel])
             stackView.axis = .horizontal
@@ -211,8 +215,8 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        deliveryFeesLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
+        deliveryFeesLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+
         let loyalityDiscountLabelTitle = UILabel()
         loyalityDiscountLabelTitle.showsLargeContentViewer = false
         loyalityDiscountLabelTitle.font = APP_FONT_BOLD12
@@ -221,6 +225,7 @@ print("Running old Swift")
         loyalityDiscountLabel.font = APP_FONT_BOLD12
         loyalityDiscountLabelTitle.text = "loyalty_discount".localized()
         loyalityDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")",order.loyaltyDiscount.value ?? 0)
+        loyalityDiscountLabelTitle.numberOfLines = 0
         let loyalityDiscountStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [loyalityDiscountLabelTitle, loyalityDiscountLabel])
             stackView.axis = .horizontal
@@ -230,8 +235,8 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        loyalityDiscountLabelTitle.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
+        loyalityDiscountLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+
         let vatTitleLabel = UILabel()
         vatTitleLabel.showsLargeContentViewer = false
         vatTitleLabel.font = APP_FONT_BOLD12
@@ -240,6 +245,7 @@ print("Running old Swift")
         vatLabel.font = APP_FONT_BOLD12
         vatTitleLabel.text = "VAT".localized()
         vatLabel.text = String(format: "%.2f \(order.currencyCode.value ?? "")",order.totalTax.value ?? 0)
+        vatTitleLabel.numberOfLines = 0
         let vatStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [vatTitleLabel, vatLabel])
             stackView.axis = .horizontal
@@ -249,8 +255,8 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        vatTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
+        vatLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+
         let totalDiscountTitleLabel = UILabel()
         totalDiscountTitleLabel.showsLargeContentViewer = false
         let totalDiscountLabel = UILabel()
@@ -259,6 +265,7 @@ print("Running old Swift")
         totalDiscountTitleLabel.font = APP_FONT_BOLD12
         totalDiscountTitleLabel.text = "discount".localized()
         totalDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.totalDiscount.value ?? 0)
+        totalDiscountTitleLabel.numberOfLines = 0
         let totalDiscountStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [totalDiscountTitleLabel, totalDiscountLabel])
             stackView.axis = .horizontal
@@ -268,8 +275,8 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        totalDiscountTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
+        totalDiscountLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+
         let totalTitleLabel = UILabel()
         totalTitleLabel.showsLargeContentViewer = false
         let totalLabel = UILabel()
@@ -278,6 +285,7 @@ print("Running old Swift")
         totalLabel.font = APP_FONT_BOLD12
         totalTitleLabel.text = "total".localized()
         totalLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.orderTotal.value ?? 0)
+        totalTitleLabel.numberOfLines = 0
         let totalStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [totalTitleLabel, totalLabel])
             stackView.axis = .horizontal
@@ -287,7 +295,7 @@ print("Running old Swift")
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
-        totalTitleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        totalLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
 
         let lineView : UIView = {
             let view = UIView()
@@ -296,7 +304,7 @@ print("Running old Swift")
             view.clipsToBounds = true
             return view
         }()
-        
+
         let headerLineView : UIView = {
             let view = UIView()
             view.backgroundColor = .gray
@@ -304,32 +312,43 @@ print("Running old Swift")
             view.clipsToBounds = true
             return view
         }()
-        
+
         let fullStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [UILabel(),totalDiscountStack, headerLineView, subTotalStack, vatStack, deliveryFeesStack, lineView, totalStack])
             stackView.axis = .vertical
             stackView.distribution = .fill
-            stackView.alignment = .fill
+            stackView.alignment = .leading
             stackView.spacing = 10
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }()
+        [totalDiscountStack, headerLineView, subTotalStack, vatStack, deliveryFeesStack, lineView, totalStack].forEach { stack in
+            stack.leadingAnchor.constraint(equalTo: fullStack.leadingAnchor).isActive = true
+            stack.trailingAnchor.constraint(equalTo: fullStack.trailingAnchor).isActive = true
+        }
+        
         lineView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         headerLineView.heightAnchor.constraint(equalToConstant: 2).isActive = true
-        fullStack.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width - 50, height: 206)
+        fullStack.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 206)
         sectionHeader.addSubview(fullStack)
-        
+        fullStack.leadingAnchor.constraint(equalTo: sectionHeader.leadingAnchor).isActive = true
+        fullStack.trailingAnchor.constraint(equalTo: sectionHeader.trailingAnchor).isActive = true
+
         [totalDiscountLabel,totalDiscountTitleLabel,deliveryFeesLabel,deliveryFeesLabelTitle,loyalityDiscountLabel,loyalityDiscountLabelTitle,vatTitleLabel,vatLabel].forEach {
             $0.font = APP_FONT_REGULAR11
             $0.textColor = COLOR_PRIMARY_TEXT
         }
-        
+
         [self.headerLabel,totalTitleLabel,totalLabel].forEach {
             $0.font = APP_FONT_BOLD12
             $0.sizeToFit()
             $0.textColor = .black
         }
         
+        [totalDiscountLabel, deliveryFeesLabel, loyalityDiscountLabel, vatLabel, totalLabel].forEach {
+            $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
+        }
+
         return sectionHeader
     }
 }

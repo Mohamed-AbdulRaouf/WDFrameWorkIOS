@@ -47,6 +47,7 @@ class SetAppLanguage {
             UILabel.appearance().semanticContentAttribute = .forceRightToLeft
             UICollectionView.appearance().semanticContentAttribute = .forceRightToLeft
             UICollectionViewCell.appearance().semanticContentAttribute = .forceRightToLeft
+            UITableViewCell.appearance().semanticContentAttribute = .forceRightToLeft
             UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
             UITableView.appearance().semanticContentAttribute = .forceRightToLeft
             UIButton.appearance().semanticContentAttribute = .forceRightToLeft
@@ -60,6 +61,7 @@ class SetAppLanguage {
             UILabel.appearance().semanticContentAttribute = .forceLeftToRight
             UICollectionView.appearance().semanticContentAttribute = .forceLeftToRight
             UICollectionViewCell.appearance().semanticContentAttribute = .forceLeftToRight
+            UITableViewCell.appearance().semanticContentAttribute = .forceLeftToRight
             UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
             UITableView.appearance().semanticContentAttribute = .forceLeftToRight
             UIButton.appearance().semanticContentAttribute = .forceLeftToRight
