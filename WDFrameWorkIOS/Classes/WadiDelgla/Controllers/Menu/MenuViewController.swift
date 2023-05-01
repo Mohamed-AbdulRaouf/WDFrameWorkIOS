@@ -22,7 +22,7 @@ class MenuViewController: STUIViewController,IBaseController {
         label.text = "\(UserDefaults.order?.cartItems.count ?? 0)"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = .black
         label.backgroundColor =  .red
         label.layer.cornerRadius = 8
         label.layer.masksToBounds = true

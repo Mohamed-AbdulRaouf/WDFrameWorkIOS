@@ -49,9 +49,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = .white
         let label = STUnderlinedLabel()
         if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
-            label.frame = CGRect.init(x: -20, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+            label.frame = CGRect.init(x: -5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }else{
-            label.frame = CGRect.init(x: 20, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+            label.frame = CGRect.init(x: 13, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         }
         label.text = self.viewModel?.categoryList?[section].categoryName.value ?? ""
         label.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)

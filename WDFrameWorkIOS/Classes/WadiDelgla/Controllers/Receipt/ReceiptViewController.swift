@@ -21,6 +21,7 @@ class ReceiptViewController: STUIViewController,IBaseController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var brandLogoImageView: UIImageView!
+    @IBOutlet weak var doneLineView: UIView!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class ReceiptViewController: STUIViewController,IBaseController {
             self.navigationItem.setHidesBackButton(true, animated:true);
         }else{
             self.doneButton.isHidden = true
+            self.doneLineView.isHidden = true
         }
     }
     override func viewWillLayoutSubviews() {
@@ -58,7 +60,7 @@ extension ReceiptViewController{
         self.navigationItem.title = "order_details".localized()
         self.doneButton.setTitle("done".localized(), for: .normal)
         self.doneButton.titleLabel?.font = APP_FONT_BOLD15
-        self.doneButton.setTitleColor(.white, for: .normal)
+        self.doneButton.setTitleColor(.black, for: .normal)
         self.headerLabel.font = APP_FONT_BOLD15
     }
     func bindingData() {}

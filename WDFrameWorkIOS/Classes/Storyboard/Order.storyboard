@@ -218,7 +218,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRc-BY-sPt">
                                 <rect key="frame" x="192" y="873" width="30" height="2"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Pb7-vg-zqS"/>
                                     <constraint firstAttribute="height" constant="2" id="TIk-Vg-x8l"/>
@@ -248,6 +248,7 @@
                         <outlet property="brandLogoImageView" destination="keQ-zv-IkN" id="qLp-Zs-nlj"/>
                         <outlet property="brandNameLabel" destination="ysL-pZ-cdn" id="HFz-pW-TYc"/>
                         <outlet property="doneButton" destination="VZJ-8h-bMC" id="bHJ-VN-ssq"/>
+                        <outlet property="doneLineView" destination="rRc-BY-sPt" id="4TT-KV-K1r"/>
                         <outlet property="headerLabel" destination="TUl-ak-Lxl" id="QMk-cL-TfG"/>
                         <outlet property="tableHeight" destination="c4I-Ke-fQV" id="ZMB-Y3-8VN"/>
                         <outlet property="tableView" destination="mSQ-Az-vj9" id="eN9-jP-kiE"/>
@@ -627,7 +628,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="19"/>
                                 <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onCheckoutTapped:" destination="ToX-9i-dh0" eventType="touchUpInside" id="HNk-ZW-aSX"/>
@@ -635,7 +636,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-Ze-p7v">
                                 <rect key="frame" x="172.5" y="762" width="30" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="2fq-rs-z52"/>
@@ -1402,15 +1403,15 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="17"/>
                                 <state key="normal" title="Finalize Order">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onFinalizeOrderTapped:" destination="9mV-Rb-7Zn" eventType="touchUpInside" id="NsA-ZO-UYn"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Un8-T3-anX">
-                                <rect key="frame" x="192" y="852" width="30" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="192" y="854" width="30" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="FKT-5s-Ext"/>
                                     <constraint firstAttribute="width" constant="30" id="KAM-6n-Mhn"/>
@@ -1430,7 +1431,7 @@
                             <constraint firstItem="G6H-ku-oca" firstAttribute="top" secondItem="K3d-jE-sln" secondAttribute="top" id="L25-4t-kJt"/>
                             <constraint firstItem="bv5-tb-aew" firstAttribute="centerX" secondItem="8Ej-iA-ewp" secondAttribute="centerX" id="NMu-Xr-smU"/>
                             <constraint firstItem="Sts-Az-m9F" firstAttribute="top" secondItem="G6H-ku-oca" secondAttribute="bottom" id="a2Y-lW-ljH"/>
-                            <constraint firstItem="Un8-T3-anX" firstAttribute="top" secondItem="bv5-tb-aew" secondAttribute="bottom" id="acU-bm-KPV"/>
+                            <constraint firstItem="Un8-T3-anX" firstAttribute="top" secondItem="bv5-tb-aew" secondAttribute="bottom" constant="2" id="acU-bm-KPV"/>
                             <constraint firstItem="bv5-tb-aew" firstAttribute="top" secondItem="uFK-r9-Jah" secondAttribute="bottom" id="hV7-jc-ibc"/>
                             <constraint firstItem="K3d-jE-sln" firstAttribute="trailing" secondItem="Sts-Az-m9F" secondAttribute="trailing" id="hjo-2C-SR2"/>
                             <constraint firstItem="uFK-r9-Jah" firstAttribute="top" secondItem="8Ej-iA-ewp" secondAttribute="top" constant="5" id="oaR-2d-llB"/>
