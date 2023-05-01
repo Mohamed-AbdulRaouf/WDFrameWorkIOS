@@ -284,7 +284,7 @@
 "no_data_found" = "No data found, please refresh or try again later.";
 //Receipt
 "my_items" = "My Items";
-"sub_total" = "Sub-Total";
+"sub_total" = "Sub Total";
 "delivery_fees" = "Delivery Fees";
 "VAT" = "VAT";
 "total" = "Total";
@@ -303,7 +303,7 @@
 "empty_cart_message" = "You have to add something first to cart";
 "min_order_error_msg" = "Your total order amount is less than the minimum value for delivery";
 "total_discount" = "Total Discount";
-"discount" = "Discount";
+"discount" = "Total Discount";
 "clear_cart_title" = "Empty cart?";
 "clear_cart_mesg" = "By emptying your cart, you will lose the order and all the added items to the cart. Do you want to proceed with emptying the cart?";
 "order_comment_description" = "if you have any comments regarding your order …….";

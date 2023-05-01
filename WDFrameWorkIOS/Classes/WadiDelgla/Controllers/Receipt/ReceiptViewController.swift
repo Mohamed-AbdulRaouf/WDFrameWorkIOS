@@ -54,9 +54,12 @@ extension ReceiptViewController{
     func setupUI(){
         self.viewModel?.delegate = self
         self.setupTableView()
-        self.doneButton.layer.cornerRadius = 16
+//        self.doneButton.layer.cornerRadius = 16
         self.navigationItem.title = "order_details".localized()
         self.doneButton.setTitle("done".localized(), for: .normal)
+        self.doneButton.titleLabel?.font = APP_FONT_BOLD15
+        self.doneButton.setTitleColor(.white, for: .normal)
+        self.headerLabel.font = APP_FONT_BOLD15
     }
     func bindingData() {}
 }
@@ -303,7 +306,7 @@ print("Running old Swift")
         }()
         
         let fullStack : UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [headerLineView, subTotalStack, deliveryFeesStack, loyalityDiscountStack, vatStack, totalDiscountStack, lineView, totalStack])
+            let stackView = UIStackView(arrangedSubviews: [UILabel(),totalDiscountStack, headerLineView, subTotalStack, vatStack, deliveryFeesStack, lineView, totalStack])
             stackView.axis = .vertical
             stackView.distribution = .fill
             stackView.alignment = .fill
@@ -316,15 +319,15 @@ print("Running old Swift")
         fullStack.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width - 50, height: 206)
         sectionHeader.addSubview(fullStack)
         
-        [subTotalTitleLabel,subTotalLabel,deliveryFeesLabel,deliveryFeesLabelTitle,loyalityDiscountLabel,loyalityDiscountLabelTitle,vatTitleLabel,vatLabel,totalDiscountLabel,totalDiscountTitleLabel].forEach {
+        [totalDiscountLabel,totalDiscountTitleLabel,deliveryFeesLabel,deliveryFeesLabelTitle,loyalityDiscountLabel,loyalityDiscountLabelTitle,vatTitleLabel,vatLabel].forEach {
             $0.font = APP_FONT_REGULAR11
             $0.textColor = COLOR_PRIMARY_TEXT
         }
         
-        [ totalTitleLabel,totalLabel].forEach {
+        [self.headerLabel,totalTitleLabel,totalLabel].forEach {
             $0.font = APP_FONT_BOLD12
             $0.sizeToFit()
-            $0.textColor = COLOR_PRIMARY_TEXT
+            $0.textColor = .black
         }
         
         return sectionHeader

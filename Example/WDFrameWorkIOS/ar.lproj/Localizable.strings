@@ -301,7 +301,7 @@
 "empty_cart_message" = "قم بإضافه بعض المنتجات إلي السلة ";
 "min_order_error_msg" = "إجمالي الطلب أقل من الحد الأدنى!";
 "total_discount" =  "إجمالي قيمة الخصم";
-"discount" = "الخصم";
+"discount" = "إجمالي الخصم";
 "clear_cart_title" = "حذف كل العناصر بالسلة!";
 "clear_cart_mesg" = "سيتم حذف كل المنتجات المدرجة بالسلة، هل تريد الاستمرار؟";
 "order_comment_description" = " تعليقك...";
