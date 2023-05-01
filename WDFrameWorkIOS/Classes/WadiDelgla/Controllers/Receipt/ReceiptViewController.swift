@@ -32,11 +32,11 @@ class ReceiptViewController: STUIViewController,IBaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel?.getOrderDetails()
-//        if let _ = self.viewModel?.isFromCart{
-//            self.navigationItem.setHidesBackButton(true, animated:true);
-//        }else{
-            self.doneButton.isHidden = false
-//        }
+        if let _ = self.viewModel?.isFromCart{
+            self.navigationItem.setHidesBackButton(true, animated:true);
+        }else{
+            self.doneButton.isHidden = true
+        }
     }
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
