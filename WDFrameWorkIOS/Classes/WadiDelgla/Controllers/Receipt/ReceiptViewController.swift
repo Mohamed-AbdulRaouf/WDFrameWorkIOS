@@ -20,6 +20,7 @@ class ReceiptViewController: STUIViewController,IBaseController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var brandNameLabel: UILabel!
+    @IBOutlet weak var orderStatusLbl: UILabel!
     @IBOutlet weak var brandLogoImageView: UIImageView!
     @IBOutlet weak var doneLineView: UIView!
     
@@ -35,6 +36,8 @@ class ReceiptViewController: STUIViewController,IBaseController {
         self.viewModel?.getOrderDetails()
         if let _ = self.viewModel?.isFromCart{
             self.navigationItem.setHidesBackButton(true, animated:true);
+            self.orderStatusLbl.text = "order_sent_successfully".localized()
+            self.addExitWDframeworkBtn()
         }else{
             self.doneButton.isHidden = true
             self.doneLineView.isHidden = true
@@ -43,6 +46,15 @@ class ReceiptViewController: STUIViewController,IBaseController {
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
         self.tableHeight?.constant = self.tableView.contentSize.height
+    }
+    
+    private func addExitWDframeworkBtn() {
+        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
+        self.navigationItem.rightBarButtonItem = backToMainApp
+    }
+    
+    @objc func backToMainApp() {
+        doPostNotification("exit_wdframework")
     }
     
     // MARK: - IBActions
@@ -57,7 +69,7 @@ extension ReceiptViewController{
         self.viewModel?.delegate = self
         self.setupTableView()
 //        self.doneButton.layer.cornerRadius = 16
-        self.navigationItem.title = "order_details".localized()
+        self.navigationItem.title = "invoice".localized()
         self.doneButton.setTitle("done".localized(), for: .normal)
         self.doneButton.titleLabel?.font = APP_FONT_BOLD15
         self.doneButton.setTitleColor(.black, for: .normal)
@@ -265,7 +277,7 @@ print("Running old Swift")
         totalDiscountTitleLabel.showsLargeContentViewer = false
         totalDiscountLabel.font = APP_FONT_BOLD12
         totalDiscountTitleLabel.font = APP_FONT_BOLD12
-        totalDiscountTitleLabel.text = "discount".localized()
+        totalDiscountTitleLabel.text = "total_discount".localized()
         totalDiscountLabel.text = String(format: " %.2f \(order.currencyCode.value ?? "")", order.totalDiscount.value ?? 0)
         totalDiscountTitleLabel.numberOfLines = 0
         let totalDiscountStack : UIStackView = {

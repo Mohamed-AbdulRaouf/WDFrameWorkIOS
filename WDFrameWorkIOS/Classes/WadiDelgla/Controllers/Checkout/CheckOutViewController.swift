@@ -21,7 +21,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var finalizeOrderButton: UIButton!
-    
+    @IBOutlet weak var finalizeIconImageView: UIImageView!
     // MARK: - FawryPay Var
 //    let serverURL = "https://atfawry.fawrystaging.com/"
 //    let merchantCode = "+/IAAY2nothN6tNlekupwA=="
@@ -110,7 +110,8 @@ extension CheckOutViewController{
           self.finalizeOrderButton.isUserInteractionEnabled = self.viewModel?.selectedPaymentMethodIndex != -1
           self.finalizeOrderButton.setTitle(finalizeOrderTitle, for: .normal)
         self.finalizeOrderButton.isEnabled = true
-          
+        self.finalizeIconImageView.image = UIImage(named: "finalize.png", in: .WDFrameworkBundle, with: nil)?.withRenderingMode(.alwaysTemplate)
+        self.finalizeIconImageView.tintColor = .black
       }
 }
 extension CheckOutViewController: IUserAddressProtocol{

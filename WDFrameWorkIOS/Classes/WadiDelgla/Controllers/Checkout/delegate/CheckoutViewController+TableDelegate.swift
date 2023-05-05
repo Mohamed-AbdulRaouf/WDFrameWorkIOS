@@ -58,19 +58,20 @@ print("Running old Swift")
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let titles = self.viewModel?.sections
-        if titles?[indexPath.section] == "address".localized(){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutAddressTableViewCell", for: indexPath) as! CheckoutAddressTableViewCell
-            if let address = self.viewModel?.cart?.userAddressDetails {
-                cell.configureCell(address)
-                cell.onChangeAddressTapped = { [weak self] in
-                    let vc = StoryboardScene.User.userAddressListViewController.instantiate()
-                    vc.viewModel?.sourceDelegate = self
-                    self?.navigationController?.pushViewController(vc)
-                    
-                }
-            }
-            return cell
-        }else if titles?[indexPath.section] == "my_items".localized() {
+//        if titles?[indexPath.section] == "address".localized(){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutAddressTableViewCell", for: indexPath) as! CheckoutAddressTableViewCell
+//            if let address = self.viewModel?.cart?.userAddressDetails {
+//                cell.configureCell(address)
+//                cell.onChangeAddressTapped = { [weak self] in
+//                    let vc = StoryboardScene.User.userAddressListViewController.instantiate()
+//                    vc.viewModel?.sourceDelegate = self
+//                    self?.navigationController?.pushViewController(vc)
+//
+//                }
+//            }
+//            return cell
+//        }else
+        if titles?[indexPath.section] == "my_items".localized() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutItemTableViewCell", for: indexPath) as! CheckoutItemTableViewCell
             if let items = self.viewModel?.cart?.cartItems,indexPath.row <= items.count - 1 {
                 cell.choiceCount = items[indexPath.row].amount
@@ -167,7 +168,7 @@ extension CheckOutViewController {
             }
         }
         label.font = APP_FONT_BOLD14 //UIFont(resource: APP_FONT_BOLD, size: 14)
-        label.textColor = COLOR_ACCENT_DARK
+        label.textColor = .black
         headerView.addSubview(label)
         
         return headerView

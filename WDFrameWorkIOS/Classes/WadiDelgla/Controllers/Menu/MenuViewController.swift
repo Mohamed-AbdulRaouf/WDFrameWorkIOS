@@ -42,7 +42,7 @@ class MenuViewController: STUIViewController,IBaseController {
         if LocalizationSystem().isCurrentLanguageArabic() {
             self.title = "القائمه"
         } else {
-            self.title = "Cart"
+            self.title = "My Cart"
         }
         self.setCountOfCartToLbl()
     }
@@ -66,8 +66,13 @@ extension MenuViewController{
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)//move image to the right
         button.addSubview(self.cartCountLbl)
         let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.rightBarButtonItems = [barButton]
+        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
+        self.navigationItem.rightBarButtonItems = [barButton, backToMainApp]
         self.navigationItem.backBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func backToMainApp() {
+        doPostNotification("exit_wdframework")
     }
     
     @objc func openCartVC() {

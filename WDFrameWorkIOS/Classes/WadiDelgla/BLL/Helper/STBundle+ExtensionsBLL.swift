@@ -37,4 +37,11 @@ extension Bundle {
         
         objc_setAssociatedObject(Bundle.main, &bundleKey,    Bundle.main.path(forResource: language, ofType: "lproj"), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
+    
+    class var WDFrameworkBundle: Bundle {
+        get {
+            let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
+            return Bundle(path: bundlePath!)!
+        }
+    }
 }

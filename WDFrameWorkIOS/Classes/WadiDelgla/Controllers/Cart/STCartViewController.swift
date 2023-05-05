@@ -22,7 +22,7 @@ class STCartViewController: STUIViewController ,IBaseController{
     @IBOutlet weak var emptyCartMessageLabel: UILabel!
     @IBOutlet weak var emptyCartLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
-    
+    @IBOutlet weak var checkoutIconImageView: UIImageView!
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class STCartViewController: STUIViewController ,IBaseController{
         if LocalizationSystem().isCurrentLanguageArabic() {
             self.title = "السله"
         } else {
-            self.title = "Cart"
+            self.title = "My Cart"
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -95,13 +95,20 @@ extension STCartViewController{
         self.addItemButton.setTitle("add_item".localized(), for: .normal)
         self.addItemButton.titleLabel?.font = FONT_PRIMARY_BUTTON
         self.addItemButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
-        
+        self.checkoutIconImageView.image = UIImage(named: "ic_check_out.png", in: .WDFrameworkBundle, with: nil)?.withRenderingMode(.alwaysTemplate)
+        self.checkoutIconImageView.tintColor = .black
     }
     func setupNavigationBar(){
         let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 30, height: 30),.darkGray)
         let clearCart =   UIBarButtonItem(image: iconImage, style: .plain, target: self, action: #selector(onClearCartTapped))
-        self.navigationItem.rightBarButtonItems = [clearCart]
+        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
+        self.navigationItem.rightBarButtonItems = [clearCart, backToMainApp]
     }
+    
+    @objc func backToMainApp() {
+        doPostNotification("exit_wdframework")
+    }
+    
     func bindingData() {}
     
 }

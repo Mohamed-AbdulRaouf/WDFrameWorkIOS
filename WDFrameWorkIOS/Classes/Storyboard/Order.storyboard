@@ -50,12 +50,29 @@
                                                     <constraint firstAttribute="height" constant="100" id="yuN-iz-lrs"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysL-pZ-cdn">
-                                                <rect key="frame" x="207" y="116" width="0.0" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="20"/>
-                                                <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KqB-iJ-XC1">
+                                                <rect key="frame" x="20" y="112" width="374" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysL-pZ-cdn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="wuk-jL-vo0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="20"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-Ya-fxf">
+                                                        <rect key="frame" x="0.0" y="25" width="374" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="owC-Z0-yUZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Rambla-Bold" family="Rambla" pointSize="20"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-BI-7cd">
                                                 <rect key="frame" x="8" y="166" width="398" height="708"/>
                                                 <subviews>
@@ -175,13 +192,14 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="keQ-zv-IkN" firstAttribute="centerX" secondItem="sR6-UD-yFz" secondAttribute="centerX" id="03b-lW-HHH"/>
-                                            <constraint firstItem="ysL-pZ-cdn" firstAttribute="centerX" secondItem="keQ-zv-IkN" secondAttribute="centerX" id="BO8-Hy-wYV"/>
+                                            <constraint firstItem="KqB-iJ-XC1" firstAttribute="top" secondItem="keQ-zv-IkN" secondAttribute="bottom" constant="4" id="Aww-Dn-15W"/>
                                             <constraint firstItem="rU3-BI-7cd" firstAttribute="leading" secondItem="sR6-UD-yFz" secondAttribute="leading" constant="8" id="Bnl-xz-7LI"/>
                                             <constraint firstItem="keQ-zv-IkN" firstAttribute="top" secondItem="sR6-UD-yFz" secondAttribute="top" constant="8" id="GOc-Fl-tza"/>
-                                            <constraint firstItem="rU3-BI-7cd" firstAttribute="top" secondItem="ysL-pZ-cdn" secondAttribute="bottom" constant="20" id="Z8r-YE-x0J"/>
+                                            <constraint firstItem="KqB-iJ-XC1" firstAttribute="leading" secondItem="sR6-UD-yFz" secondAttribute="leading" constant="20" id="LPu-I4-nF8"/>
+                                            <constraint firstItem="rU3-BI-7cd" firstAttribute="top" secondItem="KqB-iJ-XC1" secondAttribute="bottom" constant="4" id="Yqw-Ax-cek"/>
                                             <constraint firstAttribute="bottom" secondItem="rU3-BI-7cd" secondAttribute="bottom" constant="85" id="hV4-V3-Ci0"/>
+                                            <constraint firstAttribute="trailing" secondItem="KqB-iJ-XC1" secondAttribute="trailing" constant="20" id="jfm-1v-PoN"/>
                                             <constraint firstAttribute="trailing" secondItem="rU3-BI-7cd" secondAttribute="trailing" constant="8" id="nhp-q7-c4J"/>
-                                            <constraint firstItem="ysL-pZ-cdn" firstAttribute="top" secondItem="keQ-zv-IkN" secondAttribute="bottom" constant="8" id="rqr-Ad-1kk"/>
                                             <constraint firstItem="rU3-BI-7cd" firstAttribute="centerX" secondItem="sR6-UD-yFz" secondAttribute="centerX" id="vyk-fM-tph"/>
                                         </constraints>
                                     </view>
@@ -250,6 +268,7 @@
                         <outlet property="doneButton" destination="VZJ-8h-bMC" id="bHJ-VN-ssq"/>
                         <outlet property="doneLineView" destination="rRc-BY-sPt" id="4TT-KV-K1r"/>
                         <outlet property="headerLabel" destination="TUl-ak-Lxl" id="QMk-cL-TfG"/>
+                        <outlet property="orderStatusLbl" destination="XrI-Ya-fxf" id="vca-0W-75B"/>
                         <outlet property="tableHeight" destination="c4I-Ke-fQV" id="ZMB-Y3-8VN"/>
                         <outlet property="tableView" destination="mSQ-Az-vj9" id="eN9-jP-kiE"/>
                     </connections>
@@ -316,7 +335,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="6Rb-jv-KN5"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" image="rubbishBinRed">
+                                                            <state key="normal" image="ic_delete_item.png">
                                                                 <color key="titleColor" red="0.90196078430000004" green="0.1764705882" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
@@ -614,6 +633,7 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_out.png" translatesAutoresizingMaskIntoConstraints="NO" id="IIJ-4f-OGx">
                                 <rect key="frame" x="177.5" y="717" width="20" height="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="nzK-TM-eAR"/>
                                     <constraint firstAttribute="height" constant="20" id="vvy-cM-oFv"/>
@@ -745,6 +765,7 @@
                     <connections>
                         <outlet property="addItemButton" destination="Z1o-el-3zi" id="sfb-vR-Ta4"/>
                         <outlet property="checkoutButton" destination="IAf-Ks-HgD" id="XT0-gP-wBg"/>
+                        <outlet property="checkoutIconImageView" destination="IIJ-4f-OGx" id="2Eo-UQ-i7u"/>
                         <outlet property="emptyCartLabel" destination="gER-KE-gS9" id="pQ7-w8-lhc"/>
                         <outlet property="emptyCartMessageLabel" destination="JfG-jR-u1e" id="sDo-ge-Fbn"/>
                         <outlet property="emptyCartView" destination="hXi-Zr-Fi4" id="ttE-4k-oyv"/>
@@ -780,7 +801,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="7kp-Nx-NQN"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutAddressTableViewCell" rowHeight="44" id="DWx-1c-NVh" customClass="CheckoutAddressTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutAddressTableViewCell" rowHeight="44" id="DWx-1c-NVh" customClass="CheckoutAddressTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DWx-1c-NVh" id="czl-tA-4KC">
@@ -1388,8 +1409,9 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="STFooterBackGround"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finalize" translatesAutoresizingMaskIntoConstraints="NO" id="uFK-r9-Jah">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finalize.png" translatesAutoresizingMaskIntoConstraints="NO" id="uFK-r9-Jah">
                                 <rect key="frame" x="192" y="802" width="30" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Y5B-GN-48b"/>
                                     <constraint firstAttribute="width" constant="30" id="eDJ-vq-4pJ"/>
@@ -1440,6 +1462,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="finalizeIconImageView" destination="uFK-r9-Jah" id="ogQ-RL-dCJ"/>
                         <outlet property="finalizeOrderButton" destination="bv5-tb-aew" id="QrW-qq-mHv"/>
                         <outlet property="tableView" destination="Sts-Az-m9F" id="i1d-Eg-1hI"/>
                         <outlet property="tableViewHeight" destination="7kp-Nx-NQN" id="SKC-ig-KA2"/>
@@ -2147,15 +2170,15 @@
         <image name="defaultimg.png" width="720" height="405"/>
         <image name="dobites_splash" width="16" height="16"/>
         <image name="emptyStar" width="16" height="16"/>
-        <image name="finalize" width="25" height="25"/>
+        <image name="finalize.png" width="25" height="25"/>
         <image name="ic_balance_section" width="25" height="25"/>
         <image name="ic_check_out.png" width="32" height="32"/>
         <image name="ic_coupon_code" width="24" height="24"/>
+        <image name="ic_delete_item.png" width="32" height="32"/>
         <image name="ic_online" width="22.5" height="40.5"/>
         <image name="ic_reward_section" width="25" height="25"/>
         <image name="ic_share" width="34.5" height="34.5"/>
         <image name="logo" width="160" height="160"/>
-        <image name="rubbishBinRed" width="16" height="16"/>
         <namedColor name="MainColor">
             <color red="0.96899998188018799" green="0.84700000286102295" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

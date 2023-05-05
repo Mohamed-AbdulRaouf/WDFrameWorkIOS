@@ -40,7 +40,7 @@ class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
         item = model
         self.quantityTitleLabel.text = "quantity".localized()
         
-        let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 20, height: 20))
+        let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 20, height: 20), .red)
         deleteItemButton.setImage(iconImage, for: .normal)
         
         itemTitleLabel.text = model.itemName

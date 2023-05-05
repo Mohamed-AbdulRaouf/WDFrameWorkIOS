@@ -152,8 +152,8 @@
 "start" = "إبدأ";
 "city" = "النادي";
 "area" = "المنطقة";
-"select_city" = "إختر النادي";
-"select_area" = "إختر المنطقة";
+"select_city" = "النادي";
+"select_area" = "المنطقة";
 "select_city_msg" = "قم بإختيار النادي أولاً";
 "select_city_and_area_msg" = "قم بإختيار النادي و المنطقه أولا للأستمرار";
 "clear_cart_due_to_change_location" = "بتغيير المنطقه سيتم تفرغة السلة";
@@ -164,7 +164,7 @@
 "of" = "من";
 "club" = "نادي";
 "government" = "فرع";
-"select_club" = "إختر نادي";
+"select_club" = "النادي";
 "select_government" = "إختر المحافظة";
 "select_government_msg" = "قم بإختيار النادي أولاً";
 "select_club_and_government_msg" = "قم بإختيار النادي و المنطقة أولا للأستمرار";
@@ -182,7 +182,7 @@
 "done" = "تآكيد";
 //Tab Bar Items
 "Home" = "الصفحه الرئيسيه";
-"Explore" =  "عرض المطاعم";
+"Explore" =  "قائمة المطاعم";
 "Cart" = "السلة";
 "More" = "المزيد";
 "no_data_found" = "لا يوجد بيانات برجاء تحديث الصفحه او المحاوله لاحقا";
@@ -209,11 +209,11 @@
 //referralCode
 "referral_code_title" = "لديك كود خصومات";
 "referral_code_message" = "لو معاك كود خصومات ستحصل على نقاط مجانية";
-"apply" = "تفعيل الخصم";
+"apply" = "تفعيل";
 
 //More
 "change_locations" = "تغيير الموقع";
-"my_orders" = "طلباتي السابقة";
+"my_orders" = "طلباتي";
 "language" = "اللغة الإنجليزية";
 "about_doBites" = "عن التطبيق";
 "sign_out" = "تسجيل الخروج";
@@ -283,9 +283,8 @@
 "branch_not_open" = "هذا المطعم مغلق حالياً . يمكنك الطلب من الساعة %@ و حتي الساعة %@ ";
 /* Receipt */
 "my_items" = "تفاصيل الطلب";
-"total" = "إجمالي الأصناف";
-"delivery_fees" = "تكلفة خدمة التوصيل";
-"VAT" = "قيمة الضريبة";
+"total" = "إجمالي";
+"VAT" = "ضريبة";
 "sub_total" = "إجمالي قيمة الطلب";
 "order_details" = "تفاصيل الطلب";
 //Cart
@@ -383,7 +382,7 @@
 /* Splash */
 "logo_title1" = "آندية وادي دجلة";
 "logo_title2" = "مجتمع الأبطال";
-"Order the Food You Love" = "اطلب الطعام الذي تحبه";
+"Order the Food You Love" = "اطلب الاكل الذي تحبه";
 "Online Payment not available right now" = "الدفع عبر الإنترنت غير متوفر الآن";
 "Success" = "تم";
 "Your request has been sent successfully" = "تم ارسال طلبك بنجاح";
@@ -401,3 +400,5 @@
 "cod_online" = "الدفع عند الاستلام او فيزا";
 "cart_empty" = "السلة فارغة !";
 "branch_inactive" = "الفرع غير متاح حاليا.";
+"order_sent_successfully" = "لقد تم ارسال طلبك بنجاح";
+"invoice" = "الفاتورة";

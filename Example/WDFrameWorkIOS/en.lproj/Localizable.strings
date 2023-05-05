@@ -154,8 +154,8 @@
 "start" = "START";
 "city" = "Club";
 "area" = "area";
-"select_city" = "Select Club";
-"select_area" = "Select Area";
+"select_city" = "Club";
+"select_area" = "Area";
 "select_city_msg" = "You haven't select club yet, to continue please select club first";
 "select_city_and_area_msg" = "you should select club and area to continue";
 "clear_cart_due_to_change_location" = "by changing your area you will empty cart";
@@ -168,7 +168,7 @@
 "change_location" = "Change Location";
 "club" = "Club";
 "government" = "Government";
-"select_club" = "Select club";
+"select_club" = "Club";
 "select_government" = "Select government";
 "select_government_msg" = "You haven't select club yet, to continue please select club first";
 "select_club_and_government_msg" = "you should select club and area to continue";
@@ -184,8 +184,8 @@
 "done" = "Done";
 //Tab Bar Items
 "Home" = "Home";
-"Explore" = "Explore";
-"Cart" = "Cart";
+"Explore" = "Restaurant List";
+"Cart" = "My Cart";
 "More" = "More";
 "settings" = "Settings";
 //Home
@@ -256,8 +256,7 @@
 "delivery" = "Delivery";
 "info" = "Info";
 "min_order_to_deliver" = "Min.Order to Deliver";
-"delivery_fees" = "Delivery Fees";
-"delivery_time" = "Delivery Time";
+"delivery_time" = "Time";
 "Working_hrs" = "Working Hrs";
 "online_payment" = "Online Payment";
 "no_online_payment" = "No Online Payment";
@@ -346,7 +345,7 @@
 "submit" = "Submit";
 /* Payment */
 "select_payment_method" = "Select payment method";
-"cash_on_delivery" = "Cash on delivery";
+"cash_on_delivery" = "Cash";
 "pay_with_credit_card" = "Pay with credit card";
 "congratulations" = "Congratulations";
 "success_place_order" = "Your order has been sent. In about 60 minutes it should be at your door.";
@@ -408,3 +407,5 @@
 "please_try_again_later" = "Please try again later";
 "cart_empty" = "The cart is empty !";
 "branch_inactive" = "Branch is Inactive.";
+"order_sent_successfully" = "Your order has been sent successfully";
+"invoice" = "invoice";
