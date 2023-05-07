@@ -49,7 +49,7 @@ class CheckoutItemTableViewCell: UITableViewCell,IBaseTableViewCell {
 
         }
         let price = model.itemPrice * Double(model.amount)
-        self.itemPriceLabel.text = "\(String(format: "%.2f", price ) + "\(String(describing: model.itemCurrencyCode ))")"
+        self.itemPriceLabel.text = "\(String(format: "%.2f", price) + " \(String(describing: model.itemCurrencyCode))")"
         self.choices = model.choices
         [self.itemNameQLabel].forEach {
             $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left

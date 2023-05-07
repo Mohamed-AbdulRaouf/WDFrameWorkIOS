@@ -41,7 +41,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         }
         model.brandName.bind(to: self.brandNameLabel.reactive.text)
         model.orderDate.bind(to: self.orderDateLabel.reactive.text)
-        self.orderNumberLabel.text = "\("order_number".localized()): \(model.orderNumber.value ?? 0)"
+        self.orderNumberLabel.text = "\("order_number".localized()): \(model.orderNumber.value ?? 0) - \("total".localized()): \(model.orderTotal.value ?? 0.0) \(model.currencyCode.value ?? "")"
         self.orderRefLabel.text = "\("order_ref".localized()): \(model.customerHistoryId.value ?? 0)"
         
         

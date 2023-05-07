@@ -37,6 +37,8 @@ class ReceiptViewController: STUIViewController,IBaseController {
         if let _ = self.viewModel?.isFromCart{
             self.navigationItem.setHidesBackButton(true, animated:true);
             self.orderStatusLbl.text = "order_sent_successfully".localized()
+            self.orderStatusLbl.font = APP_FONT_REGULAR11
+            self.orderStatusLbl.textColor = COLOR_PRIMARY_TEXT
             self.addExitWDframeworkBtn()
         }else{
             self.doneButton.isHidden = true

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -49,22 +49,22 @@
                                 <rect key="frame" x="-65.5" y="0.0" width="545" height="637"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="escallope_elnady.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jh-j4-3kv">
-                                        <rect key="frame" x="0.0" y="0.0" width="545" height="616.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="545" height="637"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE2-2m-t9F">
-                                        <rect key="frame" x="0.0" y="616.5" width="545" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order the Food You Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYJ-xc-igv">
-                                        <rect key="frame" x="0.0" y="616.5" width="545" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="545" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order the Food You Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYJ-xc-igv">
+                                <rect key="frame" x="112.5" y="607" width="189" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xqG-nn-1g5">
                                 <rect key="frame" x="20" y="637" width="374" height="225"/>
                                 <subviews>
@@ -231,6 +231,11 @@
                                         <state key="normal" title="My Orders">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onMyOrdersBtnTapped:" destination="B30-bc-9pb" eventType="touchUpInside" id="Poe-Aw-k7T"/>
                                         </connections>
@@ -269,7 +274,9 @@
                             <constraint firstItem="YYz-pq-ifD" firstAttribute="top" secondItem="7Oq-mu-BeN" secondAttribute="top" constant="45" id="a9A-ZB-29b"/>
                             <constraint firstItem="dIb-yJ-SfT" firstAttribute="trailing" secondItem="xqG-nn-1g5" secondAttribute="trailing" constant="20" id="cZL-44-ecr"/>
                             <constraint firstItem="xqG-nn-1g5" firstAttribute="leading" secondItem="dIb-yJ-SfT" secondAttribute="leading" constant="20" id="fcL-2t-KFV"/>
+                            <constraint firstItem="gYJ-xc-igv" firstAttribute="centerX" secondItem="7Oq-mu-BeN" secondAttribute="centerX" id="g61-pZ-Xa0"/>
                             <constraint firstItem="Cti-Ez-Abk" firstAttribute="leading" secondItem="dIb-yJ-SfT" secondAttribute="leading" id="ins-BV-urw"/>
+                            <constraint firstItem="gYJ-xc-igv" firstAttribute="top" secondItem="Qqy-ht-4mr" secondAttribute="bottom" constant="-30" id="pDf-IF-SSy"/>
                             <constraint firstItem="dIb-yJ-SfT" firstAttribute="bottom" secondItem="xqG-nn-1g5" secondAttribute="bottom" id="uVf-cm-pKw"/>
                             <constraint firstItem="Qqy-ht-4mr" firstAttribute="top" secondItem="7Oq-mu-BeN" secondAttribute="top" id="yln-Zc-Ov1"/>
                         </constraints>

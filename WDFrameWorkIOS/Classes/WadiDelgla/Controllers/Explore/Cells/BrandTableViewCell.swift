@@ -65,15 +65,15 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
 //        self.ratingView.rating = Double(model.ratingValue.value ?? 0)
 //        self.ratingView.text = "(\(model.numberOfUserRate.value ?? 0))"
         
-        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\("delivery_time".localized()) : ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.estimatedDeliveryTime.value ?? 0) \("minute".localized())")
+        self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD12, withSize: 12, .black, "\("delivery_time".localized()) : ", APP_FONT_BOLD12, withSize: 12, .black, "\(model.estimatedDeliveryTime.value ?? 0) \("minute".localized())")
         
         self.minOrderLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\("min_order_to_deliver".localized()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
         
-        self.paymentLabel.font = APP_FONT_BOLD10 //UIFont.init(resource: APP_FONT_BOLD, size: 10)
+//        self.paymentLabel.font = APP_FONT_BOLD12 //UIFont.init(resource: APP_FONT_BOLD, size: 10)
         
         
         if model.isOnLinePayment.value ?? false {
-            self.paymentLabel.text = "COD & Online".localized() //NSLocalizedString("COD & Online", comment: "COD & Online")
+            self.paymentLabel.text = "cod_online".localized() //NSLocalizedString("COD & Online", comment: "COD & Online")
         } else {
             self.paymentLabel.text = "COD".localized() //NSLocalizedString("COD", comment: "COD")
         }
@@ -92,7 +92,7 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
         
         
         [brandNameLabel,serviceLabel,onlineOrderLabel,paymentLabel,getHaveLabel,equivelantCashLabel].forEach { (label) in
-            label?.textColor = COLOR_PRIMARY_TEXT
+            label?.textColor = .black
         }
         
         
@@ -131,6 +131,9 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
             }
         }
         
+        [onlineOrderLabel, paymentLabel].forEach { label in
+            label?.font = APP_FONT_BOLD12
+        }
         
     }
     @IBAction func onRegisterToBrandTapped(_ sender: Any) {

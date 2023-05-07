@@ -141,8 +141,7 @@ extension CheckOutViewController {
             guard let order =  self.viewModel?.calcResponse,order.isCurrentRewardIdValid.value ?? false && order.currentCustomerIsRegistered.value ?? false else { return 0 }
         }
         switch titles?[section] {
-        case "address".localized() ,
-             "my_items".localized(),
+        case "my_items".localized(), // "address".localized() ,
              "discount".localized(),
              "payment_methods".localized():
             return 30

@@ -10,6 +10,7 @@ import UIKit
 class OrderPhoneTableViewCell: UITableViewCell {
     
     @IBOutlet weak var phoneTextView: UITextView!
+    @IBOutlet weak var titleLbl: UILabel!
     var onChangePhone : ((String) -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,8 @@ class OrderPhoneTableViewCell: UITableViewCell {
         phoneTextView.text = phone.replacingOccurrences(of: " ", with: "") == "" ? "Enter your phone number".localized() : phone
         phoneTextView.textColor = phone.replacingOccurrences(of: " ", with: "") == "" ? UIColor.lightGray : .black
         phoneTextView.selectedTextRange = phoneTextView.textRange(from: phoneTextView.beginningOfDocument, to: phoneTextView.beginningOfDocument)
-        
+        self.titleLbl.font = APP_FONT_REGULAR11
+        self.titleLbl.text = "order_phone_complete_delivery".localized()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

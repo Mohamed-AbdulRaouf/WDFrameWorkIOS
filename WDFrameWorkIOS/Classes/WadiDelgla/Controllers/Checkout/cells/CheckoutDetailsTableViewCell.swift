@@ -32,7 +32,7 @@ class CheckoutDetailsTableViewCell: UITableViewCell,IBaseTableViewCell {
     }
     func configureCell(_ model: ICalOrderResponseDTODAL) {
         [totalDiscountLabel,totalDiscountTitleLabel,deliveryFeesLabel,deliveryFeesTitleLabel,vatLabel,vatTitleLabel,subTotalLabel,subTotalTitleLabel,].forEach { (label) in
-            label?.font = APP_FONT_REGULAR //UIFont(resource: APP_FONT_REGULAR, size: 14)
+            label?.font = APP_FONT_BOLD12 //UIFont(resource: APP_FONT_REGULAR, size: 14)
             label?.textColor = COLOR_PRIMARY_TEXT
         }
         [totalTitleLabel,totalLabel].forEach { (label) in

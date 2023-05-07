@@ -53,8 +53,10 @@ extension MenuViewController : IMenuViewController{
     
     func setCountOfCartToLbl() {
         if let count = UserDefaults.order?.cartItems.count {
+            self.self.cartCountLbl.isHidden = false
             self.cartCountLbl.text = "\(count)"
         } else {
+            self.self.cartCountLbl.isHidden = true
             self.cartCountLbl.text = "0"
         }
     }

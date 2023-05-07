@@ -267,7 +267,7 @@
 "hr" = "HR";
 "share_code_message" =  "You’ve got free points, open this link %@ to sign up in DoBites and get free points for %@ or use this code %@ in referal code field when regsitering or after registeration.";
 "brand_location" = "Brand Location";
-"COD" = "Cash on delivery";
+"COD" = "Cash";
 "cod_online" = "Cash on delivery or Visa";
 "no_online_order" = "No Online Ordering";
 "get" = "Get";
@@ -364,7 +364,7 @@
 "continue" = "Continue";
 
 /* Order Type */
-"order_type_choices" = "Which Categories do you want to choose ?";
+"order_type_choices" = "Which service type do you want to choose ?";
 "online" = "Delivery";
 "atStore" = "Takeaway";
 "dine_in" = "Dine In";
@@ -408,4 +408,5 @@
 "cart_empty" = "The cart is empty !";
 "branch_inactive" = "Branch is Inactive.";
 "order_sent_successfully" = "Your order has been sent successfully";
-"invoice" = "invoice";
+"invoice" = "Receipt";
+"order_phone_complete_delivery" = "this number will be used by our waiters to complete the delivery";

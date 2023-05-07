@@ -402,3 +402,4 @@
 "branch_inactive" = "الفرع غير متاح حاليا.";
 "order_sent_successfully" = "لقد تم ارسال طلبك بنجاح";
 "invoice" = "الفاتورة";
+"order_phone_complete_delivery" = "سيتم استخدام هذا الرقم لإكمال التسليم";

@@ -52,6 +52,9 @@ class CheckOutViewController: STUIViewController,IBaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
            self.updateFinalizeButton()
+        self.title = "checkout".localized()
+        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
+        self.navigationItem.rightBarButtonItems = [backToMainApp]
     }
      override func viewDidAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
@@ -73,9 +76,17 @@ class CheckOutViewController: STUIViewController,IBaseController {
         self.tableView.reloadDataWithAutoSizingCellWorkAround()
 
     }
+    
+    @objc func backToMainApp() {
+        doPostNotification("exit_wdframework")
+    }
+    
     // MARK: - IBActions
     @IBAction func onFinalizeOrderTapped(_ sender: Any) {
-        self.onCheckoutButtonTapped()
+        self.showAlert(withTitle: "", andMessage: "", withActions: [UIAlertAction(title: "ok".localized(), style: .default) { [weak self] _ in
+            guard let self = self else {return}
+            self.onCheckoutButtonTapped()
+        }], withCancel: true)
     }
     func onCheckoutButtonTapped(){
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId && self.viewModel?.paymentData == nil else {

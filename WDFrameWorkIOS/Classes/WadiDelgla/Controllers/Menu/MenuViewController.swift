@@ -23,7 +23,7 @@ class MenuViewController: STUIViewController,IBaseController {
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .center
         label.textColor = .black
-        label.backgroundColor =  .red
+        label.backgroundColor =  .STYellow
         label.layer.cornerRadius = 8
         label.layer.masksToBounds = true
         return label
@@ -42,7 +42,7 @@ class MenuViewController: STUIViewController,IBaseController {
         if LocalizationSystem().isCurrentLanguageArabic() {
             self.title = "القائمه"
         } else {
-            self.title = "My Cart"
+            self.title = "List"
         }
         self.setCountOfCartToLbl()
     }
