@@ -403,3 +403,4 @@
 "order_sent_successfully" = "لقد تم ارسال طلبك بنجاح";
 "invoice" = "الفاتورة";
 "order_phone_complete_delivery" = "سيتم استخدام هذا الرقم لإكمال التسليم";
+"continue_completing_order" = "هل تريد الاستمرار في استكمال الطلب ؟";

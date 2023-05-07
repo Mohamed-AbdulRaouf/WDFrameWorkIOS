@@ -83,7 +83,7 @@ class CheckOutViewController: STUIViewController,IBaseController {
     
     // MARK: - IBActions
     @IBAction func onFinalizeOrderTapped(_ sender: Any) {
-        self.showAlert(withTitle: "", andMessage: "", withActions: [UIAlertAction(title: "ok".localized(), style: .default) { [weak self] _ in
+        self.showAlert(withTitle: "checkout".localized(), andMessage: "continue_completing_order".localized(), withActions: [UIAlertAction(title: "ok".localized(), style: .default) { [weak self] _ in
             guard let self = self else {return}
             self.onCheckoutButtonTapped()
         }], withCancel: true)

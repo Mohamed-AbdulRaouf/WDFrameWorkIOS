@@ -585,26 +585,29 @@
                                                     <outlet property="vatValueLbl" destination="NV0-2v-m7j" id="B51-6C-aAn"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderPhoneTableViewCell" rowHeight="120" id="97p-W4-hnp" customClass="OrderPhoneTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="320.5" width="375" height="120"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderPhoneTableViewCell" rowHeight="85" id="97p-W4-hnp" customClass="OrderPhoneTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="320.5" width="375" height="85"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="97p-W4-hnp" id="1Mk-VV-tln">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UTX-H9-Q68">
-                                                            <rect key="frame" x="8" y="5" width="359" height="110"/>
+                                                            <rect key="frame" x="8" y="5" width="359" height="75"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this number will be used by our waiters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlk-ks-08X">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="26"/>
                                                                     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D4f-DS-eI2">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="359" height="85.5"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="359" height="45"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="45" id="UgH-UJ-0DG"/>
+                                                                    </constraints>
                                                                     <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="phonePad" returnKeyType="done"/>
@@ -631,7 +634,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCommentTableViewCell" rowHeight="70" id="fCN-AK-jnF" customClass="OrderCommentTableViewCell" customModule="WDFrameWorkIOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="440.5" width="375" height="70"/>
+                                                <rect key="frame" x="0.0" y="405.5" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fCN-AK-jnF" id="ys7-6f-hK7">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
