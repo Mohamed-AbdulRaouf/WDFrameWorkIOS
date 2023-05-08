@@ -51,10 +51,11 @@ extension LocationViewController{
         setNavigationBarHidden(true)
         self.myOrdersBtn.setTitle("my_orders".localized(), for: .normal)
         if L102Language.isCurrentLanguageArabic() {
-            backBtn.setImage(UIImage(named: "ic_back_ar"), for: .normal)
+            self.backBtn.setImage(UIImage(named: "back_ar.png", in: .WDFrameworkBundle, with: nil)?.withRenderingMode(.alwaysTemplate), for: .normal)
         } else {
-            backBtn.setImage(UIImage(named: "ic_back"), for: .normal)
+            self.backBtn.setImage(UIImage(named: "back.png", in: .WDFrameworkBundle, with: nil)?.withRenderingMode(.alwaysTemplate), for: .normal)
         }
+        self.backBtn.tintColor = .black
     }
     
     override func viewDidAppear(_ animated: Bool) {

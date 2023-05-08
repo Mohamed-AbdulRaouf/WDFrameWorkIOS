@@ -21,6 +21,9 @@ extension MenuViewController : UICollectionViewDelegate,UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
         if let viewModel = self.viewModel?.categoryList {
             cell.configureCell(viewModel[indexPath.row])
+            if indexPath.row == 0 {
+                collectionView.selectItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, animated: true, scrollPosition: .top)
+            }
         }
 
         return cell

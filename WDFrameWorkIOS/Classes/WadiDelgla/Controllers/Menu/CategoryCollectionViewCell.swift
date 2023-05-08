@@ -17,13 +17,12 @@ class CategoryCollectionViewCell: UICollectionViewCell ,IBaseCollectionCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         categoryNameLabel.alpha = 0.6
         self.indicatorView.alpha = 0.0
     }
+    
     func configureCell(_ model: ICategoryMenuItemsDTODAL) {
         self.categoryNameLabel.text = model.categoryName.value ?? ""
-
     }
    
     override var isSelected: Bool {
@@ -32,6 +31,5 @@ class CategoryCollectionViewCell: UICollectionViewCell ,IBaseCollectionCell{
             self.indicatorView.alpha = isSelected ? 1.0 : 0.0
         }
     }
-    
     
 }
