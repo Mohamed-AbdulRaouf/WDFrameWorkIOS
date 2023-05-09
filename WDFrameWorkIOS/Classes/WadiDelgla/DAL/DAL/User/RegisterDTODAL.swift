@@ -34,7 +34,7 @@ public class RegisterDTODAL :BaseUserDTODAL, Codable, IRegisterDTODAL{
   
     public var confirmPassword: Observable<String?> = Observable<String?>(nil)
     
-    public var membershipNumber: Observable<String?> = Observable<String?>(nil)
+    public var membershipNumber = Observable<String?>(nil)
     
     public var mobile = Observable<String?>(nil)
 

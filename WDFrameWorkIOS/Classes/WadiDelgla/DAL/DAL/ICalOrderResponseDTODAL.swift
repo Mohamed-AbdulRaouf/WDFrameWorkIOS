@@ -33,4 +33,5 @@ public protocol  ICalOrderResponseDTODAL:AnyObject {
     var maxRedeemAmount: Observable<Float?> {get set}
     var isOrderingOnlineAvailable: Observable<Bool?> {get set}
     var orderComment: Observable<String?> {get set}
+    var phone2: Observable<String?> {get set}
 }

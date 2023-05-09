@@ -118,6 +118,7 @@ enum UserRouteBLL: URLRequestBuilderBLL {
             params[KBLL.APIParameterKey.password] = registerDTO.password.value
             params[KBLL.APIParameterKey.shareCode] = registerDTO.shareCode.value
             params[KBLL.APIParameterKey.email] = registerDTO.email.value
+            params[KBLL.APIParameterKey.membershipNumber] = registerDTO.membershipNumber.value
 //            params[KBLL.APIParameterKey.countryCode] = registerDTO.countryCode.value
             
         case let .resendVerifyCode(verifyCodeDTO),

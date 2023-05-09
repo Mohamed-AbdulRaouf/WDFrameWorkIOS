@@ -54,6 +54,8 @@ public struct KBLL {
         static let referenceTransactionId = "ReferenceTransactionId"
         static let referenceInvoiceId = "ReferenceInvoiceId"
         static let customerHistoryId = "CustomerHistoryId"
+        static let membershipNumber = "MembershipNumber"
+        static let phone2 = "Phone2"
         
     }
 }

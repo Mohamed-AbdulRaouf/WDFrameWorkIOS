@@ -231,7 +231,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         jsonedDict[CALCCodingKeys.orderPaymentTypeId.rawValue] = orderPaymentTypeId
         jsonedDict[CALCCodingKeys.deliveryAtStore.rawValue] = isSelectDeliveryAtStore
         jsonedDict[CALCCodingKeys.frontOrderReferenceId.rawValue] = frontOrderReferenceId
-        jsonedDict[CALCCodingKeys.phone2.rawValue] = phone2
+        jsonedDict[CALCCodingKeys.phone2.rawValue] = UserDefaults.orderPhone
        jsonedDict[CALCCodingKeys.merchantRefNumber.rawValue] = merchantRefNumber
        jsonedDict[CALCCodingKeys.referenceNumber.rawValue] = referenceNumber
        jsonedDict[CALCCodingKeys.referenceTransactionId.rawValue] = referenceTransactionId

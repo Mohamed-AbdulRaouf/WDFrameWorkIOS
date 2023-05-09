@@ -57,6 +57,8 @@ public class CalOrderResponseDTODAL :ICalOrderResponseDTODAL{
     public var isOrderingOnlineAvailable: Observable<Bool?> = Observable<Bool?>(nil)
     
     public var orderComment: Observable<String?> = Observable<String?>(nil)
+    
+    public var phone2: Observable<String?> = Observable<String?>(nil)
  
     public init(){}
     
@@ -85,6 +87,7 @@ public class CalOrderResponseDTODAL :ICalOrderResponseDTODAL{
         case MaxRedeemAmount = "MaxRedeemAmount"
         case IsOrderingOnlineAvailable = "IsOrderingOnlineAvailable"
         case orderComment = "OrderComment"
+        case phone2 = "Phone2"
     }
     public init(json:JSON)   {
         self.orderId.value = json[CodingKeys.orderid.rawValue].intValue
@@ -111,6 +114,7 @@ public class CalOrderResponseDTODAL :ICalOrderResponseDTODAL{
         self.maxRedeemAmount.value =  json[CodingKeys.MaxRedeemAmount.rawValue].floatValue
         self.isOrderingOnlineAvailable.value =  json[CodingKeys.IsOrderingOnlineAvailable.rawValue].boolValue
         self.orderComment.value = json[CodingKeys.orderComment.rawValue].stringValue
+        self.phone2.value = json[CodingKeys.phone2.rawValue].stringValue
      }
     
     
