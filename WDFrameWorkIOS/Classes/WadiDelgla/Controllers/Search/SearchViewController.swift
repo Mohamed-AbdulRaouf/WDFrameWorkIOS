@@ -40,7 +40,7 @@ extension SearchViewController {
         
         // Status bar white font
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        self.navigationController?.navigationBar.backgroundColor = COLOR_ACCENT
+//        self.navigationController?.navigationBar.backgroundColor = COLOR_ACCENT
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.navigationItem.hidesBackButton = false
@@ -55,7 +55,7 @@ extension SearchViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
-       searchController.searchBar.becomeFirstResponder()
+//       searchController.searchBar.becomeFirstResponder()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -105,19 +105,19 @@ extension SearchViewController {
         tableView.dataSource = self
         tableView.delegate = self
         // 1
-        searchController.searchResultsUpdater = self
+//        searchController.searchResultsUpdater = self
         // 2
-        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.obscuresBackgroundDuringPresentation = false
         // 3
-        searchController.searchBar.placeholder = "searching".localized()
+//        searchController.searchBar.placeholder = "searching".localized()
         // 4
-        navigationItem.searchController = searchController
+//        navigationItem.searchController = searchController
 //        tableView.tableHeaderView = searchController.searchBar
 
         // 5
         definesPresentationContext = true
-        self.searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.searchTextField.textAlignment =  LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
+//        self.searchController.hidesNavigationBarDuringPresentation = false
+//        self.searchController.searchBar.searchTextField.textAlignment =  LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         
 //        let notificationCenter = NotificationCenter.default
 //        notificationCenter.addObserver(
