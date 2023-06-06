@@ -14,6 +14,8 @@ class CartFooterTableViewCell: UITableViewCell,IBaseTableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var vatTitlelbl: UILabel!
     @IBOutlet weak var vatValueLbl: UILabel!
+    @IBOutlet weak var totalLbl: UILabel!
+    @IBOutlet weak var totalValueLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,9 +30,12 @@ class CartFooterTableViewCell: UITableViewCell,IBaseTableViewCell {
     func configureCell(_ model: ICalOrderResponseDTODAL) {
         self.quantityLabel.attributedText =  setupLabels("quantity".localized(), ": \(model.itemsCount.value ?? 0) ")
         self.subTotalLabel.attributedText =  setupLabels("sub_total".localized(), ": \(model.subTotal.value ?? 0.0) \(model.currencyCode.value ?? "")")
+        let total = (model.subTotal.value ?? 0.0) + (model.taxAmount.value ?? 0.0)
+        self.totalValueLbl.text = "\(total) \(model.currencyCode.value ?? "")"
         self.vatTitlelbl.text = "VAT".localized()
+        self.totalLbl.text = "Total".localized()
         self.vatValueLbl.text = "\(model.taxAmount.value ?? 0.0) \(model.currencyCode.value ?? "")"
-        [self.subTotalLabel, self.quantityLabel, self.vatTitlelbl, vatValueLbl].forEach { label in
+        [self.subTotalLabel, self.quantityLabel, self.vatTitlelbl, self.vatValueLbl, self.totalLbl, self.totalValueLbl].forEach { label in
             label?.font = APP_FONT_BOLD12
         }
     }

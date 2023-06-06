@@ -101,8 +101,13 @@ extension STCartViewController{
     func setupNavigationBar(){
         let iconImage:UIImage? = UIImage.getFontAwaseomImage(fontName: "fas fa-trash",imageSize: CGSize(width: 30, height: 30),.darkGray)
         let clearCart =   UIBarButtonItem(image: iconImage, style: .plain, target: self, action: #selector(onClearCartTapped))
-        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
-        self.navigationItem.rightBarButtonItems = [clearCart, backToMainApp]
+        let exitBtn = UIButton(type: .custom)
+        exitBtn.setImage(UIImage(named: "exit-to-app"), for: .normal)
+        exitBtn.addTarget(self, action: #selector(backToMainApp), for: .touchUpInside)
+        exitBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 31)
+        exitBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        let exit = UIBarButtonItem(customView: exitBtn)
+        self.navigationItem.rightBarButtonItems = [clearCart, exit]
     }
     
     @objc func backToMainApp() {

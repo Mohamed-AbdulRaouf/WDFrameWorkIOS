@@ -63,11 +63,16 @@ extension MenuViewController{
         button.setImage(R.image.ic_cart(), for: .normal)
         button.addTarget(self, action: #selector(openCartVC), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 53, height: 31)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)//move image to the right
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         button.addSubview(self.cartCountLbl)
         let barButton = UIBarButtonItem(customView: button)
-        let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
-        self.navigationItem.rightBarButtonItems = [barButton, backToMainApp]
+        let exitBtn = UIButton(type: .custom)
+        exitBtn.setImage(UIImage(named: "exit-to-app"), for: .normal)
+        exitBtn.addTarget(self, action: #selector(backToMainApp), for: .touchUpInside)
+        exitBtn.frame = CGRect(x: 0, y: 0, width: 35, height: 31)
+        exitBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        let exit = UIBarButtonItem(customView: exitBtn)
+        self.navigationItem.rightBarButtonItems = [barButton, exit]
         self.navigationItem.backBarButtonItem?.tintColor = .black
     }
     

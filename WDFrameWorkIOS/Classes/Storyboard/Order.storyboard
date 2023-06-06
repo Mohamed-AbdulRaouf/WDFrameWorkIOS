@@ -568,6 +568,23 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAs-Yo-ijb">
+                                                                    <rect key="frame" x="0.0" y="84" width="335" height="0.0"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erz-Wi-SFU">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="31.5" height="0.0"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-lW-aVd">
+                                                                            <rect key="frame" x="31.5" y="0.0" width="303.5" height="0.0"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -581,6 +598,8 @@
                                                 <connections>
                                                     <outlet property="quantityLabel" destination="03a-Vk-Zvj" id="2Sl-iy-cnl"/>
                                                     <outlet property="subTotalLabel" destination="bFH-W5-Ctd" id="xdT-kk-BbQ"/>
+                                                    <outlet property="totalLbl" destination="erz-Wi-SFU" id="Kij-qz-pJH"/>
+                                                    <outlet property="totalValueLbl" destination="1Ug-lW-aVd" id="gdl-AO-pdB"/>
                                                     <outlet property="vatTitlelbl" destination="LJ8-MG-Zge" id="R0K-kD-EaU"/>
                                                     <outlet property="vatValueLbl" destination="NV0-2v-m7j" id="B51-6C-aAn"/>
                                                 </connections>
