@@ -58,7 +58,7 @@ class MenuTableViewCell: UITableViewCell,IBaseTableViewCell {
         
         self.itemDescriptionLabel.text = model.categoryDescription.value ?? ""
         self.itemIngredientsLabel.text = model.ingredients.value ?? ""
-        self.itemCaloriesLabel.text = "\(model.itemCalories.value ?? 0) \("calories".localized())"
+        self.itemCaloriesLabel.text = "" //"\(model.itemCalories.value ?? 0) \("calories".localized())"
     }
     
     @objc func animate(){

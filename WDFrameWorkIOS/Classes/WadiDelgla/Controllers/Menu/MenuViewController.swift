@@ -42,7 +42,7 @@ class MenuViewController: STUIViewController,IBaseController {
         if LocalizationSystem().isCurrentLanguageArabic() {
             self.title = "القائمه"
         } else {
-            self.title = "List"
+            self.title = "Menu"
         }
         self.setCountOfCartToLbl()
     }
