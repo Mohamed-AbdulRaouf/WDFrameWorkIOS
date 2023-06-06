@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.2.45'
+  spec.version          = '3.2.46'
   spec.summary          = 'A short description of WDFrameWorkIOS.'
   
 
@@ -130,7 +130,7 @@ spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
   spec.dependency 'PopupDialog', '~> 1.1'
   spec.dependency 'Kingfisher', '~> 5.0'
   spec.dependency 'Cosmos'
-  spec.dependency 'MyFatoorah'
+#  spec.dependency 'MyFatoorah'
   spec.dependency 'Bond'
   spec.dependency 'Localize-Swift' ,'1.7.0'
   spec.dependency 'MOLH'
