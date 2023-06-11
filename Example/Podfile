@@ -1,4 +1,5 @@
-source 'https://github.com/CocoaPods/Specs.git'
+
+source 'https://cocoapods-cdn.netlify.app/'
 
 use_frameworks!
 
