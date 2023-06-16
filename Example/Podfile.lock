@@ -196,12 +196,12 @@ PODS:
     - TextFieldEffects
 
 DEPENDENCIES:
+  - Alamofire (from `https://github.com/Mohamed-AbdulRaouf/Alamofire.git`, commit `78424be314842833c04bc3bef5b72e85fff99204`)
   - WDFrameWorkIOS (from `../`)
 
 SPEC REPOS:
   trunk:
     - AcceptCardSDK
-    - Alamofire
     - Bond
     - CachyKit
     - Cosmos
@@ -242,8 +242,16 @@ SPEC REPOS:
     - TextFieldEffects
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :commit: 78424be314842833c04bc3bef5b72e85fff99204
+    :git: https://github.com/Mohamed-AbdulRaouf/Alamofire.git
   WDFrameWorkIOS:
     :path: "../"
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 78424be314842833c04bc3bef5b72e85fff99204
+    :git: https://github.com/Mohamed-AbdulRaouf/Alamofire.git
 
 SPEC CHECKSUMS:
   AcceptCardSDK: bffe21c7dc2abe0eb63f82ec30aa4952976ae78e
@@ -288,6 +296,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   WDFrameWorkIOS: 8f7dca1e0c336b2391ff80b73c8efafbda670c6e
 
-PODFILE CHECKSUM: d846994ceda850dcdf81b88b88558de4a3de6f4f
+PODFILE CHECKSUM: 2242867453d47c6841dc6933f1d9a9aefbf51986
 
 COCOAPODS: 1.12.1

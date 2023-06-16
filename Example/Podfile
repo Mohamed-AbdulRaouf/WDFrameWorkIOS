@@ -1,28 +1,22 @@
 
-source 'https://github.com/CocoaPods/Specs'
-
 use_frameworks!
 
 platform :ios, '13.0'
-# , :exclusive => true
 
 target 'WDFrameWorkIOS_Example' do
+  use_frameworks!
   pod 'WDFrameWorkIOS', :path => '../'
-#  pod 'FirebaseCore'
-#  pod 'FirebaseAuth'
-#  pod 'FirebaseMessaging'
-#  pod 'GoogleMaps'
-#  pod 'GooglePlaces'
+  pod 'Alamofire', :git => 'https://github.com/Mohamed-AbdulRaouf/Alamofire.git', :commit => '78424be314842833c04bc3bef5b72e85fff99204'
   target 'WDFrameWorkIOS_Tests' do
     inherit! :search_paths
-
+    
     
   end
 end
 
 post_install do |installer|
-      installer.pods_project.build_configurations.each do |config|
-        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
-      end
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+  end
 end
