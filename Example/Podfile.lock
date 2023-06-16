@@ -165,7 +165,7 @@ PODS:
   - SwinjectStoryboard (2.2.2):
     - Swinject (~> 2.7.1)
   - TextFieldEffects (1.6.0)
-  - WDFrameWorkIOS (3.2.49):
+  - WDFrameWorkIOS (3.2.50):
     - AcceptCardSDK (= 5.5.1)
     - Alamofire (~> 5.6.4)
     - Bond
@@ -196,12 +196,12 @@ PODS:
     - TextFieldEffects
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Mohamed-AbdulRaouf/Alamofire.git`, commit `78424be314842833c04bc3bef5b72e85fff99204`)
   - WDFrameWorkIOS (from `../`)
 
 SPEC REPOS:
   trunk:
     - AcceptCardSDK
+    - Alamofire
     - Bond
     - CachyKit
     - Cosmos
@@ -242,16 +242,8 @@ SPEC REPOS:
     - TextFieldEffects
 
 EXTERNAL SOURCES:
-  Alamofire:
-    :commit: 78424be314842833c04bc3bef5b72e85fff99204
-    :git: https://github.com/Mohamed-AbdulRaouf/Alamofire.git
   WDFrameWorkIOS:
     :path: "../"
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 78424be314842833c04bc3bef5b72e85fff99204
-    :git: https://github.com/Mohamed-AbdulRaouf/Alamofire.git
 
 SPEC CHECKSUMS:
   AcceptCardSDK: bffe21c7dc2abe0eb63f82ec30aa4952976ae78e
@@ -294,8 +286,8 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  WDFrameWorkIOS: 8f7dca1e0c336b2391ff80b73c8efafbda670c6e
+  WDFrameWorkIOS: 543a07a26072b06919363d454f3009a7b18fc193
 
-PODFILE CHECKSUM: 2242867453d47c6841dc6933f1d9a9aefbf51986
+PODFILE CHECKSUM: 98038bcd7691a5fe804888bc8e171681b139659e
 
 COCOAPODS: 1.12.1

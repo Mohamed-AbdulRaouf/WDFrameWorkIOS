@@ -6,7 +6,6 @@ platform :ios, '13.0'
 target 'WDFrameWorkIOS_Example' do
   use_frameworks!
   pod 'WDFrameWorkIOS', :path => '../'
-  pod 'Alamofire', :git => 'https://github.com/Mohamed-AbdulRaouf/Alamofire.git', :commit => '78424be314842833c04bc3bef5b72e85fff99204'
   target 'WDFrameWorkIOS_Tests' do
     inherit! :search_paths
     
