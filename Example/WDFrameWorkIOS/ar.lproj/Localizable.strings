@@ -404,3 +404,4 @@
 "invoice" = "الفاتورة";
 "order_phone_complete_delivery" = "سيتم استخدام هذا الرقم لإكمال التسليم";
 "continue_completing_order" = "هل تريد الاستمرار في استكمال الطلب ؟";
+"coupon_code_already_used_before" = "الكوبون تم استخدامه بالفعل من قبل";

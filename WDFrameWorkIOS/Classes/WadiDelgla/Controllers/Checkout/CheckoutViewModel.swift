@@ -137,6 +137,8 @@ class CheckoutViewModel: ICheckoutViewModel{
                         if response?.error?.APIError != nil {
                             if response?.error?.ErrorCode == 645 {
                                 self.delegate?.onError("coupon_code_is_invalid".localized())
+                            } else if response?.error?.ErrorCode == 653 {
+                                self.delegate?.onError("coupon_code_already_used_before".localized())
                             } else {
                                 self.delegate?.onError(response?.error?.APIError?.description ?? "")
                             }
@@ -182,7 +184,11 @@ class CheckoutViewModel: ICheckoutViewModel{
                     guard let data = response?.data else {
                         self.errorModel = response?.error?.validateError as? IOrderValidationDTOBLL
                         if response?.error?.APIError != nil {
-                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                            if response?.error?.ErrorCode == 653 {
+                                self.delegate?.onError("coupon_code_already_used_before".localized())
+                            } else {
+                                self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                            }
                         }
                         return
                     }

@@ -411,3 +411,4 @@
 "invoice" = "Receipt";
 "order_phone_complete_delivery" = "this number will be used by our waiters to complete the delivery";
 "continue_completing_order" = "Do you want to continue completing the order ?";
+"coupon_code_already_used_before" = "Coupon code already used before";
