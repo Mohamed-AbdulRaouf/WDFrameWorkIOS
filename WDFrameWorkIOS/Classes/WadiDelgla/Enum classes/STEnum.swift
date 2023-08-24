@@ -93,9 +93,9 @@ enum OrderType {
     var imageName : String {
         switch self {
         case .online:
-            return R.image.ic_online.name
-        case .atStore:
             return R.image.ic_at_store.name
+        case .atStore:
+            return R.image.ic_online.name
         case .dine_in:
             return R.image.ic_dine_in.name
         case .drive_thrue:

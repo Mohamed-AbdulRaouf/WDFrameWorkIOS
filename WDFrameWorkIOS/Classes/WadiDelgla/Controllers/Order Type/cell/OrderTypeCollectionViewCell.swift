@@ -24,8 +24,6 @@ class OrderTypeCollectionViewCell: UICollectionViewCell {
              self.itemImageView.image = UIImage(named: image)
             self.itemImageView.contentMode = .scaleAspectFit
         }
-        self.itemImageView.makeRounded()
-        
     }
     
 }

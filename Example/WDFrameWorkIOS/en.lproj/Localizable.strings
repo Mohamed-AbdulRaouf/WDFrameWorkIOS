@@ -366,7 +366,7 @@
 /* Order Type */
 "order_type_choices" = "Which service type do you want to choose ?";
 "online" = "Delivery";
-"atStore" = "Takeaway";
+"atStore" = "pick up";
 "dine_in" = "Dine In";
 "drive_thru" = "Drive Thru";
 "delivery" = "Delivery";
