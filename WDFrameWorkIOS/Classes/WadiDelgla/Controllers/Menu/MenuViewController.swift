@@ -26,6 +26,8 @@ class MenuViewController: STUIViewController,IBaseController {
         label.backgroundColor =  .STYellow
         label.layer.cornerRadius = 8
         label.layer.masksToBounds = true
+        label.layer.borderColor = UIColor.black.cgColor
+        label.layer.borderWidth = 2.0
         return label
     }()
     

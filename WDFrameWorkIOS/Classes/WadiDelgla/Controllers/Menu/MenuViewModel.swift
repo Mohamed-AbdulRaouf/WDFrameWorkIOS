@@ -134,6 +134,7 @@ class MenuViewModel: IMenuViewModel{
                     guard let success = model as? Bool,success else { return }
                     doOnMain(deadline: 0.0, {
                         self.delegate?.onShowToast("success_add_item".localized())
+                        self.delegate?.vibrationDeviceAfterAddItem()
                         self.delegate?.updateBageCount()
                     })
                 }

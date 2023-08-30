@@ -106,6 +106,11 @@ extension STCartViewController : ISTCartViewController{
         // Present dialog
         present(popup, animated: true, completion: nil)
     }
+    
+    func vibrationDeviceAfterAddItem() {
+        self.vibrationDevice()
+    }
+    
 }
 
 // MARK: - ICartOperation Protocol for cart operations such increment / decrement / delete item from cart

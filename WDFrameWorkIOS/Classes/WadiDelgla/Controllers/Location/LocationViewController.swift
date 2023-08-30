@@ -93,7 +93,7 @@ extension LocationViewController {
             self?.bindingData()
         }
         vc.data = self.data.filter({$0.id.value == self.viewModel?.currentCity?.id.value!}).first?.areas.value ?? [SearchItemDTOModelDAL]()
-        vc.title = "area".localized()
+        vc.title = "select_nearest_restaurant".localized()
         self.navigationController?.pushViewController(vc)
         
     }

@@ -186,6 +186,11 @@ extension STUIViewController {
         }
     }
     
+    func vibrationDevice() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    
 }
 //MARK: - Alerts
 extension STUIViewController {

@@ -61,4 +61,8 @@ extension MenuViewController : IMenuViewController{
         }
     }
    
+    func vibrationDeviceAfterAddItem() {
+        self.vibrationDevice()
+    }
+    
 }

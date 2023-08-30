@@ -14,4 +14,5 @@ protocol IMenuViewController:ICommonFunc {
     func showProductViewController(_ item : IMenuItemsDTODAL)
     func onShowClearCartAlert(_ completion: @escaping ((Bool) -> Void))
     func updateBageCount()
+    func vibrationDeviceAfterAddItem()
 }

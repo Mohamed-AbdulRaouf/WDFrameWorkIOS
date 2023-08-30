@@ -172,6 +172,7 @@ extension STCartViewModel {
             self.delegate?.onReloadTableView()
             self.hideHUD()
             self.calcOrder()
+            self.delegate?.vibrationDeviceAfterAddItem()
         })
     }
     func decreamentItem(_ item: ISTCartItemDTODAL) {
@@ -181,6 +182,7 @@ extension STCartViewModel {
             self.delegate?.onReloadTableView()
             self.hideHUD()
             self.calcOrder()
+            self.delegate?.vibrationDeviceAfterAddItem()
         })
     }
     func deleteItem(_ item: ISTCartItemDTODAL) {
@@ -190,6 +192,7 @@ extension STCartViewModel {
             self.delegate?.onReloadTableView()
             self.hideHUD()
             self.calcOrder()
+            self.delegate?.vibrationDeviceAfterAddItem()
         })
     }
     func updateComment(_ visualCode: String,withComment comment: String) {

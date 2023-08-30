@@ -17,6 +17,7 @@ protocol ISTCartViewController:ICommonFunc {
     func showCommentDialog(_ visualCode: String,_ comment:String)
     func openOrderTypeVC()
     func openCheckoutVC()
+    func vibrationDeviceAfterAddItem()
 }
 protocol ICartOperation:class{
     func increamentItem(_ item: ISTCartItemDTODAL)
