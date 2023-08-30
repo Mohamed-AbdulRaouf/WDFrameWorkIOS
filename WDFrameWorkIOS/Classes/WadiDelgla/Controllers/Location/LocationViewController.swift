@@ -141,9 +141,9 @@ extension LocationViewController{
         self.startButton.setTitle("order".localized(), for: .normal)
         
         self.cityLabel.text = "select_club".localized()
-        self.areaLabel.text = "select_area".localized()
-        self.cityButton.setTitle("select_club".localized(), for: .normal)
-        self.areaButton.setTitle("select_area".localized(), for: .normal)
+        self.areaLabel.text = "select_nearest_restaurant".localized()
+        self.cityButton.setTitle("select".localized(), for: .normal)
+        self.areaButton.setTitle("select".localized(), for: .normal)
         let lang = LocalizationSystem.sharedInstance.isCurrentLanguageArabic()  ? "English" : "العربية"
         self.languageButton.setTitle(lang, for: .normal)
         
@@ -159,9 +159,8 @@ extension LocationViewController{
     func bindingData() {
         
         if let viewModel = viewModel{
-            
-            self.cityButton.setTitle(viewModel.currentCity == nil ? "select_club".localized() : viewModel.currentCity?.name.value, for: .normal)
-            self.areaButton.setTitle(viewModel.currentArea == nil ? "select_area".localized() :viewModel.currentArea?.name.value, for: .normal)
+            self.cityButton.setTitle(viewModel.currentCity == nil ? "select".localized() : viewModel.currentCity?.name.value, for: .normal)
+            self.areaButton.setTitle(viewModel.currentArea == nil ? "select".localized() :viewModel.currentArea?.name.value, for: .normal)
         }
     }
     

@@ -168,7 +168,7 @@
 "change_location" = "Change Location";
 "club" = "Club";
 "government" = "Government";
-"select_club" = "Club";
+"select_club" = "Select Club";
 "select_government" = "Select government";
 "select_government_msg" = "You haven't select club yet, to continue please select club first";
 "select_club_and_government_msg" = "you should select club and area to continue";
@@ -412,3 +412,5 @@
 "order_phone_complete_delivery" = "this number will be used by our waiters to complete the delivery";
 "continue_completing_order" = "Do you want to continue completing the order ?";
 "coupon_code_already_used_before" = "Coupon code already used before";
+"select_nearest_restaurant" = "Select Nearest Restaurant";
+"select" = "Select";

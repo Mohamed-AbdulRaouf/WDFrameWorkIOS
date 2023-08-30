@@ -164,7 +164,7 @@
 "of" = "من";
 "club" = "نادي";
 "government" = "فرع";
-"select_club" = "النادي";
+"select_club" = "أختار النادي";
 "select_government" = "إختر المحافظة";
 "select_government_msg" = "قم بإختيار النادي أولاً";
 "select_club_and_government_msg" = "قم بإختيار النادي و المنطقة أولا للأستمرار";
@@ -405,3 +405,5 @@
 "order_phone_complete_delivery" = "سيتم استخدام هذا الرقم لإكمال التسليم";
 "continue_completing_order" = "هل تريد الاستمرار في استكمال الطلب ؟";
 "coupon_code_already_used_before" = "الكوبون تم استخدامه بالفعل من قبل";
+"select_nearest_restaurant" = "أختار أقرب مطعم";
+"select" = "أختار";
