@@ -164,7 +164,7 @@
 "of" = "من";
 "club" = "نادي";
 "government" = "فرع";
-"select_club" = "أختار النادي";
+"select_club" = "إختار النادي";
 "select_government" = "إختر المحافظة";
 "select_government_msg" = "قم بإختيار النادي أولاً";
 "select_club_and_government_msg" = "قم بإختيار النادي و المنطقة أولا للأستمرار";
@@ -382,7 +382,7 @@
 /* Splash */
 "logo_title1" = "آندية وادي دجلة";
 "logo_title2" = "مجتمع الأبطال";
-"Order the Food You Love" = "اطلب الاكل الذي تحبه";
+"Order the Food You Love" = "اطلب الاكل اللى تحبه";
 "Online Payment not available right now" = "الدفع عبر الإنترنت غير متوفر الآن";
 "Success" = "تم";
 "Your request has been sent successfully" = "تم ارسال طلبك بنجاح";
@@ -405,5 +405,5 @@
 "order_phone_complete_delivery" = "سيتم استخدام هذا الرقم لإكمال التسليم";
 "continue_completing_order" = "هل تريد الاستمرار في استكمال الطلب ؟";
 "coupon_code_already_used_before" = "الكوبون تم استخدامه بالفعل من قبل";
-"select_nearest_restaurant" = "أختار أقرب مطعم";
-"select" = "أختار";
+"select_nearest_restaurant" = "إختار أقرب مطعم";
+"select" = "إختار";

@@ -46,13 +46,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qqy-ht-4mr">
-                                <rect key="frame" x="-65.5" y="0.0" width="545" height="637"/>
+                                <rect key="frame" x="-313.5" y="0.0" width="1041" height="637"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="escallope_elnady.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jh-j4-3kv">
-                                        <rect key="frame" x="0.0" y="0.0" width="545" height="637"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="mix_grill.jpg" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jh-j4-3kv">
+                                        <rect key="frame" x="0.0" y="0.0" width="1041" height="637"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE2-2m-t9F">
-                                        <rect key="frame" x="0.0" y="0.0" width="545" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1041" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -338,9 +338,9 @@
         </designable>
     </designables>
     <resources>
-        <image name="escallope_elnady.png" width="408.75" height="515.25"/>
         <image name="ic_back" width="32" height="32"/>
         <image name="menu-rounded-90.png" width="90" height="90"/>
+        <image name="mix_grill.jpg" width="1040.6400146484375" height="1300.800048828125"/>
         <image name="notification" width="15" height="16.5"/>
         <namedColor name="MainColor">
             <color red="0.96899998188018799" green="0.84700000286102295" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
