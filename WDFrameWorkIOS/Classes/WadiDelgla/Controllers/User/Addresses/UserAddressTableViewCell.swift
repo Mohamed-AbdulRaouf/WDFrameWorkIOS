@@ -16,7 +16,6 @@ class UserAddressTableViewCell: UITableViewCell,IBaseTableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var addressIndexButton: UIButton!
     @IBOutlet weak var apartmentNoLabel: UILabel!
-    
     @IBOutlet weak var areaNameLabel: UILabel!
     @IBOutlet weak var floorNoLabel: UILabel!
     @IBOutlet weak var landMarkLabel: UILabel!
@@ -56,7 +55,7 @@ class UserAddressTableViewCell: UITableViewCell,IBaseTableViewCell {
             button?.backgroundColor = COLOR_ACCENT
             button?.titleLabel?.font = APP_FONT_BOLD //UIFont(resource: APP_FONT_BOLD, size: 17)
             button?.titleLabel?.sizeToFit()
-            button?.cornerRadius = 20.0
+            button?.layer.cornerRadius = 20.0
             button?.setTitleColor(.white, for: .normal)
             button?.setTitle("\(model.addressIndex.value ?? 0)", for: .normal)
             

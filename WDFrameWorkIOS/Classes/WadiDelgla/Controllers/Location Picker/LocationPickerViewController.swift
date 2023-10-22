@@ -44,7 +44,7 @@ extension LocationPickerViewController {
         self.navigationItem.title = "check_address_search".localized()
         self.title = "check_address_search".localized()
         self.locationConfirmAddressButton.setTitle("next".localized(), for: .normal)
-        self.locationConfirmAddressButton.cornerRadius = 10.0
+        self.locationConfirmAddressButton.layer.cornerRadius = 10.0
         
         self.locationSkip.setTitle("select_manually".localized(), for: .normal)
         self.locationSkip.setTitleColor(.black, for: .normal)
