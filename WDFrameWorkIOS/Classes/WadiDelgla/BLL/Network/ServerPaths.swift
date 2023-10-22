@@ -76,4 +76,5 @@ public enum ServerPathsBLL: String {
 //    case GET_AVAILABLE_COUNTRIES = "api/Loyalty/CountryApp/GetAvailableCountries/"
     case GET_ALL_AVAILABLE_COUNTRIES = "api/Loyalty/CountryApp/GetAllAvailableCountries/"
     case GET_BRAND_AVAILABLE_COUNTRIES = "api/Loyalty/CountryApp/GetBrandAvailableCountries/"
+    case CONFIRM_ONLINE_PAYMENT_FOR_ORDER_KASHIER = "api/Loyalty/OrderApp/ConfirmOnLinePaymentForOrderKashier"
 }

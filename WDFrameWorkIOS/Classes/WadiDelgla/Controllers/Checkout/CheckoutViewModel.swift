@@ -186,6 +186,8 @@ class CheckoutViewModel: ICheckoutViewModel{
                         if response?.error?.APIError != nil {
                             if response?.error?.ErrorCode == 653 {
                                 self.delegate?.onError("coupon_code_already_used_before".localized())
+                            } else if response?.error?.ErrorCode == 674 {
+                                self.delegate?.onError("some_cart_items_changed".localized())
                             } else {
                                 self.delegate?.onError(response?.error?.APIError?.description ?? "")
                             }
@@ -196,20 +198,15 @@ class CheckoutViewModel: ICheckoutViewModel{
                         if let _customerHistoryId = _data["CustomerHistoryID"] as? Int {
                             self.customerHistoryId = _customerHistoryId
                         }
+                        if let _orderID = _data["OrderId"] as? Int {
+                            self.orderId = _orderID
+                            OrderConstants.shared.orderID = "\(_orderID)"
+                        }
                         guard  cart.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId else {
                             self.deleteCart()
                             return
                         }
-                        
-                        guard  cart.orderPaymentTypeId != PaymentType.creditCard.orderPaymentId else {
-                            self.deleteCart()
-                            return
-                        }
-//                        if let orderId = _data["OrderId"] as? Int {
-//                            self.handleOnlinePayment(String(orderId))
-//                            self.orderId = orderId
-//                            self.delegate?.confirmPaymentWithCreditCard()
-//                        }
+                        self.delegate?.confirmPaymentWithCreditCard()
                     }
                     
                 }
@@ -221,7 +218,7 @@ class CheckoutViewModel: ICheckoutViewModel{
 //        self.delegate?.onError("Online Payment not available right now".localized())
 //        return
         guard let _ = paymentData?.cardToken else {
-            self.confirmOnlinePaymentForOrder(transactionID: referenceNumber, merchanOrderId: merchantRefNumber, status: status)
+            self.confirmOnlinePaymentForOrder(transactionID: referenceNumber, orderId: OrderConstants.shared.orderID, merchanOrderId: merchantRefNumber, status: status)
             return
         }
 //        self.payWithToken(orderId)
@@ -280,11 +277,11 @@ class CheckoutViewModel: ICheckoutViewModel{
 //        }
 //    }
     
-    func confirmOnlinePaymentForOrder(transactionID: String?, merchanOrderId: String?, status: Bool) {
-        self.showHud("don't_close_app_during_purchasing_message".localized())
+    func confirmOnlinePaymentForOrder(transactionID: String?, orderId: String, merchanOrderId: String?, status: Bool) {
+//        self.showHud("don't_close_app_during_purchasing_message".localized())
         doInBackground {
-            let payment = ConfirmPaymentDTODAL(transactionId: transactionID ?? "", merchanOrderId: merchanOrderId ?? "", orderId: self.orderId?.string ?? "", status: status)
-            self.orderService?.confirmOnLinePaymentForOrder(payment, completion: { (response) in
+            let payment = ConfirmPaymentDTODAL(transactionId: transactionID ?? "", merchanOrderId: merchanOrderId ?? "", orderId: orderId, status: status)
+            self.orderService?.confirmOnLinePaymentForOrderKashier(payment, completion: { (response) in
                 doOnMain {
                     self.hideHUD()
                     guard let data = response?.data else {

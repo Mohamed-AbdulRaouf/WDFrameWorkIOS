@@ -20,6 +20,7 @@ enum OrderRouteBLL: URLRequestBuilderBLL {
     case confirmOnLinePaymentForOrder(model: IConfirmPaymentDTODAL)
     case GetOrderByFrontReference(frontOrderReferenceId: String)
     case ConfirmOnLinePaymentForOrderMyFatoorah(model: IConfirmMyFatoorahPaymentDTODAL)
+    case ConfirmOnLinePaymentForOrderKashier(model: IConfirmPaymentDTODAL)
      // MARK: - Path
     internal var path: ServerPathsBLL {
         switch self {
@@ -39,6 +40,8 @@ enum OrderRouteBLL: URLRequestBuilderBLL {
             return .GET_ORDER_BY_FRONT_REFERENCE
         case .ConfirmOnLinePaymentForOrderMyFatoorah:
             return .CONFIRM_ONLINE_PAYMENT_FOR_ORDER_MY_FATOORAH
+        case .ConfirmOnLinePaymentForOrderKashier:
+            return .CONFIRM_ONLINE_PAYMENT_FOR_ORDER_KASHIER
         }
     }
     
@@ -69,7 +72,13 @@ enum OrderRouteBLL: URLRequestBuilderBLL {
             params[KBLL.APIParameterKey.customerHistoryId] = model.customerHistoryId.value ?? 0
             params[KBLL.APIParameterKey.orderId] = model.orderId.value ?? ""
             params[KBLL.APIParameterKey.status] = model.status.value ?? false
-
+        case let .ConfirmOnLinePaymentForOrderKashier(model): //(transactionId, merchanOrderId, orderId, status):
+            params[KBLL.APIParameterKey.transactionId] = model.transactionId.value ?? ""
+            params[KBLL.APIParameterKey.merchanOrderId] = model.merchanOrderId.value ?? ""
+            params[KBLL.APIParameterKey.orderId] = model.merchanOrderId.value ?? ""
+            params[KBLL.APIParameterKey.status] = model.status.value ?? false
+            params["Language"] = Config.language
+            params["CustomerID"] = model.customerID.value ?? 0
         default: break
          }
         

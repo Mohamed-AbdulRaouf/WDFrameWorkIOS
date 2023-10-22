@@ -111,6 +111,7 @@ extension CheckOutViewController : ICheckoutViewController{
     }
     
     func confirmPaymentWithCreditCard() {
+        self.openCreditCardForm()
 //        self.FawryPayment()
     }
     

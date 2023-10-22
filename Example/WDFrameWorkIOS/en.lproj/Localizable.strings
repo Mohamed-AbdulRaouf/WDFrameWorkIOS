@@ -414,3 +414,5 @@
 "coupon_code_already_used_before" = "Coupon code already used before";
 "select_nearest_restaurant" = "Select Nearest Restaurant";
 "select" = "Select";
+"some_cart_items_changed" = "Some Cart Item(s) Changed";
+"payment_failed_please_try_again_later" = "Payment failed please try again later";

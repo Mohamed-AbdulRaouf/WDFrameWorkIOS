@@ -90,21 +90,17 @@ class CheckOutViewController: STUIViewController,IBaseController {
     }
     func onCheckoutButtonTapped(){
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId && self.viewModel?.paymentData == nil else {
-                  self.viewModel?.makeOrder()
-                  return
-              }
-              
-        self.openCreditCardForm()
+            self.viewModel?.makeOrder()
+            return
+        }
+        self.viewModel?.makeOrder()
     }
-    func openCreditCardForm(){
+    
+    func openCreditCardForm() {
         guard self.viewModel?.cart?.orderPaymentTypeId != PaymentType.cashOnDelivery.orderPaymentId else{ return }
-//        self.viewModel?.makeOrder()
-//        self.FawryPayment()
         self.authenticationRequest()
-//            let vc = StoryboardScene.Payment.creditCardViewController.instantiate()
-//            vc.viewModel?.sourceDelegate = self
-//            self.navigationController?.pushViewController(vc)
     }
+    
     deinit {
           if let observer = observer {
               NotificationCenter.default.removeObserver(observer)
@@ -143,30 +139,31 @@ extension CheckOutViewController: AcceptSDKDelegate {
     func paymentAttemptFailed(_ error: AcceptSDKError, detailedDescription: String) {
         debugPrint("paymentAttemptFailed")
         self.showToast("transaction_failed".localized())
+        self.viewModel?.handleOnlinePayment(merchantRefNumber: OrderConstants.shared.orderID, referenceNumber: OrderConstants.shared.transactionID, status: false)
     }
 
     func transactionRejected(_ payData: PayResponse) {
         debugPrint("transactionRejected")
         self.showToast("transaction_failed".localized())
+        self.viewModel?.handleOnlinePayment(merchantRefNumber: OrderConstants.shared.orderID, referenceNumber: OrderConstants.shared.transactionID, status: false)
     }
 
     func transactionAccepted(_ payData: PayResponse) {
         debugPrint("transactionAccepted")
-        OrderConstants.shared.orderID = "\(payData.order)"
         OrderConstants.shared.transactionID = "\(payData.id)"
-        self.viewModel?.makeOrder()
+        self.viewModel?.handleOnlinePayment(merchantRefNumber: OrderConstants.shared.orderID, referenceNumber: OrderConstants.shared.transactionID, status: true)
     }
 
     func transactionAccepted(_ payData: PayResponse, savedCardData: SaveCardResponse) {
         debugPrint("transactionAccepted")
-        OrderConstants.shared.orderID = "\(payData.order)"
         OrderConstants.shared.transactionID = "\(payData.id)"
-        self.viewModel?.makeOrder()
+        self.viewModel?.handleOnlinePayment(merchantRefNumber: OrderConstants.shared.orderID, referenceNumber: OrderConstants.shared.transactionID, status: true)
     }
 
     func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {
         debugPrint("userDidCancel3dSecurePayment")
         self.showToast("transaction_failed".localized())
+        self.viewModel?.handleOnlinePayment(merchantRefNumber: OrderConstants.shared.orderID, referenceNumber: OrderConstants.shared.transactionID, status: false)
     }
 
 }
@@ -180,12 +177,14 @@ extension CheckOutViewController {
             switch result {
             case .success(let res):
                 guard let token = res.token else {
-                    self.showToast("please_try_again_later".localized())
+                    SVProgressHUD.show(withStatus: "payment_failed_please_try_again_later".localized())
+                    self.viewModel?.handleOnlinePayment(merchantRefNumber: "\(OrderConstants.shared.orderID)", referenceNumber: "\(OrderConstants.shared.orderID)", status: false)
                     return
                 }
                 UserDefaultsApp.shared.auth_token = token
                 self.orderRegistration()
             case .failure(let error):
+                self.viewModel?.handleOnlinePayment(merchantRefNumber: "\(OrderConstants.shared.orderID)", referenceNumber: "\(OrderConstants.shared.orderID)", status: false)
                 debugPrint(error.localizedDescription)
                 self.showToast("please_try_again_later".localized())
             }

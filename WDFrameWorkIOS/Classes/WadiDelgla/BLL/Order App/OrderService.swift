@@ -19,6 +19,6 @@ public protocol OrderServiceBLL :AnyObject {
     func getOrderByFrontReference(_ frontOrderReferenceId: String,completion: @escaping onSuccessBLL)
     func generateFrontOrderReferenceId(forBrandId brandId: Int,withUserId userId: String) -> String
     func confirmOnLinePaymentForOrderMyFatoorah(_ model: IConfirmMyFatoorahPaymentDTODAL,completion: @escaping onSuccessBLL)
-
+    func confirmOnLinePaymentForOrderKashier(_ model: IConfirmPaymentDTODAL,completion: @escaping onSuccessBLL)
 }
 

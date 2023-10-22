@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         let bundle = Bundle(path: bundlePath!)
         let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         let vc = WDStoryboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        // simple tech aacount
+        // let firstScreenWDframework = vc.create(firstName: "Mohamed",lastName: "Abdulraouf", mobile: "+201224660704", email: "mohamed.a.raouf@icloud.com", membershipNumber: "0040071777", language: language)
         let firstScreenWDframework = vc.create(firstName: "Mohamed",lastName: "Abdulraouf", mobile: "+201226372125", email: "mohamed.a.raouf@icloud.com", membershipNumber: "0040071777", language: language)
         // set app delegate to push view controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate

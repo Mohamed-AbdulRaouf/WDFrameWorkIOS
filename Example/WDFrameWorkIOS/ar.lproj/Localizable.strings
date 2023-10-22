@@ -407,3 +407,5 @@
 "coupon_code_already_used_before" = "الكوبون تم استخدامه بالفعل من قبل";
 "select_nearest_restaurant" = "إختار أقرب مطعم";
 "select" = "إختار";
+"some_cart_items_changed" = "تم تغيير بعض عناصر سلة التسوق";
+"payment_failed_please_try_again_later" = "فشلت عمليه الدفع يرجى المحاولة مرة أخرى في وقت لاحق";

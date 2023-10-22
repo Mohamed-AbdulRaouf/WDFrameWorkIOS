@@ -243,4 +243,23 @@ public class  OrderUseCasesBLL : OrderServiceBLL  {
             }
         }
     }
+    
+    public func confirmOnLinePaymentForOrderKashier(_ model: IConfirmPaymentDTODAL, completion: @escaping onSuccessBLL) {
+        //API confirmOnLinePaymentForOrderKashier
+        let request = OrderRouteBLL.ConfirmOnLinePaymentForOrderKashier(model: model)
+        network.sendRequest(request) { (response, error) in
+            guard error == nil else {
+                completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: NetworkErrorBLL(error: (error as NSError?)!))))
+                return
+            }
+            
+            if response?.messageCode == 200 || response?.messageCode == 601 {
+                completion(STResponseBLL(data: true, error:nil))
+                return
+            } else {
+                completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil, APIError: StandardMessagesBLL(rawValue: response?.messageCode ?? 0),ErrorCode: response?.messageCode)))
+            }
+        }
+    }
+    
 }
