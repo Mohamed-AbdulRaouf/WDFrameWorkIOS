@@ -38,4 +38,13 @@ class UserDefaultsApp {
         }
     }
     
+    var orderID: Int {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "wd_order_id")
+        }
+        get {
+            return UserDefaults.standard.integer(forKey: "wd_order_id")
+        }
+    }
+    
 }

@@ -16,8 +16,8 @@ class RateOrderCommentTableViewCell: UITableViewCell {
     var onSubmitTapped: (() -> Void)?
     
     // MARK: - IBOutlets
-    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var submitRateBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,25 +31,25 @@ class RateOrderCommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(_ comment: String,_ isOrderRatedBefore: Bool){
-        self.submitButton.backgroundColor = COLOR_ACCENT
-        self.submitButton.titleLabel?.font = FONT_PRIMARY_BUTTON
-        self.submitButton.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
-        self.submitButton.layer.cornerRadius = 5
-        self.submitButton.setTitle(R.string.localizable.submit(), for: .normal)
+        self.submitRateBtn.titleLabel?.font = FONT_PRIMARY_BUTTON
+        self.submitRateBtn.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
+        self.submitRateBtn.layer.cornerRadius = 5
+        self.submitRateBtn.setTitle(R.string.localizable.submit(), for: .normal)
         self.commentTextView.layer.cornerRadius = 5
         self.commentTextView.addShadow()
         self.commentTextView.delegate = self
         self.commentTextView.text = comment
         self.commentTextView.isUserInteractionEnabled = !isOrderRatedBefore
-        self.submitButton.isHidden = isOrderRatedBefore
+        self.submitRateBtn.isHidden = isOrderRatedBefore
         if isOrderRatedBefore {
                    self.commentTextView.isHidden = comment == ""
                }
     }
-
-    @IBAction func onSubmitRateTapped(_ sender: Any) {
+    
+    @IBAction func submitRateTappedBtn(_ sender: Any) {
         self.onSubmitTapped!()
     }
+    
 }
 extension RateOrderCommentTableViewCell : UITextViewDelegate {
     

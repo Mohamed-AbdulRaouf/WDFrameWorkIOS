@@ -61,6 +61,7 @@ enum MainRouterPaymob: URLRequestConvertiblePaymob {
                 "auth_token": UserDefaultsApp.shared.auth_token,
                 "expiration": 3600,
                 "order_id": UserDefaultsApp.shared.orderPayID,
+                "merchant_order_id": UserDefaultsApp.shared.orderID,
                 "delivery_needed": "false",
                 "amount_cents": "\(Int(amount * 100))",
                 "currency": "EGP",

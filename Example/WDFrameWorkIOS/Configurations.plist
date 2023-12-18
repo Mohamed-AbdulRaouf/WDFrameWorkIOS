@@ -10,7 +10,7 @@
 	<key>Debug</key>
 	<dict>
 		<key>serverURL</key>
-		<string>https://wdorderonlineapi.azurewebsites.net/</string>
+		<string>https://wdorderonlineapitest.azurewebsites.net/</string>
 	</dict>
 	<key>Release</key>
 	<dict>

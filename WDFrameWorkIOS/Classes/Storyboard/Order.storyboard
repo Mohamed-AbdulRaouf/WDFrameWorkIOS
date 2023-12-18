@@ -1841,7 +1841,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-2c-YkJ">
-                                                    <rect key="frame" x="20" y="20" width="374" height="116"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="3XF-22-AGG"/>
@@ -1850,30 +1850,31 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SY-mx-ugH">
-                                                    <rect key="frame" x="172" y="166" width="70" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEu-6Y-Boc">
+                                                    <rect key="frame" x="147" y="145" width="120" height="51"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="8La-XP-RGV"/>
-                                                        <constraint firstAttribute="width" constant="70" id="If6-Y9-UJc"/>
+                                                        <constraint firstAttribute="height" constant="51" id="2p1-mK-HLM"/>
+                                                        <constraint firstAttribute="width" constant="120" id="4c7-01-898"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="submit"/>
                                                     <connections>
-                                                        <action selector="onSubmitRateTapped:" destination="2VM-vy-k8h" eventType="touchUpInside" id="qGb-bU-c4z"/>
+                                                        <action selector="submitRateTappedBtn:" destination="2VM-vy-k8h" eventType="touchUpInside" id="f3W-1u-da9"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4SY-mx-ugH" firstAttribute="top" secondItem="Cyt-2c-YkJ" secondAttribute="bottom" constant="30" id="1Ub-gv-1R2"/>
+                                                <constraint firstItem="VEu-6Y-Boc" firstAttribute="top" secondItem="Cyt-2c-YkJ" secondAttribute="bottom" constant="25" id="6Zv-sC-Fd8"/>
+                                                <constraint firstItem="VEu-6Y-Boc" firstAttribute="centerX" secondItem="Cyt-2c-YkJ" secondAttribute="centerX" id="9QM-DB-S8O"/>
                                                 <constraint firstItem="Cyt-2c-YkJ" firstAttribute="top" secondItem="cBt-pJ-A53" secondAttribute="top" constant="20" id="CdP-7B-9km"/>
+                                                <constraint firstAttribute="bottom" secondItem="VEu-6Y-Boc" secondAttribute="bottom" constant="10" id="Mcu-JU-XjL"/>
                                                 <constraint firstAttribute="trailing" secondItem="Cyt-2c-YkJ" secondAttribute="trailing" constant="20" id="Mjf-4M-WXv"/>
-                                                <constraint firstItem="4SY-mx-ugH" firstAttribute="centerX" secondItem="cBt-pJ-A53" secondAttribute="centerX" id="Tmo-YV-iyT"/>
                                                 <constraint firstItem="Cyt-2c-YkJ" firstAttribute="leading" secondItem="cBt-pJ-A53" secondAttribute="leading" constant="20" id="rSf-mk-Wih"/>
-                                                <constraint firstAttribute="bottom" secondItem="4SY-mx-ugH" secondAttribute="bottom" constant="10" id="szX-hh-Gfd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentTextView" destination="Cyt-2c-YkJ" id="HVd-8H-9pc"/>
-                                            <outlet property="submitButton" destination="4SY-mx-ugH" id="RfK-Cq-FhJ"/>
+                                            <outlet property="submitRateBtn" destination="VEu-6Y-Boc" id="31v-bV-6AF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

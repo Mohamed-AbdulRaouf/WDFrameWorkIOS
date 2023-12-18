@@ -22,6 +22,11 @@ class K{
 
 //MARK: - CONFIGURATION
 class Config {
+    // Debug Base Url
+    // https://wdorderonlineapitest.azurewebsites.net
+    // Pro
+    // https://wdorderonlineapi.azurewebsites.net
+    
     static var TestUserPhoneNumber: String {
         return "01004276126"
     }
@@ -39,7 +44,7 @@ class Config {
     }
     
     static var PayMobIntegrationID: Int {
-        return 3694576
+        return 3694576 // debug 3694576 // production 4371443
     }
     
     static var PayMobApiKey: String {

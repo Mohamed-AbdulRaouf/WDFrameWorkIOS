@@ -201,6 +201,7 @@ extension CheckOutViewController {
                     return
                 }
                 UserDefaultsApp.shared.orderPayID = "\(orderID)"
+                UserDefaultsApp.shared.orderID = orderID
                 self.paymentKeyRequest()
             case .failure(let error):
                 debugPrint(error.localizedDescription)
