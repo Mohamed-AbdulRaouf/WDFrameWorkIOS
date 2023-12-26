@@ -32,8 +32,6 @@ class RateOrderCommentTableViewCell: UITableViewCell {
     }
     func configureCell(_ comment: String,_ isOrderRatedBefore: Bool){
         self.submitRateBtn.titleLabel?.font = FONT_PRIMARY_BUTTON
-        self.submitRateBtn.setTitleColor(COLOR_BUTTON_TEXT, for: .normal)
-        self.submitRateBtn.layer.cornerRadius = 5
         self.submitRateBtn.setTitle(R.string.localizable.submit(), for: .normal)
         self.commentTextView.layer.cornerRadius = 5
         self.commentTextView.addShadow()

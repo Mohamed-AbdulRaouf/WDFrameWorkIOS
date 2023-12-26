@@ -1852,12 +1852,21 @@
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEu-6Y-Boc">
                                                     <rect key="frame" x="147" y="145" width="120" height="51"/>
+                                                    <color key="backgroundColor" name="MainColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="51" id="2p1-mK-HLM"/>
                                                         <constraint firstAttribute="width" constant="120" id="4c7-01-898"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="submit"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="submit">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="submitRateTappedBtn:" destination="2VM-vy-k8h" eventType="touchUpInside" id="f3W-1u-da9"/>
                                                     </connections>

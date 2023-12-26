@@ -61,7 +61,7 @@ extension RateOrderViewController : UITableViewDelegate,UITableViewDataSource {
         return self.viewModel?.getCellHeight(atIndexPath: indexPath) ?? 0.0
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60 //UITableView.automaticDimension
+        return 90 //UITableView.automaticDimension
     }
 }
 
