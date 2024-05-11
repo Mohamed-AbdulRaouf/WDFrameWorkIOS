@@ -39,35 +39,17 @@ class BrandHeaderInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.viewModel?.viewDidLoad(model)
         self.selectionStyle = .none
         guard let viewModel = viewModel else { return }
-       
         [directionButton,shareButton].forEach {
             $0?.layer.cornerRadius = 30
             $0?.layer.borderWidth = 3
             $0?.layer.borderColor = COLOR_ACCENT.cgColor
         }
-        
-         shareButton.setImage(viewModel.shareImage, for: .normal)
-        
-         directionButton.setImage(viewModel.directionImage, for: .normal)
-        
-        if let brandBackgroundImg = viewModel.brandImageResource as? ImageResource{
-            self.brandBackgroundImageView.kf.setImage(with: brandBackgroundImg)
-        }else{
-            self.brandBackgroundImageView.image = viewModel.brandImageResource as? UIImage
-        }
-        
-       
-       
-//        self.brandDetailsLabel.text = viewModel.cuisine
-//        self.brandNameLabel.text = viewModel.brandName
-//        self.rateView.rating = viewModel.rating
-//        self.rateView.isUserInteractionEnabled = viewModel.isUserCanRate
-//        self.rateView.text = viewModel.ratingText
+        shareButton.setImage(viewModel.shareImage, for: .normal)
+        directionButton.setImage(viewModel.directionImage, for: .normal)
+        self.brandBackgroundImageView.image = viewModel.brandImageResource as? UIImage
         self.shareButton.isHidden = viewModel.isHiddedShareButton
-        
-        
-        
     }
+    
     @IBAction func onDirectionTapped(_ sender: Any) {
           self.onTappedDirection!()
     }
