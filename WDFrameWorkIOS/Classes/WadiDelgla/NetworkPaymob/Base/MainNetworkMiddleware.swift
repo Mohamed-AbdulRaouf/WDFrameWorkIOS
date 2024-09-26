@@ -16,9 +16,6 @@ class MainNetworkMiddleware: RequestInterceptor {
         var urlRequest = urlRequest
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        if let token = UserDefaultsService.sharedInstance.authToken {
-//            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-//        }
         completion(.success(urlRequest))
     }
     

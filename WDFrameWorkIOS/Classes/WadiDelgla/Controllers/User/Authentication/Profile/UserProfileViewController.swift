@@ -255,7 +255,6 @@ extension UserProfileViewController : LoginProtocol{
     }
     func onDismissLogin() {
         guard UserDefaults.user == nil else { return }
-//         self.openLogin()
         self.tabBarController?.selectedIndex = 0
 
     }

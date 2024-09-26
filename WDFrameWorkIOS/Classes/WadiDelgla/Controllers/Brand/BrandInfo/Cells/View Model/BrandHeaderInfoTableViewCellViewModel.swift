@@ -9,7 +9,7 @@
 import Foundation
 import Bond
 import Kingfisher
-//import DAL
+
 protocol IBrandHeaderInfoTableViewCellViewModel: IBaseViewModel {
      var shareImage : UIImage! { get set }
     var directionImage: UIImage! {get set}

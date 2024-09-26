@@ -21,11 +21,6 @@ public class OrderValidationManagerBLL : IValidationManagerBLL{
     
     public  func validate(model: ISTCheckoutOrderDTODAL) -> Bool {
         return true
-//        if !validateUserAddressId(userAddressId: model.selectedAddressId){
-//            return false
-//         }else{
-//             return true
-//        }
     }
     
 }

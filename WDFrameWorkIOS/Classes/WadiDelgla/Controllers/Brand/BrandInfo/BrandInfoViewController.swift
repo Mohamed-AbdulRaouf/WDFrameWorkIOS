@@ -14,7 +14,7 @@ class BrandInfoViewController: STUIViewController ,IBaseController{
     typealias T = IBrandInfoViewModel
     var viewModel: IBrandInfoViewModel?
     var numberOfRows = 0
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuButton: UIButton!
@@ -68,19 +68,16 @@ extension BrandInfoViewController: UITableViewDelegate,UITableViewDataSource,IBa
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 200
         }else if indexPath.row == 1{
             return self.viewModel?.brand?.contractTypeId.value == ContractType.loyality.contractTypeId ? 145 : 0
         }
-//        else if indexPath.row == 2{
-//            return 140
-//        }
         else {
-            return 200 // UITableView.automaticDimension
+            return 200
         }
     }
     
@@ -105,13 +102,7 @@ extension BrandInfoViewController: UITableViewDelegate,UITableViewDataSource,IBa
             guard let brand = self.viewModel?.brand else {return cell}
             cell.configureCell(brand)
             return cell
-//        }else if indexPath.row == 2 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "BrandFacilitiesTableViewCell", for: indexPath) as! BrandFacilitiesTableViewCell
-//            guard let facilities = self.viewModel?.brand?.facilities.value else {return cell}
-//            cell.configureCell(facilities)
-//            return cell
-            
-        }else{
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BrandDeliveryInfoTableViewCell", for: indexPath) as! BrandDeliveryInfoTableViewCell
             
             guard let brand = self.viewModel?.brand else {return cell}
@@ -135,7 +126,7 @@ extension BrandInfoViewController: UITableViewDelegate,UITableViewDataSource,IBa
 
 // MARK: - IBrandInfoViewController Protocol
 extension BrandInfoViewController : IBrandInfoViewController{
-   
+    
     func onReloadTableView() {
         self.tableView.reloadData()
     }
@@ -155,19 +146,19 @@ extension BrandInfoViewController : IBrandInfoViewController{
         let vc = StoryboardScene.Location.nearResturantsLocationsViewController.instantiate()
         vc.viewModel?.brandId = self.viewModel?.brand?.brandId.value ?? 0
         self.navigationController?.pushViewController(vc)
-
+        
     }
     func openLogin(){
         let vc = StoryboardScene.User.loginViewController.instantiate()
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
-
+        
     }
     func openNotificationList() {
         let vc = StoryboardScene.Features.notificationListViewController.instantiate()
         vc.viewModel?.requestDTO?.brandId.value = self.viewModel?.brand?.brandId.value
         self.navigationController?.pushViewController(vc)
-
+        
     }
 }
 

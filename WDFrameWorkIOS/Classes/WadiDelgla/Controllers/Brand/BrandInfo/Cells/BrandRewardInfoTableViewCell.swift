@@ -10,7 +10,7 @@ import UIKit
 //import DAL
 class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
     typealias T = IBrandDTODAL
-
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var redeemAmountLabel: UILabel!
@@ -24,21 +24,21 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
     @IBOutlet weak var rewardTitleLabel: UILabel!
     @IBOutlet weak var headerTitleLabel: UILabel!
     var onLoginTap : (() -> Void)?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func configureCell(_ model:IBrandDTODAL) {
-         loginButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 10
         self.selectionStyle = .none
-
+        
         self.setupHeaderTitle()
         self.rewardTitleLabel.text = "Rewards".localized()
         self.balanceTitleLabel.text = "balance".localized()
@@ -46,9 +46,6 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.loginButton.setTitle("view_balance_info".localized(), for: .normal)
         self.loginView.alpha = UserDefaults.user == nil ? 0.8 : 0.0
         self.loginButton.isHidden = !(UserDefaults.user == nil)
-        
-        
-        
         self.rewardAmountLabel.text = "\(model.equivalentRewardPointsAmount.value ?? 0.0) \(model.currency.value ?? "")"
         self.balanceAmountLabel.text = "\(model.equivalentPointsAmount.value ?? 0.0) \(model.currency.value ?? "")"
         self.redeemAmountLabel.text = "\(model.equivalentRedeemPointsAmount.value ?? 0.0) \(model.currency.value ?? "")"
@@ -86,10 +83,7 @@ class BrandRewardInfoTableViewCell: UITableViewCell ,IBaseTableViewCell{
             attributedString2 = NSMutableAttributedString(string: " \("Rewards".localized())", attributes:attrs2)
             
         }
-        
-        
         attributedString1.append(attributedString2)
-        
         self.headerTitleLabel.attributedText = attributedString1
         self.headerTitleLabel.setLineSpacing(lineSpacing: 0.5)
         self.headerTitleLabel.textAlignment = .center

@@ -13,7 +13,6 @@ import Kingfisher
 class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
     typealias T = IBrandDTODAL
     
-    
     @IBOutlet weak var equivelantCashLabel: UILabel!
     @IBOutlet weak var bitesLabel: UILabel!
     @IBOutlet weak var getHaveLabel: UILabel!
@@ -23,7 +22,6 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
     @IBOutlet weak var minOrderLabel: UILabel!
     @IBOutlet weak var deliverTimeLabel: UILabel!
     @IBOutlet weak var currentPointsButton: UIButton!
-//    @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var onlineOrderLabel: UILabel!
     
     @IBOutlet weak var paymentLabel: UILabel!
@@ -61,41 +59,24 @@ class BrandTableViewCell: UITableViewCell ,IBaseTableViewCell{
             facilities += " \(facility)"
         })
         self.serviceLabel.text = facilities
-        
-//        self.ratingView.rating = Double(model.ratingValue.value ?? 0)
-//        self.ratingView.text = "(\(model.numberOfUserRate.value ?? 0))"
-        
         self.deliverTimeLabel.setupAttributes(APP_FONT_BOLD12, withSize: 12, .black, "\("delivery_time".localized()) : ", APP_FONT_BOLD12, withSize: 12, .black, "\(model.estimatedDeliveryTime.value ?? 0) \("minute".localized())")
         
         self.minOrderLabel.setupAttributes(APP_FONT_BOLD10, withSize: 10, COLOR_PRIMARY_TEXT, "\("min_order_to_deliver".localized()): ", APP_FONT_REGULAR, withSize: 10, COLOR_PRIMARY_TEXT, "\(model.minOrderValueToDeliver.value ?? 0) \(model.currency.value ?? "")")
-        
-//        self.paymentLabel.font = APP_FONT_BOLD12 //UIFont.init(resource: APP_FONT_BOLD, size: 10)
-        
-        
         if model.isOnLinePayment.value ?? false {
-            self.paymentLabel.text = "cod_online".localized() //NSLocalizedString("COD & Online", comment: "COD & Online")
+            self.paymentLabel.text = "cod_online".localized()
         } else {
-            self.paymentLabel.text = "COD".localized() //NSLocalizedString("COD", comment: "COD")
+            self.paymentLabel.text = "COD".localized()
         }
         
-        
-        self.getHaveLabel.font = APP_FONT_REGULAR10 //UIFont.init(resource: APP_FONT_REGULAR, size: 10)
-        
-        self.bitesLabel.font = APP_FONT_BOLD13 //UIFont.init(resource: APP_FONT_BOLD, size: 13)
+        self.getHaveLabel.font = APP_FONT_REGULAR10
+        self.bitesLabel.font = APP_FONT_BOLD13
         self.bitesLabel.textColor = .darkGray
-        
-        
-        
         self.equivelantCashLabel.font = APP_FONT_REGULAR10 //UIFont.init(resource: APP_FONT_REGULAR, size: 10)
         self.equivelantCashLabel.text = "\(model.equivalentPointsAmount.value ?? 0) \(model.currency.value ?? "")"
-        
-        
-        
+
         [brandNameLabel,serviceLabel,onlineOrderLabel,paymentLabel,getHaveLabel,equivelantCashLabel].forEach { (label) in
             label?.textColor = .black
         }
-        
-        
         if model.isOnlineOrder.value ?? false {
             self.onlineOrderLabel.text = "online_order".localized()
             self.onlineOrderLabel.font = APP_FONT_REGULAR //UIFont.init(resource: APP_FONT_REGULAR, size: 14)

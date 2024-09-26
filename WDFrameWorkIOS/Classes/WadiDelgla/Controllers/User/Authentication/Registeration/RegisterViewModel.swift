@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol IRegisterViewModel: IBaseViewModel {
     
     var user_data : IRegisterDTODAL? {get set}
@@ -21,19 +20,18 @@ protocol IRegisterViewModel: IBaseViewModel {
     func register()
     var delegate: IRegisterViewController? {get set}
     func validateCustomer()
-
+    
 }
 class RegisterViewModel: IRegisterViewModel{
-     weak var delegate: IRegisterViewController?
-     var user_data: IRegisterDTODAL?
+    weak var delegate: IRegisterViewController?
+    var user_data: IRegisterDTODAL?
     var country_data: ICountryDTODAL?
-     var apiClient: UserServiceBLL?
-     var errorModel : IRegisterValidationDTOBLL?
+    var apiClient: UserServiceBLL?
+    var errorModel : IRegisterValidationDTOBLL?
     public  init (user_data : IRegisterDTODAL ,apiClient: UserServiceBLL,errorModel : IRegisterValidationDTOBLL){
         self.user_data = user_data
         self.errorModel = errorModel
         self.apiClient = apiClient
-//        self.country_data = country_data
     }
     
     /// This Function to call register API with registeration data
@@ -52,30 +50,17 @@ class RegisterViewModel: IRegisterViewModel{
             self.apiClient?.register(self.user_data!, hintNumber: self.country_data!.hintNumber.value) { (response) in
                 doOnMain {
                     self.validateCustomer()
-//                    self.hideHUD()
-//                    guard let _ = response?.data else {
-//                        self.errorModel = response?.error?.validateError as? IRegisterValidationDTOBLL
-////                        self.delegate?.onUpdateLayout()
-//                        if response?.error?.APIError != nil {
-////                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
-//                        }
-//                        return
-//                    }
-//                    self.delegate?.successfullyRegister()
                 }
             }
         }
     }
     
     func validateCustomer() {
-//        self.showHud()
-//        doInBackground {
         self.apiClient?.validateCustomer(GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry, "12", 0) { (response) in
-                doOnMain {
-                    self.hideHUD()
-                    self.delegate?.successfullyRegister()
-                }
+            doOnMain {
+                self.hideHUD()
+                self.delegate?.successfullyRegister()
             }
-//        }
+        }
     }
 }

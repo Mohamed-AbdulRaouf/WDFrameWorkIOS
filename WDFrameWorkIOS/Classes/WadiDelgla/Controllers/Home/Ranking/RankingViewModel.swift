@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol IRankingViewModel: IBaseViewModel {
     
     var apiClient: UserServiceBLL? { get set }

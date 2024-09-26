@@ -15,8 +15,6 @@ public class MainStoryboardScene {
     public init() {}
 
     public func splashViewControllerVC() -> UIViewController {
-//        let main = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = main.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
         return StoryboardScene.Main.splashViewController.instantiate()
     }
 
@@ -81,9 +79,7 @@ public class MenuStoryboardScene {
 
     public func menuVC() -> UIViewController {
         let vc = StoryboardScene.Menu.menuViewController.instantiate()
-//        K.shared.SELECTED_BRAND = self.viewModel?.brand
-//        self.navigationController?.pushViewController(vc)
-        return  vc //StoryboardScene.Menu.menuViewController.instantiate()
+        return vc
     }
 
     public func productVC() -> UIViewController {

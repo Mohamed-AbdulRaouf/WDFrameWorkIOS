@@ -9,10 +9,8 @@
 import UIKit
 //import DAL
 class BrandFacilitiesTableViewCell: UITableViewCell ,IBaseTableViewCell{
-   
     
     typealias T = [IFacilityDTODAL]
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -29,19 +27,19 @@ class BrandFacilitiesTableViewCell: UITableViewCell ,IBaseTableViewCell{
         self.headerTitleLabel.text = R.string.localizable.facilities()
         self.headerTitleLabel.textColor = COLOR_PRIMARY_TEXT
         self.selectionStyle = .none
-
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func configureCell(_ model: [IFacilityDTODAL]) {
         self.facilities = model
         self.collectionView.reloadData()
     }
-
+    
 }
 ////MARK:- CitiesCollectionDataSource
 extension BrandFacilitiesTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -51,7 +49,6 @@ extension BrandFacilitiesTableViewCell : UICollectionViewDelegate,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        var cell = UICollectionViewCell()
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandFacilityCollectionCell", for: indexPath) as! BrandFacilityCollectionCell
         
         cell.configureCell((facilities?[indexPath.row])!)
@@ -73,6 +70,3 @@ extension BrandFacilitiesTableViewCell : UICollectionViewDelegate,UICollectionVi
         return 0
     }
 }
-
-
-

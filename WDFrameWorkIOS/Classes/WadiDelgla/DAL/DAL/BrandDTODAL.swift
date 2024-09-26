@@ -303,15 +303,8 @@ public  class BrandDTODAL : IBrandDTODAL,Codable{
         try container.encode(contractTypeId.value, forKey: .contractTypeId)
         try container.encode(deliveryAtStore.value, forKey: .deliveryAtStore)
         try container.encode(usingLocationService.value, forKey: .usingLocationService)
-
-//        try container.encode(customerOrders.value, forKey: .customerOrders)
-
-        //           public var facilities: Observable<[IFacilityDTO]?> = Observable<[IFacilityDTO]?>(nil)
-        //
-        //           public var cuisines: Observable<[ICuisinesDTO]?> = Observable<[ICuisinesDTO]?>(nil)
-        //
-        //           public var customerOrders: Observable<[IBaseOrderDTO]?> = Observable<[IBaseOrderDTO]?>(nil)
     }
+    
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

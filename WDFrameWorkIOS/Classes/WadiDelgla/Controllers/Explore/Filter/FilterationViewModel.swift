@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol IFilterationViewModel: IBaseViewModel {
     var onReloadTable :  (() -> Void)? { get set }
     var filterationList :IFilterationListDTODAL? {get set}
@@ -24,7 +23,7 @@ protocol IFilterationViewModel: IBaseViewModel {
 }
 class FilterationViewModel: IFilterationViewModel{
     var model: [IFilterationSectionDTODAL]? = []
-   weak var delegate: IFilterProtocol?
+    weak var delegate: IFilterProtocol?
     var onReloadTable: (() -> Void)?
     var filterationList :IFilterationListDTODAL?
     var selectedCuisine: [String]?
@@ -56,7 +55,6 @@ class FilterationViewModel: IFilterationViewModel{
                 for item in selectedC {
                     selectedCuisine?.append(String(item.id.value ?? 0))
                 }
-//                UserDefaults.recentCuisineFilterSearches = selectedCuisine
             }
             //facilities
             let selectedF = model?.first(where: {$0.type.value == "F"})?.items.value?.filter({$0.isSelected.value!})
@@ -65,7 +63,6 @@ class FilterationViewModel: IFilterationViewModel{
                 for item in selectedF {
                     selectedFacilities?.append(String(item.id.value ?? 0))
                 }
-//                UserDefaults.recentFaciltiesFilterSearches = selectedFacilities
             }
             self.delegate?.setSelectedFacilityAndCusinies(self.selectedCuisine ?? [], self.selectedFacilities ?? [])
         }

@@ -81,46 +81,7 @@ class MainNetworkPaymob: RequestInterceptor {
             return .failure(error)
         }
     }
-    
-//    fileprivate func process<T>(response: AFDataResponse<Any>, decodedTo type: T.Type) -> AFResult<T> where T: Codable {
-//        switch response.result {
-//        case .success:
-//
-//            guard let data = response.data else {
-//                if willPrint { debugPrint("=======DEBUG=NETWORK=============Request has no data") }
-//                return .failure(NSError.create(description: "server_error"))
-//            }
-//
-//            do {
-//                let data = try JapxDecoder().decode(type, from: data)
-//                if willPrint {
-//                    debugPrint("=======DEBUG=NETWORK=============Request DATA")
-//                    dump(data)
-//                }
-//                return .success(data)
-//            } catch {
-//                if willPrint {
-//                    debugPrint("=======DEBUG=NETWORK=============Request DECODING ERROR")
-//                    debugPrint(error)
-//                }
-//                return .failure(NSError.create(description: "server_error"))
-//            }
-//
-//        case .failure(let error):
-//
-//            if willPrint {
-//                debugPrint("=======DEBUG=NETWORK=============Request Failure")
-//                debugPrint(error.localizedDescription)
-//            }
-//
-//            if error.localizedDescription.contains("JSON") {
-//                return .failure(NSError.create(description: "server_error"))
-//            }
-//
-//            return .failure(error)
-//        }
-//    }
-    
+        
     func cancelAllRequests() {
         manager.session.getAllTasks { tasks in tasks.forEach { $0.cancel() } }
     }

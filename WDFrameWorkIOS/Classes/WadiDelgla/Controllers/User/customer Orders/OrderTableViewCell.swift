@@ -8,7 +8,6 @@
 
 import UIKit
 import Cosmos
-//import DAL
 import Kingfisher
 import SwifterSwift
 import Bond
@@ -28,10 +27,10 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func configureCell(_ model: IOrderDTODAL) {
@@ -68,7 +67,7 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
             label?.font = APP_FONT_REGULAR12 //UIFont(resource: APP_FONT_REGULAR, size: 12)
             label?.textColor = COLOR_PRIMARY_TEXT
         }
-       
+        
         self.orderStatusLabel.attributedText = setupLabels("\("order_status".localized()) : ", "\(model.orderStatus.value ?? "")", UIColor.init(hexString: String(model.colorCode.value?.dropFirst() ?? "")) ?? COLOR_PRIMARY_TEXT)
         self.orderStatusLabel.font = APP_FONT_REGULAR10
         
@@ -78,10 +77,8 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
         }
     }
     func setupLabels(_ str1:String,_ str2:String ,_ strColor  : UIColor) -> NSMutableAttributedString {
-//        let attrs1 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_REGULAR, size: 12), NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         let attrs1 = [NSAttributedString.Key.font : APP_FONT_REGULAR10, NSAttributedString.Key.foregroundColor : COLOR_PRIMARY_TEXT]
         
-//        let attrs2 = [NSAttributedString.Key.font : UIFont(resource: APP_FONT_BOLD, size: 13), NSAttributedString.Key.foregroundColor : strColor]
         let attrs2 = [NSAttributedString.Key.font : APP_FONT_REGULAR10, NSAttributedString.Key.foregroundColor : strColor]
         
         let attributedString1 = NSMutableAttributedString(string:str1, attributes:attrs1)
@@ -96,19 +93,19 @@ class OrderTableViewCell: UITableViewCell,IBaseTableViewCell {
     }
     
     func getRequiredFormat(dateStrInTwentyFourHourFomat: String) -> String? {
-
+        
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-
+        
         if let newDate = dateFormatter.date(from: dateStrInTwentyFourHourFomat) {
-
+            
             let timeFormat = DateFormatter()
             timeFormat.timeZone = TimeZone.autoupdatingCurrent
             timeFormat.locale = Locale(identifier: "en_US_POSIX")
             timeFormat.dateFormat = "hh:mm a"
-
+            
             let requiredStr = timeFormat.string(from: newDate)
             return requiredStr
         } else {

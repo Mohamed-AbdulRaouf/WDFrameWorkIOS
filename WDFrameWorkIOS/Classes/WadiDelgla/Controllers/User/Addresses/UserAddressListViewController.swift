@@ -104,7 +104,6 @@ extension UserAddressListViewController: UITableViewDelegate,UITableViewDataSour
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

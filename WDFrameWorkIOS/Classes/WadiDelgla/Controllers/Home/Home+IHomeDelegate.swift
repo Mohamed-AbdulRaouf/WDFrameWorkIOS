@@ -9,9 +9,6 @@
 import UIKit
 extension HomeViewController : IHomeViewController{
     
-    
-   
-    
     func onReloadTable() {
          self.tableView.reloadData()
     }
@@ -39,7 +36,6 @@ extension HomeViewController : IHomeViewController{
     
     func openExplore() {
         self.tabBarController?.selectedIndex = 1
-//        self.tabBarController?.delegate?.tabBarController!((self.tabBarController)!, didSelect: (self.tabBarController!.selectedViewController!))
     }
     func openNotificationList(){
         let vc = StoryboardScene.Features.notificationListViewController.instantiate()

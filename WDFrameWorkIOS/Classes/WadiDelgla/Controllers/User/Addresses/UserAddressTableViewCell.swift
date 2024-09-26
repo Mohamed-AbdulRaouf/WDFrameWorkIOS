@@ -10,9 +10,6 @@ import UIKit
 //import DAL
 class UserAddressTableViewCell: UITableViewCell,IBaseTableViewCell {
     typealias T = IUserAddressDTODAL
-//    typealias viewModelType = IUserAddressDTO
-
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var addressIndexButton: UIButton!
     @IBOutlet weak var apartmentNoLabel: UILabel!

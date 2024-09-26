@@ -9,10 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
-//import KashierPaymentSDK
+
 protocol IBrandInfoViewModel: IBaseViewModel {
     var cellModels: Property<[IBrandHeaderInfoTableViewCellViewModel]>? { get }
     var apiClient: BrandServiceBLL? { get set }
@@ -79,5 +77,5 @@ class BrandInfoViewModel: IBrandInfoViewModel{
             self.delegate?.openLogin()
         }
     }
-
+    
 }

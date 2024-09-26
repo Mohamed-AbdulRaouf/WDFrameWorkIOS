@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 public protocol IQRViewModel: IBaseViewModel {
     
     var onSuccessReadQRCode: (() -> Void)? { get set }
@@ -35,11 +34,7 @@ class QRViewModel: IQRViewModel{
                 let areaId  = fullAddressArr[2]
                 let cityId = fullAddressArr[1]
                 let streetName = fullAddressArr[0]
-#warning("check from code")
-//                UserDefaults.currentArea = SearchItemDTODAL(id:areaId,name:areaId)
-//                UserDefaults.currentCity = SearchItemDTOModelDAL(id:cityId,name:cityId)
                 UserDefaults.streetName = streetName
-                
             }
            
             self.hideHUD()

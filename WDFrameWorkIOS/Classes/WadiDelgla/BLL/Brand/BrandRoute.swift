@@ -21,7 +21,6 @@ enum BrandRouteBLL: URLRequestBuilderBLL {
     case readNotification(notificationId: String)
     case getBrandInfoById(brandId: String)
     case getBrandLocationsByAreaId(areaId: String, brandId: String)
-//    case getServiceList
     case getBrandList(requestBrandDTO: IRequestBrandDTODAL)
     case getBrandFilterationList
     case getBrandsNotificationsCount(brandId: Int)
@@ -47,8 +46,6 @@ enum BrandRouteBLL: URLRequestBuilderBLL {
             return .GET_BRAND_INFO_BY_ID
         case .getBrandLocationsByAreaId:
             return .GET_BRAND_LOCATION_BY_AREA_ID
-//        case .getServiceList:
-//            return .BET_BRAND_SERVICES
         case .getBrandList:
             return .GET_BRAND_LIST
         case .getBrandFilterationList:
@@ -77,12 +74,6 @@ enum BrandRouteBLL: URLRequestBuilderBLL {
     }
     internal var headers: HTTPHeaders {
         let default_headers = defaultHeaders
-//           switch self {
-//           case  .getAdList,.getBranchsNearBy,.getBrandsNotifications,.getBrandNotifications,.removeNotification,.readNotification:
-//               break
-//           default:
-//               break
-//           }
            return default_headers
        }
     internal var urlParameters: [String]? {
@@ -153,12 +144,8 @@ enum BrandRouteBLL: URLRequestBuilderBLL {
             params.append(["pageIndex" : "\(requestBrandDTO.pageIndex.value ?? "")"])
             params.append(["pageSize" : "\(requestBrandDTO.pageSize.value ?? "")"])
             if let brandName = requestBrandDTO.brandName.value, brandName != "" {
-//                params.append(["brandName" : "\(requestBrandDTO.brandName.value ?? "")"])
                 params.append(["brandName" : "\(brandName)"])
-
             }
-//
-//             params.append("\(requestBrandDTO.brandName.value != "" ? "&brandName=\(requestBrandDTO.brandName.value ?? "")" : "&brandName")")
 
         default:break
         }

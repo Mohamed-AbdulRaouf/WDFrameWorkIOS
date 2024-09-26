@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-//import DAL
+
 class QRcodeViewController: QRController,IBaseController{
     
     // MARK: - Properties
@@ -139,28 +139,6 @@ extension QRcodeViewController{
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         if supportedBarCodes.contains(metadataObj.type) {
             self.captureSession?.stopRunning()
-            
-//            let deleteAction =  UIAlertAction(title: R.string.localizable.ok(), style: .default) { (dialog) in
-//
-//            }
-//                
-//
-//            
-//            let fullAddressArr = metadataObj.stringValue?.components(separatedBy: ",") ?? []
-//            if fullAddressArr.count > 0 {
-//                let areaId  = fullAddressArr[1]
-//                let cityId = fullAddressArr[2]
-//                let streetName = fullAddressArr[0]
-//                
-//                UserDefaults.currentArea = SearchItemDTO(id:areaId,name:areaId)
-//                UserDefaults.currentCity = SearchItemDTO(id:cityId,name:cityId)
-//                UserDefaults.streetName = streetName
-//                
-////                self.showAlert(withTitle: metadataObj.stringValue!, andMessage: "area id = \(areaId) & city id = \(cityId) & strret name = \(streetName)" , withActions: [deleteAction], withCancel: true)
-//
-//                
-//            }
-            
         }
         self.viewModel?.saveAddressInfo( metadataObj.stringValue!)
         }

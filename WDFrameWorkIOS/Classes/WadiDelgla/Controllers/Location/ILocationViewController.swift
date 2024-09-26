@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import DAL
+
 protocol ILocationViewController:ICommonFunc {
     func openHome()
     func onSuccessLoadCitiesAndAreas(_ cities: [CityDTODAL])

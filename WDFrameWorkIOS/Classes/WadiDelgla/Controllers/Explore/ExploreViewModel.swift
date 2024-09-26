@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol IExploreViewModel: IBaseViewModel {
     var apiClient: BrandServiceBLL? { get set }
     var userService: UserServiceBLL? { get set }
@@ -22,7 +21,7 @@ protocol IExploreViewModel: IBaseViewModel {
     var brandInfo :IBrandDTODAL? {get set}
     func getServices()
     func getBrandList()
-     func initdata()
+    func initdata()
     func handleCusiniesAndFacilitiesData()
     func selectSort(atIndex index:Int)
     func setCusiniesAndFacilities(_ cusinies: [String], _ facilities: [String])
@@ -77,7 +76,7 @@ class ExploreViewModel: IExploreViewModel{
     }
     func getServices() {
         self.showHud()
-         self.filterAndSeviceList = nil
+        self.filterAndSeviceList = nil
         doInBackground {
             self.apiClient?.getBrandFilterationAndServicesList() { (response) in
                 doOnMain {
@@ -121,20 +120,17 @@ class ExploreViewModel: IExploreViewModel{
     func checkIfChangeLoyalty(){
         if self.requestBrandDTO?.brandsMe.value != ((TabsData.sharedInstance.isLoyality ?? false ) ? 1 : 0 ){
             self.brand = nil
-//            self.brand?.items.value?.removeAll()
             self.requestBrandDTO?.brandsMe.value = (TabsData.sharedInstance.isLoyality ?? false ) ? 1 : 0
             self.getBrandList()
         }
     }
     func selectSort(atIndex index:Int){
         self.brand = nil
-//        self.brand?.items.value?.removeAll()
         self.requestBrandDTO?.sortID.value = self.filterAndSeviceList?.sortList.value?[index].id.value ?? "0"
         self.getBrandList()
     }
     func setCusiniesAndFacilities(_ cusinies: [String], _ facilities: [String]){
         self.brand = nil
-//        self.brand?.items.value?.removeAll()
         UserDefaults.recentCuisineFilterSearches = cusinies
         UserDefaults.recentFaciltiesFilterSearches = facilities
         self.handleCusiniesAndFacilitiesData()
@@ -165,8 +161,8 @@ class ExploreViewModel: IExploreViewModel{
                         return
                     }
                     self.delegate?.onShowToast("success_register_to_brand".localized())
-                        self.initdata()
-                     self.delegate?.onReloadTableView()
+                    self.initdata()
+                    self.delegate?.onReloadTableView()
                     self.getBrandList()
                     
                 }

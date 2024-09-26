@@ -16,8 +16,6 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource,UITe
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
-        
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 { return ""}
@@ -94,24 +92,12 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource,UITe
             }
             cell.checkTapAction = { [weak self]
                 (isOn) in
-                //                self?.viewModel?.product?.sizes.value?[(self?.viewModel?.selectedSizeIndex!)!].choiceGroups.value?[indexPath.section - 2].choices.value?[indexPath.row].isSelectedChoice.value = isOn
-                
                 self?.viewModel?.onChoiceTappedAtIndex(indexPath,isOn)
-                
             }
             return cell
             
         }
         
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 1{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductSizeTableViewCell", for: indexPath) as! ProductSizeTableViewCell
-//            cell.onSelectedSize = { [weak self] in
-//                self?.viewModel?.selectedSizeIndex = indexPath.row
-//            }
-////            cell.radioButton.se
-//        }
-//    }
+
 }

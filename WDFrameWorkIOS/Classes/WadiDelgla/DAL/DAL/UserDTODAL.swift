@@ -108,7 +108,6 @@ public class UserDTODAL :BaseUserDTODAL, Codable, IUserDTODAL{
     }
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-//
         super.init()
         self.userId.value =  try container.decodeIfPresent(String.self, forKey: .userId)
         self.code.value = try container.decodeIfPresent(String.self,forKey: .code)

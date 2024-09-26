@@ -13,17 +13,17 @@ class ForgotPasswordVerifyCodeViewController: STUIViewController, IBaseControlle
     // MARK: - Properties
     typealias T = IForgotPasswordVerifyCodeViewModel
     var viewModel: IForgotPasswordVerifyCodeViewModel?
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var phoneNumberTextField: STErrorTextField!
     @IBOutlet weak var dismissButton: STSkipButton!
     @IBOutlet weak var sendVerifyCodeButton: UIButton!
     @IBOutlet weak var countryCodeButton: UIButton!
-
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //bind UI
         self.addDismissKeyboardTapGesture()
         self.setupUI()
@@ -39,11 +39,11 @@ class ForgotPasswordVerifyCodeViewController: STUIViewController, IBaseControlle
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func onCountryCodeTapped(_ sender: Any) {
-           
-           let vc = StoryboardScene.Features.countryListViewController.instantiate()
-           vc.viewModel?.sourceDelegate = self
-           self.present(vc, animated: true, completion: nil)
-       }
+        
+        let vc = StoryboardScene.Features.countryListViewController.instantiate()
+        vc.viewModel?.sourceDelegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
     // MARK: - Functions
     @objc func updateView(_ notification: Notification){
         self.bindingData()
@@ -74,13 +74,13 @@ extension ForgotPasswordVerifyCodeViewController{
             
         }
         [self.countryCodeButton].forEach {
-                  $0?.titleLabel?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
+            $0?.titleLabel?.font = APP_FONT_REGULAR16 //UIFont(resource: APP_FONT_REGULAR, size: 17)
             $0?.setTitleColor(.black, for: .normal)
-                  $0?.backgroundColor = .white
-                  $0?.layer.cornerRadius = 20
-                  $0?.setTitle("", for: .normal)
-                 
-              }
+            $0?.backgroundColor = .white
+            $0?.layer.cornerRadius = 20
+            $0?.setTitle("", for: .normal)
+            
+        }
         self.phoneNumberTextField.keyboardType = .phonePad
         
         self.phoneNumberTextField.placeholder = R.string.localizable.phone_number()
@@ -90,7 +90,7 @@ extension ForgotPasswordVerifyCodeViewController{
         if let countrylist = K.shared.ALL_AVAILABLE_COUNTRY_LIST,countrylist.count > 0 {
             self.updateCountryCode(country: countrylist[0])
         }
-                
+        
         
     }
     func bindingData(){
@@ -100,40 +100,40 @@ extension ForgotPasswordVerifyCodeViewController{
         }
         
     }
-   
+    
     func updateCountryCode(country: ICountryDTODAL) {
-          self.countryCodeButton.setTitle("\(country.emoji.value ?? "") \(country.dialCode.value ?? "")", for: .normal)
+        self.countryCodeButton.setTitle("\(country.emoji.value ?? "") \(country.dialCode.value ?? "")", for: .normal)
         self.phoneNumberTextField.placeholder = country.hintNumber.value ?? R.string.localizable.phone_number()
-         self.phoneNumberTextField.maxLength = country.hintNumber.value?.count ?? 0
+        self.phoneNumberTextField.maxLength = country.hintNumber.value?.count ?? 0
         self.viewModel?.verificationCodeModel?.countryId = country.countryId
-          self.viewModel?.verificationCodeModel?.dialCode = country.dialCode
-      }
+        self.viewModel?.verificationCodeModel?.dialCode = country.dialCode
+    }
 }
 
 // MARK: - IForgetPasswordViewController Protocol
 extension ForgotPasswordVerifyCodeViewController: IForgetPasswordViewController{
     func onError(_ error: String) {
-            self.bindingData()
-            self.showMessage(andMessage: error)
+        self.bindingData()
+        self.showMessage(andMessage: error)
     }
     
     func onUpdateLayout() {
         self.bindingData()
     }
     
-   func onSuccess(_ model :IAuthPhoneNumberDTODAL) {
+    func onSuccess(_ model :IAuthPhoneNumberDTODAL) {
         self.bindingData()
         self.dismiss(animated: true, completion: {
             showResetPasswordVC(model)
         })
     }
-  
+    
 }
 
 // MARK: - CountrySelectorDelegate Protocol
 extension ForgotPasswordVerifyCodeViewController: CountrySelectorDelegate {
     func selectCountry(country: ICountryDTODAL) {
         self.updateCountryCode(country: country)
-
+        
     }
 }

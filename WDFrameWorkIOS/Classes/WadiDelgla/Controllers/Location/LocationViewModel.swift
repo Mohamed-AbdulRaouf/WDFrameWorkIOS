@@ -7,8 +7,7 @@
 //
 
 import Foundation
-//import DAL
-//import BLL
+
 protocol ILocationViewModel: IBaseViewModel {
     
     var apiClient: LocationServiceBLL? { get set }
@@ -17,7 +16,7 @@ protocol ILocationViewModel: IBaseViewModel {
     var currentCity: SearchItemDTOModelDAL? {get set}
     var currentArea: SearchItemDTOModelDAL? {get set}
     var delegate: ILocationViewController? {get set}
-   
+    
     func validateOnChangeLocation()
     func validateOnCartHasItems()
     func validateOnCartHasItemsForCountry(country: ICountryDTODAL)
@@ -31,7 +30,7 @@ class LocationViewModel: ILocationViewModel{
     var cartService: CartServiceBLL?
     var currentCity: SearchItemDTOModelDAL? {
         get{
-           return UserDefaults.currentCity
+            return UserDefaults.currentCity
         }
         set{
             UserDefaults.currentCity = newValue
@@ -40,7 +39,7 @@ class LocationViewModel: ILocationViewModel{
     
     var currentArea: SearchItemDTOModelDAL?{
         get{
-             return UserDefaults.currentArea
+            return UserDefaults.currentArea
         }
         set{
             UserDefaults.currentArea = newValue
@@ -50,9 +49,9 @@ class LocationViewModel: ILocationViewModel{
     
     var apiClient: LocationServiceBLL?
     
- 
+    
     var onUpdateUserSuccessfully : (() -> Void)?
-     var oldCityId : String?
+    var oldCityId : String?
     var oldCountryId: String?
     
     
@@ -78,7 +77,7 @@ class LocationViewModel: ILocationViewModel{
                         }
                         return
                     }
-                  
+                    
                     self.delegate?.onSuccessLoadCitiesAndAreas(data as! [CityDTODAL])
                 }
             }
@@ -97,7 +96,7 @@ class LocationViewModel: ILocationViewModel{
             self.delegate?.reloadData()
         }
     }
-     
+    
     func validateOnChangeLocation(){
         guard let currentCity = currentCity , let currentArea = currentArea else{
             self.delegate?.onError("select_city_and_area_msg".localized())
@@ -106,29 +105,29 @@ class LocationViewModel: ILocationViewModel{
         if let order = UserDefaults.order, let oldCityId = oldCityId, let oldCountryId = UserDefaults.currentArea?.id.value {
             if oldCityId != currentCity.id.value ?? "" || oldCountryId != "\(Int(order.selectedAreaId))" {
                 self.delegate?.onShowClearCartAlert()
-               return
-            }
-        }
-       self.delegate?.openHome()
-    }
-     func validateOnCartHasItems(){
-            guard  cartService?.getCart() == nil else{
-                  self.delegate?.onShowClearCartByChangingLanguage()
                 return
             }
-              changeLanguage()
         }
+        self.delegate?.openHome()
+    }
+    func validateOnCartHasItems(){
+        guard  cartService?.getCart() == nil else{
+            self.delegate?.onShowClearCartByChangingLanguage()
+            return
+        }
+        changeLanguage()
+    }
     func validateOnCartHasItemsForCountry(country: ICountryDTODAL) {
-             guard  cartService?.getCart() == nil else{
-                 self.delegate?.onShowClearCartAlert(messageText: "clear_cart_due_to_change_country".localized(), actionButtonText: "clear_cart".localized(), actionButtonClosure: {
-                     self.cartService?.deleteCart(completion: { (success) in
-                         if success {
-                             changeCountry(withCountry: country)
-                         }
-                     })
-                 })
-                 return
-             }
-             changeCountry(withCountry: country)
-         }
+        guard  cartService?.getCart() == nil else{
+            self.delegate?.onShowClearCartAlert(messageText: "clear_cart_due_to_change_country".localized(), actionButtonText: "clear_cart".localized(), actionButtonClosure: {
+                self.cartService?.deleteCart(completion: { (success) in
+                    if success {
+                        changeCountry(withCountry: country)
+                    }
+                })
+            })
+            return
+        }
+        changeCountry(withCountry: country)
+    }
 }

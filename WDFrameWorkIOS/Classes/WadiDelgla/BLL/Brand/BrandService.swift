@@ -19,7 +19,6 @@ public protocol BrandServiceBLL :AnyObject {
     func readNotification(_ notificationId: String,completion: @escaping onSuccessBLL)
     func getBrandInfoById(_ brandId: String,completion: @escaping onSuccessBLL)
     func getBrandLocationsByAreaId(_ areaId: String, brandId: String,completion: @escaping onSuccessBLL)
-//    func getServiceList(completion: @escaping onSuccess)
     func getBrandList(_ requestBrandDTO: IRequestBrandDTODAL, completion: @escaping onSuccessBLL)
     func getBrandFilterationAndServicesList(completion: @escaping onSuccessBLL)
     func getBrandsNotificationsCount(_ brandId: Int,completion: @escaping onSuccessBLL)

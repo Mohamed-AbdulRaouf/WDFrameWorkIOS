@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol ISortViewModel: IBaseViewModel {
     var onReloadTable :  (() -> Void)? { get set }
     var model :[IServiceDTODAL]? {get set}

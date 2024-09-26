@@ -8,14 +8,12 @@
 
 import Foundation
 import UIKit
-//import DAL
+
 extension CountryListViewController : UITableViewDelegate,UITableViewDataSource {
     func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        //        tableView.estimatedRowHeight = 60.0
-        //        tableView.rowHeight = UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
@@ -49,10 +47,10 @@ extension CountryListViewController : UITableViewDelegate,UITableViewDataSource 
         }
         let selectedCountry : ICountryDTODAL
         if self.isFiltering {
-             selectedCountry = self.filteredData[indexPath.row]
+            selectedCountry = self.filteredData[indexPath.row]
             print(selectedCountry)
         } else {
-             selectedCountry = countryList[indexPath.row]
+            selectedCountry = countryList[indexPath.row]
             print(selectedCountry)
         }
         // Close Search Controller keyboard when you select cell
@@ -60,7 +58,7 @@ extension CountryListViewController : UITableViewDelegate,UITableViewDataSource 
             self.dismiss(animated: true, completion: nil)
         }
         self.dismiss(animated: true) {
-                            self.viewModel?.sourceDelegate?.selectCountry(country: selectedCountry)
+            self.viewModel?.sourceDelegate?.selectCountry(country: selectedCountry)
         }
     }
 }

@@ -82,16 +82,8 @@ extension UITextField {
         label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: 0).isActive = true
         label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 0).isActive = true
         label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: 0).isActive = true
-        
-       
-//         superview!.superview!.addSubview(container)
-        self.addSubview(container)
-//        UIApplication.shared.keyWindow!.addSubview(container)
-        
-//        let currentWindow: UIWindow? = UIApplication.shared.keyWindow
-//        currentWindow?.addSubview(container)
 
-        
+        self.addSubview(container)
         // Set constraints for container
         container.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 1).isActive = true
         container.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
@@ -145,7 +137,6 @@ extension UITextField {
         }
         
         // Don't hide keyboard after click by icon
-//        UIViewController.isCatchTappedAround = false
     }
 }
 

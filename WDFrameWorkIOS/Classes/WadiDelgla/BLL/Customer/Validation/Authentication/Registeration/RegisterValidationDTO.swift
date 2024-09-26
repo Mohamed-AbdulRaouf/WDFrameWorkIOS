@@ -20,7 +20,5 @@ public class RegisterValidationDTOBLL : NSObject,IRegisterValidationDTOBLL{
     public var msgPasswordError = Observable<String?>(nil)
     
     public var msgConfirmPasswordError: Observable<String?> = Observable<String?>(nil)
-
-//    public override init() {}
     
 }

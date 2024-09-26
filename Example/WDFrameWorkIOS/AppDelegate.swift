@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
         application.registerForRemoteNotifications()
         self.openMainVC()
-        
+        // for test app
 //        let bundlePath = Bundle(for: TestViewController.self).path(forResource: "resources", ofType: "bundle")
 //        let bundle = Bundle(path: bundlePath!)
 //        let WDStoryboard: UIStoryboard = UIStoryboard(name: "TestStoryboard", bundle: bundle)

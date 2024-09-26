@@ -26,13 +26,9 @@ class OrderTypeViewModel:IOrderTypeViewModel {
     func viewDidLoad() {
         self.loadData()
     }
-    func loadData() {
-        
+    func loadData() {        
         orderTypeModel?.append(OrderType.online.instance)
         orderTypeModel?.append(OrderType.atStore.instance)
-//        orderTypeModel?.append(OrderType.dine_in.instance)
-//        orderTypeModel?.append(OrderType.drive_thrue.instance)
-//        orderTypeModel?.append(OrderType.delivery.instance)
         self.delegate?.onReloadCollectionView()
     }
 }

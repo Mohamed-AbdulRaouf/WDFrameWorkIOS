@@ -8,6 +8,3 @@
 
 import Foundation
 import Bond
-//public protocol IPhoneNumberValidationDTOBLL : IBaseValidationDTOBLL{
-//    var msgPhoneNumberError : Observable<String?> { get  set}
-//}

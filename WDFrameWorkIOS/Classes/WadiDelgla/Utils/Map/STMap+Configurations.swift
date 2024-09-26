@@ -72,14 +72,11 @@ class MapController : STUIViewController,IMap{
     func zoomtoLocation() {
         //Zoom to user location
         if let userLocation = locationManager.location?.coordinate {
-            //            guard  self.brandLocations.count > 0 else {return}
-//            let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), regionRadius * 5, regionRadius * 5)
-            
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+            print("Running Swift 5.0 or later")
             let viewRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), latitudinalMeters: regionRadius * 5, longitudinalMeters: regionRadius * 5)
 #else
-print("Running old Swift")
+            print("Running old Swift")
             let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: userLocation.latitude , longitude: userLocation.longitude ), regionRadius * 5, regionRadius * 5)
 #endif
             
@@ -90,13 +87,10 @@ print("Running old Swift")
             
         }
         
-        
         DispatchQueue.main.async {
             self.locationManager.startUpdatingLocation()
         }
     }
-    
-    
     
 }
 extension MapController: MKMapViewDelegate {
@@ -123,9 +117,6 @@ extension MapController: MKMapViewDelegate {
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-//        let location = view.annotation as! Artwork
-//        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-//        location.mapItem().openInMaps(launchOptions: launchOptions)
     }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
@@ -152,7 +143,7 @@ extension MapController: MKMapViewDelegate {
                 //google map
                 
                 self.openWithGoogleMap(latitude: coordinate?.latitude, longitude: coordinate?.longitude)
-               
+                
             })
             let cancelAction = UIAlertAction(title: R.string.localizable.cancel(), style: .default, handler: { (action) in
                 /* Just do nothing for now */
@@ -162,7 +153,7 @@ extension MapController: MKMapViewDelegate {
             {
                 alert.addAction(googleMapAction)
             }
-           
+            
             alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)
         }
@@ -176,28 +167,7 @@ extension MapController: MKMapViewDelegate {
         mapItem.name = annotationTitle
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
-    /*
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
-    {
-        if let annotationTitle = view.annotation?.title
-        {
-            print("User tapped on annotation with title: \(annotationTitle!)")
-            let alert = UIAlertController(title: "\(R.string.localizable.show_direction_msg()) \(annotationTitle!)?", message: nil, preferredStyle: .alert)
-            let yesAction = UIAlertAction(title: R.string.localizable.yes(), style: .default, handler: { (action) in
-                let coordinate = view.annotation?.coordinate
-                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate!, addressDictionary:nil))
-                mapItem.name = annotationTitle
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-            })
-            let noAction = UIAlertAction(title: R.string.localizable.no(), style: .default, handler: { (action) in
-                /* Just do nothing for now */
-            })
-            alert.addAction(yesAction)
-            alert.addAction(noAction)
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    */
+    
 }
 extension MapController: CLLocationManagerDelegate {
     func checkLocationAuthorizationStatus() {

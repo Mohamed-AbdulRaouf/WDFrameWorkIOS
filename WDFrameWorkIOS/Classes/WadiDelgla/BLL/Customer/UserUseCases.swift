@@ -569,33 +569,6 @@ extension UserUseCasesBLL{
         completion(STResponseBLL(data: true, error:nil))
         //API
         let phoneNumber = "\(authDTO.dialCode.value ?? "+2")\(authDTO.mobile.value ?? "")"
-//        STFirebaseLib.verifyPhoneNumber(withPhoneNumber: phoneNumber, withLang: Config.language) { (verificationID, error) in
-//             guard error == nil else {
-//                completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: nil,firebaseError: error)))
-//                 return
-//             }
-//             completion(STResponseBLL(data: verificationID, error:nil))
-//        }
-        /*
-         
-                Auth.auth().languageCode = Config.language;
-                 Auth.auth().settings?.isAppVerificationDisabledForTesting = false
-                 let phoneNumber = "\(authDTO.countryCode.value ?? "+2")\(authDTO.mobile.value ?? "")"
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate:nil) {
-            verificationID, error in
-            guard error == nil else {
-                print(error!._code)
-                if let errorCode = AuthErrorCode(rawValue: error!._code) {
-                    print(errorCode.errorMessage)
-                    completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: nil,firebaseError: errorCode.errorMessage)))
-                    return
-                }
-                completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO , APIError: nil,networkError: NetworkErrorBLL(error: (error as NSError?)!))))
-                return
-            }
-            completion(STResponseBLL(data: verificationID, error:nil))
-        }
-        */
     }
     public func validateVerifificationCode(_ authDTO: IAuthPhoneNumberDTODAL, completion: @escaping onSuccessBLL) {
         //validate data
@@ -618,73 +591,5 @@ extension UserUseCasesBLL{
             return
         }
          completion(STResponseBLL(data: true, error:nil))
-//        STFirebaseLib.signIn(withVerificationID: authDTO.verificationId.value ?? "", verificationCode:  authDTO.verificationCode.value ?? "") { (success, error) in
-//             guard error == nil else {
-//                            completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: nil,firebaseError: error)))
-//                             return
-//                         }
-//                         completion(STResponseBLL(data: true, error:nil))
-//        }
-        /*
-        let credential = PhoneAuthProvider.provider().credential(withVerificationID: authDTO.verificationId.value ?? "",
-                                                                 verificationCode: authDTO.verificationCode.value ?? "")
-        Auth.auth().signIn(with: credential) { authData, error in
-            // your code here
-            guard error == nil else {
-                if let errorCode = AuthErrorCode(rawValue: error!._code) {
-                    print(errorCode.errorMessage)
-                    completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: nil,firebaseError: errorCode.errorMessage)))
-                    return
-                }
-                completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: nil , APIError: nil,networkError: NetworkErrorBLL(error: (error as NSError?)!))))
-                return
-            }
-            completion(STResponseBLL(data: true, error:nil))
-        };
-        */
     }
 }
-// MARK: - Removed API
-//extension UserUseCases{
-    /*
-     /// This Function to send verification Code to mobile number
-     ///
-     /// - Parameters:
-     ///   - forgotPassowrdDTO: mobile number and other attributes to send verification code
-     ///   - completion: Tt returns success or fails send verification code
-     public func sendVerifyCode(_ forgotPassowrdDTO: IVerificationCodeDTO, completion: @escaping onSuccessBLL) {
-     //validate data
-     let validationDTO = VerificationCodeValidationDTO()
-     let validation = VerificationCodeValidationManager(errorModel: validationDTO)
-     
-     guard validation.validate(model: "") else {
-     completion(STResponseBLL(data: nil,error: STErrorBLL(validateError: validationDTO, APIError: nil)))
-     return
-     }
-     //API
-     let request = UserRouteBLL.resendVerifyCode(verifyCodeDTO: forgotPassowrdDTO)
-     network.sendRequest(request) { (response, error) in
-     guard error == nil else {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO , APIError: nil,networkError: NetworkErrorBLL(error: (error as NSError?)!))))
-     return
-     }
-     if response?.messageCode == 666 {
-     completion(STResponseBLL(data: true, error: nil))
-     }else if  response?.messageCode == 633 {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO, APIError: StandardMessagesBLL.noValidPhoneNumber)))
-     }else if  response?.messageCode == 634 {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO, APIError: StandardMessagesBLL.phoneNumberNotFound)))
-     }else if  response?.messageCode == 637 {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO, APIError: StandardMessagesBLL.faildUpdateVerifyCode)))
-     }else if  response?.messageCode == 667 {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO, APIError: StandardMessagesBLL.faildSendVerifyCode)))
-     }else if response?.messageCode == 613 {
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO, APIError: StandardMessagesBLL.userNotFound)))
-     }else{
-     completion(STResponseBLL(data: nil, error: STErrorBLL(validateError: validationDTO , APIError: StandardMessagesBLL.errorOccure)))
-     }
-     }
-     }
-     
-     */
-//}

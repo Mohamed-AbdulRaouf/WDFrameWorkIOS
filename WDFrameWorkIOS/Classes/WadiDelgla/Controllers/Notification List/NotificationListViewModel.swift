@@ -45,14 +45,6 @@ class NotificationListViewModel: INotificationListViewModel{
             self.requestDTO?.brandId.value = 0
         }
          self.getBrandNotifications()
-//        if let brandId = requestDTO?.brandId.value{
-//             self.getBrandsNotifications()
-//        }
-//        if requestDTO?.brandId.value == 0{
-//           
-//        }else{
-//            self.getBrandNotifications()
-//        }
     }
   
     func getBrandsNotifications() {

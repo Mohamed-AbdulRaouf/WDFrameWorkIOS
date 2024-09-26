@@ -40,7 +40,6 @@ extension SearchViewController {
         
         // Status bar white font
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-//        self.navigationController?.navigationBar.backgroundColor = COLOR_ACCENT
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.navigationItem.hidesBackButton = false
@@ -55,7 +54,6 @@ extension SearchViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
-//       searchController.searchBar.becomeFirstResponder()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,26 +73,6 @@ extension SearchViewController {
         tableView.reloadData()
     }
     func handleKeyboard(notification: Notification) {
-        // 1
-//        guard notification.name == UIResponder.keyboardWillChangeFrameNotification else {
-//            searchFooterBottomConstraint.constant = 0
-//            view.layoutIfNeeded()
-//            return
-//        }
-//        
-//        guard
-//            let info = notification.userInfo,
-//            let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
-//            else {
-//                return
-//        }
-//        
-//        // 2
-//        let keyboardHeight = keyboardFrame.cgRectValue.size.height
-//        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-//            self.searchFooterBottomConstraint.constant = keyboardHeight
-//            self.view.layoutIfNeeded()
-//        })
     }
     
     
@@ -104,33 +82,7 @@ extension SearchViewController {
     func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
-        // 1
-//        searchController.searchResultsUpdater = self
-        // 2
-//        searchController.obscuresBackgroundDuringPresentation = false
-        // 3
-//        searchController.searchBar.placeholder = "searching".localized()
-        // 4
-//        navigationItem.searchController = searchController
-//        tableView.tableHeaderView = searchController.searchBar
-
-        // 5
         definesPresentationContext = true
-//        self.searchController.hidesNavigationBarDuringPresentation = false
-//        self.searchController.searchBar.searchTextField.textAlignment =  LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
-        
-//        let notificationCenter = NotificationCenter.default
-//        notificationCenter.addObserver(
-//            forName: UIResponder.keyboardWillChangeFrameNotification,
-//            object: nil, queue: .main) { (notification) in
-//                self.handleKeyboard(notification: notification)
-//        }
-//        notificationCenter.addObserver(
-//            forName: UIResponder.keyboardWillHideNotification,
-//            object: nil, queue: .main) { (notification) in
-//                self.handleKeyboard(notification: notification)
-//        }
-        
     }
     
 }

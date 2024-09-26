@@ -9,8 +9,6 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 protocol IMoreViewModel:IBaseViewModel {
     
@@ -22,7 +20,6 @@ protocol IMoreViewModel:IBaseViewModel {
     func viewDidload()
     func didSelectItem(_ indexPathRow:Int)
     func registerToBrand(_ referralCode: String)
-//    func validateOnCartHasItems()
     func validateOnCartHasItemsForCountry(country: ICountryDTODAL)
     func validateOnCartHasItemsForLang()
 }
@@ -57,24 +54,13 @@ class MoreViewModel: IMoreViewModel{
     
     func setupUI(){
         self.moreItems = [MoreItemDTODAL]()
-        
-//        self.moreItems?.append(MoreItemDTO(R.string.localizable.change_country(), R.image.ic_change_location.name))
-        
         self.moreItems?.append(MoreItemDTODAL(R.string.localizable.change_location(), R.image.ic_change_location.name))
-        
-//        self.moreItems?.append(MoreItemDTO(R.string.localizable.favorites(), R.image.ic_heart_black.name))
-        
         self.moreItems?.append(MoreItemDTODAL(R.string.localizable.my_orders(), R.image.ic_order.name))
         
         
         self.moreItems?.append(MoreItemDTODAL(R.string.localizable.language(), R.image.ic_change_lang.name))
         
         self.moreItems?.append(MoreItemDTODAL(R.string.localizable.bar_code(), R.image.ic_bar_code.name))
-        
-        
-        //        self.moreItems?.append(MoreItemDTO(R.string.localizable.referral_code(), R.image.ic_gift_gray.name))
-        
-//        self.moreItems?.append(MoreItemDTO(R.string.localizable.about_doBites(), R.image.ic_dobites.name))
         
         if UserDefaults.user != nil {
             self.moreItems?.append(MoreItemDTODAL(R.string.localizable.sign_out(), R.image.ic_exit.name))
@@ -104,13 +90,7 @@ class MoreViewModel: IMoreViewModel{
             })
         }
     }
-//    func validateOnCartHasItems(){
-//        guard  cartService?.getCart() == nil else{
-//            self.delegate?.onShowClearCartByChangingLanguage()
-//            return
-//        }
-//        changeLanguage()
-//    }
+
     func validateOnCartHasItemsForLang() {
         
         guard  cartService?.getCart() == nil else{

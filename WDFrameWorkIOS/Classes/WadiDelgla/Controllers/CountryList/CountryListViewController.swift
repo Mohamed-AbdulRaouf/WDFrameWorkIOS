@@ -8,8 +8,7 @@
 
 import UIKit
 import RxSwift
-//import RxCocoa
-//import DAL
+
 class CountryListViewController: STUIViewController,IBaseController {
     
     
@@ -71,19 +70,7 @@ extension CountryListViewController {
     }
     
     
-    func setupSearchController() {
-//        // 1
-//        searchController.searchResultsUpdater = self
-//        // 2
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        // 3
-//        searchController.searchBar.placeholder = "Search Countries"
-//        // 4
-//        navigationItem.searchController = searchController
-//        // 5
-//        definesPresentationContext = true
-        
-        
+    func setupSearchController() {        
          searchController = ({
                 let controller = UISearchController(searchResultsController: nil)
                 controller.searchResultsUpdater = self

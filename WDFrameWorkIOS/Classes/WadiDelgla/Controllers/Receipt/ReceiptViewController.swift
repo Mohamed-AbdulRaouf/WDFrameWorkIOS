@@ -70,7 +70,6 @@ extension ReceiptViewController{
     func setupUI(){
         self.viewModel?.delegate = self
         self.setupTableView()
-//        self.doneButton.layer.cornerRadius = 16
         self.navigationItem.title = "invoice".localized()
         self.doneButton.setTitle("done".localized(), for: .normal)
         self.doneButton.titleLabel?.font = APP_FONT_BOLD15
@@ -88,18 +87,15 @@ extension ReceiptViewController: UITableViewDelegate,UITableViewDataSource,IBase
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 60.0
-//        self.tableView.isScrollEnabled = false
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         return UITableView.automaticDimension
 #else
-print("Running old Swift")
+        print("Running old Swift")
         return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
 #endif
     }
@@ -126,20 +122,20 @@ print("Running old Swift")
 extension ReceiptViewController {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         return UITableView.automaticDimension
 #else
-print("Running old Swift")
+        print("Running old Swift")
         return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
 #endif
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         return UITableView.automaticDimension
 #else
-print("Running old Swift")
+        print("Running old Swift")
         return UITableViewAutomaticDimension //60 //UITableView.automaticDimension
 #endif
     }
@@ -152,17 +148,17 @@ print("Running old Swift")
         nameLabel.numberOfLines = 0
         if LocalizationSystem.sharedInstance.isCurrentLanguageArabic() {
             nameLabel.text = "\(String(describing: self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0).enToArDigits)* \(self.viewModel?.order?.orderItems.value?[section].itemTitle.value ?? "")"
-                 
-             }else{
-                 nameLabel.text = "\(String(describing: self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0))x \(self.viewModel?.order?.orderItems.value?[section].itemTitle.value ?? "")"
-             }
-             
-             let price = Float(self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0) * (self.viewModel?.order?.orderItems.value?[section].itemPrice.value ?? 0.0)
-             
-             priceLabel.text = "\(String(format: "%.2f", price) + " \(String(describing: self.viewModel?.order?.orderItems.value?[section].currencyCode.value ?? ""))")"
-             [nameLabel].forEach {
-                 $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
-             }
+            
+        }else{
+            nameLabel.text = "\(String(describing: self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0))x \(self.viewModel?.order?.orderItems.value?[section].itemTitle.value ?? "")"
+        }
+        
+        let price = Float(self.viewModel?.order?.orderItems.value?[section].itemQty.value ?? 0) * (self.viewModel?.order?.orderItems.value?[section].itemPrice.value ?? 0.0)
+        
+        priceLabel.text = "\(String(format: "%.2f", price) + " \(String(describing: self.viewModel?.order?.orderItems.value?[section].currencyCode.value ?? ""))")"
+        [nameLabel].forEach {
+            $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
+        }
         
         let subTotalStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
@@ -189,14 +185,11 @@ print("Running old Swift")
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard section == (self.viewModel?.order?.orderItems.value?.count ?? 0) - 1 else { return UIView()}
         guard let order = self.viewModel?.order?.orderDetails.value else { return UIView()}
-
+        
         let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 206))
-
+        
         let subTotalTitleLabel = UILabel()
-//        subTotalTitleLabel.showsLargeContentViewer = false
         let subTotalLabel = UILabel()
-//        subTotalLabel.showsLargeContentViewer = false
-
         subTotalTitleLabel.font = APP_FONT_BOLD12
         subTotalLabel.font = APP_FONT_BOLD12
         subTotalTitleLabel.text = "sub_total".localized()
@@ -212,7 +205,7 @@ print("Running old Swift")
             return stackView
         }()
         subTotalLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let deliveryFeesLabelTitle = UILabel()
         deliveryFeesLabelTitle.showsLargeContentViewer = false
         let deliveryFeesLabel = UILabel()
@@ -232,7 +225,7 @@ print("Running old Swift")
             return stackView
         }()
         deliveryFeesLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let loyalityDiscountLabelTitle = UILabel()
         loyalityDiscountLabelTitle.showsLargeContentViewer = false
         loyalityDiscountLabelTitle.font = APP_FONT_BOLD12
@@ -252,7 +245,7 @@ print("Running old Swift")
             return stackView
         }()
         loyalityDiscountLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let vatTitleLabel = UILabel()
         vatTitleLabel.showsLargeContentViewer = false
         vatTitleLabel.font = APP_FONT_BOLD12
@@ -272,7 +265,7 @@ print("Running old Swift")
             return stackView
         }()
         vatLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let totalDiscountTitleLabel = UILabel()
         totalDiscountTitleLabel.showsLargeContentViewer = false
         let totalDiscountLabel = UILabel()
@@ -292,7 +285,7 @@ print("Running old Swift")
             return stackView
         }()
         totalDiscountLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let totalTitleLabel = UILabel()
         totalTitleLabel.showsLargeContentViewer = false
         let totalLabel = UILabel()
@@ -312,7 +305,7 @@ print("Running old Swift")
             return stackView
         }()
         totalLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
-
+        
         let lineView : UIView = {
             let view = UIView()
             view.backgroundColor = .gray
@@ -320,7 +313,7 @@ print("Running old Swift")
             view.clipsToBounds = true
             return view
         }()
-
+        
         let headerLineView : UIView = {
             let view = UIView()
             view.backgroundColor = .gray
@@ -328,7 +321,7 @@ print("Running old Swift")
             view.clipsToBounds = true
             return view
         }()
-
+        
         let fullStack : UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [UILabel(),totalDiscountStack, headerLineView, subTotalStack, vatStack, deliveryFeesStack, lineView, totalStack])
             stackView.axis = .vertical
@@ -349,12 +342,12 @@ print("Running old Swift")
         sectionHeader.addSubview(fullStack)
         fullStack.leadingAnchor.constraint(equalTo: sectionHeader.leadingAnchor).isActive = true
         fullStack.trailingAnchor.constraint(equalTo: sectionHeader.trailingAnchor).isActive = true
-
+        
         [totalDiscountLabel,totalDiscountTitleLabel,deliveryFeesLabel,deliveryFeesLabelTitle,loyalityDiscountLabel,loyalityDiscountLabelTitle,vatTitleLabel,vatLabel].forEach {
             $0.font = APP_FONT_REGULAR11
             $0.textColor = COLOR_PRIMARY_TEXT
         }
-
+        
         [self.headerLabel,totalTitleLabel,totalLabel].forEach {
             $0.font = APP_FONT_BOLD12
             $0.sizeToFit()
@@ -364,7 +357,7 @@ print("Running old Swift")
         [totalDiscountLabel, deliveryFeesLabel, loyalityDiscountLabel, vatLabel, totalLabel].forEach {
             $0?.textAlignment = LocalizationSystem.sharedInstance.isCurrentLanguageArabic() ? .right : .left
         }
-
+        
         return sectionHeader
     }
 }

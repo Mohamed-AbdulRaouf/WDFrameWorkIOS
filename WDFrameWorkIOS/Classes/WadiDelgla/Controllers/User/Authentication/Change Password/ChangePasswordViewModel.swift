@@ -58,12 +58,6 @@ class ChangePasswordViewModel: IChangePasswordViewModel{
                         return
                     }
                     //update password offline
-                    /*
-                    self.viewDidLoad()
-                    let user = UserDefaults.user
-                    user?.password.value = self.passwordModel?.newPassword.value
-                    UserDefaults.user = user
-                    */
                     UserDefaults.user = nil
                     UserDefaults.loginData = nil
                     self.delegate?.onUpdatePasswordSuccess()

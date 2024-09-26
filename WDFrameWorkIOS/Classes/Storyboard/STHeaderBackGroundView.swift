@@ -29,7 +29,6 @@ public class STHeaderBackGroundView: UIView {
     
     public func loadViewFromNib() -> UIView? {
         guard let nibName = nibName else { return nil }
-//        let bundle = Bundle(for: type(of: self))
         let bundlePath = Bundle(for: UserTestPath.self).path(forResource: "resources", ofType: "bundle")
         let bundle = Bundle(path: bundlePath!)
         let nib = UINib(nibName: nibName, bundle: bundle)

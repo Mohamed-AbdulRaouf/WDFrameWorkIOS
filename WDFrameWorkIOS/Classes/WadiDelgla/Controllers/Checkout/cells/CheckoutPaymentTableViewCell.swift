@@ -37,10 +37,6 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
             $0?.circleColor = COLOR_ACCENT
             $0?.strokeColor = COLOR_PRIMARY_TEXT
             $0?.circleRadius = 10.0
-//            $0?.circleColor = COLOR_ACCENT_DARK
-//            $0?.strokeColor = UIColor(hexString: "EFEFEF")!
-//            $0?.circleRadius = 10.0
-//            $0?.setTitle("", for: .normal)
         }
         self.radioButton.isSelected = model.isSelected
         
@@ -51,8 +47,6 @@ class CheckoutPaymentTableViewCell: UITableViewCell {
         self.subTitleLabel.text = subTitle
         self.subTitleLabel.font = APP_FONT_REGULAR10 //UIFont(resource: APP_FONT_REGULAR, size: 10)
         self.subTitleLabel.textColor = COLOR_SUB_TITLE_TEXT
-       
-//        self.changeButton.isHidden = model.paymentType == PaymentType.cashOnDelivery
         self.subTitleLabel.isHidden = model.paymentType == PaymentType.cashOnDelivery
 
         

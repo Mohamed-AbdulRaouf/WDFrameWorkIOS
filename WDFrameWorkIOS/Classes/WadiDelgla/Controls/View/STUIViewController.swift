@@ -8,10 +8,8 @@
 
 
 import UIKit
-//import AZDialogView
-//import Toast_Swift
 import RswiftResources
-//import BLL
+
 class STUIViewController: UIViewController {
     //MARK: - VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -43,17 +41,6 @@ extension STUIViewController {
         self.tabBarController?.tabBar.items?[2].badgeValue = "\(totalSum)"
     }
     func defaultUI(){
-//        self.navigationController?.navigationBar.barTintColor = .orange
-//        self.navigationController?.toolbar.barTintColor = .orange
-//        UINavigationBar.appearance().barTintColor = .orange
-//        UINavigationBar.appearance().tintColor = .white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        UINavigationBar.appearance().isTranslucent = false
-
-//        self.tabBarController?.navigationItem.titleView = nil
-//        self.tabBarController?.navigationItem.rightBarButtonItems = nil
-//        self.tabBarController?.navigationItem.leftBarButtonItems = nil
-        
         
     }
     func addDismissKeyboardTapGesture(){
@@ -90,74 +77,18 @@ extension STUIViewController {
     }
     /* bab el hara functions*/
     
-    
-    
-    //   func addDismissButton(){
-    //       self.navigationController?.navigationBar.topItem?.title = ""
-    //       let dismissButton = UIBarButtonItem(title: "X", style: .plain, target: self, action: #selector(onDismissTapped))
-    //       dismissButton.tintColor = .black
-    //
-    //       //        UIBarButtonItem(image: R.image.ic_close(), style: .plain, target: self, action: #selector(onDismissTapped))
-    //       self.navigationItem.rightBarButtonItems = [dismissButton]
-    //       self.navigationItem.leftBarButtonItems = []
-    //       self.navigationController?.isNavigationBarHidden = false
-    //       self.navigationItem.setHidesBackButton(true, animated: true)
-    //       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-    //       self.navigationController?.navigationBar.shadowImage = UIImage()
-    //       self.navigationController?.navigationBar.isTranslucent = true
-    //       self.navigationController?.view.backgroundColor = UIColor.clear
-    //   }
-    //
 }
 
 //MARK: - Dialog Messages
 extension STUIViewController {
     //MARK: - show Dialog message with ok action
     func showMessage(withTitle title: String = "", andMessage message: String, withcompletion completion: (() -> Void )? = nil) {
-        
         self.showAlertMessage(message: message)
-#warning("check from code")
-//        DispatchQueue.main.async {
-//            let dialog = AZDialogViewController(title: title, message: message)
-//            dialog.imageHandler = { (imageView) in
-//
-//                imageView.image = R.image.logo()
-//                imageView.contentMode = .scaleAspectFit
-//                return true
-//            }
-//            dialog.addAction(AZDialogAction(title: R.string.localizable.ok()) { (dialog) -> (Void) in
-//                dialog.dismiss(animated: true, completion: {
-//                    completion?()
-//                })
-//            })
-//
-//            dialog.show(in: self)
-//        }
     }
     
     //MARK: - show Dialog message with custom actions
     func showMessage(withTitle title: String,andMessage message: String,withCancel showCancel: Bool){
-#warning("check from code")
         self.showAlertMessage(message: message)
-//        DispatchQueue.main.async {
-//            let dialog = AZDialogViewController(title: title, message: message)
-//            dialog.imageHandler = { (imageView) in
-//                imageView.image = R.image.logo()
-//                imageView.contentMode = .scaleAspectFit
-//                return true
-//            }
-//            for  action in actions {
-//                dialog.addAction(action)
-//            }
-//            if showCancel {
-//                let cancel = AZDialogAction(title: R.string.localizable.cancel()) { (dialog) -> (Void) in
-//                    dialog.dismiss()
-//                }
-//                dialog.addAction(cancel)
-//            }
-//            dialog.cancelEnabled = true
-//            dialog.show(in: self)
-//        }
     }
     
     //MARK: - show bottom toast with message

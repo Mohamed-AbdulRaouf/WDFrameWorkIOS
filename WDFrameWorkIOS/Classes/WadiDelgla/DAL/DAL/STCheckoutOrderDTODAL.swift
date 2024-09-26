@@ -15,7 +15,7 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
     public var isOnlinePayment: Bool? = false
     
     public var isBrandDeliveryAtStore: Bool? = false
-
+    
     public var brandImage: String = ""
     
     public var brandName: String = ""
@@ -67,17 +67,15 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
     public var isSelectDeliveryAtStore: Bool = false
     
     public var frontOrderReferenceId: String? = ""
-
+    
     public var phone2: String? = ""
     public var merchantRefNumber: String? = ""
     public var referenceNumber: String? = ""
     public var referenceTransactionId: String = ""
     public var referenceInvoiceId: String = ""
-
     
-    public  init(){
-//        super.init()
-    }
+    
+    public  init(){ }
     
     
     enum CodingKeys: String, CodingKey {
@@ -114,14 +112,11 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case referenceNumber = "referenceNumber"
         case referenceTransactionId = "ReferenceTransactionId"
         case referenceInvoiceId = "ReferenceInvoiceId"
-//        case paymentData = "paymentData"
-     }
+    }
     
-   
+    
     public  func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-//        let superencoder = container.superEncoder()
-//        try super.encode(to: superencoder)
         try container.encode(orderComment, forKey: .orderComment)
         try container.encode(brandId, forKey: .brandId)
         try container.encode(brandImage, forKey: .brandImage)
@@ -155,16 +150,10 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         try container.encode(referenceNumber, forKey: .referenceNumber)
         try container.encode(referenceTransactionId, forKey: .referenceTransactionId)
         try container.encode(referenceInvoiceId, forKey: .referenceInvoiceId)
-
-//         try container.encode(paymentData, forKey: .paymentData)
-
     }
+    
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        // Get superDecoder for superclass and call super.init(from:) with it
-//        let superDecoder = try container.superDecoder()
-//        try super.init(from: superDecoder)
-
         brandId = try container.decode(Int.self, forKey: .brandId)
         brandImage = try container.decode(String.self, forKey: .brandImage)
         brandName = try container.decode(String.self, forKey: .brandName)
@@ -197,9 +186,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         referenceNumber = try container.decode(String.self, forKey: .referenceNumber)
         referenceTransactionId = try container.decode(String.self, forKey: .referenceTransactionId)
         referenceInvoiceId = try container.decode(String.self, forKey: .referenceInvoiceId)
-        
-//        paymentData = try container.decode(STCartPaymentDTO.self, forKey: .paymentData)
-     }
+    }
+    
     enum CALCCodingKeys: String, CodingKey {
         case CustomerMessage = "CustomerMessage"
         case AreaID = "AreaID"
@@ -218,9 +206,8 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         case referenceTransactionId = "ReferenceTransactionId"
         case referenceInvoiceId = "ReferenceInvoiceId"
     }
-   public  var JSONRepresentation: Dictionary<String, Any>  {
+    public  var JSONRepresentation: Dictionary<String, Any>  {
         var jsonedDict = [String:Any]()
-//        jsonedDict = super.JSONRepresentation
         jsonedDict[CALCCodingKeys.CustomerMessage.rawValue] = ""
         jsonedDict[CALCCodingKeys.AreaID.rawValue] = selectedAreaId
         jsonedDict[CALCCodingKeys.UserAddressId.rawValue] = selectedAddressId
@@ -232,17 +219,14 @@ public class STCheckoutOrderDTODAL : Codable, ISTCheckoutOrderDTODAL  {
         jsonedDict[CALCCodingKeys.deliveryAtStore.rawValue] = isSelectDeliveryAtStore
         jsonedDict[CALCCodingKeys.frontOrderReferenceId.rawValue] = frontOrderReferenceId
         jsonedDict[CALCCodingKeys.phone2.rawValue] = UserDefaults.orderPhone
-       jsonedDict[CALCCodingKeys.merchantRefNumber.rawValue] = merchantRefNumber
-       jsonedDict[CALCCodingKeys.referenceNumber.rawValue] = referenceNumber
-       jsonedDict[CALCCodingKeys.referenceTransactionId.rawValue] = referenceTransactionId
-       jsonedDict[CALCCodingKeys.referenceInvoiceId.rawValue] = referenceInvoiceId
-
-//        jsonedDict[CALCCodingKeys.deliveryAtStore.rawValue] = deliveryAtStore
+        jsonedDict[CALCCodingKeys.merchantRefNumber.rawValue] = merchantRefNumber
+        jsonedDict[CALCCodingKeys.referenceNumber.rawValue] = referenceNumber
+        jsonedDict[CALCCodingKeys.referenceTransactionId.rawValue] = referenceTransactionId
+        jsonedDict[CALCCodingKeys.referenceInvoiceId.rawValue] = referenceInvoiceId
         if cartItems.count > 0 {
             jsonedDict[CALCCodingKeys.orderCalcs.rawValue] = cartItems.map({$0.CALCJSONRepresentation})
         }
-    
         return jsonedDict
     }
-  
+    
 }

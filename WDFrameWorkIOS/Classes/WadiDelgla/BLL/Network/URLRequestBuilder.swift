@@ -77,10 +77,6 @@ extension URLRequestBuilderBLL {
     
     var defaultParams: Parameters {
         var param = Parameters()
-//        param[K.APIParameterKey.language] =  UserDefaults.currentAppLanguage
-//        param[K.APIParameterKey.customerSourceId] = K.CUSTOMER_SOURCE
-//        param[K.APIParameterKey.mobileAppToken] =  UserDefaults.fcmToken
-
         param[KBLL.APIParameterKey.language] = Config.language
         param[KBLL.APIParameterKey.CustomerSourceID] = Config.customerSourceId
         param[KBLL.APIParameterKey.customerSourceID] = Config.customerSourceId
@@ -88,14 +84,7 @@ extension URLRequestBuilderBLL {
 
         return param
     }
-//    var urlParameters: Parameters {
-//        get{
-//            return self.urlParameters
-//        }
-//        set{
-//            urlParameters = newValue
-//        }
-//    }
+
     var encoding: ParameterEncoding {
         switch method {
         case .get:
@@ -108,9 +97,6 @@ extension URLRequestBuilderBLL {
     var urlRequest: URLRequest {
         var request = URLRequest(url: requestURL)
         request.httpMethod = method.rawValue
-        // mohamed
-//        headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
-        
         return request
     }
     
@@ -122,30 +108,4 @@ extension URLRequestBuilderBLL {
         return try encoding.encode(urlRequest, with: parameters)
     }
     
-    /*
-    // MARK: - URLRequestConvertible
-    func asURLRequest() throws -> URLRequest {
-        let url = try K.ProductionServer.baseURL.asURL()
-        
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
-        // HTTP Method
-        urlRequest.httpMethod = method.rawValue
-        
-        // Common Headers
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        
-        // Parameters
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        }
-        
-        return urlRequest
-    }
-    */
 }

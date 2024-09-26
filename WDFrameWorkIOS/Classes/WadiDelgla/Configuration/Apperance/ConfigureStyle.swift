@@ -8,9 +8,7 @@
 
 import UIKit
 import RswiftResources
-////import DAL
-//import KashierPaymentSDK
-// MARK:- COLOR_CONFIGURATIONS
+
 let COLOR_PRIMARY = UIColor.STYellow
 let COLOR_ACCENT = UIColor.STYellow
 let COLOR_BUTTON = UIColor.STYellow
@@ -33,17 +31,17 @@ let COLOR_SUB_TITLE_TEXT = UIColor.init(hexString: "1A1824", transparency: 0.5)!
 
 
 // MARK: - FONT_CONFIGURATIONS
-let APP_FONT_REGULAR = UIFont.systemFont(ofSize: 14, weight: .regular) // R.font.ramblaRegular
-let APP_FONT_BOLD = UIFont.systemFont(ofSize: 16, weight: .bold) //R.font.ramblaBold
-let APP_FONT_BOLD12 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).bold.withSize(12) //UIFont.systemFont(ofSize: 12, weight: .bold) //R.font.ramblaBold
-let APP_FONT_BOLD14 = UIFont.systemFont(ofSize: 14, weight: .bold) //R.font.ramblaBold
+let APP_FONT_REGULAR = UIFont.systemFont(ofSize: 14, weight: .regular)
+let APP_FONT_BOLD = UIFont.systemFont(ofSize: 16, weight: .bold)
+let APP_FONT_BOLD12 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).bold.withSize(12)
+let APP_FONT_BOLD14 = UIFont.systemFont(ofSize: 14, weight: .bold)
 let APP_FONT_BOLD15 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).bold.withSize(15)
-let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 19)
-let FONT_PRIMARY_BUTTON14 = UIFont.systemFont(ofSize: 14, weight: .bold) //UIFont(resource: APP_FONT_BOLD, size: 14)
-let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular) //UIFont(resource: APP_FONT_REGULAR, size: 14)
+let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold)
+let FONT_PRIMARY_BUTTON14 = UIFont.systemFont(ofSize: 14, weight: .bold)
+let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular)
 
 let APP_FONT_REGULAR10 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).withSize(10)
-let APP_FONT_REGULAR11 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).withSize(11) //UIFont.systemFont(ofSize: 11, weight: .regular)
+let APP_FONT_REGULAR11 = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).withSize(11)
 let APP_FONT_REGULAR12 = UIFont.systemFont(ofSize: 12, weight: .regular)
 let APP_FONT_REGULAR13 = UIFont.systemFont(ofSize: 13, weight: .regular)
 let APP_FONT_REGULAR16 = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -56,28 +54,3 @@ let APP_FONT_REGULAR20 = UIFont.systemFont(ofSize: 20, weight: .regular)
 let APP_FONT_BOLD22 = UIFont.systemFont(ofSize: 22, weight: .bold)
 let APP_FONT_BOLD10 = UIFont.systemFont(ofSize: 10, weight: .bold)
 let APP_FONT_BOLD13 = UIFont.systemFont(ofSize: 13, weight: .bold)
-
-/*
- let APP_FONT_REGULAR = UIFont.systemFont(ofSize: 14, weight: .regular).withSize(14) // R.font.ramblaRegular
- let APP_FONT_BOLD = UIFont.systemFont(ofSize: 16, weight: .bold).withSize(16) //R.font.ramblaBold
- let APP_FONT_BOLD12 = UIFont.systemFont(ofSize: 12, weight: .bold).withSize(12) //R.font.ramblaBold
- let APP_FONT_BOLD14 = UIFont.systemFont(ofSize: 14, weight: .bold).withSize(14) //R.font.ramblaBold
- let FONT_PRIMARY_BUTTON = UIFont.systemFont(ofSize: 19, weight: .bold).withSize(19) //UIFont(resource: APP_FONT_BOLD, size: 19)
- let FONT_PRIMARY_BUTTON14 = UIFont.systemFont(ofSize: 14, weight: .bold).withSize(14) //UIFont(resource: APP_FONT_BOLD, size: 14)
- let FONT_TEXT_FIELD = UIFont.systemFont(ofSize: 14, weight: .regular).withSize(14) //UIFont(resource: APP_FONT_REGULAR, size: 14)
-
- let APP_FONT_REGULAR10 = UIFont.systemFont(ofSize: 10, weight: .regular).withSize(10)
- let APP_FONT_REGULAR11 = UIFont.systemFont(ofSize: 11, weight: .regular).withSize(11)
- let APP_FONT_REGULAR12 = UIFont.systemFont(ofSize: 12, weight: .regular).withSize(12)
- let APP_FONT_REGULAR13 = UIFont.systemFont(ofSize: 13, weight: .regular).withSize(13)
- let APP_FONT_REGULAR16 = UIFont.systemFont(ofSize: 16, weight: .regular).withSize(16)
- let APP_FONT_BOLD18 = UIFont.systemFont(ofSize: 18, weight: .bold).withSize(18)
-
- let APP_FONT_REGULAR18 = UIFont.systemFont(ofSize: 18, weight: .regular).withSize(18)
- let APP_FONT_BOLD20 = UIFont.systemFont(ofSize: 20, weight: .bold).withSize(20)
-
- let APP_FONT_REGULAR20 = UIFont.systemFont(ofSize: 20, weight: .regular).withSize(20)
- let APP_FONT_BOLD22 = UIFont.systemFont(ofSize: 22, weight: .bold).withSize(22)
- let APP_FONT_BOLD10 = UIFont.systemFont(ofSize: 10, weight: .bold).withSize(10)
- let APP_FONT_BOLD13 = UIFont.systemFont(ofSize: 13, weight: .bold).withSize(13)
- */

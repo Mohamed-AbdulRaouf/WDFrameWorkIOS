@@ -37,8 +37,8 @@ class STCartViewController: STUIViewController ,IBaseController{
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
-//        self.view.addSubview(view)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel?.viewDidLoad()
@@ -66,17 +66,17 @@ class STCartViewController: STUIViewController ,IBaseController{
     }
     @IBAction func onCheckoutTapped(_ sender: Any) {
         self.view.endEditing(true)
-//        self.viewModel?.validateUserLocationWithSelectedCountry()
         self.viewModel?.validateCheckout()
     }
+    
     @available(iOS 16.0, *)
     @objc func userNotAllowedAccessLocation(_ notification: Notification) {
-      print("Location services are not enabled")
+        print("Location services are not enabled")
         createSettingsAlertController(title: K.shared.SELECTED_BRAND?.brandName.value ?? "", message: "location_permission_denied".localized())
-      }
+    }
     deinit {
-           removeNotificationObserver(NotificationName.userNotAllowAccessLocation.rawValue)
-       }
+        removeNotificationObserver(NotificationName.userNotAllowAccessLocation.rawValue)
+    }
 }
 
 // MARK: - Internal
@@ -124,13 +124,11 @@ extension STCartViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-//        tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableViewAutomaticDimension
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         tableView.rowHeight = tableView.estimatedRowHeight
 #else
-print("Running old Swift")
+        print("Running old Swift")
         tableView.rowHeight = UITableViewAutomaticDimension
 #endif
         
@@ -161,13 +159,13 @@ print("Running old Swift")
             }
             return cell
         } else if indexPath.section == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "OrderPhoneTableViewCell", for: indexPath) as! OrderPhoneTableViewCell
-                cell.configureCell(UserDefaults.orderPhone)
-                cell.onChangePhone = { [weak self ] phone in
-                    self?.viewModel?.cart?.phone2 = phone
-                    UserDefaults.orderPhone = phone
-                }
-                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderPhoneTableViewCell", for: indexPath) as! OrderPhoneTableViewCell
+            cell.configureCell(UserDefaults.orderPhone)
+            cell.onChangePhone = { [weak self ] phone in
+                self?.viewModel?.cart?.phone2 = phone
+                UserDefaults.orderPhone = phone
+            }
+            return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemTableViewCell", for: indexPath) as! CartItemTableViewCell
             if let items = self.viewModel?.cart?.cartItems{

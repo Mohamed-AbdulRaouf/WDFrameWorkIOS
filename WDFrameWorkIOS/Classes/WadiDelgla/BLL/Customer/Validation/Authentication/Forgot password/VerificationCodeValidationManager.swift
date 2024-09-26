@@ -32,22 +32,7 @@ public class VerificationCodeValidationManagerBLL : IValidationManagerBLL{
 }
 // Fields to be validated
 extension VerificationCodeValidationManagerBLL : IVerificationCodeValidationManagerBLL {
-    //MARK: validate Mobile number
-    
-//    public func validateMobileNumber(string: String) -> Bool
-//    {
-//        //        var validationError :String? = nil
-//        if string == "" {
-//            errorViewModel?.msgPhoneNumberError.value  = ValidationError.ErrorMessages.msgEmptyMobileNo()
-//            return false
-//        }
-//        if string.withoutSpacesAndNewLines == "" || string.count != userPhoneNumberLength || !string.isDigits {
-//            errorViewModel?.msgPhoneNumberError.value  = ValidationError.ErrorMessages.msgInvalidMobileNo()
-//            return false
-//        }
-//        errorViewModel?.msgPhoneNumberError.value = ""
-//        return true
-//    }
+    //MARK: validate Mobile number    
     public func validateMobileNumber(string: String,hintNumber: String = "01001234567") -> Bool {
         //        var validationError :String? = nil
                if string == "" {

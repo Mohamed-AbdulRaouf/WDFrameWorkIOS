@@ -9,11 +9,10 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 import Kingfisher
 import UIKit
+
 protocol ISTCartViewModel: IBaseViewModel {
     //MARK: - Variables
     var delegate: ISTCartViewController? {get set}
@@ -40,18 +39,18 @@ protocol ISTCartViewModel: IBaseViewModel {
 class STCartViewModel: ISTCartViewModel{
     
     //MARK: - Variables
-       weak var delegate: ISTCartViewController?
-       var cart: ISTCheckoutOrderDTODAL?
-       var cartService: CartServiceBLL?
-       var orderService: OrderServiceBLL?
-       var errorModel : IOrderValidationDTOBLL?
-       var calcResponse: ICalOrderResponseDTODAL?
+    weak var delegate: ISTCartViewController?
+    var cart: ISTCheckoutOrderDTODAL?
+    var cartService: CartServiceBLL?
+    var orderService: OrderServiceBLL?
+    var errorModel : IOrderValidationDTOBLL?
+    var calcResponse: ICalOrderResponseDTODAL?
     //MARK: - Functions
-      public  init (cartService: CartServiceBLL,orderService: OrderServiceBLL,errorModel: IOrderValidationDTOBLL){
-          self.cartService = cartService
-          self.orderService = orderService
-          self.errorModel = errorModel
-      }
+    public  init (cartService: CartServiceBLL,orderService: OrderServiceBLL,errorModel: IOrderValidationDTOBLL){
+        self.cartService = cartService
+        self.orderService = orderService
+        self.errorModel = errorModel
+    }
     
     func viewDidLoad() {
         self.getCartDB()

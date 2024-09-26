@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
+
 protocol IOrderListViewModel: IBaseViewModel {
     
     var apiClient: UserServiceBLL? { get set }

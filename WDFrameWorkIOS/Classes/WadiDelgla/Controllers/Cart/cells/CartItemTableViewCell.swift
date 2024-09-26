@@ -7,14 +7,13 @@
 //
 
 import UIKit
-//import DAL
 import Kingfisher
+
 class CartItemTableViewCell: UITableViewCell ,IBaseTableViewCell{
     typealias T = ISTCartItemDTODAL
     @IBOutlet weak var quantityTitleLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var itemSubTotalLabel: UILabel!
-    
     @IBOutlet weak var itemCommentLabel: UILabel!
     @IBOutlet weak var itemQuantityLabel: UILabel!
     @IBOutlet weak var itemSizeLabel: UILabel!

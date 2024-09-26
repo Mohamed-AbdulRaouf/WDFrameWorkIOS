@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import DAL
+
 class FilterTableViewCell: UITableViewCell,IBaseTableViewCell {
     typealias T = IBaseFilterDTODAL
     

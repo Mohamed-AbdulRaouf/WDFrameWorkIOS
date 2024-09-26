@@ -38,19 +38,7 @@ extension CommentViewController: UITextViewDelegate {
         endEditing()
         return true
     }
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text.isEmpty {
-//            textView.text = R.string.localizable.comment_description()
-//            textView.textColor = UIColor.lightGray
-//        }
-//        endEditing()
-//    }
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if textView.textColor == UIColor.lightGray {
-//            textView.text = nil
-//            textView.textColor = UIColor.black
-//        }
-//    }
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
         // Combine the textView text and the replacement text to

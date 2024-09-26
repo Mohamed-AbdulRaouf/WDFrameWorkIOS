@@ -42,13 +42,8 @@ class CheckOutViewController: STUIViewController,IBaseController {
         self.finalizeOrderButton.setTitle("finalize_order".localized(), for: .normal)
         self.viewModel?.delegate = self
         self.viewModel?.viewDidLoad()
-        
-//        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
-//                  // do whatever you want when the app is brought back to the foreground
-//                  self.viewModel?.getOrderByFrontReference()
-//              }
-             
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
            self.updateFinalizeButton()

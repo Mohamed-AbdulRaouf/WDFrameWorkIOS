@@ -134,7 +134,6 @@ extension RegisterationViewController{
         
         // Localizable
         
-//        self.phoneNumberTextField.placeholder = R.string.localizable.phone_number()
         self.referralCodeTextField.placeholder = R.string.localizable.referral_code()
         self.firstNameTextField.placeholder = R.string.localizable.first_name()
         self.lastNameTextField.placeholder = R.string.localizable.last_name()

@@ -33,15 +33,15 @@ extension UIApplication {
     }
     
     static var brandId: Int {
-              return Int(Bundle.main.object(forInfoDictionaryKey: "BrandID") as! String) ?? 0
-          }
+        return Int(Bundle.main.object(forInfoDictionaryKey: "BrandID") as! String) ?? 0
+    }
     static var KASHIER_SDK_MODE: String {
-               return Bundle.main.object(forInfoDictionaryKey: "KashierSDKMode") as! String
-           }
+        return Bundle.main.object(forInfoDictionaryKey: "KashierSDKMode") as! String
+    }
     static var CustomerSourceId: Int {
-             return Int(Bundle.main.object(forInfoDictionaryKey: "CustomerSourceId") as! String) ?? 0
-         }
+        return Int(Bundle.main.object(forInfoDictionaryKey: "CustomerSourceId") as! String) ?? 0
+    }
     static var googlePlacesAPIKey: String {
-              return Bundle.main.object(forInfoDictionaryKey: "GOOGLE_PLACES_API_KEY") as! String
-        }
+        return Bundle.main.object(forInfoDictionaryKey: "GOOGLE_PLACES_API_KEY") as! String
+    }
 }

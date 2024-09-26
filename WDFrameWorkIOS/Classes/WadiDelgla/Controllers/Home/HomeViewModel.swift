@@ -9,12 +9,9 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 import RxSwift
-//import RxCocoa
-//import KashierPaymentSDK
+
 protocol IHomeViewModel: IBaseViewModel {
     
     var apiClient: BrandServiceBLL? { get set }
@@ -39,7 +36,7 @@ protocol IHomeViewModel: IBaseViewModel {
     func viewDidLoad()
     func getBrandsNotificatiosCount()
     var notificationsCount: Int? {get set}
-
+    
 }
 
 class HomeViewModel: IHomeViewModel{
@@ -47,7 +44,7 @@ class HomeViewModel: IHomeViewModel{
     
     var requestOrderDTO: IRequestDTODAL?
     
-    weak  var delegate: IHomeViewController?    
+    weak  var delegate: IHomeViewController?
     
     var apiClient: BrandServiceBLL?
     var userService: UserServiceBLL?
@@ -71,7 +68,7 @@ class HomeViewModel: IHomeViewModel{
     func viewDidLoad(){
         TabsData.sharedInstance.searchTerm = ""
         TabsData.sharedInstance.isLoyality = false
-
+        
         self.requestOrderDTO?.pageNumber.value = 1
         self.requestOrderDTO?.pageSize.value = 50
         self.requestOrderDTO?.brandId.value = 0
@@ -86,18 +83,14 @@ class HomeViewModel: IHomeViewModel{
             doInBackground {
                 self.getBrandsNotificatiosCount()
             }
-
+            
             if isFirstOpen!{
                 doInBackground {
-                     self.getCustomerNotRatedOrders()
+                    self.getCustomerNotRatedOrders()
                 }
             }
             
-        }else{
-            //            self.notificationCountBtn.isHidden = true
         }
-        
-
     }
     func getBrandsNotificatiosCount() {
         self.showHud()
@@ -114,7 +107,7 @@ class HomeViewModel: IHomeViewModel{
             })
         }
     }
-   func getAds() {
+    func getAds() {
         self.showHud()
         doInBackground {
             self.apiClient?.getAdsList(pagingDTO: self.pagingDTO!) { (response) in
@@ -142,11 +135,11 @@ class HomeViewModel: IHomeViewModel{
     func getRowHeight(_ row:Int) -> CGFloat{
         switch row {
         case 1:
-            return 200 //UITableView.automaticDimension
+            return 200
         case 2:
             return 200
         default:
-             return 200
+            return 200
         }
     }
     func onRankingTapped() {
@@ -173,7 +166,7 @@ class HomeViewModel: IHomeViewModel{
     func onNearResturantsTapped(){
         LocationManager.sharedInstance.runLocationBlock {
             doOnMain {
-                 self.delegate?.openBranchLocations()
+                self.delegate?.openBranchLocations()
             }
         }
     }

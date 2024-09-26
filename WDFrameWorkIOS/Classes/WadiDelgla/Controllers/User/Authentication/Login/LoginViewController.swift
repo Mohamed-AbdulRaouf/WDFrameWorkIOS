@@ -39,25 +39,14 @@ class LoginViewController: STUIViewController ,IBaseController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: animated)
-//        self.phoneNumberTextField.text = "01113713682"
-//        self.passwordTextField.text = "123456"
-//        let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
-//        self.updateCountryCode(country: country)
-//        viewModel?.sendLoginRequest()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if let _ = UserDefaults.user  {
-//            let vc = StoryboardScene.Location.locationViewController.instantiate()
-//            self.navigationController?.pushViewController(vc)
-//        } else {
         self.phoneNumberTextField.text = GlobalConstants.shared.mobile.getPhoneNumberOnlyWithCountry
             self.passwordTextField.text = GlobalConstants.shared.password
                     let country = CountryDTODAL(countryId: "12", countryCode: "EG", dialCode: "+20", emoji: "🇪🇬", name: "Egypt", hintNumber: "01001234567")
@@ -65,7 +54,6 @@ class LoginViewController: STUIViewController ,IBaseController{
             UserDefaults.currentAppCountry = country
                     self.updateCountryCode(country: country)
                     viewModel?.sendLoginRequest()
-//        }
     }
     
     // MARK: - IBActions
@@ -137,8 +125,6 @@ extension LoginViewController{
         }
         [self.loginButton].forEach {
             $0?.layer.cornerRadius = 10
-//            $0?.titleLabel?.font = FONT_PRIMARY_BUTTON
-//            $0?.backgroundColor = COLOR_ACCENT
         }
         self.phoneNumberTextField.keyboardType = .phonePad
         self.passwordTextField.placeholder = "password".localized()

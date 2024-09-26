@@ -17,8 +17,6 @@ extension RateOrderViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 44
     }
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -53,13 +53,6 @@ extension NearResturantsLocationsViewController{
                 // apple map
                 self?.dropPins(viewModel.brandLocations!)
                 self?.zoomtoLocation()
-                /*
-                let coordinate =
-                    CLLocationCoordinate2D(latitude: self?.viewModel?.brandLocations?[0].latitude.value ?? 0, longitude: self?.viewModel?.brandLocations?[0].longitude.value ?? 0)
-                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-                mapItem.name = self?.viewModel?.brandLocations?[0].brandName.value ?? ""
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-                */
                 //google map
                 if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
                 {

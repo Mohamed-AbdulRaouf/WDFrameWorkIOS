@@ -49,14 +49,4 @@ struct UploadImageDataModel: BaseCodable {
 // MARK: - Datum
 struct UploadImageData: Codable {
     let type, id: String
-//    let url: String
-//    let datumExtension, type, fileName: String
-
-//    enum CodingKeys: String, CodingKey {
-//        case mimeType = "mime_type"
-//        case id, url
-//        case datumExtension = "extension"
-//        case type
-//        case fileName = "filename"
-//    }
 }

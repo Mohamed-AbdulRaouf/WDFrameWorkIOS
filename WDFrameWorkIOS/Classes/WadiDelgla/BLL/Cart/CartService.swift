@@ -12,9 +12,6 @@ import Foundation
 public protocol CartServiceBLL :AnyObject {
     func getCart() -> STCheckoutOrderDTODAL?
     func AddItemToCart(_ itemDTO:IMenuItemsDTODAL,for brand: IBrandDTODAL,areaId: Int,completion: @escaping onSuccessBLL)
-//    func AddItemToCart(_ itemDTO:IMenuItemsDTO,_ brand: IBrandDTO,_ areaId: Int,_ userId: String,completion: @escaping onSuccess)
-
-//    func AddItemToCart(_ itemDTO:IMenuItemsDTO,_ brand: IBrandDTO,_ areaId: Int,_ userId : String,completion: @escaping onSuccess)
     func deleteCart(completion: @escaping ((Bool) -> Void))
     func checkIfSameCurrentCart(_ brandId: Int) -> Bool
     func isItemInCart(cart: STCheckoutOrderDTODAL,chosenItem: STCartItemDTODAL) -> Bool

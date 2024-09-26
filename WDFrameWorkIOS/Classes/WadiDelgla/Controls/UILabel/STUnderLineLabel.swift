@@ -15,7 +15,6 @@ class STUnderlinedLabel: UILabel {
             guard let text = text else { return }
             let textRange = NSMakeRange(0, text.count)
             let attributedText = NSMutableAttributedString(string: text)
-//            attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.styleSingle.rawValue, range: textRange)
 #if swift(>=5.0)
 print("Running Swift 5.0 or later")
             attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)

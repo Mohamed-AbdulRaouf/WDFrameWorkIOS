@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import DAL
+
 class RankingTableViewCell: UITableViewCell,IBaseTableViewCell {
     
     

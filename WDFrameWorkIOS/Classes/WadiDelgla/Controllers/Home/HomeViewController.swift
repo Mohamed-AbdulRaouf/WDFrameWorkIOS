@@ -86,7 +86,6 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource,IBaseTab
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel?.getRowHeight(indexPath.row) ?? 0

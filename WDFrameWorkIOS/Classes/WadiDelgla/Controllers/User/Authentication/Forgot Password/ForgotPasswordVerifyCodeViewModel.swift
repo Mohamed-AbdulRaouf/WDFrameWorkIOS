@@ -10,9 +10,7 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
-//import STFirebaseSDK
+
 protocol IForgotPasswordVerifyCodeViewModel: IBaseViewModel{
     
     var verificationCodeModel : IAuthPhoneNumberDTODAL! {get set}
@@ -23,7 +21,7 @@ protocol IForgotPasswordVerifyCodeViewModel: IBaseViewModel{
     var delegate: IForgetPasswordViewController? {get set}
 }
 class ForgotPasswordVerifyCodeViewModel: IForgotPasswordVerifyCodeViewModel{
-   weak var delegate: IForgetPasswordViewController?
+    weak var delegate: IForgetPasswordViewController?
     
     var verificationCodeModel: IAuthPhoneNumberDTODAL!
     
@@ -31,7 +29,7 @@ class ForgotPasswordVerifyCodeViewModel: IForgotPasswordVerifyCodeViewModel{
     
     var errorModel: IPhoneNumberValidationDTOBLL?
     
-
+    
     public  init (verificationCodeModel : IAuthPhoneNumberDTODAL ,apiClient: UserServiceBLL,errorModel : IPhoneNumberValidationDTOBLL){
         self.verificationCodeModel = verificationCodeModel
         self.errorModel = errorModel
@@ -39,46 +37,31 @@ class ForgotPasswordVerifyCodeViewModel: IForgotPasswordVerifyCodeViewModel{
     }
     /// This Function to send verification code for reset password
     func sendVerifyCode() {
-       self.showHud()
-              guard self.verificationCodeModel.mobile.value != Config.TestUserPhoneNumber else {
-                     doOnMain {
-                         self.hideHUD()
-                         self.delegate?.onSuccess(self.verificationCodeModel!)
-                     }
-                   return
-                 }
-              doInBackground {
-                         self.apiClient.validateVerifificationCode(self.verificationCodeModel!, completion: { (response) in
-                             doOnMain {
-                                 self.hideHUD()
-                                 guard let _ = response?.data else {
-                                  self.delegate?.onUpdateLayout()
-                                     return
-                                 }
-                                 self.verifyPhoneNumber()
-                             }
-                         })
-                     }
+        self.showHud()
+        guard self.verificationCodeModel.mobile.value != Config.TestUserPhoneNumber else {
+            doOnMain {
+                self.hideHUD()
+                self.delegate?.onSuccess(self.verificationCodeModel!)
+            }
+            return
+        }
+        doInBackground {
+            self.apiClient.validateVerifificationCode(self.verificationCodeModel!, completion: { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let _ = response?.data else {
+                        self.delegate?.onUpdateLayout()
+                        return
+                    }
+                    self.verifyPhoneNumber()
+                }
+            })
+        }
     }
     func verifyPhoneNumber(){
-             self.showHud()
-             let phoneNumber = "\(self.verificationCodeModel.dialCode.value ?? "+2")\(self.verificationCodeModel.mobile.value ?? "")"
-//             doInBackground {
-//                 STFirebaseLib.verifyPhoneNumber(withPhoneNumber: phoneNumber, withLang: K.shared.APP_LANGUAGE) { (verificationID, error) in
-//                     doOnMain {
-//                         self.hideHUD()
-//                         guard let _ = verificationID else {
-//                             if error != nil {
-//                                 self.delegate?.onError(error ?? "")
-//                             }
-//                             return
-//                         }
-//                         self.verificationCodeModel.verificationId.value = verificationID
-//                         self.delegate?.onSuccess(self.verificationCodeModel!)
-//                     }
-//                 }
-//             }
-         }
+        self.showHud()
+        let phoneNumber = "\(self.verificationCodeModel.dialCode.value ?? "+2")\(self.verificationCodeModel.mobile.value ?? "")"
+    }
     func getUser() {
         self.showHud()
         doInBackground {
@@ -93,11 +76,11 @@ class ForgotPasswordVerifyCodeViewModel: IForgotPasswordVerifyCodeViewModel{
                         }
                         return
                     }
-                   self.sendVerifyCode()
+                    self.sendVerifyCode()
                 }
             })
         }
-
+        
     }
 }
 

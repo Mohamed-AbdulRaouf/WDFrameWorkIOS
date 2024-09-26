@@ -41,12 +41,6 @@ class Config {
     static var BRAND_ID: Int {
         return UIApplication.brandId
     }
-//    static var BRAND_NAME_EN: String {
-//        return UIApplication.BRAND_NAME_EN
-//    }
-//    static var BRAND_NAME_AR: String {
-//        return UIApplication.BRAND_NAME_AR
-//    }
 }
 //MARK: - BLL CONFIGURATION
 extension Config: BLLConfigBLL {

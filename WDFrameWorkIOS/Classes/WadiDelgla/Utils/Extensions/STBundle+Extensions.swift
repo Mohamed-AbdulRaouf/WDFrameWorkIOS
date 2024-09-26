@@ -28,17 +28,6 @@ class AnyLanguageBundle: Bundle {
 
 extension Bundle {
     class func setLanguage(_ language: String) {
-
-//        let bll_bundle = Bundle(identifier: "com.simpletouch.wdframeWorkios")!
-//         print("URL BATH -> \(String(describing: bll_bundle.bundlePath))")
-////        defer {
-//            object_setClass(Bundle.main, AnyLanguageBundle.self)
-//            object_setClass(bll_bundle, AnyLanguageBundle.self)
-            
-
-
-//        }
-        
         if language == "ar" {
             SetAppLanguage.shared.setLanguage(languageCode: "ar")
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
@@ -48,9 +37,5 @@ extension Bundle {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             UINavigationBar().semanticContentAttribute = .forceLeftToRight
         }
-        
-//        objc_setAssociatedObject(Bundle.main, &bundleKey,    Bundle.main.path(forResource: language, ofType: "lproj"), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-//        objc_setAssociatedObject(bll_bundle, &bundleKey,   bll_bundle.path(forResource: language, ofType: "lproj"), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
     }
 }

@@ -341,9 +341,6 @@ public class CartUseCasesBLL : CartServiceBLL  {
         let minut = calendar.component(.minute, from: date)
         let second = calendar.component(.second, from: date)
         let miSecond = calendar.component(.nanosecond, from: date)
-        //           let randomDigits = Int.random(in: 0..<4)
-//        let deviceID = UIDevice.current.identifierForVendor!.uuidString
-//        let token = UserDefaults.user?.token.value
         return "I_\(year)_\(month)_\(day)_\(hour)_\(minut)_\(second)_\(miSecond)_\(brandId)_\(userId)"
     }
 }

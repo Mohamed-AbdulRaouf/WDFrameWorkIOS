@@ -37,7 +37,6 @@ class CustomFileManagerBLL {
             let errors =  json.map({try! CustomErrorDTODAL.init(json: $0)})
             let str = String(decoding: data, as: UTF8.self)
             print(str);
-//            UserDefaults.apiErrors = str
             return errors
             
         } catch {
@@ -45,27 +44,5 @@ class CustomFileManagerBLL {
         }
         
         return nil
-        /*
-         do {
-         let data = try Data(contentsOf: URL)
-         print(data)
-         let str = String(decoding: data, as: UTF8.self)
-         print(str);
-         
-         } catch {
-         // catch errors here
-         }
-         */
-        
-        //        do {
-        //            let txt =  try NSString(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
-        //            print(txt);
-        //            return txt
-        //        }
-        //        catch {
-        //            /* error handling here */
-        //            return nil
-        //        }
-        
     }
 }

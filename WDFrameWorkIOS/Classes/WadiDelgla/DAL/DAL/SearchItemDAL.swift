@@ -91,16 +91,5 @@ public class SearchItemDTODAL :BaseUserDTODAL, Codable, IRegisterDTODAL{
     
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        //
-        //        code = try container.decodeIfPresent(
-        //            (Observable<String?>).self, forKey: .code)
-        //
-        //        firstName = try container.decodeIfPresent(String.self,forKey: .firstName)
-        //        lastName = try container.decodeIfPresent(String.self,forKey: .lastName)
-        //        email = try container.decodeIfPresent(String.self,forKey: .email)
-        //        password = try container.decodeIfPresent(String.self,forKey: .password)
-        //        gender = try container.decodeIfPresent(String.self,forKey: .gender)
-        //        shareCode = try container.decodeIfPresent(String.self,forKey: .shareCode)
-        //        brandId = try container.decodeIfPresent(Int.self,forKey: .brandId)
     }
 }

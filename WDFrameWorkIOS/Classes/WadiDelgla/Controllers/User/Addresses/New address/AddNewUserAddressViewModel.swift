@@ -51,11 +51,6 @@ class AddNewUserAddressViewModel: IAddNewUserAddressViewModel{
             //new address
             self.currentCity = UserDefaults.currentCity
             self.currentArea = UserDefaults.currentArea
-        }else{
-            //update address
-            #warning("check from code")
-//            self.currentCity = SearchItemDTODAL(id:String(address_data?.cityId.value ?? 0),name :address_data?.cityName.value  ?? "")
-//            self.currentArea = SearchItemDTO(id: String(address_data?.areaId.value ?? 0), name: address_data?.areaName.value ?? "")
         }
         self.getCitiesAndAreas()
     }
@@ -135,14 +130,6 @@ class AddNewUserAddressViewModel: IAddNewUserAddressViewModel{
                 self.apiClient?.addCustomerAddress(self.address_data!) { (response) in
                     doOnMain {
                         self.hideHUD()
-//                        guard let _ = response?.data else {
-//                            self.errorModel = response?.error?.validateError as? IAddressValidationDTOBLL
-//                            self.delegate?.onUpdateLayout()
-//                            if response?.error?.APIError != nil {
-//                                self.delegate?.onError(response?.error?.APIError?.description ?? "")
-//                            }
-//                            return
-//                        }
                         self.delegate?.successAddNewAddress()
                     }
                 }

@@ -160,11 +160,7 @@ extension AddNewUserAddressViewController: IAddNewUserAddressViewController{
     }
     
     func successAddNewAddress() {
-//        self.bindingData()
-//        self.showToast(R.string.localizable.success_add_address())
-//        doOnMain(deadline: 0.2, {
-            self.navigationController?.popViewController(animated: true)
-//        })
+        self.navigationController?.popViewController(animated: true)
     }
     
     func onError(_ error: String) {

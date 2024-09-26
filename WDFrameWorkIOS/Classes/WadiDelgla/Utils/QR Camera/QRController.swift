@@ -40,9 +40,6 @@ override func viewDidLoad() {
     }
     
     func alertCameraAccessNeeded() {
-        
-//        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
-        
         let alert = UIAlertController(
             title: "Need Camera Access",
             message: "Camera access is required to make full use of this feature.",
@@ -51,7 +48,6 @@ override func viewDidLoad() {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Allow Camera", style: .cancel, handler: { (alert) -> Void in
-//            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
         }))
         
         DispatchQueue.main.async {

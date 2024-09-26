@@ -9,8 +9,6 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 
 public protocol CountrySelectorDelegate:class {
@@ -24,7 +22,6 @@ protocol ICountryListViewModel: IBaseViewModel {
     var sourceDelegate: CountrySelectorDelegate? {get set}
     var brandId: Int? {get set}
     func viewDidLoad()
-//    func getCountryList()
 }
 class CountryListViewModel: ICountryListViewModel{
     var apiClient: CountryServiceBLL?
@@ -53,29 +50,29 @@ class CountryListViewModel: ICountryListViewModel{
     
     func getAllAvailableCountryList() {
         guard K.shared.ALL_AVAILABLE_COUNTRY_LIST == nil else {
-                   self.countryList = K.shared.ALL_AVAILABLE_COUNTRY_LIST
-                   return
-               }
-               self.showHud()
-               doInBackground {
-                   self.apiClient?.getAllAvailableCountries(completion: { (response) in
-                       doOnMain {
-                           self.hideHUD()
-                           guard let data = response?.data else {
-                               if response?.error?.APIError != nil {
-                                   self.delegate?.onError(response?.error?.APIError?.description ?? "")
-                               }
-                               if response?.error?.networkError != nil {
-                                   self.delegate?.onError(response?.error?.networkError?.description ?? "")
-                               }
-                               return
-                           }
-                           K.shared.ALL_AVAILABLE_COUNTRY_LIST = data as? [CountryDTODAL]
-                           self.countryList = K.shared.ALL_AVAILABLE_COUNTRY_LIST
-                           self.delegate?.onReloadTableView()
-                       }
-                   })
-               }
+            self.countryList = K.shared.ALL_AVAILABLE_COUNTRY_LIST
+            return
+        }
+        self.showHud()
+        doInBackground {
+            self.apiClient?.getAllAvailableCountries(completion: { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let data = response?.data else {
+                        if response?.error?.APIError != nil {
+                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                        }
+                        if response?.error?.networkError != nil {
+                            self.delegate?.onError(response?.error?.networkError?.description ?? "")
+                        }
+                        return
+                    }
+                    K.shared.ALL_AVAILABLE_COUNTRY_LIST = data as? [CountryDTODAL]
+                    self.countryList = K.shared.ALL_AVAILABLE_COUNTRY_LIST
+                    self.delegate?.onReloadTableView()
+                }
+            })
+        }
     }
     func getBrandCountryList() {
         guard K.shared.BRAND_COUNTRY_LIST == nil else {

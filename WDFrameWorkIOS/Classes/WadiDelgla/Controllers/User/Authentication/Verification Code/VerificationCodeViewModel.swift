@@ -8,9 +8,7 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
-//import STFirebaseSDK
+
 protocol IVerificationCodeViewModel: IBaseViewModel {
     var verificationCodeModel : IAuthPhoneNumberDTODAL! {get set}
     var apiClient: UserServiceBLL { get set }
@@ -59,100 +57,58 @@ class VerificationCodeViewModel: IVerificationCodeViewModel{
                 }
             })
         }
-        //        doInBackground {
-        //            self.apiClient.sendVerifyCodeViaFireBase(self.verificationCodeModel, completion: { (response) in
-        //                doOnMain {
-        //                    self.hideHUD()
-        //                    guard let _ = response?.data else {
-        //                        if response?.error?.FireBaseError != nil {
-        //                            self.delegate?.onError(response?.error?.FireBaseError ?? "")
-        //                        }
-        //                        return
-        //                    }
-        //                    self.verificationCodeModel.verificationId.value = response?.data as? String
-        //                    self.delegate?.onSuccessSendVerifyCode()
-        //                }
-        //            })
-        //        }
     }
     
     func verifyPhoneNumber(){
         self.showHud()
         let phoneNumber = "\(self.verificationCodeModel.dialCode.value ?? "+2")\(self.verificationCodeModel.mobile.value ?? "")"
-//        doInBackground {
-//            STFirebaseLib.verifyPhoneNumber(withPhoneNumber: phoneNumber, withLang: K.shared.APP_LANGUAGE) { (verificationID, error) in
-//                doOnMain {
-//                    self.hideHUD()
-//                    guard let _ = verificationID else {
-//                        if error != nil {
-//                            self.delegate?.onError(error ?? "")
-//                        }
-//                        return
-//                    }
-//                    self.verificationCodeModel.verificationId.value = verificationID
-//                    self.delegate?.onSuccessSendVerifyCode()
-//                }
-//            }
-//        }
     }
-     /// This Function to verify verification code that user entered
-        func validateVerificationCode() {
-            self.showHud()
-            guard self.verificationCodeModel.mobile.value != Config.TestUserPhoneNumber else {
-                       doOnMain {
-                           self.hideHUD()
-                           if self.verificationCodeModel.verificationCode.value != Config.TestVerifyCode{
-                               self.delegate?.onError("Invalid Verification Code")
-                               return
-                           }
-                           self.delegate?.onSuccessCheckVerifyCode()
-                           
-                       }
-                       return
-                   }
-            doInBackground {
-                self.apiClient.validateVerifificationCode(self.verificationCodeModel!, completion: { (response) in
-                    doOnMain {
-                        self.hideHUD()
-                        guard let _ = response?.data else {
-                            return
-                        }
-                        self.signIn()
-    //                    self.delegate?.onSuccessCheckVerifyCode()
-                    }
-                })
+    /// This Function to verify verification code that user entered
+    func validateVerificationCode() {
+        self.showHud()
+        guard self.verificationCodeModel.mobile.value != Config.TestUserPhoneNumber else {
+            doOnMain {
+                self.hideHUD()
+                if self.verificationCodeModel.verificationCode.value != Config.TestVerifyCode{
+                    self.delegate?.onError("Invalid Verification Code")
+                    return
+                }
+                self.delegate?.onSuccessCheckVerifyCode()
+                
             }
+            return
         }
+        doInBackground {
+            self.apiClient.validateVerifificationCode(self.verificationCodeModel!, completion: { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let _ = response?.data else {
+                        return
+                    }
+                    self.signIn()
+                }
+            })
+        }
+    }
     
     func signIn(){
-           self.showHud()
-//           STFirebaseLib.signIn(withVerificationID: self.verificationCodeModel!.verificationId.value ?? "", verificationCode:  self.verificationCodeModel!.verificationCode.value ?? "",withLang: K.shared.APP_LANGUAGE) { (success, error) in
-//               self.hideHUD()
-//                       guard let _ = success else{
-//                           if error != nil {
-//                               self.delegate?.onError(error ?? "")
-//                               return
-//                           }
-//                           return
-//                       }
-//                        self.delegate?.onSuccessCheckVerifyCode()
-//                   }
-       }
- func validateCustomer(){
-       self.showHud()
-       doInBackground {
-        self.apiClient.validateCustomer(self.verificationCodeModel.mobile.value ?? "",self.verificationCodeModel.countryId.value ?? "", Config.BRAND_ID, completion: { (response) in
-               doOnMain {
-                   self.hideHUD()
-                   guard let _ = response?.data else {
-                       if response?.error?.APIError != nil {
-                           self.delegate?.onError(response?.error?.APIError?.description ?? "")
-                       }
-                       return
-                   }
-                   self.delegate?.onSucessValidateCustomer()
-               }
-           })
-       }
-   }
+        self.showHud()
+    }
+    func validateCustomer(){
+        self.showHud()
+        doInBackground {
+            self.apiClient.validateCustomer(self.verificationCodeModel.mobile.value ?? "",self.verificationCodeModel.countryId.value ?? "", Config.BRAND_ID, completion: { (response) in
+                doOnMain {
+                    self.hideHUD()
+                    guard let _ = response?.data else {
+                        if response?.error?.APIError != nil {
+                            self.delegate?.onError(response?.error?.APIError?.description ?? "")
+                        }
+                        return
+                    }
+                    self.delegate?.onSucessValidateCustomer()
+                }
+            })
+        }
+    }
 }

@@ -34,7 +34,6 @@ class NotRatedOrdersViewController: STUIViewController,IBaseController {
     }
     func showRate(){}
     func showMessage(_ message: String) {
-//        self.showMessage(withTitle:"", andMessage: message)
     }
 
 }

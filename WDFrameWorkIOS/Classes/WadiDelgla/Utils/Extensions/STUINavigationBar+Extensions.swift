@@ -35,14 +35,6 @@ extension UINavigationBar {
         UINavigationBar.appearance().barTintColor = background
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor:text]
-        UINavigationBar.appearance().barStyle = .blackOpaque
-//        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-//            statusBar.setValue(UIColor.white, forKey: "foregroundColor")
-//            statusBar.setValue(UIColor.init(hexString: "#bb0000"), forKey: "backgroundColor")
-//        }
-//        UIApplication.shared.statusBarView?.backgroundColor = UIColor.init(hexString: "#bb0000")
-        
-        
-        
+        UINavigationBar.appearance().barStyle = .blackOpaque        
     }
 }

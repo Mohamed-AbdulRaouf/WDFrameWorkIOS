@@ -18,8 +18,6 @@ extension LocationPickerViewController: GMSAutocompleteViewControllerDelegate {
         dismiss(animated: true, completion: nil)
         self.reverseGeocodeCoordinate(coordinate: place.coordinate)
         self.locationMapView.clear()
-//        self.locationSearchTextField.text = place.name
-        
        
         let cord2D = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         

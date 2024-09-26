@@ -8,12 +8,9 @@
 
 import Foundation
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 import Kingfisher
 import UIKit
-//import KashierPaymentSDK
 
 protocol ICheckoutViewModel: IBaseViewModel {
     //MARK: - Variables
@@ -278,7 +275,6 @@ class CheckoutViewModel: ICheckoutViewModel{
 //    }
     
     func confirmOnlinePaymentForOrder(transactionID: String?, orderId: String, merchanOrderId: String?, status: Bool) {
-//        self.showHud("don't_close_app_during_purchasing_message".localized())
         doInBackground {
             let payment = ConfirmPaymentDTODAL(transactionId: transactionID ?? "", merchanOrderId: merchanOrderId ?? "", orderId: orderId, status: status)
             self.orderService?.confirmOnLinePaymentForOrderKashier(payment, completion: { (response) in
@@ -343,11 +339,9 @@ class CheckoutViewModel: ICheckoutViewModel{
                       self.hideHUD()
                       guard let data = response?.data as? OrderByFrontRefernceDTODAL else {
                           self.hideHUD()
-//                          self.delegate?.onError(R.string.localizable.error_happen_message())
                           return
                       }
                       guard let status = data.status.value ,status else {
-//                          self.delegate?.onError(response?.error?.networkError?.description ?? "")
                           return }
                       // cash on delivery
                       if self.cart?.orderPaymentTypeId == PaymentType.cashOnDelivery.orderPaymentId {

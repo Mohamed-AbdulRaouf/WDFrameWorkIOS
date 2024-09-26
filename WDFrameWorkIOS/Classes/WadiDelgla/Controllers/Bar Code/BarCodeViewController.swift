@@ -39,9 +39,6 @@ extension BarCodeViewController{
     
     func bindingData() {
         if let viewModel = viewModel {
-            //            viewModel.userInfo
-            //                .map {_ in "\(viewModel.userFirstName.value) \(viewModel.userLastName.value)" }
-            //                .bind(to: userInfoLabel)
             viewModel.userInfo
                 .bind(to: userInfoLabel)
             viewModel.barCodeImage.bind(to: barCodeImageView.reactive.image)

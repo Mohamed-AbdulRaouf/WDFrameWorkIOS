@@ -9,8 +9,6 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
 import SVProgressHUD
 import Kingfisher
 import UIKit

@@ -8,7 +8,7 @@
 
 import UIKit
 
- 
+
 class OrderListViewController: STUIViewController,IBaseController {
     
     var viewModel: IOrderListViewModel?
@@ -18,7 +18,7 @@ class OrderListViewController: STUIViewController,IBaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setupUI()
         self.bindingData()
@@ -35,22 +35,14 @@ class OrderListViewController: STUIViewController,IBaseController {
     }
     
     func setupUI(){
-//        self.navigationController?.navigationBar.barTintColor = .black
-//        // To change colour of tappable items.
-//        navigationController?.navigationBar.tintColor = UIColor(named: "MainColor")!
-//        // To apply textAttributes to title i.e. colour, font etc.
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black ]
-//        // To control navigation bar's translucency.
-//        navigationController?.navigationBar.isTranslucent = true
-//        navigationController?.navigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
         self.viewModel?.delegate = self
         self.setupTableView()
         self.navigationItem.title = "my_orders".localized()
     }
     func bindingData() {
-         
+        
     }
- 
+    
 }
 
 extension OrderListViewController: UITableViewDelegate,UITableViewDataSource,IBaseTableView{
@@ -59,27 +51,22 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource,IBa
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60.0
-//        tableView.rowHeight = UITableView.automaticDimension
     }
-   
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel?.order?.items.value?.count ?? 0 == 0 {
             self.tableView.setEmptyMessage("no_orders".localized())
-           
-               } else {
-                   self.tableView.restore()
-               }
+            
+        } else {
+            self.tableView.restore()
+        }
         return viewModel?.order?.items.value?.count ?? 0
     }
     
-   
-
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! OrderTableViewCell
-       
+        
         
         if indexPath.row == (self.viewModel?.order?.items.value?.count ?? 0)! - 1 {
             if (self.viewModel?.order?.totalCount.value ?? 0)! > (self.viewModel?.order?.items.value?.count ?? 0)! {
@@ -94,7 +81,7 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource,IBa
                 self?.navigationController?.pushViewController(vc)
             }
         }
-     
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -106,10 +93,9 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource,IBa
 }
 
 extension OrderListViewController: IOrderListViewController{
-  
+    
     
     func onReloadTableView() {
-      //  self.tableView.separatorStyle = .singleLine
         self.tableView.reloadData()
     }
 }

@@ -9,7 +9,6 @@
 import Foundation
 import Bond
 public class BaseUserDTODAL : IBaseUserDTODAL {
-//    public var mobile = Observable<String?>(nil)
     public init(){}
     
 }

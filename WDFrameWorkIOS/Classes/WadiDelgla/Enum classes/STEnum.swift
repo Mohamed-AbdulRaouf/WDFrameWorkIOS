@@ -131,5 +131,4 @@ enum Gender: String{
 enum NotificationName: String {
     case userNotAllowAccessLocation = "userNotAllowAccessLocation"
     case NOTIFICATION_CART = "cartItemCount"
-//    let NOTIFICATION_CART = Notification.Name("cartItemCount")
 }

@@ -15,8 +15,8 @@ public class LocationManager: NSObject {
     private var locationManager = CLLocationManager()
     private let operationQueue = OperationQueue()
     let geoCoder = CLGeocoder()
-
-   private override init(){
+    
+    private override init(){
         super.init()
         
         //Pause the operation queue because
@@ -40,19 +40,19 @@ public class LocationManager: NSObject {
 }
 //MARK: - CLLocationManagerDelegate Protocol
 extension LocationManager : CLLocationManagerDelegate{
-   public  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
+    public  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
     public  func locationManager(_ manager: CLLocationManager,
-                                  didChangeAuthorization status: CLAuthorizationStatus) {}
+                                 didChangeAuthorization status: CLAuthorizationStatus) {}
     public func locationManager(_ manager: CLLocationManager,
-                                  didFailWithError error: Error) {}
+                                didFailWithError error: Error) {}
 }
 //MARK: - Functions
 extension LocationManager {
     static func requestGPS() {
         LocationManager.sharedInstance.locationManager.requestLocation()
-       }
+    }
     
-
+    
     ///Checks the status of the location permission
     /// and adds the callback block to the queue to run when finished checking
     /// NOTE: Anything done in the UI should be enclosed in `DispatchQueue.main.async {}`
@@ -116,42 +116,42 @@ extension LocationManager {
         var address = ""
         
         ceo.reverseGeocodeLocation(loc,preferredLocale: Locale.init(identifier: lang), completionHandler:
-            {(placemarks, error) in
-                if (error != nil)
-                {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
-                    
-                }
-                let pm = placemarks! as [CLPlacemark]
+                                    {(placemarks, error) in
+            if (error != nil)
+            {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
                 
-                if pm.count > 0 {
-                    let pm = placemarks![0]
-                    print(pm.country)
-                    print(pm.locality)
-                    print(pm.subLocality)
-                    print(pm.thoroughfare)
-                    print(pm.postalCode)
-                    print(pm.subThoroughfare)
-                    var addressString : String = ""
-                    if pm.subLocality != nil {
-                        addressString = addressString + pm.subLocality! + ", "
-                    }
-                    if pm.thoroughfare != nil {
-                        addressString = addressString + pm.thoroughfare! + ", "
-                    }
-                    if pm.locality != nil {
-                        addressString = addressString + pm.locality! + ", "
-                    }
-                    if pm.country != nil {
-                        addressString = addressString + pm.country! + ", "
-                    }
-                    if pm.postalCode != nil {
-                        addressString = addressString + pm.postalCode! + " "
-                    }
-                    print(addressString)
-                    address = addressString
-                    completion(address)
+            }
+            let pm = placemarks! as [CLPlacemark]
+            
+            if pm.count > 0 {
+                let pm = placemarks![0]
+                print(pm.country)
+                print(pm.locality)
+                print(pm.subLocality)
+                print(pm.thoroughfare)
+                print(pm.postalCode)
+                print(pm.subThoroughfare)
+                var addressString : String = ""
+                if pm.subLocality != nil {
+                    addressString = addressString + pm.subLocality! + ", "
                 }
+                if pm.thoroughfare != nil {
+                    addressString = addressString + pm.thoroughfare! + ", "
+                }
+                if pm.locality != nil {
+                    addressString = addressString + pm.locality! + ", "
+                }
+                if pm.country != nil {
+                    addressString = addressString + pm.country! + ", "
+                }
+                if pm.postalCode != nil {
+                    addressString = addressString + pm.postalCode! + " "
+                }
+                print(addressString)
+                address = addressString
+                completion(address)
+            }
         })
         
         
@@ -160,10 +160,9 @@ extension LocationManager {
     func getUserCurrentISOCountry(completion: @escaping (String?) -> Void) {
         runLocationBlock {
             let location = CLLocation(latitude: self.getLatitude(), longitude: self.getLongitude())
-                       self.getCountry(forLocation: location) { country in
-                           completion(country?.isoCountryCode)
-//                        completion("EG")
-                       }
+            self.getCountry(forLocation: location) { country in
+                completion(country?.isoCountryCode)
+            }
         }
     }
     func getCountry(forLocation location: CLLocation,completion: @escaping (CLPlacemark?) -> Void){

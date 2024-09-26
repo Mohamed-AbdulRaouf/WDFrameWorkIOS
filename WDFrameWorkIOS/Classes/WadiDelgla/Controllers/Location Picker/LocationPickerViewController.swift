@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
-//import DAL
+
 // MARK: - IBOUTLETS - Variables
 class LocationPickerViewController: UIViewController {
     
@@ -105,14 +105,6 @@ extension LocationPickerViewController {
         self.pinMarker.icon = image
         self.pinMarker.map = vwMap
         self.pinMarker.appearAnimation = GMSMarkerAnimation.pop
-        
-        
-        
-        //        let markerImage = R.image.ic_offer_pickup()
-        //        let markerView = UIImageView(image: markerImage)
-        //        pinMarker?.iconView = markerView
-        //        pinMarker?.map = self.locationMapView
-        
     }
     func getUserAAddressccessPermision(){
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -123,9 +115,9 @@ extension LocationPickerViewController {
         let camera = GMSCameraPosition.camera(withLatitude:initalLocation.latitude,longitude: initalLocation.longitude, zoom: 16.0)
         locationMapView.camera = camera
         DispatchQueue.main.async
-            {
-                self.locationMapView.clear() // clearing Pin before adding new
-                self.plotMarker(AtCoordinate: self.initalLocation, onMapView: self.locationMapView)
+        {
+            self.locationMapView.clear() // clearing Pin before adding new
+            self.plotMarker(AtCoordinate: self.initalLocation, onMapView: self.locationMapView)
         }
         self.reverseGeocodeCoordinate(coordinate: self.initalLocation)
         self.locationManager.startUpdatingLocation()

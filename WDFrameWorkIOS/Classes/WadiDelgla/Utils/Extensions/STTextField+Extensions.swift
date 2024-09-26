@@ -8,11 +8,7 @@
 
 import UIKit
 extension UITextField {
-//    func setRightPaddingPoints(_ amount:CGFloat) {
-//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-//        self.rightView = paddingView
-//        self.rightViewMode = .always
-//    }
+
     func underlineTextField(_ color : UIColor){
         let bottomLine = CALayer()
 

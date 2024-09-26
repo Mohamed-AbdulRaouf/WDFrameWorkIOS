@@ -7,8 +7,6 @@
 //
 
 import Foundation
-////import DAL
-//import SwiftyJSON
 /*---UserDefaults---*/
 public extension UserDefaults {
     //makes the string safer
@@ -83,15 +81,6 @@ public extension UserDefaults {
               UserDefaults.standard.synchronize()
           }
       }
-//    static var currentAppCountry : String? {
-//           get {
-//               return UserDefaults.standard.value(forKey:UserDefaultsKeysBLL.currentAppCountry.rawValue) as? String
-//           }
-//           set{
-//               UserDefaults.standard.set(newValue, forKey: UserDefaultsKeysBLL.currentAppCountry.rawValue)
-//               UserDefaults.standard.synchronize()
-//           }
-//       }
     static var fcmToken : String {
         get {
             return  UserDefaults.standard.value(forKey:UserDefaultsKeysBLL.fcmToken.rawValue) as? String ?? ""
@@ -186,18 +175,7 @@ public extension UserDefaults {
             UserDefaults.standard.synchronize()
         }
     }
-    //    static var apiErrors : String {
-    //        get {
-    //            if let apiErrors = UserDefaults.standard.value(forKey:UserDefaultsKeysBLL.apiErrors.rawValue) as? String {
-    //                return apiErrors
-    //            }
-    //            return ""
-    //        }
-    //        set{
-    //            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeysBLL.apiErrors.rawValue)
-    //            UserDefaults.standard.synchronize()
-    //        }
-    //    }
+    
     static var isAppNeedsWalkthrough : Bool?{
         get {
             if let isneed = UserDefaults.standard.value(forKey:UserDefaultsKeysBLL.appNeedsWalkthroughKey.rawValue) as? Bool {

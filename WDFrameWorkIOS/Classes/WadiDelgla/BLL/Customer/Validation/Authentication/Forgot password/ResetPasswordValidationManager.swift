@@ -37,22 +37,7 @@ public class ResetPasswordValidationManager : IValidationManagerBLL{
 }
 // Fields to be validated
 extension ResetPasswordValidationManager : IResetPasswordValidationManagerBLL {
-//    //MARK: validate Mobile number
-//    
-//    public func validateVerificationCode(string: String) -> Bool
-//    {
-//        //        var validationError :String? = nil
-//        if string == "" {
-//            errorViewModel?.msgVerifyCodeError.value  = ValidationError.ErrorMessages.msgEmptyVerifyCode()
-//            return false
-//        }
-//        if string.withoutSpacesAndNewLines == "" || string.count != verificationCodeLength || !string.isDigits {
-//            errorViewModel?.msgVerifyCodeError.value  = ValidationError.ErrorMessages.msgInvalidVerifyCode()
-//            return false
-//        }
-//        errorViewModel?.msgVerifyCodeError.value = ""
-//        return true
-//    }
+
     //MARK: validate Password
     public func validatePassword(string: String) -> Bool {
         if string == "" {

@@ -35,7 +35,6 @@ class VerificationCodeViewController: STUIViewController ,IBaseController{
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.viewModel?.sendVerifyCode()
     }
     // MARK: - IBActions
     @IBAction func onDismissTapped(_ sender: Any) {
@@ -97,9 +96,7 @@ extension VerificationCodeViewController{
         let attributedString = NSMutableAttributedString()
         attributedString.append(NSAttributedString(string: R.string.localizable.havenT_received_Code(),
                                                    attributes: [.underlineStyle: 0]))
-//        attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
-//                                                   attributes: [.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]))
-        
+
 #if swift(>=5.0)
 print("Running Swift 5.0 or later")
         attributedString.append(NSAttributedString(string: R.string.localizable.resend_code(),
@@ -125,7 +122,6 @@ print("Running old Swift")
     func bindingData(){
         if let viewModel = viewModel,let verifyModel = viewModel.verificationCodeModel {
             self.phoneNumberTextField.text = "\(verifyModel.dialCode.value ?? "")" + "\(verifyModel.mobile.value ?? "")"
-//            verifyModel.mobile.bind(to: phoneNumberTextField.reactive.text)
             verifyCodeTextField.reactive.text.bind(to: verifyModel.verificationCode)
         }
     }

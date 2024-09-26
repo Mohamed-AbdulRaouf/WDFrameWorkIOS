@@ -9,9 +9,6 @@
 import Foundation
 import Swinject
 import SwinjectStoryboard
-//import DAL
-//import BLL
-
 
 let container = Container() { container in
     container.register(NetworkingBLL.self) { _ in NetworkBLL() }.inObjectScope(.container)
@@ -129,8 +126,6 @@ let container = Container() { container in
     
     
     container.register(ICityDTODAL.self) { r in CityDTODAL() }
-#warning("check from code")
-//    container.register(ISearchItemDTODAL.self) { r in SearchItemDTODAL() }
     
     container.register(ILocationViewModel.self) { r in
         let viewModel = LocationViewModel(apiClient: r.resolve(LocationServiceBLL.self)!, cartService: r.resolve(CartServiceBLL.self)!)
@@ -143,7 +138,6 @@ let container = Container() { container in
     }
     
     container.storyboardInitCompleted(SearchViewController.self) { r, c in
-        //        c.viewModel = r.resolve(ILocationViewModel.self)!
     }
     
     //MARK:- Splash
@@ -305,9 +299,6 @@ let container = Container() { container in
     container.register(IServiceDTODAL.self) { _ in ServiceDTODAL() }
     container.register(IRequestBrandDTODAL.self) { _ in RequestBrandDTODAL() }
     container.register(IFilterationListDTODAL.self) { _ in FilterationListDTODAL() }
-#warning("check from code")
-//    container.register(IFilterationSectionDTODAL.self) { _ in FilterationSectionDTO() }
-    
     container.register(IExploreViewModel.self) { r in
         let viewModel = ExploreViewModel(requestBrandDTO: r.resolve(IRequestBrandDTODAL.self)!, apiClient: r.resolve(BrandServiceBLL.self)!, userService: r.resolve(UserServiceBLL.self)!)
         return viewModel

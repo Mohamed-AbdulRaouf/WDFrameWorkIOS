@@ -10,7 +10,6 @@ import Foundation
 ////import DAL
 public protocol IResetPasswordValidationManagerBLL  {
     var errorViewModel: IResetPasswordValidationDTOBLL? { get set }
-//    func validateVerificationCode(string: String) -> Bool
     func validatePassword(string: String) -> Bool
     func validateConfirmPassword(password: String,newpassword: String) -> Bool
 

@@ -15,12 +15,11 @@ extension CheckOutViewController : UITableViewDelegate,UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-//        tableView.rowHeight = UITableViewAutomaticDimension
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         tableView.rowHeight = tableView.estimatedRowHeight
 #else
-print("Running old Swift")
+        print("Running old Swift")
         tableView.rowHeight = UITableViewAutomaticDimension
 #endif
     }
@@ -45,32 +44,18 @@ print("Running old Swift")
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 {
-            //            guard let order =  self.viewModel?.calcResponse,order.isCurrentRewardIdValid.value ?? false && order.currentCustomerIsRegistered.value ?? false else { return 0 }
+            
         }
-//        return UITableViewAutomaticDimension
 #if swift(>=5.0)
-print("Running Swift 5.0 or later")
+        print("Running Swift 5.0 or later")
         return tableView.estimatedRowHeight
 #else
-print("Running old Swift")
+        print("Running old Swift")
         return UITableViewAutomaticDimension
 #endif
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let titles = self.viewModel?.sections
-//        if titles?[indexPath.section] == "address".localized(){
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutAddressTableViewCell", for: indexPath) as! CheckoutAddressTableViewCell
-//            if let address = self.viewModel?.cart?.userAddressDetails {
-//                cell.configureCell(address)
-//                cell.onChangeAddressTapped = { [weak self] in
-//                    let vc = StoryboardScene.User.userAddressListViewController.instantiate()
-//                    vc.viewModel?.sourceDelegate = self
-//                    self?.navigationController?.pushViewController(vc)
-//
-//                }
-//            }
-//            return cell
-//        }else
         if titles?[indexPath.section] == "my_items".localized() {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutItemTableViewCell", for: indexPath) as! CheckoutItemTableViewCell
             if let items = self.viewModel?.cart?.cartItems,indexPath.row <= items.count - 1 {
@@ -142,8 +127,8 @@ extension CheckOutViewController {
         }
         switch titles?[section] {
         case "my_items".localized(), // "address".localized() ,
-             "discount".localized(),
-             "payment_methods".localized():
+            "discount".localized(),
+            "payment_methods".localized():
             return 30
         default:
             return 0

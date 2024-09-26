@@ -56,7 +56,7 @@ class SplashViewModel: ISplashViewModel{
             }
             
         }
-       
+        
     }
     /// This Function to call Login API
     func sendLoginRequest(){
@@ -139,18 +139,5 @@ class SplashViewModel: ISplashViewModel{
         }
         UserDefaults.currentAppCountry = K.shared.BRAND_COUNTRY_LIST![0]
         self.delegate?.onPresentLocation()
-
-        /*
-        guard  UserDefaults.currentAppCountry == nil else {
-            self.delegate?.onPresentLocation()
-            return
-        }
-        guard let countries = K.shared.BRAND_COUNTRY_LIST,countries.count > 1 else{
-            UserDefaults.currentAppCountry = K.shared.BRAND_COUNTRY_LIST![0]
-            self.delegate?.onPresentLocation()
-            return
-        }
-        self.delegate?.onPresentCountryList()
- */
     }
 }

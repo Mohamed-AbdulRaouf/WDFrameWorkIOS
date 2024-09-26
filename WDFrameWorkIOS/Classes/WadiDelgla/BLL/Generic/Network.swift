@@ -11,57 +11,11 @@ import Alamofire
 //import SwiftyJSON
 public class NetworkBLL: NetworkingBLL {
     public init() {}
-    /*
-    var alamoFireManager : SessionManager?
-    
-    private lazy var backgroundManager: Alamofire.SessionManager = {
-            let bundleIdentifier = "com.simpletouch.Rosto"
-            return Alamofire.SessionManager(configuration: URLSessionConfiguration.background(withIdentifier: bundleIdentifier + ".background"))
-        }()
 
-   public var backgroundCompletionHandler: (() -> Void)? {
-        get {
-            return backgroundManager.backgroundCompletionHandler
-        }
-        set {
-            backgroundManager.backgroundCompletionHandler = newValue
-        }
-    }
-
-    */
     public func sendRequest2(_ apiRoute: URLRequestBuilderBLL, completion: @escaping onResponse) {
-        /*
-        backgroundManager.session.configuration.shouldUseExtendedBackgroundIdleMode = true
-        backgroundManager.startRequestsImmediately = true
-        backgroundManager.session.configuration.timeoutIntervalForRequest = 180
-
-        backgroundManager.request(apiRoute.requestURL, method: apiRoute.method, parameters: apiRoute.parameters, encoding: apiRoute.encoding, headers: apiRoute.headers)
-                  .responseJSON { (response) in
-                      //                guard self != nil else { return }
-                      switch response.result {
-                      case .success( _):
-                          guard let data = response.data else {
-                              completion(nil,NetworkError.IncorrectDataReturned )
-                              return
-                          }
-                          guard let json = try? JSON(data: data) else {                         completion(nil,NetworkError.IncorrectDataReturned)
-                              return
-                          }
-                          //                    let decoder = JSONDecoder()
-                          //                    let object = try! decoder.decode(type, from: data)
-                          print("LOG -> \(apiRoute.requestURL.absoluteString)")
-                          print("WITH PARAMS -> \(String(describing: apiRoute.parameters?.jsonString()))")
-                          print("BACKEND RESPONSE Status =  \(response.response?.statusCode) WITH JSON = \(json)")
-                          
-                          completion(MainResponse(statusCode: response.response?.statusCode, json: json) , nil)
-                      case .failure(let error):
-                          completion(nil,NetworkError(error: error as NSError))
-                      }
-              }
-*/
+        debugPrint(apiRoute)
     }
     public func sendRequest(_ apiRoute: URLRequestBuilderBLL, completion: @escaping  onResponse) {
-        //       try? Alamofire.request(apiRoute.asURLRequest())
         print("LOG -> TRY CaLLING  \(apiRoute.requestURL.absoluteString)")
         print("WITH PARAMS -> \(String(describing: apiRoute.parameters?.jsonString()))")
         AF.request(apiRoute.requestURL, method: apiRoute.method, parameters: apiRoute.parameters, encoding: apiRoute.encoding, headers: apiRoute.headers)
@@ -76,8 +30,6 @@ public class NetworkBLL: NetworkingBLL {
                     guard let json = try? JSON(data: data) else {                         completion(nil,NetworkErrorBLL.IncorrectDataReturned)
                         return
                     }
-                    //                    let decoder = JSONDecoder()
-                    //                    let object = try! decoder.decode(type, from: data)
                     print("LOG -> \(apiRoute.requestURL.absoluteString)")
                     print("WITH PARAMS -> \(String(describing: apiRoute.parameters?.jsonString()))")
                     print("BACKEND RESPONSE Status =  \(response.response?.statusCode) WITH JSON = \(json)")
@@ -126,8 +78,6 @@ public class NetworkBLL: NetworkingBLL {
             guard let json = try? JSON(data: data) else {                         completion(nil,NetworkErrorBLL.IncorrectDataReturned)
                 return
             }
-            //                    let decoder = JSONDecoder()
-            //                    let object = try! decoder.decode(type, from: data)
             print("LOG -> \(apiRoute.requestURL.absoluteString)")
             print("WITH PARAMS -> \(String(describing: apiRoute.parameters?.jsonString()))")
             print("BACKEND RESPONSE Status =  \(httpResponse.statusCode) WITH JSON = \(json)")

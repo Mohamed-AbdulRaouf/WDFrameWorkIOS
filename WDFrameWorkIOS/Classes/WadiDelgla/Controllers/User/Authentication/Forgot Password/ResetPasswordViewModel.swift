@@ -10,9 +10,7 @@
 import Foundation
 import Bond
 import ReactiveKit
-//import DAL
-//import BLL
-//import STFirebaseSDK
+
 protocol IResetPasswordViewModel: IBaseViewModel {
     
     var newPasswordModel : IResetPasswordDTODAL! {get set}
@@ -102,21 +100,6 @@ class ResetPasswordViewModel: IResetPasswordViewModel{
     func verifyPhoneNumber(){
         self.showHud()
         let phoneNumber = "\(self.verificationCodeModel.dialCode.value ?? "+2")\(self.verificationCodeModel.mobile.value ?? "")"
-//        doInBackground {
-//            STFirebaseLib.verifyPhoneNumber(withPhoneNumber: phoneNumber, withLang: K.shared.APP_LANGUAGE) { (verificationID, error) in
-//                doOnMain {
-//                    self.hideHUD()
-//                    guard let _ = verificationID else {
-//                        if error != nil {
-//                            self.delegate?.onError(error ?? "")
-//                        }
-//                        return
-//                    }
-//                    self.verificationCodeModel.verificationId.value = verificationID
-//                    self.delegate?.onSuccessSendVerifyCode()
-//                }
-//            }
-//        }
     }
     /// This Function to verify verification code that user entered
     func validateVerificationCode() {
@@ -142,24 +125,12 @@ class ResetPasswordViewModel: IResetPasswordViewModel{
                         return
                     }
                     self.signIn()
-                    //                    self.delegate?.onSuccessCheckVerifyCode()
                 }
             })
         }
     }
     func signIn(){
         self.showHud()
-//        STFirebaseLib.signIn(withVerificationID: self.verificationCodeModel!.verificationId.value ?? "", verificationCode:  self.verificationCodeModel!.verificationCode.value ?? "", withLang: K.shared.APP_LANGUAGE) { (success, error) in
-//            self.hideHUD()
-//            guard let _ = success else{
-//                if error != nil {
-//                    self.delegate?.onError(error ?? "")
-//                    return
-//                }
-//                return
-//            }
-//            self.delegate?.onSuccessCheckVerifyCode()
-//        }
     }
     func checkResetPasswordDTO() {
         self.showHud()

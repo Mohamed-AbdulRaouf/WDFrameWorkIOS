@@ -8,8 +8,6 @@
 
 import UIKit
 import Kingfisher
-//import Toast_Swift
-//import DAL
 
 // MARK: - IMenuViewController Protocol
 extension MenuViewController : IMenuViewController{
@@ -40,13 +38,6 @@ extension MenuViewController : IMenuViewController{
     }
     
     func updateBageCount() {
-        // stop display background from server for a while
-//        if let imageUrl = URL(string: K.shared.SELECTED_BRAND?.backgroundAdsImage.value?.replacingOccurrences(of: "http", with: "https") ?? "") {
-//            let resource = ImageResource(downloadURL: imageUrl, cacheKey: K.shared.SELECTED_BRAND?.backgroundAdsImage.value)
-//            self.backgroundAdsImage.kf.setImage(with: resource)
-//        } else {
-//            self.backgroundAdsImage.image = UIImage(named: "defaultimg")
-//        }
         self.setCountOfCartToLbl()
         self.getCattItemsCountBadget()
     }

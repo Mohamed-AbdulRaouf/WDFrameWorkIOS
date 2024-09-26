@@ -69,13 +69,12 @@ class ExploreViewController: STUIViewController ,IBaseController,UITabBarControl
         vc.viewModel?.model = self.viewModel?.filterAndSeviceList?.sortList.value
         vc.viewModel?.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
-     }
+    }
     
     @objc func backToMainApp() {
         doPostNotification("exit_wdframework")
-//        self.navigationController?.popToRootViewController(animated: true)
     }
-   
+    
 }
 
 // MARK: - Internal
@@ -87,14 +86,13 @@ extension ExploreViewController{
         self.setupCollectionView()
         self.setupSearchBar()
         self.viewModel?.initdata()
-//        DispatchQueue.global(qos: .background).async {
         doInBackground {
-              self.viewModel?.getServices()
+            self.viewModel?.getServices()
         }
         doOnMain {
-             self.viewModel?.getBrandList()
-        }       
-      
+            self.viewModel?.getBrandList()
+        }
+        
         addRefreshControl()
     }
     func bindingData() {}
@@ -105,26 +103,16 @@ extension ExploreViewController{
         let backToMainApp = UIBarButtonItem(image: UIImage(named: "exit-to-app"), style: .plain, target: self, action: #selector(backToMainApp))
         self.navigationItem.rightBarButtonItem = backToMainApp
         self.tabBarController?.delegate = self
-//        UINavigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
-        
-//        self.navigationController?.navigationBar.barTintColor = .black
-//        // To change colour of tappable items.
-//        navigationController?.navigationBar.tintColor = UIColor(named: "MainColor")!
-//        // To apply textAttributes to title i.e. colour, font etc.
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black ]
-//        // To control navigation bar's translucency.
-//        navigationController?.navigationBar.isTranslucent = true
-//        navigationController?.navigationBar.setColors(background: UIColor(named: "MainColor")!, text: .black)
-        
     }
-    func addRefreshControl(){
-           refreshControl = UIRefreshControl()
-           refreshControl?.tintColor = COLOR_ACCENT
-           refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
-           tableView.addSubview(refreshControl!)
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = COLOR_ACCENT
+        refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        tableView.addSubview(refreshControl!)
     }
-       @objc func refreshList(){
+    @objc func refreshList(){
         self.viewModel?.refreshList()
         refreshControl?.endRefreshing()
-       }
+    }
 }

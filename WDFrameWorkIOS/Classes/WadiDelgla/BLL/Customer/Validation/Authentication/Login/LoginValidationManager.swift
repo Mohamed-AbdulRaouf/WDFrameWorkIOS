@@ -10,12 +10,7 @@ import Foundation
 ////import DAL
 
 public class LoginValidationManagerBLL : IUserValidationManagerBLL{
-    
-    
-    
-    
     public var errorViewModel: ILoginValidationDTOBLL?
-    
     private var userPhoneNumberLength = 11
     private let minUserPasswordLength = 3
     private let maxUserPasswordLength = 10
@@ -76,12 +71,9 @@ extension LoginValidationManagerBLL : ILoginValidationManagerBLL {
     public func testPass(string: String) -> ValidationResultBLL {
         if string == "" || string.isEmpty {
             print(RBLL.string.localizable.empty_password())
-//            errorViewModel?.msgPasswordError.value = ValidationError.ErrorMessages.msgEmptyPassword()
-            
             return .Invalid(ValidationErrorBLL.ErrorMessages.msgEmptyPassword())
         }
         if string.withoutSpacesAndNewLines == "" || string.count < minUserPasswordLength || string.count > maxUserPasswordLength {
-//            errorViewModel?.msgPasswordError.value  = ValidationError.ErrorMessages.msgInvalidPassword()
             return .Invalid(ValidationErrorBLL.ErrorMessages.msgInvalidPassword())
         }
         errorViewModel?.msgPasswordError.value = ""

@@ -129,12 +129,11 @@ extension LocationViewController {
 extension LocationViewController{
     func setupUI(){
         self.viewModel?.delegate = self
-//        self.startButton.backgroundColor = COLOR_ACCENT
         self.title1Label.text = "logo_title1".localized()
         self.title2Label.text = "Order the Food You Love".localized()
         self.title1Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
         self.title2Label.font = APP_FONT_BOLD18 //UIFont.init(resource: APP_FONT_BOLD, size: 18)
-
+        
         self.startButton.layer.cornerRadius = 30
         self.startButton.layer.borderColor = UIColor.clear.cgColor
         self.startButton.titleLabel?.font = FONT_PRIMARY_BUTTON
@@ -146,14 +145,6 @@ extension LocationViewController{
         self.areaButton.setTitle("select".localized(), for: .normal)
         let lang = LocalizationSystem.sharedInstance.isCurrentLanguageArabic()  ? "English" : "العربية"
         self.languageButton.setTitle(lang, for: .normal)
-        
-        /*
-        if let country = UserDefaults.currentAppCountry ,let countries = K.shared.BRAND_COUNTRY_LIST,countries.count > 1{
-            self.updateCountryCode(country: country)
-        }else{
-            self.countryButton.isHidden = true
-        }
-        */
         self.countryButton.isHidden = true
     }
     func bindingData() {
@@ -190,27 +181,18 @@ extension LocationViewController {
 extension LocationViewController: ILocationViewController{
     
     func openHome(){
-//        let vc = StoryboardScene.Main.tabBarViewController.instantiate()
-//        UIApplication.shared.keyWindow?.rootViewController = vc
         let vc = StoryboardScene.Main.exploreViewController.instantiate()
         self.navigationController?.pushViewController(vc)
     }
+    
     func onSuccessLoadCitiesAndAreas(_ cities: [CityDTODAL]) {
         self.data = cities
         let city =  cities.filter({$0.id.value ?? "" == self.viewModel?.currentCity?.id.value ?? ""}).first
-
+        
         let areas = cities.filter({$0.id.value ?? "" == self.viewModel?.currentCity?.id.value ?? ""}).first?.areas.value ?? [SearchItemDTOModelDAL]()
-//        for area in areas {
-//            showAlert(title: area.name.value ?? "nnn", message: area.id.value ?? "id")
-//        }
         let area = areas.filter({$0.id.value ?? "" == self.viewModel?.currentArea?.id.value ?? ""}).first ?? SearchItemDTOModelDAL()
-//        showAlert(title: area.name.value ?? "nnn", message: self.viewModel?.currentArea?.id.value ?? "id")
-        
-//        showAlert(title:city?.name.value, message: "\(cities[0].id.value ?? "") - \(self.viewModel?.currentCity?.id.value ?? "") - \(cities[0].name.value ?? "")  - \(area.name.value ?? "") - \(area.id.value ?? "")")
-//        self.viewModel?.checkCityName(cities)
-//        self.viewModel?.checkAreaName(cities)
-        
     }
+    
     func onShowClearCartAlert() {
         let alertVC = UIAlertController(title: "", message: "clear_cart_due_to_change_location".localized(), preferredStyle: .actionSheet)
         let clearAction = UIAlertAction(title: "clear_cart".localized(), style: .destructive) { (pressed) in

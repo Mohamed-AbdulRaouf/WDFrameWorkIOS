@@ -43,16 +43,7 @@ class SSRadioButton: UIButton {
      Radius of RadioButton circle.
      */
     @IBInspectable var circleRadius: CGFloat = 5.0
-//    @IBInspectable override var cornerRadius: CGFloat {
-//        get {
-//            return layer.cornerRadius
-//        }
-//        set {
-//            layer.cornerRadius = newValue
-//            layer.masksToBounds = newValue > 0
-//        }
-//    }
-//    
+
     fileprivate func circleFrame() -> CGRect {
         var circleFrame = CGRect(x: 0, y: 0, width: 2*circleRadius, height: 2*circleRadius)
         circleFrame.origin.x = 0 + circleLayer.lineWidth

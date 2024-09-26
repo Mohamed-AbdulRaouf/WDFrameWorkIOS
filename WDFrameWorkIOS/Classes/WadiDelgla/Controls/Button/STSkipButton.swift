@@ -19,10 +19,7 @@ final class STSkipButton: UIButton {
         super.init(coder: aDecoder)
 
     }
-    
-    
-
-    
+   
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setUpView()
@@ -41,7 +38,5 @@ final class STSkipButton: UIButton {
         self.setTitle(R.string.localizable.skip(), for: .normal)
         self.setTitleColor(.white, for: .normal)
     }
-   
-
 
 }

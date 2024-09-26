@@ -31,8 +31,6 @@ public protocol UserServiceBLL :AnyObject {
     func getCustomerOrderDetails(_ customerHistoryId: Int,completion: @escaping onSuccessBLL)
     func registerUserInBrand(_ brandId: Int,completion: @escaping onSuccessBLL)
     func getCustomerNotRatedOrders(_ requestOrders: IRequestDTODAL,completion: @escaping onSuccessBLL)
-//    func sendVerifyCodeViaFireBase(_ authDTO: IAuthPhoneNumberDTO,completion: @escaping onSuccess)
-//    func checkVerifyCodeViaFireBase(_ authDTO: IAuthPhoneNumberDTO,completion: @escaping onSuccess)
     func validateVerifificationCode(_ authDTO: IAuthPhoneNumberDTODAL,completion: @escaping onSuccessBLL)
     
     func validateCustomer(_ phoneNumber: String,_ countryId: String?,_ brandId: Int, completion: @escaping onSuccessBLL)
