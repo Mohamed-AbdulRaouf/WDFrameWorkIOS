@@ -22,7 +22,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-mohamed.a.raouf@icloud.com, mohamed.a.raouf@icloud.com
+mohamed.a.raouf@icloud.com
 
 ## License
 
