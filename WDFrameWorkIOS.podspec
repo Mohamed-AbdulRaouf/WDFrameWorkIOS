@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
     spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.3.8'
+    spec.version          = '3.3.9'
     spec.summary          = 'A short description of WDFrameWorkIOS.'
     spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
     
@@ -22,7 +22,6 @@ Pod::Spec.new do |spec|
     DESC
     
     spec.homepage         = 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS'
-    # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     spec.license          = { :type => 'MIT', :file => 'LICENSE' }
     spec.author           = { 'mohamed.a.raouf@icloud.com' => 'mohamed.a.raouf@icloud.com' }
     spec.source           = { :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS.git', :tag => spec.version.to_s }
@@ -39,7 +38,6 @@ Pod::Spec.new do |spec|
     spec.dependency 'GoogleMaps'
     spec.dependency 'GooglePlaces'
     spec.dependency 'Alamofire' , '~> 5.6.4'
-    #  spec.dependency 'SwiftyJSON', '~> 4.0'
     spec.dependency 'R.swift', '~> 7.2.4'
     spec.dependency 'SwifterSwift'
     spec.dependency 'CachyKit'
@@ -56,11 +54,9 @@ Pod::Spec.new do |spec|
     spec.dependency 'FontAwesome.swift'
     spec.dependency 'SVProgressHUD'
     spec.dependency 'RxSwift'
-    #  spec.dependency 'Toast-Swift'
     spec.dependency 'PopupDialog', '~> 1.1'
     spec.dependency 'Kingfisher', '~> 5.0'
     spec.dependency 'Cosmos'
-    #  spec.dependency 'MyFatoorah'
     spec.dependency 'Bond'
     spec.dependency 'Localize-Swift' ,'1.7.0'
     spec.dependency 'MOLH'
