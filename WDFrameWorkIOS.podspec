@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
     spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.3.9'
+    spec.version          = '3.3.10'
     spec.summary          = 'A short description of WDFrameWorkIOS.'
     spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
     
