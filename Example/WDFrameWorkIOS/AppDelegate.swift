@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(Config.PayMobIntegrationID, forKey: "PayMobIntegrationID")
         UserDefaults.standard.set(Config.PayMobApiKey, forKey: "PayMobApiKey")
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
+        IQKeyboardManager.shared.toolbarConfiguration.previousNextDisplayMode = .alwaysShow
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(STUIView.self)
     }
     

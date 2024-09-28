@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |spec|
     spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.4.0'
-    spec.summary          = 'A short description of WDFrameWorkIOS.'
+    spec.version          = '3.4.1'
+    spec.summary          = 'food ordering services of WadiDegla.'
     spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
     
     spec.description      = <<-DESC
@@ -62,5 +62,5 @@ Pod::Spec.new do |spec|
     spec.dependency 'MOLH'
     spec.dependency 'Japx'
     spec.dependency 'Japx/Codable'
-    spec.dependency 'AcceptCardSDK' , '5.5.1'
+    spec.dependency 'AcceptCardSDK' , '5.6.0'
 end
