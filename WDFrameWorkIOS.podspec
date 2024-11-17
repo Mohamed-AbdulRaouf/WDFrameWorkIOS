@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
     spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.5.0'
+    spec.version          = '3.5.1'
     spec.summary          = 'food ordering services of WadiDegla.'
     spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
     
@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
     spec.dependency 'GooglePlaces'
     spec.dependency 'Alamofire' , '~> 5.6.4'
     spec.dependency 'R.swift', '~> 7.2.4'
-    spec.dependency 'SwifterSwift'
+    spec.dependency 'SwifterSwift', '~> 6.2.0'
     spec.dependency 'CachyKit'
     spec.dependency 'TextFieldEffects'
     spec.dependency 'SideMenu'
@@ -50,7 +50,7 @@ Pod::Spec.new do |spec|
     spec.dependency 'SwinjectStoryboard'
     spec.dependency 'Swinject'
     spec.dependency 'FSnapChatLoading'
-    spec.dependency 'IQKeyboardManagerSwift'
+    spec.dependency 'IQKeyboardManagerSwift', '~> 8.0.0'
     spec.dependency 'FontAwesome.swift'
     spec.dependency 'SVProgressHUD'
     spec.dependency 'RxSwift'

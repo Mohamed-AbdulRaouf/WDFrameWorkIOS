@@ -85,9 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupConfig() {
         UserDefaults.standard.set(Config.PayMobIntegrationID, forKey: "PayMobIntegrationID")
         UserDefaults.standard.set(Config.PayMobApiKey, forKey: "PayMobApiKey")
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.toolbarConfiguration.previousNextDisplayMode = .alwaysShow
-        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(STUIView.self)
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
     }
     
     @objc func exitWDFramework() {
