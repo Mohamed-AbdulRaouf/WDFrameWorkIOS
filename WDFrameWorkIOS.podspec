@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
     spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.5.1'
+    spec.version          = '3.5.2'
     spec.summary          = 'food ordering services of WadiDegla.'
     spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
     
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
     spec.author           = { 'mohamed.a.raouf@icloud.com' => 'mohamed.a.raouf@icloud.com' }
     spec.source           = { :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS.git', :tag => spec.version.to_s }
     
-    spec.ios.deployment_target = '13.0'
+    spec.ios.deployment_target = '15.1'
     spec.swift_version  = '5.3.2'
     spec.static_framework = true
     spec.requires_arc = true
