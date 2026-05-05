@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'WDFrameWorkIOS'
-  spec.version          = '3.5.5'
+  spec.version          = '3.5.6'
   spec.summary          = 'food ordering services of WadiDegla.'
 
   spec.description      = <<-DESC
