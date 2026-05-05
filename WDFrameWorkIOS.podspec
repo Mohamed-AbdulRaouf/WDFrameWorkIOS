@@ -7,60 +7,73 @@
 #
 
 Pod::Spec.new do |spec|
-    spec.name             = 'WDFrameWorkIOS'
-    spec.version          = '3.5.4'
-    spec.summary          = 'food ordering services of WadiDegla.'
-    spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.simpletouch.wdframeWorkios' }
-    
-    spec.description      = <<-DESC
-    --- WDFrameWork ---
-    WadiDegla Framework (SDK),
-    It allows you to connect to food ordering services through our
-    effective, important platform at the world of restaurant management,
-    WadiDegla Framework (SDK)
-    --- WDFrameWork ---
-    DESC
-    
-    spec.homepage         = 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS'
-    spec.license          = { :type => 'MIT', :file => 'LICENSE' }
-    spec.author           = { 'mohamed.a.raouf@icloud.com' => 'mohamed.a.raouf@icloud.com' }
-    spec.source           = { :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS.git', :tag => spec.version.to_s }
-    
-    spec.ios.deployment_target = '15.1'
-    spec.swift_version  = '5.9'
-    spec.static_framework = true
-    spec.requires_arc = true
-    spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 arm64e armv7 armv7s x86_64' }
-    spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,xcframework,framework,strings,otf}'
-    spec.resource_bundles = {
-        'resources' => 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,png,jpeg,jpg,storyboardc,xcframework,framework,strings,otf}'}
-    spec.exclude_files = "WDFrameWorkIOS/**/*.plist"
-    spec.dependency 'GoogleMaps'
-    spec.dependency 'GooglePlaces'
-    spec.dependency 'Alamofire' , '~> 5.6.4'
-    spec.dependency 'R.swift', '~> 7.2.4'
-    spec.dependency 'SwifterSwift', '~> 6.2.0'
-    spec.dependency 'CachyKit'
-    spec.dependency 'TextFieldEffects'
-    spec.dependency 'SideMenu'
-    spec.dependency 'Firebase'
-    spec.dependency 'FirebaseCore'
-    spec.dependency 'FirebaseAuth'
-    spec.dependency 'FirebaseMessaging'
-    spec.dependency 'SwinjectStoryboard'
-    spec.dependency 'Swinject'
-    spec.dependency 'FSnapChatLoading'
-    spec.dependency 'IQKeyboardManagerSwift', '~> 8.0.0'
-    spec.dependency 'FontAwesome.swift'
-    spec.dependency 'SVProgressHUD'
-    spec.dependency 'RxSwift'
-    spec.dependency 'PopupDialog', '~> 1.1'
-    spec.dependency 'Kingfisher', '~> 5.0'
-    spec.dependency 'Cosmos'
-    spec.dependency 'Bond'
-    spec.dependency 'Localize-Swift' ,'1.7.0'
-    spec.dependency 'MOLH'
-    spec.dependency 'Japx'
-    spec.dependency 'Japx/Codable'
-    spec.dependency 'AcceptCardSDK' , '5.6.0'
+  spec.name             = 'WDFrameWorkIOS'
+  spec.version          = '3.5.5'
+  spec.summary          = 'food ordering services of WadiDegla.'
+
+  spec.description      = <<-DESC
+  --- WDFrameWork ---
+  WadiDegla Framework (SDK),
+  It allows you to connect to food ordering services through our
+  effective, important platform at the world of restaurant management.
+  --- WDFrameWork ---
+  DESC
+
+  spec.homepage         = 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS'
+  spec.license          = { :type => 'MIT', :file => 'LICENSE' }
+  spec.author           = { 'mohamed.a.raouf@icloud.com' => 'mohamed.a.raouf@icloud.com' }
+  spec.source           = { :git => 'https://github.com/Mohamed-AbdulRaouf/WDFrameWorkIOS.git', :tag => spec.version.to_s }
+
+  spec.ios.deployment_target = '15.1'
+  spec.swift_version         = '5.9'
+  spec.static_framework      = true
+  spec.requires_arc          = true
+
+  # ✅ Merged into one, removed deprecated archs
+  spec.pod_target_xcconfig = {
+    'PRODUCT_BUNDLE_IDENTIFIER' => 'com.simpletouch.wdframeWorkios',
+    'VALID_ARCHS' => 'arm64 arm64e x86_64'
+  }
+
+  # ✅ No binary types in source_files
+  spec.source_files = 'WDFrameWorkIOS/Classes/**/*.{h,m,swift,storyboard,xib,storyboardc,strings,otf}'
+
+  # ✅ Only assets in resource_bundles
+  spec.resource_bundles = {
+    'resources' => 'WDFrameWorkIOS/Classes/**/*.{storyboard,xib,png,jpeg,jpg,storyboardc,strings,otf}'
+  }
+
+  # ✅ Declare vendored binaries separately if you have any
+  # spec.vendored_frameworks = 'WDFrameWorkIOS/Classes/**/*.xcframework'
+
+  spec.exclude_files = 'WDFrameWorkIOS/**/*.plist'
+
+  spec.dependency 'GoogleMaps'
+  spec.dependency 'GooglePlaces'
+  spec.dependency 'Alamofire', '~> 5.6.4'
+  spec.dependency 'R.swift', '~> 7.2.4'
+  spec.dependency 'SwifterSwift', '~> 6.2.0'
+  spec.dependency 'CachyKit'
+  spec.dependency 'TextFieldEffects'
+  spec.dependency 'SideMenu'
+  spec.dependency 'Firebase'
+  spec.dependency 'FirebaseCore'
+  spec.dependency 'FirebaseAuth'
+  spec.dependency 'FirebaseMessaging'
+  spec.dependency 'SwinjectStoryboard'
+  spec.dependency 'Swinject'
+  spec.dependency 'FSnapChatLoading'
+  spec.dependency 'IQKeyboardManagerSwift', '~> 8.0.0'
+  spec.dependency 'FontAwesome.swift'
+  spec.dependency 'SVProgressHUD'
+  spec.dependency 'RxSwift'
+  spec.dependency 'PopupDialog', '~> 1.1'
+  spec.dependency 'Kingfisher', '~> 5.0'
+  spec.dependency 'Cosmos'
+  spec.dependency 'Bond'
+  spec.dependency 'Localize-Swift', '1.7.0'
+  spec.dependency 'MOLH'
+  spec.dependency 'Japx'
+  spec.dependency 'Japx/Codable'
+  spec.dependency 'AcceptCardSDK', '5.6.0'
 end
